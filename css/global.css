@@ -1,0 +1,22 @@
+/* =============================================================================
+ * MadJon's Customizations
+ * ============================================================================= */
+
+header, #main, footer {
+	z-index:3;
+	position:relative;
+}
+#background-image {
+	position:absolute;
+	z-index:1;
+}
+header {
+	background: url(../images/bkgd_header_tile.png) repeat-x scroll 0 0 transparent;
+	height:81px;
+	text-align:center;
+}
+header a {
+	height: 38px;
+	padding: 20px 0;
+	display: inline-block;
+}
