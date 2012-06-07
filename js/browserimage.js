@@ -45,7 +45,6 @@ var Background;
 		
 		init: function()
 		{
-			console.log('INIT!!');
 			if($('#background-image').length == 1)
 			{
 				$(window).resize(function() {
