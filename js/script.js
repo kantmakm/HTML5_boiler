@@ -52,7 +52,7 @@
 		/* Autoclear */
 		autoclear: function(){
 			// Auto Clear Form Fields When Active
-			$('input[type=text].autoclear, textarea.autoclear')
+			$('input[type=text].autoclear, input[type=password].autoclear, textarea.autoclear')
 			  .click(function(){
 			    if($(this).val() == $(this).data('autoclear'))
 				  {
