@@ -110,7 +110,7 @@ footer a {
 	text-align: center;
 	clear: both;
 }
-.submit-area button.submit {
+button.submit {
 	height: 37px;
 	border: 0;
 	position: relative;
@@ -118,14 +118,14 @@ footer a {
 	margin: 0;
 	background: none;
 }
-.submit-area button.submit span {
+button.submit span {
 	height: 37px;
 	background: url(../images/button_submit.png) no-repeat scroll left top transparent;
 	display:block;
 	padding: 10px 20px 10px 30px;
 	color:#FFFFFF;
 }
-.submit-area button.submit span.end {
+button.submit span.end {
 	background-position: right bottom;
 	margin:0;
 	position:absolute;
@@ -149,6 +149,7 @@ input[type=email] {
 	height: 35px;
 	border-radius: 2px;
 	border: 1px solid #B9BCBE;
+	padding-left: 5px;
 }
 textarea {
 	border:1px solid #c1c6c8;
@@ -156,14 +157,15 @@ textarea {
 	-o-border-radius: 2px;
 	-moz-border-radius: 2px;
 	-webkit-border-radius: 2px;
-	
 
   box-shadow: inset 1px 1px 10px -2px #000000;
   -o-box-shadow: inset 1px 1px 10px -2px #000000;
   -moz-box-shadow: inset 1px 1px 10px -2px #000000;
   -webkit-box-shadow: inset 1px 1px 10px -2px #000000;
 }
-
+input.autoclear {
+	color: #aeaeae;
+}
 .form-element textarea {
 	width:420px;
 	float:left;
@@ -182,6 +184,9 @@ textarea {
 }
 .form-element {
 	float:left;
+}
+fieldset.form-element {
+	float:none;
 }
 .form-element,
 .form-element-right {
@@ -406,24 +411,24 @@ textarea {
 	font-size: 11px;
 	font-family: "HelveticaNeueBold", Helvetica, Arial, sans-serif;
 }
-#signin .remember-area {
+.remember-area {
 	float:left;
 	position:relative;
 	padding-left: 25px;
 	font-size: 12px;
 	color: #555555;
 }
-#signin .remember-area input {
+.remember-area input {
 	position:absolute;
 	top: 2px;
 	left: 3px;
 }
-#signin .remember-area a {
+.remember-area a {
 	color: #00929f;
 	text-decoration: none;
 	font-weight:bold;
 }
-#signin .submit-area {
+.submit-area-right {
 	float:right;
 }
 #signin .submit {
@@ -445,4 +450,17 @@ textarea {
 }
 .button-iphone {
 	background: url(../images/button_iphone.png) no-repeat scroll 0 0 transparent;
+}
+
+/**
+ * Register
+ */
+
+#register {
+	background-color: #FDFDFD;
+	position: relative;
+	padding: 20px 24px;
+	margin: 0 auto;
+	width: 420px;
+	float:none;
 }

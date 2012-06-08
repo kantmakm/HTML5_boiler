@@ -13,6 +13,7 @@
 			
 			// bookmark functionality
 			$('.bookmark').click(Global.bookmark);
+			Global.autoclear();
 			
 			if($('textarea').length > 0)Textarea.bindEvents();
 			if($('.date-manager').length > 0)DateManager.init();
@@ -47,6 +48,34 @@
 			{
 				$('header a.bookmark').html('Bookmarked');
 			}
+		},
+		/* Autoclear */
+		autoclear: function(){
+			// Auto Clear Form Fields When Active
+			$('input[type=text].autoclear, textarea.autoclear')
+			  .click(function(){
+			    if($(this).val() == $(this).data('autoclear'))
+				  {
+				    $(this).removeClass('autoclear');
+					$(this).val('');
+				  }
+				})
+				.focus(function(){
+				  if($(this).val() == $(this).data('autoclear'))
+				    {
+					  $(this).removeClass('autoclear');
+					  $(this).val('');
+					}
+				})
+				.blur(function(){
+				  if($(this).val() == ''){
+				    $(this).addClass('autoclear');
+				    $(this).val($(this).data('autoclear'));
+				  }
+				})
+				.each(function(){
+				  $(this).data('autoclear', $(this).val());
+				});
 		}
 	}
 	
