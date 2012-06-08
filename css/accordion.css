@@ -7,7 +7,7 @@
 .accordion-box .ui-accordion .ui-accordion-header {
 	background: url(../images/bkgd_accordion_header.png) repeat-x scroll 0 0 transparent;
 	height: 33px;
-	padding: 25px 0 0 50px;
+	padding: 20px 0 5px 50px;
 	margin: 0;
 	border: 0;
 	color: #AAAAAA;
