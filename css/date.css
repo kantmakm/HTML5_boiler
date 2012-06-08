@@ -1,0 +1,91 @@
+.date-manager {
+	position: relative;
+	display: block;
+	height: 55px;
+	margin: 0 -30px;
+	padding: 20px 0 0;
+	border-top: 1px solid #E7E5E3;
+}
+.date-manager .right-selector,
+.date-manager .left-selector {
+	position: absolute;
+	height: 25px;
+	display: block;
+	background: url(../images/arrow_date.png) no-repeat scroll left bottom transparent;
+	width: 13px;
+	text-decoration: none;
+	bottom:8px;
+	z-index: 2;
+}
+.date-manager .left-selector {
+	left:15px;
+}
+.date-manager .right-selector {
+	right:15px;
+	background-position: right bottom;
+}
+.date-manager .year-selector {
+	position: relative;
+	width: 740px;
+	height: 40px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.date-manager .year-selector .slider {
+	width:10000px;
+	position:absolute;
+	top:0;
+	right:0;
+}
+.date-manager .year-selector ul {
+/*	position: absolute;
+	top: 0;
+	right: 0;
+*/
+	height: 40px;
+/*	white-space: nowrap;*/
+	padding: 0;
+	margin: 0;
+	float:right;
+	display:block;
+}
+.date-manager .year-selector li {
+	display: block;
+	padding: 0 1px;
+	white-space: nowrap;
+	margin: 0;
+	float: left;
+}
+.date-manager .year-selector li a {
+	height: 38px;
+	width: 205px;
+	display: block;
+	padding: 1px 20px 0;
+	text-decoration: none;
+	color: white;
+	font-weight: bold;
+	background-image: url(../images/arrow_mask.png);
+	background-repeat: no-repeat;
+	background-position: left bottom;
+
+	transition: background-position 0.25s;
+	-o-transition: background-position 0.25s;
+	-moz-transition: background-position 0.25s;
+	-webkit-transition: background-position 0.25s;
+}
+.date-manager .year-selector li.active a {
+	background-position: right bottom;
+}
+
+/**
+ * Background-Colors
+ */
+.blue {
+	background-color: #00bfd1;
+}
+.blue-green {
+	background-color: #82ca9d;
+}
+.green {
+	background-color: #acd373;
+}

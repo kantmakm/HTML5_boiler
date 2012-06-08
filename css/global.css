@@ -5,6 +5,9 @@
 body {
 	background-color:#000000;
 }
+.error {
+	color: #e34848;
+}
 #main, footer {
 	z-index:3;
 	position:relative;
@@ -66,7 +69,7 @@ header #logo {
 	width: 770px;
 	margin: 0 auto;
 	display: block;
-	padding: 60px 0;
+	padding: 60px 0 20px;
 }
 #main #error {
 	text-align: center;
@@ -76,6 +79,22 @@ header #logo {
 }
 #mail {
 	display:none;
+}
+footer {
+	width: 710px;
+	margin: 0 auto;
+	display: block;
+	background: #000000;
+	opacity: 0.9;
+	padding: 15px 30px;
+}
+footer .navigation {
+	float:right;
+}
+footer a {
+	color: #6E6E6E;
+	font-size: 10px;
+	text-decoration: none;
 }
 /**
  * jQuery UI Dialog
@@ -87,8 +106,49 @@ header #logo {
  * Forms
  */
 
+.submit-area {
+	text-align: center;
+	clear: both;
+}
+.submit-area button.submit {
+	height: 37px;
+	border: 0;
+	position: relative;
+	padding: 0;
+	margin: 0;
+	background: none;
+}
+.submit-area button.submit span {
+	height: 37px;
+	background: url(../images/button_submit.png) no-repeat scroll left top transparent;
+	display:block;
+	padding: 10px 20px 10px 30px;
+	color:#FFFFFF;
+}
+.submit-area button.submit span.end {
+	background-position: right bottom;
+	margin:0;
+	position:absolute;
+	top:0;
+	right:-9px;
+	height:37px;
+	width:10px;
+	padding:0;
+}
+
 .form-element {
-	padding-bottom:10px;
+	padding-bottom:20px;
+}
+input[type=text],
+input[type=password],
+input[type=email] {
+	margin: 0 0 25px;
+	box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.25) inset;
+	width: 100%;
+	background: none no-repeat scroll 0 0 #F2F2F2;
+	height: 35px;
+	border-radius: 2px;
+	border: 1px solid #B9BCBE;
 }
 textarea {
 	border:1px solid #c1c6c8;
@@ -111,24 +171,34 @@ textarea {
 .form-element .notes p {
 	padding:5px 0;
 }
-.form-element-right {
-	float:right;
-	width:300px;
-}
 .form-element h4,
 .form-element-right h4
 {
-	font-family: Helvetica, Arial, "Lucida Grande", sans-serif;
 	color:#6E6E6E;
-	padding:10px 0;
 }
+.form-element-right {
+	float: right !important;
+	width: 220px;
+}
+.form-element {
+	float:left;
+}
+.form-element,
+.form-element-right {
+	padding: 20px 0;
+}
+.select-element select,
+.form-element select,
+.form-element-right select {
+	margin-left:15px;
+}
+
 .form-element label,
 .form-element-right label {
 	display:block;
-	font-family: Helvetica, Arial, "Lucida Grande", sans-serif;
 	font-size:12px;
 	color: #666666;
-	margin:10px 0;
+	margin:10px 0 0;
 }
 .form-element label input,
 .form-element-right label input {
@@ -136,18 +206,45 @@ textarea {
 }
 
 .form-element-with-notes .notes {
-	float: left;
+	float: right;
 	width: 140px;
 	font-size: 10px;
 	padding-left: 20px;
 }
+.form-element-with-notes .under-notes {
+	float: left;
+	clear:left;
+	font-size:12px;
+	width:390px;
+}
 .form-element-with-notes textarea {
-	width:400px;
+	width:390px;
+	display:block;
+	float:left;
 }
 
 /**
  * shared modular style-rules
  */
+
+/*description-summary*/
+.description-summary {
+	font-size:12px;
+}
+.description-summary h3 {
+	width: 150px;
+	float: left;
+	clear: left;
+	text-align: right;
+	padding: 5px;
+	font-weight: bold;
+}
+.description-summary p {
+	display: block;
+	float: left;
+	width: 400px;
+	padding: 5px 0;	
+}
 
 /* Rounded Corners/Box-shadow */
 .titled-box {
@@ -155,6 +252,19 @@ textarea {
 	position: relative;
 	padding: 20px 24px;
 	margin: 0;
+	float:left;
+}
+.small-box {
+	padding: 10px 10px !important;
+}
+.titled-box-right {
+	float:right;
+}
+.titled-box .box-title,
+.large-titled-box .box-title {
+	font-family: "HelveticaNeueLTStd", Helvetica, Arial, sans-serif;
+	font-size: 22px;
+	color: #6E6E6E;
 }
 .titled-box .box-title {
 	position: absolute;
@@ -163,7 +273,6 @@ textarea {
 	right: -3px;
 	height: 49px;
 	background: url(../images/bkgd_box_header_small.png) no-repeat scroll right top transparent;
-	font-size: 16px;
 	font-weight: normal;
 	margin: 0;
 }
@@ -171,7 +280,7 @@ textarea {
 .titled-box .box-title a {
 	background: url(../images/bkgd_box_header_small.png) no-repeat scroll left bottom transparent;
 	height: 29px;
-	padding: 20px 0 0 20px;
+	padding: 15px 0 5px 20px;
 	left: -10px;
 	position: absolute;
 	top: 0;
@@ -219,51 +328,42 @@ textarea {
 	background-color:#FFFFFF;
 }
 .large-titled-box .box-title {
-	height: 32px;
-	padding: 25px 0 0 30px;
+	height: 33px;
+	padding: 20px 0 5px 30px;
 	background: url(../images/bkgd_box_header_large.png) repeat-x scroll 0 0 transparent;
+	font-weight: normal;
 }
 /* Both */
 .large-titled-box fieldset,
 .titled-box fieldset {
 	border-bottom: 2px solid #E7E5E3;
 	padding-bottom: 20px;
-	margin-bottom: 20px;
+/*	margin-bottom: 20px;*/
 }
 /**
- * Accordion Styling
+ * Photo Box
  */
-.accordion {
-	
+.photo-box {
+	position: relative;
+	border: 3px solid #FFFFFF;
+	float: left;
+	border-radius: 5px;
 }
-.accordion-box .ui-accordion .ui-accordion-header {
-	background: url(../images/bkgd_accordion_header.png) repeat-x scroll 0 0 transparent;
-	height: 33px;
-	padding: 25px 0 0 30px;
-	margin: 0;
-	border: 0;
-	color: #AAAAAA;
-	transition: color 0.25s;
-	-o-transition: color 0.25s;
-	-moz-transition: color 0.25s;
-	-webkit-transition: color 0.25s;
-	border-top: 1px solid #E7E5E3;
-/*	border-bottom: 1px solid #E7E5E3;*/
+.photo-box p {
+	position: absolute;
+	display:block;
+	top:10px;
+	left:5px;
+	bottom:0;
+	width:150px;
+	font-family: "HelveticaNeueLTStd", Helvetica, Arial, sans-serif;
+	text-shadow: 2px 0px 0px #FFFFFF;
+	font-size: 22px;
+	color: #1C1C1C;
+	line-height: 1;
 }
-.accordion-box .ui-accordion .ui-accordion-content {
-	border:0;
-	border-top:1px solid #E7E5E3;
-	padding: 20px 30px;
-}
-.accordion-box .ui-accordion .ui-state-active {
-	color: #333333;
-	height:34px;
-}
-.accordion-box .ui-accordion-content h3 {
-	color: #00919E;
-	margin: -20px -30px 0;
-	padding: 20px 30px 20px;
-	border-bottom: 1px solid #E7E5E3;
+.photo-box p strong {
+	font-size: 30px;
 }
 /**
  * Front-page specific
@@ -271,12 +371,77 @@ textarea {
 .signin #main {
 	width:640px;
 }
+.signin .titled-box {
+	margin: 46px 0 20px;
+}
 #signin .body1 {
 	width:240px;
 	padding-right:10px;
 	border-right:1px solid #cccccc;
+	font-size: 14px;
+}
+#signin .body1 ul {
+	font-family: "HelveticaNeueLTStd", Helvetica, Arial, sans-serif;
+	padding: 10px 0;
+	margin: 0;
+}
+#signin .body1 ul li {
+	background: url(../images/icon_check.png) no-repeat scroll 0 0 transparent;
+	padding-left:15px;
+	font-size:16px;
+	color: #444444;
 }
 #signin .body2 {
-	width:315px;
-	padding-left:25px;
+	width: 315px;
+	float:left;
+	padding-left: 25px;
+}
+#signin .body2 h3 {
+	font-size: 14px;
+	color: #444444;
+	font-weight: bold;
+}
+#signin .body2 p.error {
+	padding: 0 0 5px;
+	font-size: 11px;
+	font-family: "HelveticaNeueBold", Helvetica, Arial, sans-serif;
+}
+#signin .remember-area {
+	position:relative;
+	padding-left: 25px;
+	font-size: 12px;
+	color: #555555;
+}
+#signin .remember-area input {
+	position:absolute;
+	top: 2px;
+	left: 3px;
+}
+#signin .remember-area a {
+	color: #00929f;
+	text-decoration: none;
+	font-weight:bold;
+}
+#signin .submit-area {
+	float:right;
+}
+#signin .submit {
+	font-family: "HelveticaNeueBold", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	text-shadow: 1px 0px 0px rgba(0,0,0,0.2);
+}
+.button-droid,
+.button-iphone {
+	display:block;
+	width:158px;
+	height:51px;
+	float: left;
+	text-decoration:none;
+}
+.button-droid {
+	background: url(../images/button_droid.png) no-repeat scroll 0 0 transparent;
+	margin: 0 15px 0 0;
+}
+.button-iphone {
+	background: url(../images/button_iphone.png) no-repeat scroll 0 0 transparent;
 }

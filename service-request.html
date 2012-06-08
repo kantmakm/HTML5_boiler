@@ -23,6 +23,8 @@
   <link rel="stylesheet" href="css/reset.css"> <!-- Eric Meyer Stylesheet -->
   <link rel="stylesheet" href="css/style.css"> <!-- Default Stylesheet -->
   <link rel="stylesheet" href="css/global.css"> <!-- Added Styles For All Pages -->
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/accordion.css">
   <link rel="stylesheet" href="css/jquery.ui.css"> <!-- Added Styles For All Pages -->
 
   <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
@@ -46,7 +48,7 @@
   <!-- end scripts -->
 
 </head>
-<body class="signin">
+<body class="service-request">
 	<!-- The Stretchy Background Image -->
 	<div id="background-image">
 		<img class="source-image" src="images/bkgd_1.jpg" >
@@ -57,32 +59,83 @@
   <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
   <header>
 		<div class="header-contents">
-			<a href="/" id="logo"><img src="images/logo.png" width="167" height="38" ></a>
+			<a href="index.html" id="logo"><img src="images/logo.png" width="167" height="38" ></a>
 			<ul>
-				<li><a href="#" class="email" title="Contact Archstone">EMAIL</a></li>
-				<li><a href="#" class="bookmark" title="Bookmark this page">Bookmark</a></li>
+				<li><a href="request-history.html" title="Contact Archstone">Request History</a></li>
+				<li><a href="service-request.html" title="Contact Archstone">Service Request</a></li>				<li><a href="#" class="bookmark" title="Bookmark this page">Bookmark</a></li>
 			</ul>
 		</div>
   </header>
-  <div role="main" id="main">
+  <div role="main" id="main" class="clearfix">
 		<div id="service-request" class="accordion-box large-titled-box clearfix">
 			<h1 class="box-title"><span>NEW SERVICE REQUEST</span></h1>
 			<div class="body accordion accordion-body">
 				<h2>My Apartment</h2>
 				<div>
-					<h3>
+					<h3 class="select-element">
 						<span>WHERE IS THE ISSUE?</span>
 						<select name="service_request_location_home"><option>Select a Location in Your Home</option></select>
 					</h3>
 					<fieldset class="form-element">
 						<h4>What's Wrong?</h4>
 						<div class="form-element-with-notes">
-							<textarea cols="50" rows="5"></textarea>
+							<div class="notes">
+								<p>Leaky faucet in the bathroom? Air conditioner not quite right?</p>
+								<p>Describe the issue in detail so we can fix it.</p>
+								<p>(<span class="char-limit">240</span> characters remaining)</p>
+							</div>
+							<textarea class="auto-resize with-limit" cols="50" rows="5"></textarea>
+						</div>
+					</fieldset>
+					<div class="form-element-right">
+						<h4>Do you have pets?</h4>
+						<label><input type="radio" name="pets" value="yes">Yes, I have a pet.</label>
+						<label><input type="radio" name="pets" value="no">No pets here.</label>
+					</div>
+
+					<div class="form-element">
+						<h4>Can we come in?</h4>
+						<label><input type="radio" name="come_in" value="yes">I give permission to enter my apartment.</label>
+						<label><input type="radio" name="come_in" value="no">I prefer to be home. Please contact me to schedule a time.</label>
+					</div>
+
+					<div class="form-element">
+						<h4>Do you have an alarm?</h4>
+						<label><input type="radio" name="alarm" value="yes">Yes, I have an alarm.</label>
+						<label><input type="radio" name="alarm" value="no">No alarm.</label>
+					</div>
+					
+					<div class="form-element">
+						<h4>Anything else we should know?</h4>
+						<div class="form-element-with-notes">
+							<div class="notes">
+								<p>Optional</p>
+								<p> &nbsp; </p>
+								<p><span class="char-limit">300</span> characters remaining</p>
+							</div>
+							<textarea cols="50" rows="3" class="auto-resize with-limit"></textarea>
+							<p class="under-notes">It is our policy to respond to you in-home service request within 24 hours.
+							We may contact you with further questions.</p>
+						</div>
+					</div>
+					<p class="submit-area"><button type="submit" class="submit"><span>Send Request</span><span class="end"> &nbsp; </span></button></p>
+				</div>
+				<h2>Common Area</h2>
+				<div>
+					<h3 class="select-element">
+						<span>WHERE IS THE ISSUE?</span>
+						<select name="location" class="location"><option>Select a Common Area</option></select>
+					</h3>
+					<fieldset class="form-element">
+						<h4>What's sWrong?</h4>
+						<div class="form-element-with-notes">
 							<div class="notes">
 								<p>Leaky faucet in the bathroom? Air conditioner not quite right?</p>
 								<p>Describe the issue in detail so we can fix it.</p>
 								<p>(240 characters remaining)</p>
 							</div>
+							
+							<textarea cols="50" rows="5" class="auto-resize"></textarea>
 						</div>
 					</fieldset>
 					<div class="form-element-right">
@@ -101,20 +154,19 @@
 						<h4>Do you have an alarm?</h4>
 						<label><input type="radio" name="alarm" value="yes">Yes, I have an alarm.</label>
 						<label><input type="radio" name="alarm" value="no">No alarm.</label>
-					</div>
-				</div>
-				<h2>Common Area</h2>
-				<div>
-					<h3>
-						<span>WHERE IS THE ISSUE?</span>
-						<select name="service_request_location_common"><option>Select a Common Area</option></select>
-					</h3>
+					</div>					
+					<p class="submit-area"><button type="submit" class="submit"><span>Send Request</span><span class="end"> &nbsp; </span></button></p>
 				</div>
 			</div>
 		</div>
   </div>
   <footer>
-
+		<div class="navigation">
+			<a href="#">Privacy Policy</a>  |  <a href="#">ArchstoneApartments.com</a>
+		</div>
+		<div class="copyright">
+			<a href="#">Copyright © 2012 Archstone. All Rights Reserved.</a>
+		</div>
   </footer>
 
 
@@ -133,7 +185,7 @@
 			</div>
 			<p><textarea name="mail-body" rows="5" cols="20"></textarea></p>
 			<p class="submit-area">
-				<button type="submit" class="submit"><span>Send</span></button>
+				<button type="submit" class="submit"><span>Send</span><span class="end"> &nbsp; </span></button>
 			</p>
 		</form>
 	</div>
