@@ -6,13 +6,20 @@
 	/*
 	*///
 	var Global = {
+		
+		vars: {
+			dialog: {
+				serviceRequestSubject: 'This is a test subject for %i',
+				serviceRequestBody: 'Dear Archstone Representative, \n I am writing to you regarding issue %i'
+			}
+		},
+		
 		/* Bind all the jQuery events */
 		bindEvents: function() {
-			// email functionality
-			$('.email').click(Global.emailDialog);
-			
-			// bookmark functionality
-			$('.bookmark').click(Global.bookmark);
+			// dialog functionality
+			Global.bindDialogs();
+
+			// autoclear for textareas and text-boxes
 			Global.autoclear();
 			
 			if($('textarea').length > 0)Textarea.bindEvents();
@@ -22,25 +29,35 @@
 		 * Display the Email Dialog
 		 * I can refactor this into its own object if need be.
 		 */
-		emailDialog: function()
+		bindDialogs: function()
 		{
-			$('#mail form').clone().dialog({
-				height: "auto",
-	      width: "auto",
-				modal:true,
-				title: $(this).attr('title')
-			})
+			$('.cta-email').click(function(){
+				$h2 = $(this).parents('.discreet-accordion h2');
+				$('#dialog-email').dialog({
+					height: "auto",
+		      width: "auto",
+					modal:true,
+					title: $(this).attr('title')
+				});
+				if($h2.length > 0)
+				{
+					$('#dialog-email #mail-subject').val(Global.vars.dialog.serviceRequestSubject.replace('%i', $h2.attr('rel')));
+					$('#dialog-email #mail-body').html(Global.vars.dialog.serviceRequestBody.replace('%i', $h2.attr('rel')));
+				}
+				return false;
+			});
+			$('.cta-lease').click(function(){
+				console.log('HEY!')
+				$('#dialog-lease').dialog({
+					height: "auto",
+		      width: "auto",
+					modal:true,
+					title: $(this).attr('title')
+				});
+			});
 			$('.ui-dialog-titlebar').removeClass('ui-corner-all').addClass('ui-corner-top');
+			
 			console.log($('.ui-dialog-titlebar'));
-			return false;
-		},
-		/**
-		 * Bookmark the current page
-		 * I can refactor this into its own object if need be.
-		 */
-		bookmark: function(){
-			$.cookie('archstone_bookmarked', window.location.pathname);
-			$(this).html('Bookmarked');
 			return false;
 		},
 		init: function()

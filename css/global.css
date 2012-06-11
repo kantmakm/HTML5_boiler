@@ -80,6 +80,10 @@ footer a {
 	text-align: center;
 	clear: both;
 }
+#dialog-email .submit-area {
+	text-align:right;
+	padding-right:20px;
+}
 button.submit {
 	height: 37px;
 	border: 0;
@@ -128,6 +132,7 @@ input[type=email] {
 	
 }
 textarea {
+	padding: 5px;
 	border:1px solid #c1c6c8;
 	border-radius: 2px;
 	-o-border-radius: 2px;
@@ -210,16 +215,16 @@ fieldset.form-element {
  */
 
 /*description-summary*/
-.ui-dialog .form-element {
+#dialog-email .form-element {
 	clear: both;
 	padding: 0;
 }
-.description-summary {
+#dialog-email .description-summary {
 	font-size:12px;
 }
 .description-summary h3,
 .description-summary h4,
-.ui-dialog .form-element label {
+#dialog-email .form-element label {
 	width: 150px;
 	float: left;
 	clear: left;
@@ -228,31 +233,43 @@ fieldset.form-element {
 	font-weight: bold;
 	margin:0 !important;
 }
-.ui-dialog .form-element label {
+#dialog-email .form-element label {
 	width: 70px;
 	text-align: left;
 	font-size: 16px;
 	font-family: "HelveticaNeueLTStd", Helvetica, Arial, sans-serif;
 }
-
 .description-summary p,
-.ui-dialog .form-element select,
-.ui-dialog .form-element input {
+#dialog-email .form-element select,
+#dialog-email .form-element input,
+#dialog-lease .form-element input {
 	display: block;
 	float: left;
 	width: 400px;
 	padding: 5px;	
 	margin:0 !important;
 }
-.ui-dialog .form-element select,
-.ui-dialog .form-element input {
+#dialog-email .form-element select,
+#dialog-email .form-element input,
+#dialog-lease .form-element input {
 	padding: 1px 1px 1px 5px;	
 	width:350px;
 }
-.ui-dialog textarea {
+#dialog-email textarea {
 	width:420px;
 	height:150px;
 	margin:10px;
+}
+#dialog-lease .form-element {
+	clear: both;
+	padding: 10px;
+}
+#dialog-lease .form-element label {
+	float:left;
+	margin:0;
+}
+#dialog-lease .form-element input {
+	width:30px;
 }
 /* Rounded Corners/Box-shadow */
 .titled-box {

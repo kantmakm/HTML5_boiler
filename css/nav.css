@@ -4,7 +4,7 @@ header {
 }
 header .primary-nav-contents
 {
-	background: url(../images/bkgd_header_tile.png) repeat-x scroll 0 0 transparent;
+	background: url(../images/bkgd_nav_primary_tile.png) repeat-x scroll 0 0 #FFFFFF;
 	z-index: 1003;
 }
 header .primary-nav-contents,
@@ -21,13 +21,13 @@ header .primary-nav-contents ul {
 header .primary-nav-contents ul {
 	margin: 0;
 	height: 74px;
-	background: url(../images/bkgd_header_rule.png) no-repeat scroll right 3px transparent;
+	background: url(../images/bkgd_nav_primary_rule.png) no-repeat scroll right 3px transparent;
 	display: inline-block;
 	vertical-align: top;
 }
 header .primary-nav-contents ul li {
 	float: left;
-	background: url(../images/bkgd_header_rule.png) no-repeat scroll left 3px transparent;
+	background: url(../images/bkgd_nav_primary_rule.png) no-repeat scroll left 3px transparent;
 	height: 74px;
 	position:relative;
 }
@@ -67,7 +67,7 @@ header .primary-nav-contents ul ul li a {
 header .secondary-nav-contents
 {
 	z-index:1002;
-	background: url(../images/bkgd_secondary_tile.png) repeat-x scroll 0 0 transparent;
+	background: url(../images/bkgd_nav_secondary_tile.png) repeat-x scroll 0 0 #0097a4;
 	height:32px;
 	border-top: 1px solid #666666;
 	border-bottom: 1px solid #2a384f;
