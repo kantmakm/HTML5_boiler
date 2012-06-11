@@ -57,11 +57,27 @@
        chromium.org/developers/how-tos/chrome-frame-getting-started -->
   <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
   <header>
-		<div class="header-contents">
+		<div class="primary-nav-contents">
 			<a href="index.html" id="logo"><img src="images/logo.png" width="167" height="38" ></a>
-			<ul>
+			<ul class="primary-nav">
 				<li><a href="request-history.html" title="Contact Archstone">Request History</a></li>
 				<li><a href="service-request.html" title="Contact Archstone">Service Request</a></li>				<li><a href="#" class="bookmark" title="Bookmark this page">Bookmark</a></li>
+				<li class="half-pint clearfix">
+					<a href="#">Genevieve Cornhill</a>
+					<ul class="clearfix">
+						<li><a href="#">Switch to Different Lease</a></li>
+						<li><a href="#">Contact Information</a></li>
+						<li><a href="#">Settings</a></li>
+						<li><a href="#">Sign Out</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div class="secondary-nav-contents">
+			<ul class="secondary-nav">
+				<li><a href="#">Team</a></li>
+				<li><a href="#">Amenities</a></li>
+				<li><a href="#">Forms &amp; Policies</a></li>
 			</ul>
 		</div>
   </header>
@@ -98,12 +114,12 @@
 			<p class="box-footer"><span></span></p>
 		</div>
 		
-		<div class="photo-box clearfix">
+		<div class="photo-box left clearfix">
 			<p><strong>OPTIONAL</strong><br/>MARKETING<br/>REAL<br/>ESTATE</p>
 			<img src="images/puppy.png">
 		</div>
 		
-		<div class="titled-box clearfix small-box titled-box-right">
+		<div class="titled-box left clearfix small-box titled-box-right">
 			<h1 class="box-title"><span>myARCHSTONE MOBILE</span></h1>
 			<div class="body clearfix">
 				<a href="#" class="button-droid"> &nbsp; </a>
@@ -126,15 +142,15 @@
 	<!-- Hidden Email Dialog -->
 	<div id="mail" class="titled-box">
 		<form action="index.html" method="POST">
-			<div class="form-element">
-				<label class="form-label">To:</label>
-				<select name="mail-to">
+			<div class="description-summary">
+				<h3><label class="form-label">To:</label></h3>
+				<p><select name="mail-to">
 					<option value="andrew_wyndertyne@archstoneapartments.com">andrew_wyndertyne@archstoneapartments.com</option>
-				</select>
+				</select></p>
 			</div>
-			<div class="form-element">
-				<label class="form-label">Subject:</label>
-				<input type="text" name="mail-subject">
+			<div class="description-summary">
+				<h3><label class="form-label">Subject:</label></h3>
+				<p><input type="text" name="mail-subject"></p>
 			</div>
 			<p><textarea name="mail-body" rows="5" cols="20"></textarea></p>
 			<p class="submit-area">

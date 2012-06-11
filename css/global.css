@@ -1,3 +1,4 @@
+@import url(nav.css);
 /* =============================================================================
  * MadJon's Customizations
  * ============================================================================= */
@@ -5,8 +6,18 @@
 body {
 	background-color:#000000;
 }
+a {
+	color:#00929f;
+	text-decoration: none;
+}
+/*a:hover {
+	text-decoration:underline;
+}*/
 .error {
 	color: #e34848;
+}
+.left {
+	float:left;
 }
 #main, footer {
 	z-index:3;
@@ -18,52 +29,11 @@ body {
 	right:0;
 	opacity:0.8;
 }
-header {
-	background: url(../images/bkgd_header_tile.png) repeat-x scroll 0 0 transparent;
-	height:81px;
-	text-align:center;
-	position:relative;
-	z-index:1003;
-}
-header .header-contents {
-	width: 770px;
-	margin: 0 auto;
-	position: relative;
-	height: 100%;
-}
-header ul {
-	margin: 0;
-	height: 81px;
-	float: left;
-	background: url(../images/bkgd_header_rule.png) no-repeat scroll right 3px transparent;
-}
-header ul li {
-	float: left;
-	background: url(../images/bkgd_header_rule.png) no-repeat scroll left 3px transparent;
-	height: 81px;
-}
-header ul li a {
-	padding: 30px 20px;
-	height:41px;
-	color:#AAAAAA;
+.add-button {
+	background: url(../images/button_plus.png) no-repeat scroll 0 0 transparent ;
+	height:20px;
 	display:block;
-/*	border-right: 1px solid #DCDCDC;
-	border-left: 1px solid #FFFFFF;*/
-
-	transition: color 0.25s;
-	-o-transition: color 0.25s;
-	-moz-transition: color 0.25s;
-	-webkit-transition: color 0.25s;
-	text-decoration:none;
-}
-header ul li a:hover,
-header ul li a.active {
-	color:#333333;
-}
-header #logo {
-	padding: 20px 0;
-	float: left;
-	height: 41px;
+	padding-left: 25px;
 }
 #main {
 	width: 770px;
@@ -145,11 +115,17 @@ input[type=email] {
 	margin: 0 0 25px;
 	box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.25) inset;
 	width: 100%;
-	background: none no-repeat scroll 0 0 #F2F2F2;
 	height: 35px;
 	border-radius: 2px;
 	border: 1px solid #B9BCBE;
 	padding-left: 5px;
+	outline: none;
+	
+	transition: all 0.5s;
+	-o-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	
 }
 textarea {
 	border:1px solid #c1c6c8;
@@ -165,6 +141,7 @@ textarea {
 }
 input.autoclear {
 	color: #aeaeae;
+	background: none no-repeat scroll 0 0 #F2F2F2;
 }
 .form-element textarea {
 	width:420px;
@@ -233,31 +210,56 @@ fieldset.form-element {
  */
 
 /*description-summary*/
+.ui-dialog .form-element {
+	clear: both;
+	padding: 0;
+}
 .description-summary {
 	font-size:12px;
 }
-.description-summary h3 {
+.description-summary h3,
+.description-summary h4,
+.ui-dialog .form-element label {
 	width: 150px;
 	float: left;
 	clear: left;
 	text-align: right;
 	padding: 5px;
 	font-weight: bold;
+	margin:0 !important;
 }
-.description-summary p {
+.ui-dialog .form-element label {
+	width: 70px;
+	text-align: left;
+	font-size: 16px;
+	font-family: "HelveticaNeueLTStd", Helvetica, Arial, sans-serif;
+}
+
+.description-summary p,
+.ui-dialog .form-element select,
+.ui-dialog .form-element input {
 	display: block;
 	float: left;
 	width: 400px;
-	padding: 5px 0;	
+	padding: 5px;	
+	margin:0 !important;
 }
-
+.ui-dialog .form-element select,
+.ui-dialog .form-element input {
+	padding: 1px 1px 1px 5px;	
+	width:350px;
+}
+.ui-dialog textarea {
+	width:420px;
+	height:150px;
+	margin:10px;
+}
 /* Rounded Corners/Box-shadow */
 .titled-box {
 	background-color: #FDFDFD;
 	position: relative;
-	padding: 20px 24px;
+	padding: 20px 25px;/* Used to be 20 24 */
 	margin: 0;
-	float:left;
 }
 .small-box {
 	padding: 10px 10px !important;
@@ -270,6 +272,7 @@ fieldset.form-element {
 	font-family: "HelveticaNeueLTStd", Helvetica, Arial, sans-serif;
 	font-size: 22px;
 	color: #6E6E6E;
+	font-weight: normal;
 }
 .titled-box .box-title {
 	position: absolute;
@@ -332,6 +335,7 @@ fieldset.form-element {
 .large-titled-box {
 	background-color:#FFFFFF;
 }
+.request-summary .request-title,
 .large-titled-box .box-title {
 	height: 33px;
 	padding: 20px 0 5px 30px;
@@ -397,8 +401,8 @@ fieldset.form-element {
 	color: #444444;
 }
 #signin .body2 {
-	width: 315px;
-	float:left;
+	width: 305px;
+	float: left;
 	padding-left: 25px;
 }
 #signin .body2 h3 {
@@ -462,5 +466,46 @@ fieldset.form-element {
 	padding: 20px 24px;
 	margin: 0 auto;
 	width: 420px;
-	float:none;
+}
+
+/**
+ * Request
+ */
+#request-sent .body p {
+	margin: 10px 0;
+}
+.request-summary {
+	
+}
+.request-summary .request-title {
+	margin: 10px -25px;
+	border-bottom: 1px solid #E7E5E3;
+	border-top: 1px solid #E7E5E3;
+	position:relative;
+}
+.request-summary .request-title .title {
+	position: absolute;
+	top: 5px;
+	left: 10px;
+	font-weight: bold;	
+}
+.request-summary .request-title .id {
+	position: absolute;
+	bottom: 5px;
+	left: 10px;
+}
+.request-summary .request-title .status {
+	position: absolute;
+	top: 10px;
+	right: 15px;
+}
+.request-summary .request-item {
+	position:relative;
+}
+.request-summary .request-item h4 {
+	position:top;
+	
+}
+.request-summary .request-item p {
+	
 }

@@ -1,0 +1,108 @@
+header {
+	text-align:center;
+	position:relative;
+}
+header .primary-nav-contents
+{
+	background: url(../images/bkgd_header_tile.png) repeat-x scroll 0 0 transparent;
+	z-index: 1003;
+}
+header .primary-nav-contents,
+header .secondary-nav-contents {
+/*	width: 770px;*/
+	margin: 0 auto;
+	position: relative;
+}
+header .secondary-nav-contents,
+header .primary-nav-contents ul {
+	margin: 0 auto;
+	text-align:center;
+}
+header .primary-nav-contents ul {
+	margin: 0;
+	height: 74px;
+	background: url(../images/bkgd_header_rule.png) no-repeat scroll right 3px transparent;
+	display: inline-block;
+	vertical-align: top;
+}
+header .primary-nav-contents ul li {
+	float: left;
+	background: url(../images/bkgd_header_rule.png) no-repeat scroll left 3px transparent;
+	height: 74px;
+	position:relative;
+}
+header .primary-nav-contents ul li a {
+	padding: 30px 20px 0;
+	height:41px;
+	color:#AAAAAA;
+	display:block;
+
+	transition: color 0.25s;
+	-o-transition: color 0.25s;
+	-moz-transition: color 0.25s;
+	-webkit-transition: color 0.25s;
+	text-decoration:none;
+}
+header .primary-nav-contents ul li a:hover,
+header .primary-nav-contents ul li a.active {
+	color:#333333;
+}
+header .primary-nav-contents ul ul {
+/*	display:none;*/
+	z-index:3;
+	height:auto;
+	position:absolute;
+	top:77px;
+	left: 0px;
+	background: none repeat-y scroll center top #FFFFFF;
+	overflow:hidden;
+}
+header .primary-nav-contents ul ul li {
+}
+header .primary-nav-contents ul ul li a {
+}
+/**
+ * Secondary Nav
+ */
+header .secondary-nav-contents
+{
+	z-index:1002;
+	background: url(../images/bkgd_secondary_tile.png) repeat-x scroll 0 0 transparent;
+	height:32px;
+	border-top: 1px solid #666666;
+	border-bottom: 1px solid #2a384f;
+	
+  box-shadow:  0px 1px 5px 0px rgba(0, 0, 0, 0.5);
+  -o-box-shadow:  0px 1px 5px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow:  0px 1px 5px 0px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow:  0px 1px 5px 0px rgba(0, 0, 0, 0.5);
+}
+header .secondary-nav-contents ul {
+	margin:0;
+	padding: 5px 0 0;
+}
+header .secondary-nav-contents ul li {
+	display: inline;
+}
+header .secondary-nav-contents ul li a {
+	padding: 2px 5px;
+	color: #CCCCCC;
+	font-family: "HelveticaNeueLTStd", Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+	text-shadow: 0px 1px 0px rgba(0,0,0,0.3);
+
+	transition: color 0.25s;
+	-o-transition: color 0.25s;
+	-moz-transition: color 0.25s;
+	-webkit-transition: color 0.25s;
+}
+header .secondary-nav-contents ul li a:hover {
+	color: #FFFFFF;
+}
+header #logo {
+	padding: 20px 0;
+	height: 37px;
+	display: inline-block;
+	vertical-align: top;
+}

@@ -24,12 +24,14 @@
 		 */
 		emailDialog: function()
 		{
-			$('#mail').dialog({
+			$('#mail form').clone().dialog({
 				height: "auto",
 	      width: "auto",
 				modal:true,
 				title: $(this).attr('title')
-			});
+			})
+			$('.ui-dialog-titlebar').removeClass('ui-corner-all').addClass('ui-corner-top');
+			console.log($('.ui-dialog-titlebar'));
 			return false;
 		},
 		/**
@@ -44,6 +46,7 @@
 		init: function()
 		{
 			Global.bindEvents();
+			Nav.init();
 			if($.cookie('archstone_bookmarked') == window.location.pathname)
 			{
 				$('header a.bookmark').html('Bookmarked');
@@ -200,6 +203,59 @@
 			}
 		}
 	}
+	
+	var Nav = {
+		t: 0, //setTimeout()
+		init: function()
+		{
+			$('ul.primary-nav li.half-pint').hover(function(){
+				clearTimeout(Nav.t);
+				$(this).addClass('hover').siblings().removeClass('siblings');
+				// Nav.drop();
+				console.log(' li hover');
+				var $ul = $(this).children('ul');
+				Nav.t = setTimeout(function(){
+					$ul.stop().animate({
+						'height': $ul.data('height')
+					});
+				}, 100)
+			}, function(){
+				console.log(' li off');
+				var $ul = $(this).children('ul');
+				Nav.t = setTimeout(function(){
+					$ul.stop().animate({
+						'height': 0
+					});
+				}, 100)
+			});
+			
+			$('ul.primary-nav ul').each(function(){
+				$(this).data('height', $(this).height());
+				$(this).height(0);
+			}).hover(function(){
+				console.log('hover ul(clear) ' + Nav.t);
+				clearTimeout(Nav.t);
+				$(this).stop().animate({
+					'height': $(this).data('height')
+				});
+			}, function(){
+				console.log(' off ul')
+				Nav.t = setTimeout(function(){
+					$(this).stop().animate({'height': 0});
+				}, 100);
+			});
+		},
+		// drop: function()
+		// {
+		// 	var $ul = $('ul.primary-nav li.hover').find('ul');
+		// 	$ul.height($ul.data('height')).addClass('open');
+		// },
+		// pull: function()
+		// {
+		// 	var $ul = $('ul.primary-nav li.hover ul.open').removeClass('open').height(0);
+		// }
+	}
+	
 	$(function(){
 		Global.init();
 		if($('.accordion').length == 1)Accordion.init();
