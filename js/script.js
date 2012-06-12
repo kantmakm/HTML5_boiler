@@ -57,7 +57,6 @@
 			});
 			$('.ui-dialog-titlebar').removeClass('ui-corner-all').addClass('ui-corner-top');
 			
-			console.log($('.ui-dialog-titlebar'));
 			return false;
 		},
 		init: function()
@@ -158,9 +157,11 @@
 	var Accordion = {
 		init: function()
 		{
+			var is_open = $('.discreet-accordion').length == 0;
+			if(is_open)is_open = 0;
 			$('.accordion').accordion({
 						collapsible: true,
-						active: false
+						active: is_open
 					});
 		}
 	};

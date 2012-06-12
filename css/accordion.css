@@ -46,7 +46,7 @@
 .accordion-box .ui-accordion-content h3 {
 	font-family: "HelveticaNeueLTStd", Helvetica, Arial, sans-serif;
 	color: #00919E;
-	padding: 20px 0 20px;
+	padding: 0 0 20px;
 	border-bottom: 1px solid #E7E5E3;
 }
 
@@ -67,9 +67,10 @@
 	padding-bottom:15px;
 }
 .discreet-accordion-box .discreet-accordion-header label.form-element span {
-	font-family: "HelveticaNeueLTStd", Helvetica, Arial, sans-serif;
-	color: #00919e;
-	color: 18px;
+/*	font-family: "HelveticaNeueLTStd", Helvetica, Arial, sans-serif;*/
+/*	color: #00919e;*/
+	font-size: 18px;
+	color: #444444;
 }
 .discreet-accordion-box h2.accordion-header {
 	clear:both;

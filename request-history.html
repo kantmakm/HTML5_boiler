@@ -66,9 +66,11 @@
 		<div class="primary-nav-contents">
 			<a href="index.html" id="logo"><img src="images/logo.png" width="167" height="38" ></a>
 			<ul class="primary-nav">
-				<li><a href="request-history.html" title="Contact Archstone">Request History</a></li>
-				<li><a href="service-request.html" title="Contact Archstone">Service Request</a></li>
-				<li class="half-pint">
+				<li><a href="#" title="Contact Archstone">Payment</a></li>
+				<li><a href="service-request.html">Service</a></li>
+				<li><a href="#">Information</a></li>
+				<li><a href="#">Lease</a></li>
+				<!-- <li class="half-pint">
 					<a href="#">Genevieve Cornhill</a>
 					<ul>
 						<li><a href="#" class="cta-lease">Switch to Different Lease</a></li>
@@ -76,17 +78,17 @@
 						<li><a href="#">Settings</a></li>
 						<li><a href="#">Sign Out</a></li>
 					</ul>
-				</li>
+				</li> -->
 			</ul>
 		</div>
+
 		<!-- /Primary Navigation -->
 		
 		<!-- Secondary Navigation -->
 		<div class="secondary-nav-contents">
 			<ul class="secondary-nav">
-				<li><a href="#">Team</a></li>
-				<li><a href="#">Amenities</a></li>
-				<li><a href="#">Forms &amp; Policies</a></li>
+				<li><a href="service-request.html">New Request</a></li>
+				<li><a href="request-history.html">Request History</a></li>
 			</ul>
 		</div>
 		<!-- /Secondary Navigation -->
@@ -114,15 +116,19 @@
 			</fieldset>
 			<fieldset class="discreet-accordion-header">
 				<label class="form-element-right form-element">
-					<span>STATUS</span>
+					<span>Status</span>
 					<select name="status">
-						<option>Open Requests</option>
+						<option value="open">Open Requests</option>
+						<option value="close">Closed Requests</option>
+						<option value="all">All Requests</option>
 					</select>
 				</label>
 				<label class="form-element">
-					<span>SHOW ME</span>
-					<select name="status">
-						<option>My Apartment</option>
+					<span>Show Me</span>
+					<select name="location">
+						<option value="apartment">My Apartment</option>
+						<option value="common">Common Area</option>
+						<option value="all">All</option>
 					</select>
 				</label>
 				<h2 class="accordion-header clearfix">

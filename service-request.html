@@ -58,14 +58,37 @@
        chromium.org/developers/how-tos/chrome-frame-getting-started -->
   <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
   <header>
+		<!-- Primary Navigation -->
 		<div class="primary-nav-contents">
 			<a href="index.html" id="logo"><img src="images/logo.png" width="167" height="38" ></a>
-			<ul>
-				<li><a href="request-history.html" title="Contact Archstone">Request History</a></li>
-				<li><a href="service-request.html" title="Contact Archstone">Service Request</a></li>				<li><a href="#" class="bookmark" title="Bookmark this page">Bookmark</a></li>
+			<ul class="primary-nav">
+				<li><a href="#" title="Contact Archstone">Payment</a></li>
+				<li><a href="service-request.html">Service</a></li>
+				<li><a href="#">Information</a></li>
+				<li><a href="#">Lease</a></li>
+				<!-- <li class="half-pint">
+					<a href="#">Genevieve Cornhill</a>
+					<ul>
+						<li><a href="#" class="cta-lease">Switch to Different Lease</a></li>
+						<li><a href="#">Contact Information</a></li>
+						<li><a href="#">Settings</a></li>
+						<li><a href="#">Sign Out</a></li>
+					</ul>
+				</li> -->
 			</ul>
 		</div>
+		<!-- /Primary Navigation -->
+		
+		<!-- Secondary Navigation -->
+		<div class="secondary-nav-contents">
+			<ul class="secondary-nav">
+				<li><a href="service-request.html">New Request</a></li>
+				<li><a href="request-history.html">Request History</a></li>
+			</ul>
+		</div>
+		<!-- /Secondary Navigation -->
   </header>
+
   <div role="main" id="main" class="clearfix">
 		<div id="service-request" class="accordion-box large-titled-box clearfix">
 			<h1 class="box-title"><span>NEW SERVICE REQUEST</span></h1>
@@ -80,28 +103,28 @@
 						<fieldset class="form-element">
 							<h4>What's Wrong?</h4>
 							<div class="form-element-with-notes">
+								<textarea class="auto-resize with-limit" cols="50" rows="5"></textarea>
 								<div class="notes">
 									<p>Leaky faucet in the bathroom? Air conditioner not quite right?</p>
 									<p>Describe the issue in detail so we can fix it.</p>
 									<p>(<span class="char-limit">240</span> characters remaining)</p>
 								</div>
-								<textarea class="auto-resize with-limit" cols="50" rows="5"></textarea>
 							</div>
 						</fieldset>
-						<div class="form-element-right">
-							<h4>Do you have pets?</h4>
+						<div class="two-column">
+							<h4 class="label-column">Do you have pets?</h4 class="label-column">
 							<label><input type="radio" name="pets" value="yes">Yes, I have a pet.</label>
 							<label><input type="radio" name="pets" value="no">No pets here.</label>
 						</div>
 
-						<div class="form-element">
-							<h4>Can we come in?</h4>
+						<div class="two-column">
+							<h4 class="label-column">Can we come in?</h4 class="label-column">
 							<label><input type="radio" name="come_in" value="yes">I give permission to enter my apartment.</label>
 							<label><input type="radio" name="come_in" value="no">I prefer to be home. Please contact me to schedule a time.</label>
 						</div>
 
-						<div class="form-element">
-							<h4>Do you have an alarm?</h4>
+						<div class="two-column">
+							<h4 class="label-column">Do you have an alarm?</h4 class="label-column">
 							<label><input type="radio" name="alarm" value="yes">Yes, I have an alarm.</label>
 							<label><input type="radio" name="alarm" value="no">No alarm.</label>
 						</div>
@@ -109,12 +132,13 @@
 						<div class="form-element">
 							<h4>Anything else we should know?</h4>
 							<div class="form-element-with-notes">
+								<textarea cols="50" rows="3" class="auto-resize with-limit"></textarea>
 								<div class="notes">
 									<p>Optional</p>
 									<p> &nbsp; </p>
 									<p><span class="char-limit">300</span> characters remaining</p>
 								</div>
-								<textarea cols="50" rows="3" class="auto-resize with-limit"></textarea>
+								
 								<p class="under-notes">It is our policy to respond to you in-home service request within 24 hours.
 								We may contact you with further questions.</p>
 							</div>
@@ -139,26 +163,46 @@
   </footer>
 
 
-	<!-- Hidden Email Dialog -->
-	<div id="mail" class="titled-box">
+
+
+	<!-- Hidden Dialogs -->
+	<div id="dialog-email" class="dialog">
 		<form action="index.html" method="POST">
 			<div class="form-element">
-				<label class="form-label">To:</label>
-				<select name="mail-to">
+				<label class="form-label" for="mail-to">To:</label>
+				<select name="mail-to" id="mail-to">
 					<option value="andrew_wyndertyne@archstoneapartments.com">andrew_wyndertyne@archstoneapartments.com</option>
 				</select>
 			</div>
 			<div class="form-element">
-				<label class="form-label">Subject:</label>
-				<input type="text" name="mail-subject">
+				<label class="form-label" for="mail-subject">Subject:</label>
+				<input type="text" name="mail-subject" id="mail-subject">
 			</div>
-			<p><textarea name="mail-body" rows="5" cols="20"></textarea></p>
+			<p><textarea name="mail-body" id="mail-body" rows="5" cols="20"></textarea></p>
 			<p class="submit-area">
 				<button type="submit" class="submit"><span>Send</span><span class="end"> &nbsp; </span></button>
 			</p>
 		</form>
 	</div>
+	<div id="dialog-lease" class="dialog">
+		<form action="index.html" method="POST">
+			<div class="form-element">
+				<input type="radio" value="0" name="location" id="location-0">
+				<label for="location-0">[ Apartment Address ] Customer Name [ Community ]</label>
+			</div>
 
+			<div class="form-element">
+				<input type="radio" value="1" name="location" id="location-1">
+				<label for="location-1">123 Main Street #101, Genvieve Cornhill, Archstone Englewood</label>
+			</div>
+
+			<div class="form-element">
+				<input type="radio" value="2" name="location" id="location-2">
+				<label for="location-2">456 Spruce Street #12, Genevieve Cornhill, Archstone
+			</div>
+
+		</form>
+	</div>
   <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
        mathiasbynens.be/notes/async-analytics-snippet -->
   <script>
