@@ -62,10 +62,10 @@
 		<div class="primary-nav-contents">
 			<a href="index.html" id="logo"><img src="images/logo.png" width="167" height="38" ></a>
 			<ul class="primary-nav">
-				<li><a href="#" title="Contact Archstone">Payment</a></li>
+				<li><a href="#" title="Contact Us">Payment</a></li>
 				<li><a href="service-request.html">Service</a></li>
 				<li><a href="#">Information</a></li>
-				<li><a href="#">Lease</a></li>
+				<li><a href="#" class="cta-lease">Lease</a></li>
 				<!-- <li class="half-pint">
 					<a href="#">Genevieve Cornhill</a>
 					<ul>
@@ -82,7 +82,7 @@
 		<!-- Secondary Navigation -->
 		<div class="secondary-nav-contents">
 			<ul class="secondary-nav">
-				<li><a href="service-request.html">New Request</a></li>
+				<li><a href="service-request.html" class="active">New Request</a></li>
 				<li><a href="request-history.html">Request History</a></li>
 			</ul>
 		</div>
@@ -97,25 +97,20 @@
 				<div>
 					<form action="request-sent.html" method="POST">
 						<h3 class="select-element">
-							<span>WHERE IS THE ISSUE?</span>
-							<select name="service_request_location_home"><option>Select a Location in Your Home</option></select>
+							<span>Where is the issue?</span>
+							<select name="service_request_location_home"><option>Select a location in your home</option></select>
 						</h3>
 						<fieldset class="form-element">
 							<h4>What's Wrong?</h4>
 							<div class="form-element-with-notes">
 								<textarea class="auto-resize with-limit" cols="50" rows="5"></textarea>
 								<div class="notes">
-									<p>Leaky faucet in the bathroom? Air conditioner not quite right?</p>
+									<p>Leaky faucet in the bathroom?<br>Air conditioner not quite right?</p>
 									<p>Describe the issue in detail so we can fix it.</p>
 									<p>(<span class="char-limit">240</span> characters remaining)</p>
 								</div>
 							</div>
 						</fieldset>
-						<div class="two-column">
-							<h4 class="label-column">Do you have pets?</h4 class="label-column">
-							<label><input type="radio" name="pets" value="yes">Yes, I have a pet.</label>
-							<label><input type="radio" name="pets" value="no">No pets here.</label>
-						</div>
 
 						<div class="two-column">
 							<h4 class="label-column">Can we come in?</h4 class="label-column">
@@ -128,6 +123,12 @@
 							<label><input type="radio" name="alarm" value="yes">Yes, I have an alarm.</label>
 							<label><input type="radio" name="alarm" value="no">No alarm.</label>
 						</div>
+						
+						<div class="two-column">
+							<h4 class="label-column">Do you have pets?</h4 class="label-column">
+							<label><input type="radio" name="pets" value="yes">Yes, I have a pet.</label>
+							<label><input type="radio" name="pets" value="no">No pets here.</label>
+						</div>
 					
 						<div class="form-element">
 							<h4>Anything else we should know?</h4>
@@ -135,11 +136,10 @@
 								<textarea cols="50" rows="3" class="auto-resize with-limit"></textarea>
 								<div class="notes">
 									<p>Optional</p>
-									<p> &nbsp; </p>
 									<p><span class="char-limit">300</span> characters remaining</p>
 								</div>
 								
-								<p class="under-notes">It is our policy to respond to you in-home service request within 24 hours.
+								<p class="under-notes">It is our policy to respond to your in-home service request within 24 hours.
 								We may contact you with further questions.</p>
 							</div>
 						</div>
@@ -208,7 +208,7 @@
   <script>
     var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
     (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    g.src=('https:'==location.protocol?'https://ssl':'http://www')+'.google-analytics.com/ga.js';
     s.parentNode.insertBefore(g,s)}(document,'script'));
   </script>
 </body>

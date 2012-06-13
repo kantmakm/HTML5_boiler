@@ -10,7 +10,7 @@
 	padding: 20px 0 5px 50px;
 	margin: 0;
 	border: 0;
-	color: #AAAAAA;
+	color: #999999;
 	transition: color 0.25s;
 	-o-transition: color 0.25s;
 	-moz-transition: color 0.25s;
@@ -22,8 +22,7 @@
 	background: url(../images/icon_triangle_accordion.png) no-repeat scroll 0 0 transparent;
 	width:14px;
 	height:14px;
-	left: 20px;
-	
+	left: 30px;
 
 	transition: background-position 0.25s;
 	-o-transition: background-position 0.25s;
@@ -44,8 +43,10 @@
 	height:34px;
 }
 .accordion-box .ui-accordion-content h3 {
-	font-family: "HelveticaNeueLTStd", Helvetica, Arial, sans-serif;
-	color: #00919E;
+/*	font-family: "HelveticaNeueLTStd", Helvetica, Arial, sans-serif;
+	color: #00919E;*/
+	font-size: 18px;
+	color: #6E6E6E;
 	padding: 0 0 20px;
 	border-bottom: 1px solid #E7E5E3;
 }
@@ -60,7 +61,7 @@
 	display:none;
 }
 .discreet-accordion-box h1 {
-	margin: -20px -30px 0;
+	margin: 0 -30px 0;
 	padding: 20px 30px 20px;
 }
 .discreet-accordion-box .discreet-accordion-header {
@@ -76,7 +77,7 @@
 	clear:both;
 }
 .discreet-accordion-box .discreet-accordion h2 {
-	height:40px;
+	height:30px;
 	border:0;
 	background: none no-repeat scroll 0 0 transparent;
 	color: #6e6e6e;
@@ -86,7 +87,7 @@
 	float:left;
 	display:block;
 	font-size: 12px;
-	padding:10px 0;
+	padding:10px 0 0;
 }
 .discreet-accordion-box h2.accordion-header span {
 	font-size: 10px;

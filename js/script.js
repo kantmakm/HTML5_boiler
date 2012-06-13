@@ -34,6 +34,7 @@
 			$('.cta-email').click(function(){
 				$h2 = $(this).parents('.discreet-accordion h2');
 				$('#dialog-email').dialog({
+					resizable: false,
 					height: "auto",
 		      width: "auto",
 					modal:true,
@@ -49,6 +50,7 @@
 			$('.cta-lease').click(function(){
 				console.log('HEY!')
 				$('#dialog-lease').dialog({
+					resizable: false,
 					height: "auto",
 		      width: "auto",
 					modal:true,
@@ -125,8 +127,10 @@
 			if(left < 0)
 			{
 				$charLimit.parent().addClass('error');
+				$('button.submit').prop('disabled', true);
 			}else{
 				$charLimit.parent().removeClass('error');
+				if($('.error .char-limit').length == 0)$('button.submit').prop('disabled', false);
 			}
 		},
 		/**
@@ -160,9 +164,9 @@
 			var is_open = $('.discreet-accordion').length == 0;
 			if(is_open)is_open = 0;
 			$('.accordion').accordion({
-						collapsible: true,
-						active: is_open
-					});
+				collapsible: true,
+				active: is_open
+			});
 		}
 	};
 	/*
@@ -194,9 +198,10 @@
 				if(($('.year-selector ul').width()+247) > (741-right))
 				{
 					var year = (parseInt($('.year-selector ul li:first a').html())-1);
+					var color = $('.year-selector ul li:first a').hasClass('blue')?'green':$('.year-selector ul li:first a').hasClass('blue-green')?'blue':'blue-green';
 					$('<li></li>')
 						.addClass('year-' + year)
-						.html('<a href="#" class="blue">' + year + '</a></li>')
+						.html('<a href="#" class="' + color + '">' + year + '</a></li>')
 						.prependTo($('.year-selector ul'));
 				}
 				move = "-=247";

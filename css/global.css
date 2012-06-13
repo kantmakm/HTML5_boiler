@@ -18,6 +18,7 @@ a {
 }
 .dialog {
 	display:none;
+	overflow:hidden !important; /*stupid IE */
 }
 .left {
 	float:left;
@@ -42,7 +43,10 @@ a {
 	width: 770px;
 	margin: 0 auto;
 	display: block;
-	padding: 60px 0 20px;
+	padding: 20px 0 20px;
+}
+.signin #main {
+	padding-top: 60px;
 }
 #main #error {
 	text-align: center;
@@ -83,6 +87,7 @@ footer a {
 }
 button.submit {
 	height: 37px;
+	outline: none;
 	border: 0;
 	position: relative;
 	padding: 0;
@@ -91,6 +96,8 @@ button.submit {
 	overflow:visible;
 }
 button.submit span {
+	font-family: "HelveticaNeueBold", Helvetica, Arial, sans-serif;
+	font-size: 14px;
 	height: 37px;
 	background: url(../images/button_submit.png) no-repeat scroll left top transparent;
 	display:block;
@@ -98,7 +105,7 @@ button.submit span {
 	color:#FFFFFF;
 }
 button.submit span.end {
-	background-position: right bottom;
+	background-position: right -37px;
 	margin:0;
 	position:absolute;
 	top:0;
@@ -106,6 +113,12 @@ button.submit span.end {
 	height:37px;
 	width:10px;
 	padding:0;
+}
+button.submit[disabled] span {
+	background-position: left -71px;
+}
+button.submit[disabled] span.end {
+	background-position: right -111px;
 }
 
 .form-element {
@@ -130,6 +143,7 @@ input[type=email] {
 	
 }
 textarea {
+	resize: none;
 	padding: 5px;
 	border:1px solid #c1c6c8;
 	border-radius: 2px;
@@ -170,6 +184,11 @@ input.autoclear {
 }
 fieldset.form-element {
 	float:none;
+	padding-top: 10px;
+}
+h4 {
+	padding: 0 0 10px;
+	font-size: 18px;
 }
 .form-element,
 .form-element-right {
@@ -200,13 +219,15 @@ fieldset.form-element {
 	padding-left: 20px;
 }
 .form-element-with-notes .under-notes {
+	color: #6E6E6E;
+	padding-top: 10px;
 	float: left;
 	clear:left;
 	font-size:12px;
-	width:390px;
+	width:410px;
 }
 .form-element-with-notes textarea {
-	width:390px;
+	width:408px;
 	display:block;
 	float:left;
 }
@@ -291,7 +312,7 @@ fieldset.form-element {
 #dialog-email textarea {
 	width:420px;
 	height:150px;
-	margin:10px;
+	margin:10px 5px;
 }
 #dialog-lease .form-element {
 	clear: both;
@@ -558,4 +579,10 @@ fieldset.form-element {
 }
 .request-summary .request-item p {
 	
+}
+/** 
+ *
+ */
+#service-request .two-column .label-column {
+	font-size: 18px;
 }
