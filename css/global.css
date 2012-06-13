@@ -95,7 +95,7 @@ button.submit {
 	background: none;
 	overflow:visible;
 }
-button.submit span {
+button.submit span{
 	font-family: "HelveticaNeueBold", Helvetica, Arial, sans-serif;
 	font-size: 14px;
 	height: 37px;

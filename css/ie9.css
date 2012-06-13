@@ -1,0 +1,9 @@
+/* JUST ie9 */
+button.submit:active span.end {
+	top: 1px; 
+	right: -10px;
+}
+/*button.submit span.end {
+	top: 1px; 
+	right: -10px;
+}*/
