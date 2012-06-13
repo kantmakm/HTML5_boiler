@@ -185,7 +185,7 @@
 		{
 			console.log('request-history.json hashChange!');
 			$.getJSON('request-history.json', function(data, response){
-				
+				console.log(data);
 			});
 		},
 		init: function()
@@ -292,7 +292,8 @@
 			// - make the AJAX
 			// - change animate the DateManager
 			// - change the DateManager.date to reflect the selected date
-			window.addEventListener("hashchange", DateManager.hashChange, false); //execute on hashchange
+			$(window).bind('hashchange', DateManager.hashChange);
+			// window.addEventListener("hashchange", DateManager.hashChange, false); //execute on hashchange
 		}
 		
 		Global.init();
