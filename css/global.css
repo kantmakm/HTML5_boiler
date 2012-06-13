@@ -109,13 +109,13 @@ button.submit span.end {
 	margin:0;
 	position:absolute;
 	top:0;
-	right:-9px;
+	right:-10px;
 	height:37px;
 	width:10px;
 	padding:0;
 }
 button.submit[disabled] span {
-	background-position: left -71px;
+	background-position: left -74px;
 }
 button.submit[disabled] span.end {
 	background-position: right -111px;
@@ -330,7 +330,7 @@ h4 {
 	background-color: #FDFDFD;
 	position: relative;
 	padding: 20px 25px;/* Used to be 20 24 */
-	margin: 0;
+	margin: 40px 0;
 }
 .small-box {
 	padding: 10px 10px !important;
