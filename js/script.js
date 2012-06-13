@@ -185,7 +185,7 @@
 		{
 			console.log('request-history.json hashChange!');
 			$.getJSON('request-history.json', function(data, response){
-				console.log(data);
+				console.log(data); 
 			});
 		},
 		init: function()
