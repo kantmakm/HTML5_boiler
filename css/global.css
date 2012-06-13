@@ -482,6 +482,7 @@ h4 {
 	font-weight: bold;
 }
 #signin .body2 p.error {
+	margin-right: 10px;
 	padding: 0 0 5px;
 	font-size: 11px;
 	font-family: "HelveticaNeueBold", Helvetica, Arial, sans-serif;

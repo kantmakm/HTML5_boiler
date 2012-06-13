@@ -1,6 +1,13 @@
 /*
- * Author:
+ * Author: MadJon
  */
+
+/**
+ * hashchange listeners for certain parts of
+ * (must be outside of jquery stuff)
+ */
+
+
 
 (function($){
 	/*
@@ -164,6 +171,7 @@
 			var is_open = $('.discreet-accordion').length == 0;
 			if(is_open)is_open = 0;
 			$('.accordion').accordion({
+				autoHeight: false,
 				collapsible: true,
 				active: is_open
 			});
@@ -172,6 +180,14 @@
 	/*
 	*///
 	var DateManager = {
+		
+		hashChange: function()
+		{
+			console.log('request-history.json hashChange!');
+			$.getJSON('request-history.json', function(data, response){
+				
+			});
+		},
 		init: function()
 		{
 			$('.left-selector, .right-selector').click(function(){
@@ -267,20 +283,19 @@
 					$(this).stop().animate({'height': 0});
 				}, 100);
 			});
-		},
-		// drop: function()
-		// {
-		// 	var $ul = $('ul.primary-nav li.hover').find('ul');
-		// 	$ul.height($ul.data('height')).addClass('open');
-		// },
-		// pull: function()
-		// {
-		// 	var $ul = $('ul.primary-nav li.hover ul.open').removeClass('open').height(0);
-		// }
+		}
 	}
 	
 	$(function(){
+		if($('.date-manager').length == 1){
+			// I'll be using DateManager.hashChange() to:
+			// - make the AJAX
+			// - change animate the DateManager
+			// - change the DateManager.date to reflect the selected date
+			window.addEventListener("hashchange", DateManager.hashChange, false); //execute on hashchange
+		}
+		
 		Global.init();
 		if($('.accordion').length == 1)Accordion.init();
-	})
+	});
 })(jQuery);
