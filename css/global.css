@@ -23,6 +23,18 @@ a {
 .left {
 	float:left;
 }
+.ui-icon {
+	background: url(../images/icon_triangle_accordion.png) no-repeat scroll 0 0 transparent;
+	width:14px;
+	height:14px;
+	left: 30px;
+	position: absolute;
+
+	transition: background-position 0.25s;
+	-o-transition: background-position 0.25s;
+	-moz-transition: background-position 0.25s;
+	-webkit-transition: background-position 0.25s;
+}
 #main, footer {
 	z-index:3;
 	position:relative;
