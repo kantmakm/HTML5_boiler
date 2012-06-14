@@ -47,20 +47,6 @@ header .primary-nav-contents ul li a:hover,
 header .primary-nav-contents ul li a.active {
 	color:#333333;
 }
-header .primary-nav-contents ul ul {
-/*	display:none;*/
-	z-index:3;
-	height:auto;
-	position:absolute;
-	top:77px;
-	left: 0px;
-	background: none repeat-y scroll center top #FFFFFF;
-	overflow:hidden;
-}
-header .primary-nav-contents ul ul li {
-}
-header .primary-nav-contents ul ul li a {
-}
 /**
  * Secondary Nav
  */
@@ -106,4 +92,70 @@ header #logo {
 	height: 37px;
 	display: inline-block;
 	vertical-align: top;
+}
+
+/**
+ * FLoating Dropdown Nav
+ */
+header .dropdown-nav-contents {
+	position: absolute;
+	right: 0;
+	top: 0;
+	z-index: 1003;
+	padding: 0 30px 0 0;
+	height: 30px;
+	margin: 0;
+}
+header .dropdown-nav-contents ul {
+	margin: 0;
+	padding: 0;
+}
+header .dropdown-nav-contents ul li a {
+	background: none repeat-x scroll 0 0 transparent;
+	z-index: 1004;
+	padding: 9px 10px;
+	display: block;
+	position: relative;
+}
+header .dropdown-nav-contents ul.hover li a {
+	background-image: url(../images/bkgd_nav_dropdown_tile.png);
+}
+header .dropdown-nav-contents ul li {
+/*	padding: 10px;*/
+	text-align:left;
+}
+header .dropdown-nav-contents ul ul {
+	z-index: 1003;
+	height: auto;
+	position: absolute;
+	top: 40px;
+	right: 30px;
+	background: none repeat-y scroll center top #FFFFFF;
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+	
+	box-shadow: 				none;
+	-o-box-shadow: 			none;
+	-moz-box-shadow: 		none;
+	-webkit-box-shadow: none;
+	
+	transition: 				box-shadow 0.5s;
+	-o-transition: 			box-shadow 0.5s;
+	-moz-transition: 		box-shadow 0.5s;
+	-webkit-transition: box-shadow 0.5s;
+}
+header .dropdown-nav-contents ul li:hover ul {
+	box-shadow: 				0 0 5px 1px #000000;
+	-o-box-shadow: 			0 0 5px 1px #000000;
+	-moz-box-shadow: 		0 0 5px 1px #000000;
+	-webkit-box-shadow: 0 0 5px 1px #000000;
+}
+header .dropdown-nav-contents ul ul li {
+	z-index: 1003;
+}
+header .dropdown-nav-contents ul ul li a {
+	z-index: 1003;
+	padding: 10px;
+	background: none no-repeat scroll 0 0 #FFFFFF;
 }
