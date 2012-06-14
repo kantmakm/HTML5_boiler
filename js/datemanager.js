@@ -92,7 +92,9 @@ var DateManager;
 	});
 })(jQuery);
 
-	
+	/**
+	 * @todo Add this When After Nav
+	 */
 	// 	moveYears: function(older)
 	// 	{
 	// 		var right = parseInt($('.year-selector .slider').css('right').replace('px', ''));
