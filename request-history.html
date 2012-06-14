@@ -55,6 +55,7 @@
 	<script src="js/browserimage.js"></script>
   <script src="js/plugins.js"></script>
   <script src="js/script.js"></script>
+  <script src="js/datemanager.js"></script>
   <!-- end scripts -->
 
 </head>
@@ -123,7 +124,7 @@
 			<fieldset class="discreet-accordion-header">
 				<label class="form-element-right form-element">
 					<span>Status</span>
-					<select name="status">
+					<select name="status" id="status">
 						<option value="open">Open Requests</option>
 						<option value="close">Closed Requests</option>
 						<option value="all">All Requests</option>
@@ -131,7 +132,7 @@
 				</label>
 				<label class="form-element">
 					<span>Show me</span>
-					<select name="location">
+					<select name="location" id="location">
 						<option value="apartment">My Apartment</option>
 						<option value="common">Common Area</option>
 						<option value="all">All</option>
@@ -329,17 +330,17 @@
 	<div id="dialog-lease" class="dialog">
 		<form action="index.html" method="POST">
 			<div class="form-element">
-				<input type="radio" value="0" name="location" id="location-0">
+				<input type="radio" value="0" name="lease-location" id="location-0">
 				<label for="location-0">[ Apartment Address ] Customer Name [ Community ]</label>
 			</div>
 
 			<div class="form-element">
-				<input type="radio" value="1" name="location" id="location-1">
+				<input type="radio" value="1" name="lease-location" id="location-1">
 				<label for="location-1">123 Main Street #101, Genvieve Cornhill, Archstone Englewood</label>
 			</div>
 
 			<div class="form-element">
-				<input type="radio" value="2" name="location" id="location-2">
+				<input type="radio" value="2" name="lease-location" id="location-2">
 				<label for="location-2">456 Spruce Street #12, Genevieve Cornhill, Archstone
 			</div>
 

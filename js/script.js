@@ -6,13 +6,13 @@
  * hashchange listeners for certain parts of
  * (must be outside of jquery stuff)
  */
+var Global;
 
-
-
+// turns jQuery into $
 (function($){
 	/*
 	*///
-	var Global = {
+	Global = {
 		
 		vars: {
 			dialog: {
@@ -177,71 +177,6 @@
 			});
 		}
 	};
-	/*
-	*///
-	var DateManager = {
-		
-		hashChange: function()
-		{
-			console.log('request-history.json hashChange!');
-			$.getJSON('request-history.json', function(data, response){
-				console.log(data); 
-			});
-		},
-		init: function()
-		{
-			$('.left-selector, .right-selector').click(function(){
-				DateManager.moveYears($(this).hasClass('left-selector')?true:false);
-				return false;
-			});
-			$('.year-selector ul li a').live('click', function(){
-				DateManager.selectDate($(this).html());
-				return false;
-			})
-		},
-		moveYears: function(older)
-		{
-			var right = parseInt($('.year-selector .slider').css('right').replace('px', ''));
-			var move;
-			$('.year-selector .slider').stop( false, true);
-			if(older == false && right < 0)
-			{
-				move = "+=247";
-			}
-			else if(older == true)
-			{
-				// need an extra year. add it before we move slide
-				if(($('.year-selector ul').width()+247) > (741-right))
-				{
-					var year = (parseInt($('.year-selector ul li:first a').html())-1);
-					var color = $('.year-selector ul li:first a').hasClass('blue')?'green':$('.year-selector ul li:first a').hasClass('blue-green')?'blue':'blue-green';
-					$('<li></li>')
-						.addClass('year-' + year)
-						.html('<a href="#" class="' + color + '">' + year + '</a></li>')
-						.prependTo($('.year-selector ul'));
-				}
-				move = "-=247";
-			}
-			else
-			{
-				move = "0";
-			}
-			$('.year-selector .slider').animate({
-				right: move
-			});
-			return false;
-		},
-		selectDate: function(year, month)
-		{
-			if(typeof month == 'undefined')
-			{
-				$('.year-selector .year-' + year)
-					.addClass('active')
-					.siblings()
-					.removeClass('active');
-			}
-		}
-	}
 	
 	var Nav = {
 		t: 0, //setTimeout()
