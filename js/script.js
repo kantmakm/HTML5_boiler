@@ -8,6 +8,12 @@
  */
 /*
 *///
+
+// // Declare the Global object.
+// Global = (typeof (Global) == "undefined" || !Global)
+//  ? function () { }
+//  : Global;
+
 var Global = {
 	
 	vars: {
@@ -26,7 +32,6 @@ var Global = {
 		Global.autoclear();
 		
 		if($('textarea').length > 0)Textarea.bindEvents();
-		if($('.date-manager').length > 0)DateManager.init();
 	},
 	/**
 	 * Display the Email Dialog
@@ -34,32 +39,57 @@ var Global = {
 	 */
 	bindDialogs: function()
 	{
-		$('.cta-email').click(function(){
-			$h2 = $(this).parents('.discreet-accordion h2');
-			$('#dialog-email').dialog({
-				resizable: false,
-				height: "auto",
-	      width: "auto",
-				modal:true,
-				title: $(this).attr('title')
-			});
-			if($h2.length > 0)
-			{
-				$('#dialog-email #mail-subject').val(Global.vars.dialog.serviceRequestSubject.replace('%i', $h2.attr('rel')));
-				$('#dialog-email #mail-body').html(Global.vars.dialog.serviceRequestBody.replace('%i', $h2.attr('rel')));
-			}
+		// Email Dialog
+		// $('.cta-email').click(function(){
+		// 	var $h2 = $(this).parents('.discreet-accordion h2');
+		// 	var title = $(this).attr('title');
+		// 	$.get('dialog-email.html', {request_id: $h2.attr('rel')}, function(data, response){
+		// 		if(response == 'success')
+		// 		{
+		// 			$('<div></div>').html(data).dialog({
+		// 				resizable: false,
+		// 				height: "auto",
+		// 	      width: "auto",
+		// 				modal:true,
+		// 				title: title
+		// 			});
+		// 		}
+		// 	});
+		// 	return false;
+		// });
+		// $('.cta-lease').click(function(){
+		// 	console.log('HEY!')
+		// 	$('#dialog-lease').dialog({
+		// 		resizable: false,
+		// 		height: "auto",
+		// 	      width: "auto",
+		// 		modal:true,
+		// 		title: $(this).attr('title')
+		// 	});
+		
+		// One Dialog to rule them all
+		$('.cta-dialog').click(function(){
+			var title = $(this).attr('title');
+			$.get($(this).attr('href'), 
+				{
+				'rel': $(this).attr('rel'),
+				'page': window.location.pathname
+				},
+				function(data, response){
+					if(response == 'success')
+					{
+						$('<div></div>').html(data).dialog({
+							resizable: false,
+							height: "auto",
+				      width: "auto",
+							modal:true,
+							title: title
+						});
+					}
+				});
 			return false;
 		});
-		$('.cta-lease').click(function(){
-			console.log('HEY!')
-			$('#dialog-lease').dialog({
-				resizable: false,
-				height: "auto",
-	      width: "auto",
-				modal:true,
-				title: $(this).attr('title')
-			});
-		});
+
 		$('.ui-dialog-titlebar').removeClass('ui-corner-all').addClass('ui-corner-top');
 		
 		return false;

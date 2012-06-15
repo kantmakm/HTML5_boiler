@@ -51,6 +51,7 @@
 	<script src="js/browserimage.js"></script>
   <script src="js/plugins.js"></script>
   <script src="js/script.js"></script>
+  <script src="js/nav.js"></script>
   <!-- end scripts -->
 
 </head>
@@ -69,21 +70,30 @@
 			<a href="index.html" id="logo"><img src="images/logo.png" width="167" height="38" ></a>
 			<ul class="primary-nav">
 				<li><a href="#" title="Contact Us">Payment</a></li>
-				<li><a href="service-request.html">Service</a></li>
+				<li class="active">
+					<a href="service-request.html">Service</a>
+					<!-- <ul>
+						<li><a href="service-request.html">New Request</a></li>
+						<li><a href="request-history.html" class="active">Request History</a></li>
+					</ul> -->
+				</li>
 				<li><a href="#">Information</a></li>
 				<li><a href="#" class="cta-lease">Lease</a></li>
-				<!-- <li class="half-pint">
-					<a href="#">Genevieve Cornhill</a>
+			</ul>
+		</div>
+		<div class="dropdown-nav-contents">
+			<ul class="dropdown-nav">
+				<li>
+					<a href="#"><span class="ui-icon"> &nbsp; </span>Genevieve Cornhill</a>
 					<ul>
 						<li><a href="#" class="cta-lease">Switch to Different Lease</a></li>
 						<li><a href="#">Contact Information</a></li>
 						<li><a href="#">Settings</a></li>
 						<li><a href="#">Sign Out</a></li>
 					</ul>
-				</li> -->
+				</li>
 			</ul>
 		</div>
-		<!-- /Primary Navigation -->
 		
 		<!-- Secondary Navigation -->
 		<div class="secondary-nav-contents">
@@ -168,47 +178,6 @@
 		</div>
   </footer>
 
-
-
-
-	<!-- Hidden Dialogs -->
-	<div id="dialog-email" class="dialog">
-		<form action="index.html" method="POST">
-			<div class="form-element">
-				<label class="form-label" for="mail-to">To:</label>
-				<select name="mail-to" id="mail-to">
-					<option value="andrew_wyndertyne@archstoneapartments.com">andrew_wyndertyne@archstoneapartments.com</option>
-				</select>
-			</div>
-			<div class="form-element">
-				<label class="form-label" for="mail-subject">Subject:</label>
-				<input type="text" name="mail-subject" id="mail-subject">
-			</div>
-			<p><textarea name="mail-body" id="mail-body" rows="5" cols="20"></textarea></p>
-			<p class="submit-area">
-				<button type="submit" class="submit"><span>Send</span><span class="end"> &nbsp; </span></button>
-			</p>
-		</form>
-	</div>
-	<div id="dialog-lease" class="dialog">
-		<form action="index.html" method="POST">
-			<div class="form-element">
-				<input type="radio" value="0" name="location" id="location-0">
-				<label for="location-0">[ Apartment Address ] Customer Name [ Community ]</label>
-			</div>
-
-			<div class="form-element">
-				<input type="radio" value="1" name="location" id="location-1">
-				<label for="location-1">123 Main Street #101, Genvieve Cornhill, Archstone Englewood</label>
-			</div>
-
-			<div class="form-element">
-				<input type="radio" value="2" name="location" id="location-2">
-				<label for="location-2">456 Spruce Street #12, Genevieve Cornhill, Archstone
-			</div>
-
-		</form>
-	</div>
   <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
        mathiasbynens.be/notes/async-analytics-snippet -->
   <script>

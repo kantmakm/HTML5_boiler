@@ -83,15 +83,15 @@
 					</ul> -->
 				</li>
 				<li><a href="#">Information</a></li>
-				<li><a href="#" class="cta-lease">Lease</a></li>
+				<li><a href="#">Lease</a></li>
 			</ul>
 		</div>
 		<div class="dropdown-nav-contents">
 			<ul class="dropdown-nav">
-				<li class="half-pint">
+				<li>
 					<a href="#"><span class="ui-icon"> &nbsp; </span>Genevieve Cornhill</a>
 					<ul>
-						<li><a href="#" class="cta-lease">Switch to Different Lease</a></li>
+						<li><a href="dialog-lease.html" class="cta-dialog" rel="request-history" title="Select the lease you would like to open">Switch to Different Lease</a></li>
 						<li><a href="#">Contact Information</a></li>
 						<li><a href="#">Settings</a></li>
 						<li><a href="#">Sign Out</a></li>
@@ -159,9 +159,9 @@
 				<h2 rel="000001">
 					<span class="last-updated">4/2/12</span>
 					<span class="request">Garbage Disposal</span>
-					<span class="description">Its getting clogged again. Getting stuck with the most...</span>
+					<span class="description">Is getting clogged again. Getting stuck with the most...</span>
 					<span class="status">In Process</span>
-					<a href="#" class="email cta-email" title="Contact Us"> &nbsp; </a>
+					<a href="dialog-email.html" class="email cta-dialog" title="Contact Us" rel="000001"> &nbsp; </a>
 				</h2>
 				<div>
 					<div class="description-summary">
@@ -198,7 +198,7 @@
 					<span class="request">Garbage Disposal</span>
 					<span class="description">Its getting clogged again. Getting stuck with the most...</span>
 					<span class="status">In Process</span>
-					<a href="#" class="email cta-email" title="Contact Us"> &nbsp; </a>
+					<a href="dialog-email.html" class="email cta-dialog" title="Contact Us" rel="000002"> &nbsp; </a>
 				</h2>
 				<div>
 					<div class="description-summary">
@@ -235,7 +235,7 @@
 					<span class="request">Garbage Disposal</span>
 					<span class="description">Its getting clogged again. Getting stuck with the most...</span>
 					<span class="status">In Process</span>
-					<a href="#" class="email cta-email" title="Contact Us"> &nbsp; </a>
+					<a href="dialog-email.html" class="email cta-dialog" title="Contact Us" rel="000003"> &nbsp; </a>
 				</h2>
 				<div>
 					<div class="description-summary">
@@ -272,7 +272,7 @@
 					<span class="request">Garbage Disposal</span>
 					<span class="description">Its getting clogged again. Getting stuck with the most...</span>
 					<span class="status">In Process</span>
-					<a href="#" class="email cta-email" title="Contact Us"> &nbsp; </a>
+					<a href="dialog-email.html" class="email cta-dialog" title="Contact Us" rel="000004"> &nbsp; </a>
 				</h2>
 				<div>
 					<div class="description-summary">
@@ -315,46 +315,6 @@
 			<a href="#">Copyright © 2012 Archstone. All Rights Reserved.</a>
 		</div>
   </footer>
-
-
-	<!-- Hidden Dialogs -->
-	<div id="dialog-email" class="dialog">
-		<form action="index.html" method="POST">
-			<div class="form-element">
-				<label class="form-label" for="mail-to">To:</label>
-				<select name="mail-to" id="mail-to">
-					<option value="andrew_wyndertyne@archstoneapartments.com">andrew_wyndertyne@archstoneapartments.com</option>
-				</select>
-			</div>
-			<div class="form-element">
-				<label class="form-label" for="mail-subject">Subject:</label>
-				<input type="text" name="mail-subject" id="mail-subject">
-			</div>
-			<p><textarea name="mail-body" id="mail-body" rows="5" cols="20"></textarea></p>
-			<p class="submit-area">
-				<button type="submit" class="submit"><span>Send</span><span class="end"> &nbsp; </span></button>
-			</p>
-		</form>
-	</div>
-	<div id="dialog-lease" class="dialog">
-		<form action="index.html" method="POST">
-			<div class="form-element">
-				<input type="radio" value="0" name="lease-location" id="location-0">
-				<label for="location-0">[ Apartment Address ] Customer Name [ Community ]</label>
-			</div>
-
-			<div class="form-element">
-				<input type="radio" value="1" name="lease-location" id="location-1">
-				<label for="location-1">123 Main Street #101, Genvieve Cornhill, Archstone Englewood</label>
-			</div>
-
-			<div class="form-element">
-				<input type="radio" value="2" name="lease-location" id="location-2">
-				<label for="location-2">456 Spruce Street #12, Genevieve Cornhill, Archstone
-			</div>
-
-		</form>
-	</div>
 
   <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
        mathiasbynens.be/notes/async-analytics-snippet -->

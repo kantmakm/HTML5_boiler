@@ -1,17 +1,30 @@
 header {
 	text-align:center;
 	position:relative;
+	background: url(../images/bkgd_nav_primary.png) repeat-x scroll 0 0 #FFFFFF;
+	z-index: 1002;
+	
+	box-shadow:  0px 1px 5px 0px rgba(0, 0, 0, 0.5);
+  -o-box-shadow:  0px 1px 5px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow:  0px 1px 5px 0px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow:  0px 1px 5px 0px rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid #2a384f;
+	
 }
 header .primary-nav-contents
 {
-	background: url(../images/bkgd_nav_primary_tile.png) repeat-x scroll 0 0 #FFFFFF;
+/*	background: url(../images/bkgd_nav_primary_tile.png) repeat-x scroll 0 0 #FFFFFF;*/
 	z-index: 1002;
 }
 header .primary-nav-contents,
 header .secondary-nav-contents {
-/*	width: 770px;*/
+	width: 770px;
+	text-align: left;
 	margin: 0 auto;
 	position: relative;
+}
+.signin header .primary-nav-contents {
+	text-align:center;
 }
 header .secondary-nav-contents,
 header .primary-nav-contents ul {
@@ -32,8 +45,8 @@ header .primary-nav-contents ul li {
 	position:relative;
 }
 header .primary-nav-contents ul li a {
-	padding: 30px 30px 0;
-	height:41px;
+	padding: 30px 30px 2px;
+	height: 45px;
 	color:#666666;
 	display:block;
 	font-family: "HelveticaNeueLTStd", Helvetica, Arial, sans-serif;
@@ -44,8 +57,12 @@ header .primary-nav-contents ul li a {
 	-webkit-transition: color 0.25s;
 	text-decoration:none;
 }
-header .primary-nav-contents ul li a:hover,
-header .primary-nav-contents ul li a.active {
+header .primary-nav-contents ul li.active a,
+header .primary-nav-contents ul li.active a:hover {
+	color: #FFFFFF;
+	background: url(../images/bkgd_nav_primary_active.png) no-repeat scroll center top transparent;
+}
+header .primary-nav-contents ul li a:hover {
 	color:#333333;
 }
 /**
@@ -54,15 +71,11 @@ header .primary-nav-contents ul li a.active {
 header .secondary-nav-contents
 {
 	z-index:1002;
-	background: url(../images/bkgd_nav_secondary_tile.png) repeat-x scroll 0 0 #0097a4;
-	height:32px;
-	border-top: 1px solid #666666;
-	border-bottom: 1px solid #2a384f;
+/*	background: url(../images/bkgd_nav_secondary_tile.png) repeat-x scroll 0 0 #0097a4;*/
+	height:31px;
+/*	border-top: 1px solid #666666;
+	border-bottom: 1px solid #2a384f;*/
 	
-  box-shadow:  0px 1px 5px 0px rgba(0, 0, 0, 0.5);
-  -o-box-shadow:  0px 1px 5px 0px rgba(0, 0, 0, 0.5);
-  -moz-box-shadow:  0px 1px 5px 0px rgba(0, 0, 0, 0.5);
-  -webkit-box-shadow:  0px 1px 5px 0px rgba(0, 0, 0, 0.5);
 }
 header .secondary-nav-contents ul {
 	margin:0;
@@ -90,7 +103,7 @@ header .secondary-nav-contents ul li a.active {
 }
 header #logo {
 	padding: 20px 0;
-	height: 37px;
+	height: 35px;
 	display: inline-block;
 	vertical-align: top;
 }
@@ -169,12 +182,13 @@ header .dropdown-nav-contents ul.hover ul li a {
 	padding: 10px;
 	background: none no-repeat scroll 0 0 #FFFFFF;
 	font-weight: normal;
+	text-align: left;
 	width:150px;
 	
-	transition: background 0.25s;
-	-o-transition: background 0.25s;
-	-moz-transition: background 0.25s;
-	-webkit-transition: background 0.25s;
+	transition: background 0.5s;
+	-o-transition: background 0.5s;
+	-moz-transition: background 0.5s;
+	-webkit-transition: background 0.5s;
 }
 header .dropdown-nav-contents ul ul li a:hover,
 header .dropdown-nav-contents ul ul li:hover {

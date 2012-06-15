@@ -11,12 +11,15 @@ DateManager.init = (typeof (DateManager.init) == "undefined" || !DateManager.ini
 			DateManager.moveYears($(this).hasClass('left-selector')?true:false);
 			return false;
 		});
+		console.log('Initing');
 		$('.year-selector ul li a').live('click', function(){
-			console.log('You clicking?');
 			$(this).parent().addClass('active').siblings().removeClass('active');
 			DateManager.selectDate();
 			return false;
 		});
+		
+		// Bind select Events
+		$('select#location, select#status').change(DateManager.selectDate);
 		
 		// Respond to hash on page load
 		if(window.location.hash)
@@ -28,13 +31,17 @@ DateManager.init = (typeof (DateManager.init) == "undefined" || !DateManager.ini
 // hashChange Event
 DateManager.hashChange = (typeof (DateManager.hashChange) == "undefined" || !DateManager.hashChange)
 	? function () {
-		console.log('request-history.json hashChange!');
-		$.getJSON('request-history.json', function(data, response){
-			// Here is where we'll use the data to generate markup to replace the acccordion etc..
-			console.log(data); 
-			
-			// code...
-		});
+		var $accordion = $('.accordion[rel=' + window.location.hash + ']');
+		if($accordion.length == 0)
+		{
+			$.getJSON('request-history.json', DateManager.replaceAccordion);
+		}
+		else
+		{
+			$accordion.siblings().fadeOut(function(){
+				$accordion.fadeIn();
+			});
+		}
 	} : DateManager.hashChange;
 
 // This Finds the date and changes the hash of the url.

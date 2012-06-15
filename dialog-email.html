@@ -1,0 +1,22 @@
+<div id="dialog-email">
+	<form action="index.html" method="POST">
+		<div class="form-element">
+			<label class="form-label" for="mail-to">To:</label>
+			<select name="mail-to" id="mail-to">
+				<option value="andrew_wyndertyne@archstoneapartments.com">andrew_wyndertyne@archstoneapartments.com</option>
+			</select>
+		</div>
+		<div class="form-element">
+			<label class="form-label" for="mail-subject"></label>
+			<input type="text" name="mail-subject" id="mail-subject" value="This is a test subject for %i">
+		</div>
+		<p><textarea name="mail-body" id="mail-body" rows="5" cols="20">
+Dear Archstone Representative, 
+I am writing to you regarding issue %i.
+This dialog is loaded dynamically from a static .html document. If implemented in a server, this message can be customized based on the arguments sent.
+		</textarea></p>
+		<p class="submit-area">
+			<button type="submit" class="submit"><span>Send</span><span class="end"> &nbsp; </span></button>
+		</p>
+	</form>
+</div>
