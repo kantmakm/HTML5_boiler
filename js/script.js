@@ -200,6 +200,7 @@ var Accordion = {
 			collapsible: true,
 			active: is_open
 		});
+		$('.ui-icon').removeClass('ui-icon-triangle-1-e');
 	}
 };
 
