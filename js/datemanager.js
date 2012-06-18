@@ -94,39 +94,3 @@ $(function(){
 	console.log('INIT!');
 	DateManager.init();
 });
-
-	/**
-	 * @todo Add this When After Nav
-	 */
-	// 	moveYears: function(older)
-	// 	{
-	// 		var right = parseInt($('.year-selector .slider').css('right').replace('px', ''));
-	// 		var move;
-	// 		$('.year-selector .slider').stop( false, true);
-	// 		if(older == false && right < 0)
-	// 		{
-	// 			move = "+=247";
-	// 		}
-	// 		else if(older == true)
-	// 		{
-	// 			// need an extra year. add it before we move slide
-	// 			if(($('.year-selector ul').width()+247) > (741-right))
-	// 			{
-	// 				var year = (parseInt($('.year-selector ul li:first a').html())-1);
-	// 				var color = $('.year-selector ul li:first a').hasClass('blue')?'green':$('.year-selector ul li:first a').hasClass('blue-green')?'blue':'blue-green';
-	// 				$('<li></li>')
-	// 					.addClass('year-' + year)
-	// 					.html('<a href="#" class="' + color + '">' + year + '</a></li>')
-	// 					.prependTo($('.year-selector ul'));
-	// 			}
-	// 			move = "-=247";
-	// 		}
-	// 		else
-	// 		{
-	// 			move = "0";
-	// 		}
-	// 		$('.year-selector .slider').animate({
-	// 			right: move
-	// 		});
-	// 		return false;
-	// 	},

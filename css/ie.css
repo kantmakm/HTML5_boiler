@@ -5,13 +5,14 @@
 	filter:alpha(opacity=80);
 	z-index: 1;
 }
-.submit {
-	filter: dropshadow(color=#000000, offx=1, offy=0);
-	overflow: visible !important;
-}
 .submit,
 .submit span {
 	background-color: #FFFFFF;
+	border: none;
+	overflow: visible !important;
+}
+.submit-area {
+	overflow:hidden;
 }
 header,
 header .primary-nav-contents,
@@ -22,6 +23,7 @@ header .secondary-nav-contents,
 header .secondary-nav-contents ul li a {
 	filter: dropshadow(color=#000000, offx=0, offy=1);
 }
+button.submit span,
 button.submit:active span {
 /*	border: none;*/
 	top: 1px; 

@@ -206,7 +206,7 @@
 .ui-icon-minus { background-position: -48px -128px; }
 .ui-icon-minusthick { background-position: -64px -128px; }
 .ui-icon-close { background-position: -80px -128px; }
-.ui-icon-closethick { background-position: -96px -128px; }
+.ui-dialog .ui-dialog-titlebar-close span.ui-icon-closethick { background-position: -96px -128px; display:none; }
 .ui-icon-key { background-position: -112px -128px; }
 .ui-icon-lightbulb { background-position: -128px -128px; }
 .ui-icon-scissors { background-position: -144px -128px; }
@@ -434,7 +434,7 @@ button.ui-button::-moz-focus-inner { border: 0; padding: 0; } /* reset extra pad
  */
 .ui-dialog { position: absolute; padding: 0; width: 300px; overflow: hidden; }
 .ui-dialog p { clear:left;  }
-.ui-dialog .ui-dialog-titlebar { padding: 15px 20px 0; position: relative; border: none; border-bottom: 1px solid #BFC3C5; height: 30px; font-family: "HelveticaNeueLTStd", Helvetica, Arial, sans-serif; color: #444444; font-size: 18px; }
+.ui-dialog .ui-dialog-titlebar { padding: 10px 20px 5px; position: relative; border: none; border-bottom: 1px solid #BFC3C5; height: 30px; font-family: "HelveticaNeueLTStd", Helvetica, Arial, sans-serif; color: #444444; font-size: 18px; }
 .ui-dialog .ui-dialog-title { float: left; margin: .1em 16px .1em 0; } 
 .ui-dialog .ui-dialog-titlebar-close { position: absolute; right: 13px; top: 13px; width: 20px; margin: 0; padding: 0; height: 20px; background: url(../images/button_dialog_close.png) no-repeat scroll 0 0 transparent; }
 .ui-dialog .ui-dialog-titlebar-close span { display: block; margin: 1px; }
@@ -445,6 +445,7 @@ button.ui-button::-moz-focus-inner { border: 0; padding: 0; } /* reset extra pad
 .ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset { float: right; }
 .ui-dialog .ui-dialog-buttonpane button { margin: .5em .4em .5em 0; cursor: pointer; }
 .ui-dialog .ui-resizable-se { width: 14px; height: 14px; right: 3px; bottom: 3px; }
+.ui-dialog textarea, .ui-dialog input, .ui-dialog select, .ui-dialog label { color: #666666; font-family: Arial, sans-serif; }
 .ui-draggable .ui-dialog-titlebar { cursor: move; }
 /*!
  * jQuery UI Slider 1.8.20
