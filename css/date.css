@@ -24,20 +24,20 @@ fieldset.date-manager {
 	right:15px;
 	background-position: right bottom;
 }
-.date-manager .year-selector {
+.date-manager #year-selector {
 	position: relative;
 	width: 740px;
 	height: 40px;
 	margin: 0 auto;
 	overflow: hidden;
 }
-.date-manager .year-selector .slider {
+.date-manager #year-selector .slider {
 	width:10000px;
 	position:absolute;
 	top:0;
 	right:0;
 }
-.date-manager .year-selector ul {
+.date-manager #year-selector ul {
 /*	position: absolute;
 	top: 0;
 	right: 0;
@@ -49,14 +49,14 @@ fieldset.date-manager {
 	float:right;
 	display:block;
 }
-.date-manager .year-selector li {
+.date-manager #year-selector li {
 	display: block;
 	padding: 0 1px;
 	white-space: nowrap;
 	margin: 0;
 	float: left;
 }
-.date-manager .year-selector li a {
+.date-manager #year-selector li a {
 	height: 38px;
 	width: 205px;
 	display: block;
@@ -73,7 +73,7 @@ fieldset.date-manager {
 	-moz-transition: background-position 0.25s;
 	-webkit-transition: background-position 0.25s;
 }
-.date-manager .year-selector li.active a {
+.date-manager #year-selector li.active a {
 	background-position: right bottom;
 }
 

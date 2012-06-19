@@ -47,8 +47,9 @@
   <!-- JavaScript in the header so my other stuff doesn't break -->
 
   <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
-  <script src="js/jquery-1.7.2.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
   <script src="js/ui/jquery-ui-1.8.20.custom.js"></script>
+  <script src="http://cachedcommons.org/cache/jquery-bbq/1.2.1/javascripts/jquery-bbq.js"></script>
 
   <!-- scripts concatenated and minified via build script -->
   <script src="js/jquery.cookie.js"></script>
@@ -56,7 +57,46 @@
   <script src="js/plugins.js"></script>
   <script src="js/script.js"></script>
   <script src="js/nav.js"></script>
-  <script src="js/datemanager.js"></script>
+  <script src="js/request-history.js"></script>
+  <script src="js/year-picker.js"></script>
+
+	<script>
+  (function ($) {
+		$(function(){
+			
+			// set defaults for page loaded with no hashtags
+		  var defaultHistoryState = {
+		      "year": 2012, // would come from server side model
+		      "type": "srt0", // default initial selected item
+		      "status": "srs0" // default initial selected item
+		  };
+		  var defaultHistoryParams = {
+		      "yearsToShow": [2009, 2010, 2011, 2012],
+		      "dateElement": $("#year-selector .slider"),
+		      "filtersElement": $("#filters"),
+		      "filterTypeElement": $("#requestHistoryType"),
+		      "filterStatusElement": $("#requestHistoryStatus"),
+		      "historyElement": $("#history"),
+		      "state": defaultHistoryState
+		  };
+		
+		
+			// initialize the service request history components
+			requestHistory.history(defaultHistoryParams);
+
+		  // handle hash change for service request history
+		  $(window).bind("hashchange", function (e) {
+		      // shallow copy the defaultHistoryParams.state before extending with $.deparam.fragment, otherwise the default is updated because of reference assignment
+		      requestHistory.history.showHistory($.extend($.extend({}, defaultHistoryParams.state), $.deparam.fragment()));
+		  });
+
+		  // first time, trigger the hash change to show the default history or reflect a bookmarked or linked hash
+		  $(window).trigger("hashchange");
+		  
+		});
+   })(jQuery);
+	</script>
+
   <!-- end scripts -->
 
 </head>
@@ -117,13 +157,8 @@
 			<fieldset class="date-manager">
 				<a href="#" class="left-selector"> &nbsp; </a>
 				<a href="#" class="right-selector"> &nbsp; </a>
-				<div class="year-selector">
+				<div id="year-selector">
 					<div class="slider">
-						<ul>
-							<li class="year-2010"><a href="#" class="blue">2010</a></li>
-							<li class="year-2011"><a href="#" class="blue-green">2011</a></li>
-							<li class="year-2012 active"><a href="#" class="green">2012</a></li>
-						</ul>
 					</div>
 				</div>
 				<div class="month-selector">
@@ -131,22 +166,24 @@
 				</div>
 			</fieldset>
 			<fieldset class="discreet-accordion-header">
-				<label class="form-element-right form-element">
-					<span>Status</span>
-					<select name="status" id="status">
-						<option value="open">Open Requests</option>
-						<option value="close">Closed Requests</option>
-						<option value="all">All Requests</option>
-					</select>
-				</label>
-				<label class="form-element">
-					<span>Show me</span>
-					<select name="location" id="location">
-						<option value="apartment">My Apartment</option>
-						<option value="common">Common Area</option>
-						<option value="all">All</option>
-					</select>
-				</label>
+				<div id="filters">
+					<label class="form-element-right form-element">
+						<span>Status</span>
+						<select name="requestHistoryStatus" id="requestHistoryStatus">
+							<option value="open">Open Requests</option>
+							<option value="close">Closed Requests</option>
+							<option value="all">All Requests</option>
+						</select>
+					</label>
+					<label class="form-element">
+						<span>Show me</span>
+						<select name="requestHistoryType" id="requestHistoryType">
+							<option value="apartment">My Apartment</option>
+							<option value="common">Common Area</option>
+							<option value="all">All</option>
+						</select>
+					</label>
+				</div>
 				<h2 class="accordion-header clearfix">
 					<span class="last-updated">Last Updated</span>
 					<span class="request">Request</span>
