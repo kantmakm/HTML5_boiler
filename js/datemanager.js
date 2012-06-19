@@ -2,6 +2,9 @@
     // This is the simplest possible plugin to select years
     // FUNCTIONALITY TO SET AND INDICATE THE CURRENTLY SELECTED YEAR OMITTED FOR THIS EXAMPLE
 	$.fn.yearPicker = function(options) {
+		
+		var colors = ['blue', 'blue-green', 'green'];
+		
 		var thisYear = new Date().getFullYear();
 
 		var settings = $.extend({
@@ -11,14 +14,51 @@
 			'yearsToShow' : [thisYear]
 		}, options);
 		console.log("datePicker settings: %o", settings);
+		
+		this.moveYears = (typeof (this.moveYears) == "undefined" || !this.moveYears)
+		 ? function (older) {
+				var right = parseInt($('#year-selector .slider').css('right').replace('px', ''));
+				var move;
+				$('#year-selector .slider').stop( false, true);
+				if(older == false && right < 0)
+				{
+					move = "+=247";
+				}
+				else if(older == true)
+				{
+					// need an extra year. add it before we move slide
+					if(($('#year-selector ul').width()+247) > (741-right))
+					{
+						var year = (parseInt($('#year-selector ul li:first a').html())-1);
+						var color = $('#year-selector ul li:first a').hasClass('blue')?'green':$('#year-selector ul li:first a').hasClass('blue-green')?'blue':'blue-green';
+						$('<li></li>')
+							.addClass('year-' + year)
+							.html('<a href="#" class="' + color + '">' + year + '</a></li>')
+							.prependTo($('#year-selector ul'));
+					}
+					move = "-=247";
+				}
+				else
+				{
+					move = "0";
+				}
+				$('#year-selector .slider').animate({
+					right: move
+				});
+				return false;
+		} : this.moveYears;
+		
+		
+		
 
 		return this.each(function() {
 			var $this = $(this);
 			var years = $("<ul>");
 			$.each(settings.yearsToShow, function(index, value) {
-				var el = $("<li>" + value.toString() + "</li>");
-				el.click(function() { settings.onChange(value); });
-				years.append(el);
+				var $a = $('<a href="#"></a>').addClass(colors[parseInt(value)%3]).html(value.toString());
+				var $el = $("<li></li>").html($a);
+				$a.click(function() { settings.onChange(value); return false; });
+				years.append($el);
 			});
 			$this.append(years);
 		});
