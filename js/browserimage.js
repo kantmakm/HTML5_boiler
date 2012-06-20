@@ -48,7 +48,6 @@ var Background;
 			if($('#background-image').length == 1)
 			{
 				$(window).resize(function() {
-					console.log('resize!')
 		  		Background.resizeNow('#background-image');
 				});
 				Background.getImageRatio($('#background-image img').attr('src'));

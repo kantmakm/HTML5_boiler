@@ -10,10 +10,7 @@
 			var selectedIndex = settings.yearsToShow.indexOf(settings.selectedYear);
 			var size = (index == selectedIndex)?'large':(index == selectedIndex-1 || index == selectedIndex+1)?'small':'gone';
 			// selected year is against a wall, which means it will have 2 smalls on 1 side instead of 1 small on both sides
-			if(size == 'gone' && total > 2 && ((total-1 == selectedIndex && index == selectedIndex-2) || (selectedIndex == 0 && index == selectedIndex+2)))
-			{
-				size = 'small';
-			}
+			if(size == 'gone' && total > 2 && ((total-1 == selectedIndex && index == selectedIndex-2) || (selectedIndex == 0 && index == selectedIndex+2)))size = 'small';
 			return size;
 		}
 		
@@ -77,7 +74,23 @@
 			 */
 			hashChange: function()
 			{
-				var year = $.deparam.fragment().year || Date.getFullYear();
+				var year = parseInt($.deparam.fragment().year || Date.getFullYear());
+				var selectedIndex = settings.yearsToShow.indexOf(year);
+				if(selectedIndex == 0 || selectedIndex == settings.yearsToShow.length-1)
+				{
+					// remove appropriate left/right arrow
+					if(selectedIndex == 0){
+						// left wall
+						$('.left-selector').fadeOut();
+					}else{
+						// right wall
+						$('.right-selector').fadeOut();
+					}
+				}else{
+					$('.left-selector, .right-selector').fadeIn();
+
+				}
+				
 				$('.date-manager').yearPicker('selectYear', year);
 			}
 		};
