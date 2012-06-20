@@ -74,8 +74,8 @@
 			 */
 			hashChange: function()
 			{
-				var year = parseInt($.deparam.fragment().year || Date.getFullYear());
-				var selectedIndex = settings.yearsToShow.indexOf(year);
+				settings.selectedYear = parseInt($.deparam.fragment().year || Date.getFullYear());
+				var selectedIndex = settings.yearsToShow.indexOf(settings.selectedYear);
 				if(selectedIndex == 0 || selectedIndex == settings.yearsToShow.length-1)
 				{
 					// remove appropriate left/right arrow
@@ -88,10 +88,9 @@
 					}
 				}else{
 					$('.left-selector, .right-selector').fadeIn();
-
 				}
 				
-				$('.date-manager').yearPicker('selectYear', year);
+				$('.date-manager').yearPicker('selectYear', settings.selectedYear);
 			}
 		};
 		

@@ -66,8 +66,8 @@
 		// set defaults for page loaded with no hashtags
 	  var defaultHistoryState = {
 	      "year": 2012, // would come from server side model
-	      "type": "srt0", // default initial selected item
-	      "status": "srs0" // default initial selected item
+	      "type": "apartment", // default initial selected item
+	      "status": "open" // default initial selected item
 	  };
 	  var defaultHistoryParams = {
 	      "yearsToShow": [2008, 2009, 2010, 2011, 2012],
@@ -75,7 +75,7 @@
 	      "filtersElement": $(".filters"),
 	      "filterTypeElement": $("#requestHistoryType"),
 	      "filterStatusElement": $("#requestHistoryStatus"),
-	      "historyElement": $("#history"),
+	      "historyElement": $("#accordions"),
 	      "state": defaultHistoryState
 	  };
 	
@@ -191,155 +191,159 @@
 					<span class="email"> &nbsp; </span>
 				</h2>
 			</fieldset>
-			<div class="accordion discreet-accordion">
-				<h2 rel="000001">
-					<span class="last-updated">4/2/12</span>
-					<span class="request">Garbage Disposal</span>
-					<span class="description">Is getting clogged again. Getting stuck with the most...</span>
-					<span class="status">In Process</span>
-					<a href="dialog-email.html" class="email cta-dialog" title="Contact Us" rel="000001"> &nbsp; </a>
-				</h2>
-				<div>
-					<div class="description-summary">
-						<h3>Reference Id</h3>
-						<p>123456789</p>
+			
+			<div id="accordions">
+				<div class="accordion discreet-accordion" id="open-apartment-2012">
+					<h2 rel="000001">
+						<span class="last-updated">4/2/12</span>
+						<span class="request">Garbage Disposal</span>
+						<span class="description">Is getting clogged again. Getting stuck with the most...</span>
+						<span class="status">In Process</span>
+						<a href="dialog-email.html" class="email cta-dialog" title="Contact Us" rel="000001"> &nbsp; </a>
+					</h2>
+					<div>
+						<div class="description-summary">
+							<h3>Reference Id</h3>
+							<p>123456789</p>
+						</div>
+						<div class="description-summary">
+							<h3>Description</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras rhoncus interdum cursus.</p>
+						</div>
+						<div class="description-summary">
+							<h3>Special Instructions</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras rhoncus interdum cursus.</p>
+						</div>
+						<div class="description-summary">
+							<h3>May we enter?</h3>
+							<p>yes</p>
+						</div>
+						<div class="description-summary">
+							<h3>Pets?</h3>
+							<p>Yes</p>
+						</div>
+						<div class="description-summary">
+							<h3>Alarm?</h3>
+							<p>No</p>
+						</div>
+						<div class="description-summary">
+							<h3>Reported By</h3>
+							<p>Jane Smith</p>
+						</div>
 					</div>
-					<div class="description-summary">
-						<h3>Description</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras rhoncus interdum cursus.</p>
+					<h2 rel="000002">
+						<span class="last-updated">4/2/12</span>
+						<span class="request">Garbage Disposal</span>
+						<span class="description">Its getting clogged again. Getting stuck with the most...</span>
+						<span class="status">In Process</span>
+						<a href="dialog-email.html" class="email cta-dialog" title="Contact Us" rel="000002"> &nbsp; </a>
+					</h2>
+					<div>
+						<div class="description-summary">
+							<h3>Reference Id</h3>
+							<p>123456789</p>
+						</div>
+						<div class="description-summary">
+							<h3>Description</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras rhoncus interdum cursus.</p>
+						</div>
+						<div class="description-summary">
+							<h3>Special Instructions</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras rhoncus interdum cursus.</p>
+						</div>
+						<div class="description-summary">
+							<h3>May we enter?</h3>
+							<p>yes</p>
+						</div>
+						<div class="description-summary">
+							<h3>Pets?</h3>
+							<p>Yes</p>
+						</div>
+						<div class="description-summary">
+							<h3>Alarm?</h3>
+							<p>No</p>
+						</div>
+						<div class="description-summary">
+							<h3>Reported By</h3>
+							<p>Jane Smith</p>
+						</div>
 					</div>
-					<div class="description-summary">
-						<h3>Special Instructions</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras rhoncus interdum cursus.</p>
+					<h2 rel="000003">
+						<span class="last-updated">4/2/12</span>
+						<span class="request">Garbage Disposal</span>
+						<span class="description">Its getting clogged again. Getting stuck with the most...</span>
+						<span class="status">In Process</span>
+						<a href="dialog-email.html" class="email cta-dialog" title="Contact Us" rel="000003"> &nbsp; </a>
+					</h2>
+					<div>
+						<div class="description-summary">
+							<h3>Reference Id</h3>
+							<p>123456789</p>
+						</div>
+						<div class="description-summary">
+							<h3>Description</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras rhoncus interdum cursus.</p>
+						</div>
+						<div class="description-summary">
+							<h3>Special Instructions</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras rhoncus interdum cursus.</p>
+						</div>
+						<div class="description-summary">
+							<h3>May we enter?</h3>
+							<p>yes</p>
+						</div>
+						<div class="description-summary">
+							<h3>Pets?</h3>
+							<p>Yes</p>
+						</div>
+						<div class="description-summary">
+							<h3>Alarm?</h3>
+							<p>No</p>
+						</div>
+						<div class="description-summary">
+							<h3>Reported By</h3>
+							<p>Jane Smith</p>
+						</div>
 					</div>
-					<div class="description-summary">
-						<h3>May we enter?</h3>
-						<p>yes</p>
-					</div>
-					<div class="description-summary">
-						<h3>Pets?</h3>
-						<p>Yes</p>
-					</div>
-					<div class="description-summary">
-						<h3>Alarm?</h3>
-						<p>No</p>
-					</div>
-					<div class="description-summary">
-						<h3>Reported By</h3>
-						<p>Jane Smith</p>
+					<h2 rel="000004">
+						<span class="last-updated">4/2/12</span>
+						<span class="request">Garbage Disposal</span>
+						<span class="description">Its getting clogged again. Getting stuck with the most...</span>
+						<span class="status">In Process</span>
+						<a href="dialog-email.html" class="email cta-dialog" title="Contact Us" rel="000004"> &nbsp; </a>
+					</h2>
+					<div>
+						<div class="description-summary">
+							<h3>Reference Id</h3>
+							<p>123456789</p>
+						</div>
+						<div class="description-summary">
+							<h3>Description</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras rhoncus interdum cursus.</p>
+						</div>
+						<div class="description-summary">
+							<h3>Special Instructions</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras rhoncus interdum cursus.</p>
+						</div>
+						<div class="description-summary">
+							<h3>May we enter?</h3>
+							<p>yes</p>
+						</div>
+						<div class="description-summary">
+							<h3>Pets?</h3>
+							<p>Yes</p>
+						</div>
+						<div class="description-summary">
+							<h3>Alarm?</h3>
+							<p>No</p>
+						</div>
+						<div class="description-summary">
+							<h3>Reported By</h3>
+							<p>Jane Smith</p>
+						</div>
 					</div>
 				</div>
-				<h2 rel="000002">
-					<span class="last-updated">4/2/12</span>
-					<span class="request">Garbage Disposal</span>
-					<span class="description">Its getting clogged again. Getting stuck with the most...</span>
-					<span class="status">In Process</span>
-					<a href="dialog-email.html" class="email cta-dialog" title="Contact Us" rel="000002"> &nbsp; </a>
-				</h2>
-				<div>
-					<div class="description-summary">
-						<h3>Reference Id</h3>
-						<p>123456789</p>
-					</div>
-					<div class="description-summary">
-						<h3>Description</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras rhoncus interdum cursus.</p>
-					</div>
-					<div class="description-summary">
-						<h3>Special Instructions</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras rhoncus interdum cursus.</p>
-					</div>
-					<div class="description-summary">
-						<h3>May we enter?</h3>
-						<p>yes</p>
-					</div>
-					<div class="description-summary">
-						<h3>Pets?</h3>
-						<p>Yes</p>
-					</div>
-					<div class="description-summary">
-						<h3>Alarm?</h3>
-						<p>No</p>
-					</div>
-					<div class="description-summary">
-						<h3>Reported By</h3>
-						<p>Jane Smith</p>
-					</div>
-				</div>
-				<h2 rel="000003">
-					<span class="last-updated">4/2/12</span>
-					<span class="request">Garbage Disposal</span>
-					<span class="description">Its getting clogged again. Getting stuck with the most...</span>
-					<span class="status">In Process</span>
-					<a href="dialog-email.html" class="email cta-dialog" title="Contact Us" rel="000003"> &nbsp; </a>
-				</h2>
-				<div>
-					<div class="description-summary">
-						<h3>Reference Id</h3>
-						<p>123456789</p>
-					</div>
-					<div class="description-summary">
-						<h3>Description</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras rhoncus interdum cursus.</p>
-					</div>
-					<div class="description-summary">
-						<h3>Special Instructions</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras rhoncus interdum cursus.</p>
-					</div>
-					<div class="description-summary">
-						<h3>May we enter?</h3>
-						<p>yes</p>
-					</div>
-					<div class="description-summary">
-						<h3>Pets?</h3>
-						<p>Yes</p>
-					</div>
-					<div class="description-summary">
-						<h3>Alarm?</h3>
-						<p>No</p>
-					</div>
-					<div class="description-summary">
-						<h3>Reported By</h3>
-						<p>Jane Smith</p>
-					</div>
-				</div>
-				<h2 rel="000004">
-					<span class="last-updated">4/2/12</span>
-					<span class="request">Garbage Disposal</span>
-					<span class="description">Its getting clogged again. Getting stuck with the most...</span>
-					<span class="status">In Process</span>
-					<a href="dialog-email.html" class="email cta-dialog" title="Contact Us" rel="000004"> &nbsp; </a>
-				</h2>
-				<div>
-					<div class="description-summary">
-						<h3>Reference Id</h3>
-						<p>123456789</p>
-					</div>
-					<div class="description-summary">
-						<h3>Description</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras rhoncus interdum cursus.</p>
-					</div>
-					<div class="description-summary">
-						<h3>Special Instructions</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras rhoncus interdum cursus.</p>
-					</div>
-					<div class="description-summary">
-						<h3>May we enter?</h3>
-						<p>yes</p>
-					</div>
-					<div class="description-summary">
-						<h3>Pets?</h3>
-						<p>Yes</p>
-					</div>
-					<div class="description-summary">
-						<h3>Alarm?</h3>
-						<p>No</p>
-					</div>
-					<div class="description-summary">
-						<h3>Reported By</h3>
-						<p>Jane Smith</p>
-					</div>
-				</div>
+				
 			</div>
 		</div>
   </div>

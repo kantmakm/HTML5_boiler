@@ -1,3 +1,4 @@
+var monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 var requestHistory = (typeof (requestHistory) == "undefined" || !requestHistory)
  ? function () {
 	return {
@@ -64,15 +65,78 @@ requestHistory.history.setFilterState = (typeof (requestHistory.history.setFilte
 				$(value).val(state.status);
 				break;
 		}
-	})
+	});
 } : requestHistory.history.setFilterState;
-/*
-*/
+/**
+ * this responds to hashChange events
+ */
 requestHistory.history.showHistory = (typeof (requestHistory.history.showHistory) == "undefined" || !requestHistory.history.showHistory)
  ? function (historyState) {
 	// set selected elements on filters in case change is because of URL hash edit, rather than UI interaction (SET SELECTED YEAR OMITTED FOR THIS EXAMPLE)
 	requestHistory.history.setFilterState(historyState);
-	// here would be the ajax call for the history list view (html), just static html for this example
-	var htmlViewFromAjaxCall = "<h2>Service Requests for Year: " + historyState.year + " Type: " + historyState.type + " Status: " + historyState.status + "</h2>";
-	requestHistory.options.historyElement.html(htmlViewFromAjaxCall);
+	var id = historyState.status + '-' + historyState.type + '-' + historyState.year;
+
+	var $accordion = $('.accordion#' + id);
+	// requested accordion doesn't exist. lets get it!
+	if($accordion.length == 0)
+	{
+		$.getJSON('request-history.json', historyState, function(data, response){
+			// alarm: 0
+			// date: 1331856000
+			// description: "Disposal is not grinding properly. Makes a funny joke at my expense when I try to turn it on"
+			// description_cut: "Disposal is not grinding properly. Makes a funny ..."
+			// email: "bar@foo.com"
+			// enter: 1
+			// id: "000012"
+			// instructions: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
+			// name: "Garbage Disposal"
+			// pets: 1
+			// reporter: "Jon Smith"
+			// status: "Repaired Temporarily"
+			if(response == 'success')
+			{
+				var $accordion = $('<div></div>').addClass('accordion').addClass('discreet-accordion').attr('id', id);
+				var $header, $body, date;
+				$.each(data, function(i,e){
+					date = new Date(e.date);
+					$header = $('<h2></h2>').attr('rel', i);
+					$header.append($('<span></span>').addClass('last-updated').html(monthNames[date.getUTCMonth()]));
+					$header.append($('<span></span>').addClass('request').html(e.name));
+					$header.append($('<span></span>').addClass('description').html(e.description_cut));
+					$header.append($('<span></span>').addClass('status').html(e.status));
+					$header.append($('<a href="dialog=ematil.html"> &nbsp; </a>').addClass('email').addClass('cta-email').attr('title', 'Contact Us').attr('rel', i));
+					
+					$content = $('<div></div>');
+					$content.append($('<div></div>').addClass('description-summary').html('<h3>Reference ID</h3><p>' + i + '</p>'));
+					$content.append($('<div></div>').addClass('description-summary').html('<h3>Description</h3><p>' + e.description + '</p>'));
+					$content.append($('<div></div>').addClass('description-summary').html('<h3>Special Instructions</h3><p>' + e.instructions + '</p>'));
+					$content.append($('<div></div>').addClass('description-summary').html('<h3>May we enter?</h3><p>' + (e.enter == 0?'no':'yes') + '</p>'));
+					$content.append($('<div></div>').addClass('description-summary').html('<h3>Pets?</h3><p>' + (e.pets == 0?'no':'yes') + '</p>'));
+					$content.append($('<div></div>').addClass('description-summary').html('<h3>Alarm?</h3><p>' + (e.alarm == 0?'no':'yes') + '</p>'));
+					$content.append($('<div></div>').addClass('description-summary').html('<h3>Reported By</h3><p>' + e.reporter + '</p>'));
+					
+					$accordion.append($header);
+					$accordion.append($content);
+					
+				});
+				// var htmlViewFromAjaxCall = "<h2>Service Requests for Year: " + historyState.year + " Type: " + historyState.type + " Status: " + historyState.status + "</h2>";
+				requestHistory.options.historyElement.find('.accordion').fadeOut(function(){
+					requestHistory.options.historyElement.append($accordion.accordion({
+						autoHeight: false,
+						collapsible: true,
+						active: false
+					}));
+				});
+				// requestHistory.options.historyElement.html(htmlViewFromAjaxCall);
+			}
+		})
+	}
+	// requested accordion exists, lets just show that one!
+	else
+	{
+		$accordion.siblings().fadeOut(function(){
+			$accordion.fadeIn();
+		});
+	}
+	
 } : requestHistory.history.showHistory;
