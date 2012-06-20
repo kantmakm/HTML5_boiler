@@ -79,9 +79,12 @@ fieldset.date-manager {
 	border:0;
 	padding:0;
 	margin:0;
-/*	display: none;*/
+	overflow:hidden;
 	position: relative;
-	width: 1px;
+	width: 0;
+}
+.date-manager .year-selector li.gone a {
+	opacity: 0;
 }
 .date-manager .year-selector li.small {
 	width:71px;
@@ -90,18 +93,17 @@ fieldset.date-manager {
 	width: 587px;
 }
 .date-manager .year-selector li a {
-	padding: 1px 18px 0;
+	position: absolute;
+	top: 1px;
+	left: 18px;
 	text-decoration: none;
 	color: white;
 	font-weight: bold;
-/*	background-image: url(../images/arrow_mask.png);
-	background-repeat: no-repeat;
-	background-position: left bottom; */
 	
-	transition: background-position 0.25s;
-	-o-transition: background-position 0.25s;
-	-moz-transition: background-position 0.25s;
-	-webkit-transition: background-position 0.25s;
+	transition: opacity 0.25s;
+	-o-transition: opacity 0.25s;
+	-moz-transition: opacity 0.25s;
+	-webkit-transition: opacity 0.25s;
 }
 .date-manager .year-selector li.active a {
 	background-position: right bottom;

@@ -87,6 +87,7 @@
 	  $(window).bind("hashchange", function (e) {
 	      // shallow copy the defaultHistoryParams.state before extending with $.deparam.fragment, otherwise the default is updated because of reference assignment
 	      requestHistory.history.showHistory($.extend($.extend({}, defaultHistoryParams.state), $.deparam.fragment()));
+				$('.date-manager').yearPicker('hashChange')
 	  });
 
 	  // first time, trigger the hash change to show the default history or reflect a bookmarked or linked hash
