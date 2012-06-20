@@ -26,7 +26,7 @@ requestHistory.history = (typeof (requestHistory.history) == "undefined" || !req
 		requestHistory.history.setFilterState(options.state);
 		options.filtersElement.find("select").each(function (index, value) {
 			$(value).change(function () {
-				history.onFilterChange($(value));
+				requestHistory.history.onFilterChange($(value));
 			});
 		});
 } : requestHistory.history;
@@ -70,7 +70,6 @@ requestHistory.history.setFilterState = (typeof (requestHistory.history.setFilte
 */
 requestHistory.history.showHistory = (typeof (requestHistory.history.showHistory) == "undefined" || !requestHistory.history.showHistory)
  ? function (historyState) {
-	console.log(historyState)
 	// set selected elements on filters in case change is because of URL hash edit, rather than UI interaction (SET SELECTED YEAR OMITTED FOR THIS EXAMPLE)
 	requestHistory.history.setFilterState(historyState);
 	// here would be the ajax call for the history list view (html), just static html for this example

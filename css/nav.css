@@ -200,3 +200,40 @@ header .dropdown-nav-contents ul ul li:hover {
 	top: 8px;
 	background-position: left bottom;
 }
+
+/**
+ * Footer
+ */
+footer {
+	width: 730px;
+	height: 31px;
+	margin: 0 auto;
+	display: block;
+	background: #000000;
+	background: rgba(0, 0, 0, 0.7);
+	padding: 10px 20px;
+}
+footer .navigation,
+footer .right {
+	float:right;
+}
+footer .navigation a,
+footer .right a {
+	font-size: 14px;
+	font-family: "HelveticaNeueLTStd", Helvetica, Arial, sans-serif;
+	display: block;
+	padding: 5px 0 0 25px;
+}
+footer .right a.cta-dialog {
+	background: url(../images/icon_mail_simple.png) no-repeat scroll 0 8px transparent;
+}
+footer .copyright {
+	padding-top: 5px;
+}
+footer p,
+footer a {
+	color: #C2C2C2;
+	font-size: 10px;
+	text-decoration: none;
+	line-height: 1.5;
+}

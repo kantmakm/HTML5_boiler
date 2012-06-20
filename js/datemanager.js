@@ -23,7 +23,6 @@
 			 */
 			init: function(options)
 			{
-				console.log('init options: %o', options);
 				var colors = ['blue', 'blue-green', 'green'];
 				var thisYear = new Date().getFullYear();
 
@@ -44,7 +43,7 @@
 						size = generateSize(index, settings);
 						var $a = $('<a href="#"></a>').html(value.toString());
 						var $el = $("<li></li>").addClass(colors[parseInt(value)%3]).addClass(size).html($a);
-						$a.click(function() { console.log(settings); settings.onChange(value); return false; });
+						$a.click(function() { settings.onChange(value); return false; });
 						years.append($el);
 					});
 					// bind Events on left/right arrows
@@ -63,9 +62,7 @@
 			 */
 			selectYear: function(year)
 			{
-				console.log(year);
 				settings.selectedYear = parseInt(year);
-				console.log(settings);
 				return $(this).each(function(){
 					var selectedIndex = settings.yearsToShow.indexOf(settings.selectedYear);
 					var $ul = $(this).find('.year-selector ul li');
