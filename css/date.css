@@ -24,20 +24,28 @@ fieldset.date-manager {
 	right:15px;
 	background-position: right bottom;
 }
-.date-manager #year-selector {
+.date-manager .year-selector {
 	position: relative;
 	width: 740px;
 	height: 40px;
 	margin: 0 auto;
 	overflow: hidden;
 }
-.date-manager #year-selector .slider {
+.date-manager .year-selector .slider {
 	width:10000px;
 	position:absolute;
 	top:0;
 	right:0;
 }
-.date-manager #year-selector ul {
+.date-manager .year-selector .arrow {
+	background: url(../images/arrow_mask_long.png) no-repeat scroll 0 0 transparent;
+	position:absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 17px;
+}
+.date-manager .year-selector ul {
 /*	position: absolute;
 	top: 0;
 	right: 0;
@@ -48,32 +56,54 @@ fieldset.date-manager {
 	margin: 0;
 	float:right;
 	display:block;
+	transition: all 0.75s;
+	-o-transition: all 0.75s;
+	-moz-transition: all 0.75s;
+	-webkit-transition: all 0.75s;
+	position: relative;
 }
-.date-manager #year-selector li {
-	display: block;
+.date-manager .year-selector li {
+	display: inline-block;
 	padding: 0 1px;
 	white-space: nowrap;
-	margin: 0;
+	margin: 0 1px;
 	float: left;
-}
-.date-manager #year-selector li a {
 	height: 38px;
-	width: 205px;
-	display: block;
-	padding: 1px 20px 0;
+	transition: all 0.75s;
+	-o-transition: all 0.75s;
+	-moz-transition: all 0.75s;
+	-webkit-transition: all 0.75s;
+	position: relative;
+}
+.date-manager .year-selector li.gone {
+	border:0;
+	padding:0;
+	margin:0;
+/*	display: none;*/
+	position: relative;
+	width: 1px;
+}
+.date-manager .year-selector li.small {
+	width:71px;
+}
+.date-manager .year-selector li.large {
+	width: 587px;
+}
+.date-manager .year-selector li a {
+	padding: 1px 18px 0;
 	text-decoration: none;
 	color: white;
 	font-weight: bold;
-	background-image: url(../images/arrow_mask.png);
+/*	background-image: url(../images/arrow_mask.png);
 	background-repeat: no-repeat;
-	background-position: left bottom;
-
+	background-position: left bottom; */
+	
 	transition: background-position 0.25s;
 	-o-transition: background-position 0.25s;
 	-moz-transition: background-position 0.25s;
 	-webkit-transition: background-position 0.25s;
 }
-.date-manager #year-selector li.active a {
+.date-manager .year-selector li.active a {
 	background-position: right bottom;
 }
 

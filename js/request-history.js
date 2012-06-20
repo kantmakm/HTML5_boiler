@@ -54,13 +54,10 @@ var requestHistory = requestHistory || (function ($) {
 			'yearsToShow': options.yearsToShow,
 			'onChange': history.onYearChange // event handler to call when year selection changes
 		});
-		console.log(options.filtersElement);
-		console.log(options);
 
 		// set initially selected values for filters, and the event handler for filter changes
+		history.setFilterState(options.state);
 		options.filtersElement.find("select").each(function (index, value) {
-	console.log(value)
-			history.setFilterState(options.state);
 			$(value).change(function () {
 				history.onFilterChange($(value));
 			});
