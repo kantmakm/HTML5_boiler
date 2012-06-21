@@ -58,6 +58,6 @@ var Background;
 // The following is the corresponding HTML
 // <!-- The Stretchy Background Image -->
 // <div id="background-image">
-// 	<img class="source-image" src="/images/bkgd_1.jpg" />
+// 	<img class="source-image" src="/images/bkgd_graphite_burst.png" />
 // </div>
 // <script type="text/javascript">Background.init(); </script>

@@ -6,6 +6,12 @@
 body {
 	background-color:#000000;
 }
+body.signed-in {
+	background: url(../images/bkgd_graphite_tile.png) repeat scroll 0 0 transparent;
+}
+/*body.signed-in #background-image{
+	display:none;
+}*/
 a {
 	color:#00929f;
 	text-decoration: none;
