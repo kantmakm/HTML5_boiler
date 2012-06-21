@@ -104,7 +104,7 @@ requestHistory.history.showHistory = (typeof (requestHistory.history.showHistory
 					$header.append($('<span></span>').addClass('request').html(e.name));
 					$header.append($('<span></span>').addClass('description').html(e.description_cut));
 					$header.append($('<span></span>').addClass('status').html(e.status));
-					$header.append($('<a href="dialog=ematil.html"> &nbsp; </a>').addClass('email').addClass('cta-email').attr('title', 'Contact Us').attr('rel', i));
+					$header.append($('<a href="dialog-email.html"> &nbsp; </a>').addClass('email').addClass('cta-dialog').attr('title', 'Contact Us').attr('rel', i));
 					
 					$content = $('<div></div>');
 					$content.append($('<div></div>').addClass('description-summary').html('<h3>Reference ID</h3><p>' + i + '</p>'));
