@@ -225,6 +225,7 @@ footer .right a {
 	padding: 5px 0 0 25px;
 }
 footer .right a.cta-dialog {
+	color: #FFFFFF;
 	background: url(../images/icon_mail_simple.png) no-repeat scroll 0 8px transparent;
 }
 footer .copyright {
