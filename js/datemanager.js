@@ -9,6 +9,7 @@
 			var total = settings.yearsToShow.length;
 			var selectedIndex = settings.yearsToShow.indexOf(settings.selectedYear);
 			var size = (index == selectedIndex)?'large':(index == selectedIndex-1 || index == selectedIndex+1)?'small':'gone';
+			if(size == 'large' && total < 3)size = (total == 1?'xx-':'x-') + size;
 			// selected year is against a wall, which means it will have 2 smalls on 1 side instead of 1 small on both sides
 			if(size == 'gone' && total > 2 && ((total-1 == selectedIndex && index == selectedIndex-2) || (selectedIndex == 0 && index == selectedIndex+2)))size = 'small';
 			return size;
@@ -64,7 +65,7 @@
 					var selectedIndex = settings.yearsToShow.indexOf(settings.selectedYear);
 					var $ul = $(this).find('.year-selector ul li');
 					$ul.each(function(i,e){
-						$(e).removeClass('gone').removeClass('large').removeClass('small').addClass(generateSize(i, settings));
+						$(e).removeClass('gone').removeClass('large').removeClass('x-large').removeClass('xx-large').removeClass('small').addClass(generateSize(i, settings));
 					});
 				});
 			},
@@ -82,7 +83,7 @@
 				{
 					if(selectedIndex == 0){
 						selectedPosition = 0;
-					}else{
+					}else if(settings.yearsToShow.length > 2){
 						selectedPosition = 2;
 					}
 				}

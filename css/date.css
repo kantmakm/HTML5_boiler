@@ -97,6 +97,12 @@ fieldset.date-manager {
 .date-manager .year-selector li.large {
 	width: 587px;
 }
+.date-manager .year-selector li.x-large {
+	width: 662px;
+}
+.date-manager .year-selector li.xx-large {
+	width: 737px;
+}
 .date-manager .year-selector li a {
 	position: absolute;
 	top: 1px;
