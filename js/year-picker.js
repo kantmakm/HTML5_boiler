@@ -1,6 +1,6 @@
 // This is the simplest possible plugin to select years
 // FUNCTIONALITY TO SET AND INDICATE THE CURRENTLY SELECTED YEAR OMITTED FOR THIS EXAMPLE
-$.fn.yearPicker = function(options) {
+$.fn.dateManager = function(options) {
 	var thisYear = new Date().getFullYear();
 
 	var settings = $.extend({

@@ -44,6 +44,11 @@ fieldset.date-manager {
 	right: 0;
 	bottom: 0;
 	height: 17px;
+	transition: all 0.75s;
+	-o-transition: all 0.75s;
+	-moz-transition: all 0.75s;
+	-webkit-transition: all 0.75s;
+	
 }
 .date-manager .year-selector ul {
 /*	position: absolute;

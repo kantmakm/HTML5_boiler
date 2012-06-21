@@ -2,7 +2,7 @@
   // This is the simplest possible plugin to select years
   // FUNCTIONALITY TO SET AND INDICATE THE CURRENTLY SELECTED YEAR OMITTED FOR THIS EXAMPLE
 	var settings; // must be set out here!!!
-	$.fn.yearPicker = function(method) {
+	$.fn.dateManager = function(method) {
 		
 		// shared method for determining which are selected
 		var generateSize = function(index, settings) {
@@ -76,21 +76,42 @@
 			{
 				settings.selectedYear = parseInt($.deparam.fragment().year || Date.getFullYear());
 				var selectedIndex = settings.yearsToShow.indexOf(settings.selectedYear);
+				var $dateManager = $('.date-manager');
+				var selectedPosition = 1;
 				if(selectedIndex == 0 || selectedIndex == settings.yearsToShow.length-1)
 				{
-					// remove appropriate left/right arrow
 					if(selectedIndex == 0){
-						// left wall
-						$('.left-selector').fadeOut();
+						selectedPosition = 0;
 					}else{
-						// right wall
-						$('.right-selector').fadeOut();
+						selectedPosition = 2;
 					}
-				}else{
-					$('.left-selector, .right-selector').fadeIn();
 				}
 				
-				$('.date-manager').yearPicker('selectYear', settings.selectedYear);
+				// hide/show appropriate arrow
+				switch(selectedPosition)
+				{
+					case 0:
+						$dateManager.find('.left-selector').fadeOut();
+						break;
+					case 1:
+						$dateManager.find('.left-selector, .right-selector').fadeIn();
+						break;
+					case 2:
+						$dateManager.find('.right-selector').fadeOut();
+						break;
+				}
+				
+				$dateManager.dateManager('selectYear', settings.selectedYear);
+				// month-selctor exists; move the arrow to december
+				if($dateManager.find('.month-selector').length > 0)
+				{
+					
+				}
+				// month-selector does not exist; move the arrow to the year
+				else
+				{
+					$dateManager.find('.arrow').css('background-position', (selectedPosition*75)-770);
+				}
 			}
 		};
 		

@@ -15,8 +15,8 @@ requestHistory.options = (typeof (requestHistory.options) == "undefined" || !req
  */
 requestHistory.history = (typeof (requestHistory.history) == "undefined" || !requestHistory.history)
  ? function (options) {
-		// initialize the yearPicker component (was DateManager)
-		options.dateElement.yearPicker({
+		// initialize the dateManager component (was DateManager)
+		options.dateElement.dateManager({
 			'selectedYear': options.state.year,
 			'yearsToShow': options.yearsToShow,
 			'onChange': requestHistory.history.onYearChange // event handler to call when year selection changes
@@ -120,7 +120,7 @@ requestHistory.history.showHistory = (typeof (requestHistory.history.showHistory
 					
 				});
 				// var htmlViewFromAjaxCall = "<h2>Service Requests for Year: " + historyState.year + " Type: " + historyState.type + " Status: " + historyState.status + "</h2>";
-				requestHistory.options.historyElement.find('.accordion').fadeOut(function(){
+				requestHistory.options.historyElement.find('.accordion:visible').fadeOut(function(){
 					requestHistory.options.historyElement.append($accordion.accordion({
 						autoHeight: false,
 						collapsible: true,
@@ -134,7 +134,9 @@ requestHistory.history.showHistory = (typeof (requestHistory.history.showHistory
 	// requested accordion exists, lets just show that one!
 	else
 	{
-		$accordion.siblings().fadeOut(function(){
+		console.log('fadeOut');
+		$accordion.siblings(':visible').fadeOut(function(){
+			console.log('fadeIn!')
 			$accordion.fadeIn();
 		});
 	}
