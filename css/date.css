@@ -74,10 +74,10 @@ fieldset.date-manager {
 	margin: 0 1px;
 	float: left;
 	height: 38px;
-	transition: all 0.75s;
-	-o-transition: all 0.75s;
-	-moz-transition: all 0.75s;
-	-webkit-transition: all 0.75s;
+	transition: width 0.75s;
+	-o-transition: width 0.75s;
+	-moz-transition: width 0.75s;
+	-webkit-transition: width 0.75s;
 	position: relative;
 }
 .date-manager .year-selector li.gone {
@@ -131,4 +131,11 @@ fieldset.date-manager {
 }
 .green {
 	background-color: #6eb576;
+}
+#accordions {
+	transition: height 0.25s;
+	-o-transition: height 0.25s;
+	-moz-transition: height 0.25s;
+	-webkit-transition: height 0.25s;
+	
 }

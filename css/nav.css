@@ -231,7 +231,8 @@ footer .copyright {
 	padding-top: 5px;
 }
 footer p,
-footer a {
+footer a,
+footer div {
 	color: #C2C2C2;
 	font-size: 10px;
 	text-decoration: none;
