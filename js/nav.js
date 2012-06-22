@@ -1,34 +1,34 @@
 // Check for "module/category" definition, then add functionality with the "module/category"
 // file: customers.search.dashboard.js
-if (typeof (Global) == "undefined" || !Global) {
-  throw "Global must be previously defined to use nav.js";
+if (typeof (global) === "undefined" || !global) {
+  throw "global must be previously defined to use nav.js";
 }
-// Declare the Global.nav object.
-Global.nav = (typeof (Global.nav) == "undefined" || !Global.nav)
+// Declare the global.nav object.
+global.nav = (typeof (global.nav) === "undefined" || !global.nav)
  ? function () { }
- : Global.nav;
+ : global.nav;
 
 // timeout var; used for setTimeout/clearTimeout
-Global.nav.t = (typeof (Global.nav.t) == "undefined" || !Global.nav.t) ? 0 : Global.nav.t;
+global.nav.t = (typeof (global.nav.t) === "undefined" || !global.nav.t) ? 0 : global.nav.t;
 
 // init method; Bind Events
-Global.nav.init = (typeof (Global.nav.init) == "undefined" || !Global.nav.init)
+global.nav.init = (typeof (global.nav.init) === "undefined" || !global.nav.init)
  ? function () {
 	
 		// Drop the dropdown nav on hover
 		$('ul.dropdown-nav li').hover(function(){
-			clearTimeout(Global.nav.t);
+			clearTimeout(global.nav.t);
 			$(this).parents('.dropdown-nav').addClass('hover');
 			$(this).addClass('hover').siblings().removeClass('siblings');
 			var $ul = $(this).children('ul');
-			Global.nav.t = setTimeout(function(){
+			global.nav.t = setTimeout(function(){
 				$ul.stop().animate({
 					'height': $ul.data('height')
 				});
 			}, 100)
 		}, function(){
 			var $ul = $(this).children('ul');
-			Global.nav.t = setTimeout(function(){
+			global.nav.t = setTimeout(function(){
 				$ul.stop().animate({'height': 0}, function(){
 					$(this).parents('.dropdown-nav').removeClass('hover');
 				});
@@ -41,20 +41,20 @@ Global.nav.init = (typeof (Global.nav.init) == "undefined" || !Global.nav.init)
 		})
 		// if you hover overthe submenu that dropped down, keep it dropped
 		.hover(function(){
-			clearTimeout(Global.nav.t);
+			clearTimeout(global.nav.t);
 			$(this).stop().animate({
 				'height': $(this).data('height')
 			});
 		}, function(){
-			Global.nav.t = setTimeout(function(){
+			global.nav.t = setTimeout(function(){
 				$(this).stop().animate({'height': 0}, function(){
 					$(this).parents('.dropdown-nav').removeClass('hover');
 				});
 			}, 100);
 		});
 	
-} : Global.nav.init;
+} : global.nav.init;
 
 $(function(){
-	Global.nav.init();
+	global.nav.init();
 })

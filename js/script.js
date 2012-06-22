@@ -9,66 +9,34 @@
 /*
 *///
 
-// // Declare the Global object.
-// Global = (typeof (Global) == "undefined" || !Global)
-//  ? function () { }
-//  : Global;
-
-var Global = {
-	
-	vars: {
-		dialog: {
-			serviceRequestSubject: 'This is a test subject for %i',
-			serviceRequestBody: 'Dear Archstone Representative, \n I am writing to you regarding issue %i'
+// Declare the global object.
+global = (typeof (global) === "undefined" || !global)
+ ? function () {
+		global.bindEvents();
+		if($.cookie('archstone_bookmarked') === window.location.pathname)
+		{
+			$('header a.bookmark').html('Bookmarked');
 		}
-	},
-	
-	/* Bind all the jQuery events */
-	bindEvents: function() {
+} : global;
+
+global.bindEvents = (typeof (global.bindEvents) === "undefined" || !global.bindEvents)
+	? function () {
 		// dialog functionality
-		Global.bindDialogs();
+		global.bindEvents.dialog();
 
 		// autoclear for textareas and text-boxes
-		Global.autoclear();
+		global.bindEvents.autoclear();
 		
-		if($('textarea').length > 0)Textarea.bindEvents();
-	},
-	/**
-	 * Display the Email Dialog
-	 * I can refactor this into its own object if need be.
-	 */
-	bindDialogs: function()
-	{
-		// Email Dialog
-		// $('.cta-email').click(function(){
-		// 	var $h2 = $(this).parents('.discreet-accordion h2');
-		// 	var title = $(this).attr('title');
-		// 	$.get('dialog-email.html', {request_id: $h2.attr('rel')}, function(data, response){
-		// 		if(response == 'success')
-		// 		{
-		// 			$('<div></div>').html(data).dialog({
-		// 				resizable: false,
-		// 				height: "auto",
-		// 	      width: "auto",
-		// 				modal:true,
-		// 				title: title
-		// 			});
-		// 		}
-		// 	});
-		// 	return false;
-		// });
-		// $('.cta-lease').click(function(){
-		// 	console.log('HEY!')
-		// 	$('#dialog-lease').dialog({
-		// 		resizable: false,
-		// 		height: "auto",
-		// 	      width: "auto",
-		// 		modal:true,
-		// 		title: $(this).attr('title')
-		// 	});
-		
+		// accordion bindEvents
+		global.bindEvents.accordion();
+
+		if($('textarea').length > 0)global.textarea.bindEvents();
+	} : global.bindEvents;
+
+global.bindEvents.dialog = (typeof (global.bindEvents.dialog) === "undefined" || !global.bindEvents.dialog)
+	? function () {
 		// One Dialog to rule them all
-		$('.cta-dialog').click(function(){
+		$('.cta-dialog').live('click', function(){
 			var title = $(this).attr('title');
 			$.get($(this).attr('href'), 
 				{
@@ -76,7 +44,7 @@ var Global = {
 				'page': window.location.pathname
 				},
 				function(data, response){
-					if(response == 'success')
+					if(response === 'success')
 					{
 						$('<div></div>').html(data).dialog({
 							resizable: false,
@@ -91,37 +59,31 @@ var Global = {
 		});
 
 		$('.ui-dialog-titlebar').removeClass('ui-corner-all').addClass('ui-corner-top');
-		
+	
 		return false;
-	},
-	init: function()
-	{
-		Global.bindEvents();
-		if($.cookie('archstone_bookmarked') == window.location.pathname)
-		{
-			$('header a.bookmark').html('Bookmarked');
-		}
-	},
-	/* Autoclear */
-	autoclear: function(){
+	}
+	: global.bindEvents.dialog;
+
+global.bindEvents.autoclear = (typeof (global.bindEvents.autoclear) === "undefined" || !global.bindEvents.autoclear)
+	? function () {
 		// Auto Clear Form Fields When Active
 		$('input[type=text].autoclear, input[type=password].autoclear, textarea.autoclear')
 		  .click(function(){
-		    if($(this).val() == $(this).data('autoclear'))
+		    if($(this).val() === $(this).data('autoclear'))
 			  {
 			    $(this).removeClass('autoclear');
 				$(this).val('');
 			  }
 			})
 			.focus(function(){
-			  if($(this).val() == $(this).data('autoclear'))
+			  if($(this).val() === $(this).data('autoclear'))
 			    {
 				  $(this).removeClass('autoclear');
 				  $(this).val('');
 				}
 			})
 			.blur(function(){
-			  if($(this).val() == ''){
+			  if($(this).val() === ''){
 			    $(this).addClass('autoclear');
 			    $(this).val($(this).data('autoclear'));
 			  }
@@ -130,14 +92,30 @@ var Global = {
 			  $(this).data('autoclear', $(this).val());
 			});
 	}
-}
+	: global.bindEvents.autoclear;
 
-var Textarea = {
+global.bindEvents.accordion = (typeof (global.bindEvents.accordion) === "undefined" || !global.bindEvents.accordion)
+	? function () {
+		if($('.accordion').length == 0)return false;
+		var is_open = $('.discreet-accordion').length === 0;
+		if(is_open)is_open = 0;
+		$('.accordion').accordion({
+			autoHeight: false,
+			collapsible: true,
+			active: is_open
+		});
+		$('.ui-icon').removeClass('ui-icon-triangle-1-e');
+
+	}
+	: global.bindEvents.accordion;
+
+
+global.textarea = {
 	
 	bindEvents: function()
 	{
-		Textarea.bindCharLimit();
-		Textarea.bindResize();
+		global.textarea.bindCharLimit();
+		global.textarea.bindResize();
 	},
 	/**
 	 * character limit for textareas
@@ -147,7 +125,7 @@ var Textarea = {
 		$('textarea.with-limit').each(function(){
 			var $limit = $(this).parents('.form-element').find('.char-limit');
 			$(this).data('limit', parseInt($limit.html()));
-			$(this).keyup(Textarea.updateCharLimit);
+			$(this).keyup(global.textarea.updateCharLimit);
 		});
 	},
 	updateCharLimit: function()
@@ -162,22 +140,22 @@ var Textarea = {
 			$('button.submit').prop('disabled', true);
 		}else{
 			$charLimit.parent().removeClass('error');
-			if($('.error .char-limit').length == 0)$('button.submit').prop('disabled', false);
+			if($('.error .char-limit').length === 0)$('button.submit').prop('disabled', false);
 		}
 	},
 	/**
-	 * Textarea resize with typing
+	 * global.textarea resize with typing
 	 */
 	bindResize: function()
 	{
-		$('textarea.auto-resize').keyup(Textarea.resizeIt);
+		$('textarea.auto-resize').keyup(global.textarea.resizeIt);
 	},
 	resizeIt: function()
 	{
 	  var str = $(this).val();
 	  var cols = $(this).attr('cols');
 		var minRows = $(this).data('minRows');
-		if(typeof minRows == 'undefined' || minRows == ''){
+		if(typeof minRows === 'undefined' || minRows === ''){
 			minRows = $(this).attr('rows');
 			$(this).data('minRows', minRows);
 		}
@@ -188,25 +166,8 @@ var Textarea = {
 	  if(minRows <= linecount)$(this).attr('rows', linecount);
 	}
 }
-/*
-*///
-var Accordion = {
-	init: function()
-	{
-		var is_open = $('.discreet-accordion').length == 0;
-		if(is_open)is_open = 0;
-		$('.accordion').accordion({
-			autoHeight: false,
-			collapsible: true,
-			active: is_open
-		});
-		$('.ui-icon').removeClass('ui-icon-triangle-1-e');
-	}
-};
-
 
 $(function(){
-	
-	Global.init();
-	if($('.accordion').length == 1)Accordion.init();
+	// magic!
+	global();
 });

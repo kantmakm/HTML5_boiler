@@ -8,10 +8,10 @@
 		var generateSize = function(index, settings) {
 			var total = settings.yearsToShow.length;
 			var selectedIndex = settings.yearsToShow.indexOf(settings.selectedYear);
-			var size = (index == selectedIndex)?'large':(index == selectedIndex-1 || index == selectedIndex+1)?'small':'gone';
-			if(size == 'large' && total < 3)size = (total == 1?'xx-':'x-') + size;
+			var size = (index === selectedIndex)?'large':(index === selectedIndex-1 || index === selectedIndex+1)?'small':'gone';
+			if(size === 'large' && total < 3)size = (total === 1?'xx-':'x-') + size;
 			// selected year is against a wall, which means it will have 2 smalls on 1 side instead of 1 small on both sides
-			if(size == 'gone' && total > 2 && ((total-1 == selectedIndex && index == selectedIndex-2) || (selectedIndex == 0 && index == selectedIndex+2)))size = 'small';
+			if(size === 'gone' && total > 2 && ((total-1 === selectedIndex && index === selectedIndex-2) || (selectedIndex === 0 && index === selectedIndex+2)))size = 'small';
 			return size;
 		}
 		
@@ -46,8 +46,8 @@
 					});
 					// bind Events on left/right arrows
 					$('.left-selector, .right-selector').click(function(){
-						var eq = $(this).hasClass('left-selector')?0:2;
-						var year = $this.find('.year-selector ul li:not(.gone):eq(' + eq + ') a').html();
+						var year = parseInt($('.large a, .x-large a, .xx-large a').html())
+						year = year+($(this).hasClass('left-selector')?-1:1);
 						$.bbq.pushState({ "year": year });
 						return false;
 					})
@@ -71,36 +71,57 @@
 			},
 			/**
 			 * Respond to hashChange
-			 * @note this is assuming only 1 date-manager. serious tweaks would be needed here for multiple
 			 */
 			hashChange: function()
 			{
-				settings.selectedYear = parseInt($.deparam.fragment().year || Date.getFullYear());
+				settings.selectedYear = parseInt($.deparam.fragment().year || new Date().getFullYear());
 				var selectedIndex = settings.yearsToShow.indexOf(settings.selectedYear);
-				var $dateManager = $('.date-manager');
-				var selectedPosition = 1;
-				if(selectedIndex == 0 || selectedIndex == settings.yearsToShow.length-1)
+				var $dateManager = $(this);
+				// Are we against a wall?
+				var arrowPosition = 1;
+				if(selectedIndex === 0 || selectedIndex === settings.yearsToShow.length-1)
 				{
-					if(selectedIndex == 0){
-						selectedPosition = 0;
+					if(selectedIndex === 0){
+						arrowPosition = 0;
 					}else if(settings.yearsToShow.length > 2){
-						selectedPosition = 2;
+						arrowPosition = 2;
+					}
+				}
+				// middle is selected, fadIn both selectors
+				if(arrowPosition === 1 && settings.yearsToShow.length > 2)
+				{
+					$dateManager.find('.left-selector, .right-selector').fadeIn();
+				}
+				// edge is selected, fade in 1 or more selectors
+				else
+				{
+					if(selectedIndex === 0) {
+						$dateManager.find('.left-selector').fadeOut();
+					} else {
+						$dateManager.find('.left-selector').fadeIn();
+					}
+					
+					if(selectedIndex === settings.yearsToShow.length-1) {
+						$dateManager.find('.right-selector').fadeOut();
+					} else {
+						$dateManager.find('.right-selector').fadeIn();
 					}
 				}
 				
 				// hide/show appropriate arrow
-				switch(selectedPosition)
-				{
-					case 0:
-						$dateManager.find('.left-selector').fadeOut();
-						break;
-					case 1:
-						$dateManager.find('.left-selector, .right-selector').fadeIn();
-						break;
-					case 2:
-						$dateManager.find('.right-selector').fadeOut();
-						break;
-				}
+				// switch(arrowPosition)
+				// {
+				// 	case 0:
+				// 		$dateManager.find('.left-selector').fadeOut();
+				// 		break;
+				// 	case 1:
+				// 		$dateManager.find('.left-selector, .right-selector').fadeIn();
+				// 		break;
+				// 	case 2:
+				// 		$dateManager.find('.right-selector').fadeOut();
+				// 		break;
+				// }
+				
 				
 				$dateManager.dateManager('selectYear', settings.selectedYear);
 				// month-selctor exists; move the arrow to december
@@ -111,7 +132,7 @@
 				// month-selector does not exist; move the arrow to the year
 				else
 				{
-					$dateManager.find('.arrow').css('background-position', (selectedPosition*75)-770);
+					$dateManager.find('.arrow').css('background-position', (arrowPosition*75)-770);
 				}
 			}
 		};

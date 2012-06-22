@@ -1,5 +1,5 @@
 var monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-var requestHistory = (typeof (requestHistory) == "undefined" || !requestHistory)
+var requestHistory = (typeof (requestHistory) === "undefined" || !requestHistory)
  ? function () {
 	return {
 		history: this.history
@@ -8,12 +8,12 @@ var requestHistory = (typeof (requestHistory) == "undefined" || !requestHistory)
 /**
  *
  */
-requestHistory.options = (typeof (requestHistory.options) == "undefined" || !requestHistory.options)
+requestHistory.options = (typeof (requestHistory.options) === "undefined" || !requestHistory.options)
  ? {} : requestHistory.options;
 /**
  *
  */
-requestHistory.history = (typeof (requestHistory.history) == "undefined" || !requestHistory.history)
+requestHistory.history = (typeof (requestHistory.history) === "undefined" || !requestHistory.history)
  ? function (options) {
 		// initialize the dateManager component (was DateManager)
 		options.dateElement.dateManager({
@@ -34,13 +34,13 @@ requestHistory.history = (typeof (requestHistory.history) == "undefined" || !req
 /**
  * Clicking a Year triggers this method
  */
-requestHistory.history.onYearChange = (typeof (requestHistory.history.onYearChange) == "undefined" || !requestHistory.history.onYearChange)
+requestHistory.history.onYearChange = (typeof (requestHistory.history.onYearChange) === "undefined" || !requestHistory.history.onYearChange)
  ? function (year) {
 		$.bbq.pushState({ "year": year });
 } : requestHistory.history.onYearChange;
 /*
 */
-requestHistory.history.onFilterChange = (typeof (requestHistory.history.onFilterChange) == "undefined" || !requestHistory.history.onFilterChange)
+requestHistory.history.onFilterChange = (typeof (requestHistory.history.onFilterChange) === "undefined" || !requestHistory.history.onFilterChange)
  ? function (filter) {
 		var val = filter.children("option:selected").val();
 		switch (filter.attr("id")) {
@@ -54,7 +54,7 @@ requestHistory.history.onFilterChange = (typeof (requestHistory.history.onFilter
 } : requestHistory.history.onFilterChange;
 /*
 */
-requestHistory.history.setFilterState = (typeof (requestHistory.history.setFilterState) == "undefined" || !requestHistory.history.setFilterState)
+requestHistory.history.setFilterState = (typeof (requestHistory.history.setFilterState) === "undefined" || !requestHistory.history.setFilterState)
  ? function (state) {
 	requestHistory.options.filtersElement.children("select").each(function (index, value) {
 		switch ($(value).attr("id")) {
@@ -70,7 +70,7 @@ requestHistory.history.setFilterState = (typeof (requestHistory.history.setFilte
 /**
  * this responds to hashChange events
  */
-requestHistory.history.showHistory = (typeof (requestHistory.history.showHistory) == "undefined" || !requestHistory.history.showHistory)
+requestHistory.history.showHistory = (typeof (requestHistory.history.showHistory) === "undefined" || !requestHistory.history.showHistory)
  ? function (historyState) {
 	// set selected elements on filters in case change is because of URL hash edit, rather than UI interaction (SET SELECTED YEAR OMITTED FOR THIS EXAMPLE)
 	requestHistory.history.setFilterState(historyState);
@@ -78,7 +78,7 @@ requestHistory.history.showHistory = (typeof (requestHistory.history.showHistory
 
 	var $accordion = $('.accordion#' + id);
 	// requested accordion doesn't exist. lets get it!
-	if($accordion.length == 0)
+	if($accordion.length === 0)
 	{
 		$.getJSON('request-history.json', historyState, function(data, response){
 			// alarm: 0
@@ -93,7 +93,7 @@ requestHistory.history.showHistory = (typeof (requestHistory.history.showHistory
 			// pets: 1
 			// reporter: "Jon Smith"
 			// status: "Repaired Temporarily"
-			if(response == 'success')
+			if(response === 'success')
 			{
 				var $accordion = $('<div></div>').addClass('accordion').addClass('discreet-accordion').attr('id', id);
 				var $header, $body, date;
@@ -110,9 +110,9 @@ requestHistory.history.showHistory = (typeof (requestHistory.history.showHistory
 					$content.append($('<div></div>').addClass('description-summary').html('<h3>Reference ID</h3><p>' + i + '</p>'));
 					$content.append($('<div></div>').addClass('description-summary').html('<h3>Description</h3><p>' + e.description + '</p>'));
 					$content.append($('<div></div>').addClass('description-summary').html('<h3>Special Instructions</h3><p>' + e.instructions + '</p>'));
-					$content.append($('<div></div>').addClass('description-summary').html('<h3>May we enter?</h3><p>' + (e.enter == 0?'no':'yes') + '</p>'));
-					$content.append($('<div></div>').addClass('description-summary').html('<h3>Pets?</h3><p>' + (e.pets == 0?'no':'yes') + '</p>'));
-					$content.append($('<div></div>').addClass('description-summary').html('<h3>Alarm?</h3><p>' + (e.alarm == 0?'no':'yes') + '</p>'));
+					$content.append($('<div></div>').addClass('description-summary').html('<h3>May we enter?</h3><p>' + (e.enter === 0?'no':'yes') + '</p>'));
+					$content.append($('<div></div>').addClass('description-summary').html('<h3>Pets?</h3><p>' + (e.pets === 0?'no':'yes') + '</p>'));
+					$content.append($('<div></div>').addClass('description-summary').html('<h3>Alarm?</h3><p>' + (e.alarm === 0?'no':'yes') + '</p>'));
 					$content.append($('<div></div>').addClass('description-summary').html('<h3>Reported By</h3><p>' + e.reporter + '</p>'));
 					
 					$accordion.append($header);
@@ -120,12 +120,13 @@ requestHistory.history.showHistory = (typeof (requestHistory.history.showHistory
 					
 				});
 				// var htmlViewFromAjaxCall = "<h2>Service Requests for Year: " + historyState.year + " Type: " + historyState.type + " Status: " + historyState.status + "</h2>";
-				requestHistory.options.historyElement.find('.accordion:visible').fadeOut(function(){
+				requestHistory.options.historyElement.find('.accordion:visible').hide('blind', function(){
 					requestHistory.options.historyElement.append($accordion.accordion({
 						autoHeight: false,
 						collapsible: true,
 						active: false
-					}));
+					}).hide());
+					$accordion.show('blind')
 				});
 				// requestHistory.options.historyElement.html(htmlViewFromAjaxCall);
 			}
@@ -134,10 +135,8 @@ requestHistory.history.showHistory = (typeof (requestHistory.history.showHistory
 	// requested accordion exists, lets just show that one!
 	else
 	{
-		console.log('fadeOut');
-		$accordion.siblings(':visible').fadeOut(function(){
-			console.log('fadeIn!')
-			$accordion.fadeIn();
+		$accordion.siblings(':visible').hide('blind', function(){
+			$accordion.show('blind');
 		});
 	}
 	
