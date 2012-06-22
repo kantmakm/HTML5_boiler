@@ -48,11 +48,11 @@
 
   <!-- scripts concatenated and minified via build script -->
   <script src="js/jquery.cookie.js"></script>
-	<script src="js/browserimage.js"></script>
   <script src="js/plugins.js"></script>
   <script src="js/script.js"></script>
-  <script src="js/yearpicker.js"></script>
-  <script src="js/servicerequest.js"></script>
+	<script src="js/browserimage.js"></script>
+  <script src="js/datemanager.js"></script>
+  <script src="js/request-history.js"></script>
 
   <!-- end scripts -->
 
@@ -62,7 +62,7 @@
 	<div id="background-image">
 		<img class="source-image" src="images/bkgd_1.jpg" >
   </div>
-	<script type="text/javascript">Background.init(); </script><!-- This needs to be here to resize this before the page finishes loading instead of after -->
+	<script type="text/javascript">global.background.init(); </script><!-- This needs to be here to resize this before the page finishes loading instead of after -->
   <header>
 		<div class="primary-nav-contents">
 			<a href="index.html" id="logo"><img src="images/logo.png" width="167" height="38" ></a>
