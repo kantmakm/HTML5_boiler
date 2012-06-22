@@ -87,7 +87,9 @@
 }
 .discreet-accordion-box .discreet-accordion .ui-accordion-content {
 	border: 0;
-	background: none no-repeat scroll 0 0 #e2e2e2;
+	background: none no-repeat scroll 0 0 #EFEFEF;
+	box-shadow: 0 0 15px 0 #999999 inset;
+	font-size: 12px;
 }
 .discreet-accordion-box .last-updated {
 	width:95px;   
@@ -108,9 +110,11 @@
 	background: url(../images/icon_mail.png) no-repeat scroll 0 0 transparent;
 }
 
-.discreet-accordion-box .discreet-accordion {
-	
+.discreet-accordion-box .discreet-accordion h3 {
+	color: #00929F;
+	font-weight: normal;
 }
 .discreet-accordion-box .discreet-accordion {
-	
+	overflow: hidden;
+	position: relative;
 }

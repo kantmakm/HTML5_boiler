@@ -60,4 +60,4 @@ var Background;
 // <div id="background-image">
 // 	<img class="source-image" src="/images/bkgd_graphite_burst.png" />
 // </div>
-// <script type="text/javascript">Background.init(); </script>
+// <script type="text/javascript">Background.init(); </script><!-- This needs to be here to resize this before the page finishes loading instead of after -->

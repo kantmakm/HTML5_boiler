@@ -120,12 +120,13 @@ requestHistory.history.showHistory = (typeof (requestHistory.history.showHistory
 					
 				});
 				// var htmlViewFromAjaxCall = "<h2>Service Requests for Year: " + historyState.year + " Type: " + historyState.type + " Status: " + historyState.status + "</h2>";
-				requestHistory.options.historyElement.find('.accordion:visible').fadeOut(function(){
+				requestHistory.options.historyElement.find('.accordion:visible').hide('blind', function(){
 					requestHistory.options.historyElement.append($accordion.accordion({
 						autoHeight: false,
 						collapsible: true,
 						active: false
-					}));
+					}).hide());
+					$accordion.show('blind')
 				});
 				// requestHistory.options.historyElement.html(htmlViewFromAjaxCall);
 			}
@@ -134,10 +135,8 @@ requestHistory.history.showHistory = (typeof (requestHistory.history.showHistory
 	// requested accordion exists, lets just show that one!
 	else
 	{
-		console.log('fadeOut');
-		$accordion.siblings(':visible').fadeOut(function(){
-			console.log('fadeIn!')
-			$accordion.fadeIn();
+		$accordion.siblings(':visible').hide('blind', function(){
+			$accordion.show('blind');
 		});
 	}
 	

@@ -71,36 +71,57 @@
 			},
 			/**
 			 * Respond to hashChange
-			 * @note this is assuming only 1 date-manager. serious tweaks would be needed here for multiple
 			 */
 			hashChange: function()
 			{
-				settings.selectedYear = parseInt($.deparam.fragment().year || Date.getFullYear());
+				settings.selectedYear = parseInt($.deparam.fragment().year || new Date().getFullYear());
 				var selectedIndex = settings.yearsToShow.indexOf(settings.selectedYear);
-				var $dateManager = $('.date-manager');
-				var selectedPosition = 1;
+				var $dateManager = $(this);
+				// Are we against a wall?
+				var arrowPosition = 1;
 				if(selectedIndex == 0 || selectedIndex == settings.yearsToShow.length-1)
 				{
 					if(selectedIndex == 0){
-						selectedPosition = 0;
+						arrowPosition = 0;
 					}else if(settings.yearsToShow.length > 2){
-						selectedPosition = 2;
+						arrowPosition = 2;
+					}
+				}
+				// middle is selected, fadIn both selectors
+				if(arrowPosition === 1 && settings.yearsToShow.length > 2)
+				{
+					$dateManager.find('.left-selector, .right-selector').fadeIn();
+				}
+				// edge is selected, fade in 1 or more selectors
+				else
+				{
+					if(selectedIndex == 0) {
+						$dateManager.find('.left-selector').fadeOut();
+					} else {
+						$dateManager.find('.left-selector').fadeIn();
+					}
+					
+					if(selectedIndex == settings.yearsToShow.length-1) {
+						$dateManager.find('.right-selector').fadeOut();
+					} else {
+						$dateManager.find('.right-selector').fadeIn();
 					}
 				}
 				
 				// hide/show appropriate arrow
-				switch(selectedPosition)
-				{
-					case 0:
-						$dateManager.find('.left-selector').fadeOut();
-						break;
-					case 1:
-						$dateManager.find('.left-selector, .right-selector').fadeIn();
-						break;
-					case 2:
-						$dateManager.find('.right-selector').fadeOut();
-						break;
-				}
+				// switch(arrowPosition)
+				// {
+				// 	case 0:
+				// 		$dateManager.find('.left-selector').fadeOut();
+				// 		break;
+				// 	case 1:
+				// 		$dateManager.find('.left-selector, .right-selector').fadeIn();
+				// 		break;
+				// 	case 2:
+				// 		$dateManager.find('.right-selector').fadeOut();
+				// 		break;
+				// }
+				
 				
 				$dateManager.dateManager('selectYear', settings.selectedYear);
 				// month-selctor exists; move the arrow to december
@@ -111,7 +132,7 @@
 				// month-selector does not exist; move the arrow to the year
 				else
 				{
-					$dateManager.find('.arrow').css('background-position', (selectedPosition*75)-770);
+					$dateManager.find('.arrow').css('background-position', (arrowPosition*75)-770);
 				}
 			}
 		};
