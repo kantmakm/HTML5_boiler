@@ -68,7 +68,7 @@ var Global = {
 		// 	});
 		
 		// One Dialog to rule them all
-		$('.cta-dialog').click(function(){
+		$('.cta-dialog').live('click', function(){
 			var title = $(this).attr('title');
 			$.get($(this).attr('href'), 
 				{
@@ -188,8 +188,7 @@ var Textarea = {
 	  if(minRows <= linecount)$(this).attr('rows', linecount);
 	}
 }
-/*
-*///
+
 var Accordion = {
 	init: function()
 	{
