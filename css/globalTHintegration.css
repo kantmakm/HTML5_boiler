@@ -33,4 +33,4 @@ label{font-weight:bold;}
 .pad-below{margin-below:10px;}
 
 .content-padding{padding:20px;}
-.active{background: url("../images/bkgd_nav_primary_active.png") no-repeat scroll left 3px transparent;}
+/*.active{background: url("../images/bkgd_nav_primary_active.png") repeat-x scroll left 3px transparent; color:#fff;}*/
