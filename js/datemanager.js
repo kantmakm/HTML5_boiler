@@ -46,8 +46,8 @@
 					});
 					// bind Events on left/right arrows
 					$('.left-selector, .right-selector').click(function(){
-						var eq = $(this).hasClass('left-selector')?0:2;
-						var year = $this.find('.year-selector ul li:not(.gone):eq(' + eq + ') a').html();
+						var year = parseInt($('.large a, .x-large a, .xx-large a').html())
+						year = year+($(this).hasClass('left-selector')?-1:1);
 						$.bbq.pushState({ "year": year });
 						return false;
 					})
