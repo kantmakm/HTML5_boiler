@@ -41,9 +41,9 @@
 
   <!-- scripts concatenated and minified via build script -->
   <script src="js/jquery.cookie.js"></script>
-	<script src="js/browserimage.js"></script>
   <script src="js/plugins.js"></script>
   <script src="js/script.js"></script>
+	<script src="js/browserimage.js"></script>
   <!-- end scripts -->
 
 </head>
@@ -52,7 +52,7 @@
 	<div id="background-image">
 		<img class="source-image" src="images/bkgd_graphite_burst.png" >
   </div>
-	<script type="text/javascript">Background.init(); </script><!-- This needs to be here to resize this before the page finishes loading instead of after -->
+	<script type="text/javascript">global.background.init(); </script><!-- This needs to be here to resize this before the page finishes loading instead of after -->
   <header>
 		<div class="primary-nav-contents">
 			<a href="index.html" id="logo"><img src="images/logo.png" width="167" height="38" ></a>

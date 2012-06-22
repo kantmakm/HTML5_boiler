@@ -1,4 +1,3 @@
-var monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 var requestHistory = (typeof (requestHistory) === "undefined" || !requestHistory)
  ? function () {
 	return {
@@ -25,6 +24,7 @@ requestHistory.history = (typeof (requestHistory.history) === "undefined" || !re
 
 		// set initially selected values for filters, and the event handler for filter changes
 		requestHistory.history.setFilterState(options.state);
+		
 		options.filtersElement.find("select").each(function (index, value) {
 			$(value).change(function () {
 				requestHistory.history.onFilterChange($(value));
@@ -56,7 +56,7 @@ requestHistory.history.onFilterChange = (typeof (requestHistory.history.onFilter
 */
 requestHistory.history.setFilterState = (typeof (requestHistory.history.setFilterState) === "undefined" || !requestHistory.history.setFilterState)
  ? function (state) {
-	requestHistory.options.filtersElement.children("select").each(function (index, value) {
+	requestHistory.options.filtersElement.find("select").each(function (index, value) {
 		switch ($(value).attr("id")) {
 			case requestHistory.options.filterTypeElement.attr("id"):
 				$(value).val(state.type);
@@ -100,7 +100,7 @@ requestHistory.history.showHistory = (typeof (requestHistory.history.showHistory
 				$.each(data, function(i,e){
 					date = new Date(e.date);
 					$header = $('<h2></h2>').attr('rel', i);
-					$header.append($('<span></span>').addClass('last-updated').html(monthNames[date.getUTCMonth()]));
+					$header.append($('<span></span>').addClass('last-updated').html(global.monthNames[date.getUTCMonth()]));
 					$header.append($('<span></span>').addClass('request').html(e.name));
 					$header.append($('<span></span>').addClass('description').html(e.description_cut));
 					$header.append($('<span></span>').addClass('status').html(e.status));
@@ -130,7 +130,7 @@ requestHistory.history.showHistory = (typeof (requestHistory.history.showHistory
 				});
 				// requestHistory.options.historyElement.html(htmlViewFromAjaxCall);
 			}
-		})
+		});
 	}
 	// requested accordion exists, lets just show that one!
 	else

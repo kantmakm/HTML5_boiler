@@ -13,11 +13,10 @@
 global = (typeof (global) === "undefined" || !global)
  ? function () {
 		global.bindEvents();
-		if($.cookie('archstone_bookmarked') === window.location.pathname)
-		{
-			$('header a.bookmark').html('Bookmarked');
-		}
 } : global;
+
+global.monthNames = (typeof (global.monthNames) === "undefined" || !global.monthNames)
+ ? ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'] : global.monthNames;
 
 global.bindEvents = (typeof (global.bindEvents) === "undefined" || !global.bindEvents)
 	? function () {
@@ -165,7 +164,7 @@ global.textarea = {
 	  });
 	  if(minRows <= linecount)$(this).attr('rows', linecount);
 	}
-}
+};
 
 $(function(){
 	// magic!

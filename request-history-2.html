@@ -53,9 +53,9 @@
 
   <!-- scripts concatenated and minified via build script -->
   <script src="js/jquery.cookie.js"></script>
-	<script src="js/browserimage.js"></script>
   <script src="js/plugins.js"></script>
   <script src="js/script.js"></script>
+	<script src="js/browserimage.js"></script>
   <script src="js/nav.js"></script>
   <script src="js/request-history.js"></script>
   <script src="js/datemanager.js"></script>
@@ -107,7 +107,7 @@
 		<img class="source-image" src="images/bkgd_graphite_burst.png" >
   </div>
 	<!-- MJ: This needs to be here to resize this before the page finishes loading instead of after -->
-	<script type="text/javascript">Background.init();</script>
+	<script type="text/javascript">global.background.init();</script>
   <header>
 		<!-- Primary Navigation -->
 		<div class="primary-nav-contents">
