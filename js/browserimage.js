@@ -45,7 +45,7 @@ var Background;
 		
 		init: function()
 		{
-			if($('#background-image').length == 1)
+			if($('#background-image').length === 1)
 			{
 				$(window).resize(function() {
 		  		Background.resizeNow('#background-image');
