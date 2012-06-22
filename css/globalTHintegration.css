@@ -22,8 +22,8 @@
 	border: 1px solid #CCF;	
 	color: #999999;
 	height: 33px;
-	margin-bottom: 20px;
-	padding: 20px 0 5px 50px;
+	margin:0px;
+	padding: 20px 0 5px 20px;
 }
 
 .show-toggle-a{display:block;}
@@ -31,3 +31,6 @@
 
 label{font-weight:bold;}
 .pad-below{margin-below:10px;}
+
+.content-padding{padding:20px;}
+.active{background: url("../images/bkgd_nav_primary_active.png") no-repeat scroll left 3px transparent;}
