@@ -78,26 +78,100 @@
 			<div class="box-shadow-left"> &nbsp; </div><div class="box-shadow-right"> &nbsp; </div>
 			<div >
 				<form method="POST" action="select-a-lease.html">
-					<h1>Choose your new password</h1>
-					<p class="form-note-alert">Your caps lock is on</p><br />
-					<label for="newpassword">New Password</label>
+					<h1 style="text-align:center; font-weight:bold;">Contact Information</h1>
+					<span style="float:right;"><button type="submit" class="submit"><span>Edit</span><span class="end"> &nbsp; </span></button></span>
+					<div class="clear-both"></div>
+					<br>
 					
-					<div style="width:550px;">
-						<div class="left-form-div"><input type="text" name="newpassword" value="" style="background:url(images/icon_check.png) no-repeat right; background-position: 98% 50%;"/></div>
-						<div class="right-form-div form-note-alert"> (6 character minimum)</div>
+					<div class="section-header">
+						My Contact
+					</div>
+					<label for="email">Email Address:</label><span class="form-note"> (for staying in touch)</span>
+					<div class="clear-both"></div>
+					<div class="form-entry">
+						<div class="show-toggle-a left-form-div pad-below">Billy.Bibbit@email.com</div>
+						<div class="left-form-div show-toggle-b"><input type="text" name="email" value="Billy.Bibbith@email.com"/></div>
 					</div>
 					<div class="clear-both"></div>
-					<label for="confirmnewpassword">Confirm New Password</label>
-					<div style="width:550px;">
-						<div  class="left-form-div"><input type="text" name="confirmnewpassword" value="" style=" background:url(images/icon_check.png) no-repeat right; background-position: 98% 50%;"/></div>
-						<div class="right-form-div form-note-alert"> password matches</div>
+					<label for="homephone">Home Phone:</label>
+					<div class="form-entry">
+						<div class="show-toggle-a left-form-div pad-below">555-555-5555</div>
+						<div class="left-form-div show-toggle-b"><input type="text" name="homephone" value="555-555-5555" /></div>
 					</div>
 					<div style="clear:both;"></div>
-					<div class="submit-area-right">
-						<button type="submit" class="submit"><span>Use this password and sign in</span><span class="end"> &nbsp; </span></button>
+					<label for="mobilephone">Mobile Phone:</label>
+					<div class="form-entry">
+						<div class="show-toggle-a left-form-div pad-below">555-555-5555</div>
+						<div class="left-form-div show-toggle-b"><input type="text" name="mobilephone" value="555-555-5555" /></div>
 					</div>
-					<div class="backtosignin">
-						<a href="">< Back to sign in</a>
+					<div style="clear:both;"></div>
+					<div class="section-header">
+						Emergency Contact
+					</div>
+					<label for="ername">Name:</label>
+					<div class="clear-both"></div>
+					<div class="form-entry">
+						<div class="show-toggle-a left-form-div pad-below">Nurse Ratched</div>
+						<div class="left-form-div show-toggle-b"><input type="text" name="ername" value="Nurse Ratched"/></div>
+					</div>
+					<div class="clear-both"></div>
+					<label for="errelationship">Relationship:</label>
+					<div class="clear-both"></div>
+					<div class="form-entry">
+						<div class="show-toggle-a left-form-div pad-below">Personal Nurse</div>
+						<div class="left-form-div show-toggle-b"><input type="text" name="errelationship" value="Personal Nurse"/></div>
+					</div>
+					<div class="clear-both"></div>
+					<label for="erhomephone">Home Phone:</label>
+					<div class="form-entry">
+						<div class="show-toggle-a left-form-div pad-below">666-666-6666</div>
+						<div class="left-form-div show-toggle-b"><input type="text" name="erhomephone" value="666-666-6666" /></div>
+					</div>
+					<div style="clear:both;"></div>
+					<div class="section-header">
+						Employer Contact
+					</div>
+					<label for="employmentstatus">Employment Status:</label>
+					<div class="form-entry">
+						<div class="show-toggle-a left-form-div" pad-below>Employed</div>
+						<div class="left-form-div show-toggle-b"><input type="text" name="employmentstatus" value="Employed" /></div>
+					</div>
+					<div style="clear:both;"></div>					
+					<label for="jobtitle">Job Title:</label>
+					<div class="form-entry">
+						<div class="show-toggle-a left-form-div pad-below">Sourcerer</div>
+						<div class="left-form-div show-toggle-b"><input type="text" name="jobtitle" value="Sourcerer" /></div>
+					</div>
+					<div style="clear:both;"></div>
+					<label for="employername">Employer Name:</label>
+					<div class="form-entry">
+						<div class="show-toggle-a left-form-div pad-below">Star Line</div>
+						<div class="left-form-div show-toggle-b"><input type="text" name="employername" value="Star Line" /></div>
+					</div>
+					<div style="clear:both;"></div>
+					<label for="employerphone">Employer Phone:</label>
+					<div class="form-entry">
+						<div class="show-toggle-a left-form-div pad-below">777-777-7777</div>
+						<div class="left-form-div show-toggle-b"><input type="text" name="employerphone" value="777-777-7777" /></div>
+					</div>
+					<div style="clear:both;"></div>
+					<label for="employeraddress">Address:</label>
+					<div class="form-entry">
+						<div class="show-toggle-a left-form-div pad-below">1600 Pennsylvania Avenue<br>Northwest Washington DC 20500</div>
+						<div class="left-form-div show-toggle-b">
+							<input type="text" name="employeraddress" value="1600 Pennsylvania Avenue" /><br>
+							<input type="text" name="employercity" value="Washington DC" />
+							<select name="employerstate" /><option name="DC">DC</option></select>
+							<input type="text" name="employerzipcode" value="20500" />
+						</div>
+					</div>
+					<div style="clear:both;"></div>
+					
+					
+					<div class="submit-area show-toggle-b">
+						<button type="submit" class="submit"><span>Cancel Changes</span><span class="end"> &nbsp; </span></button>
+						<span style="width:50px;">&nbsp;</span>
+						<button type="submit" class="submit"><span>Save Changes</span><span class="end"> &nbsp; </span></button>
 					</div>					
 				</form>
 			</div>

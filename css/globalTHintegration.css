@@ -5,3 +5,29 @@
 .form-note{font-style:italic; font-size:10px;}
 .form-note-alert{font-style:italic; font-size:10px; color:red;}
 .backtosignin{float:left; padding-top:40px;}
+
+.form-entry{
+	width:550px;
+}
+.left-form-div{
+	float:left; width:400px; padding-bottom:10px;	
+}
+.right-form-div{
+	float:left; width:100px;padding-left:20px;  padding-bottom:10px;
+}
+.clear-both{clear:both;}
+
+.section-header{
+	background: url("../images/bkgd_accordion_header.png") repeat-x scroll 0 0 transparent;
+	border: 1px solid #CCF;	
+	color: #999999;
+	height: 33px;
+	margin-bottom: 20px;
+	padding: 20px 0 5px 50px;
+}
+
+.show-toggle-a{display:block;}
+.show-toggle-b{display:none;}
+
+label{font-weight:bold;}
+.pad-below{margin-below:10px;}
