@@ -3,7 +3,7 @@
 
 /*styles used for registration and login pages.*/
 .form-note{font-style:italic; font-size:10px;}
-.form-note-alert{font-style:italic; font-size:10px; color:red;}
+.form-note-alert{font-style:italic; font-size:10px; color: #FF0000;}
 .backtosignin{float:left; padding-top:40px;}
 
 .form-entry{

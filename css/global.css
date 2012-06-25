@@ -460,6 +460,9 @@ h4 {
 .signin .titled-box {
 	margin: 46px 0 20px;
 }
+#signin .body2 ul {
+	padding: 0;
+}
 #signin .body1 {
 	width:240px;
 	padding-right:10px;
