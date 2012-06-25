@@ -4,20 +4,21 @@
 	$.fn.dateManager = function(method) {
 		var settings;
 		
-		// shared method for determining which are selected
+		/**
+		 * shared method for determining size layout (ie "small small large" vs "small x-large", etc...)
+		 */
 		var generateSize = function(index, settings) {
 			var total = settings.yearsToShow.length;
 			var selectedIndex = settings.yearsToShow.indexOf(settings.selectedYear);
 			var size = (index === selectedIndex) ? 'large' : (index === selectedIndex-1 || index === selectedIndex+1) ? 'small' : 'gone';
-			if(size === 'large' && total < 3)size = (total === 1?'xx-':'x-') + size;
-			// selected year is against a wall, which means it will have 2 smalls on 1 side instead of 1 small on both sides
+			if(size === 'large' && total < 3)size = (total === 1 ? 'xx-' : 'x-') + size;
 			if(size === 'gone' && total > 2 && ((total-1 === selectedIndex && index === selectedIndex-2) || (selectedIndex === 0 && index === selectedIndex+2)))size = 'small';
 			return size;
 		};
 		
 		var methods = {
 			/*
-			 * INIT!
+			 * INITialize!
 			 */
 			init: function(options)
 			{
@@ -75,7 +76,7 @@
 				});
 			},
 			/**
-			 * Respond to setDate
+			 * serviceRequest executes this on hashChange().
 			 */
 			setDate: function(historyState)
 			{
@@ -117,7 +118,7 @@
 				// month-selctor exists; move the arrow to december
 				if($(this).dateManager.settings.hasMonths === true)
 				{
-					console.log('hey!');
+					console.log('hey! lets select some months!');
 				}
 				// month-selector does not exist; move the arrow to the year
 				else
@@ -127,7 +128,9 @@
 			}
 		};
 		
-		// Method calling logic
+		/**
+		 * Method calling logic
+		 */
     if ( methods[method] ) {
       return methods[ method ].apply( this, Array.prototype.slice.call( arguments, 1 ));
     } else if ( typeof method === 'object' || ! method ) {

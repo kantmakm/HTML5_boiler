@@ -51,4 +51,4 @@ global.nav.t = 0;
 
 $(function(){
 	global.nav();
-})
+});
