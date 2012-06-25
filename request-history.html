@@ -70,27 +70,23 @@
 	      "status": "open" // default initial selected item
 	  };
 	  var defaultHistoryParams = {
-	      "yearsToShow": [2010, 2011, 2012],
-	      "dateElement": $(".date-manager"),
-	      "filtersElement": $(".filters"),
-	      "filterTypeElement": $("#requestHistoryType"),
-	      "filterStatusElement": $("#requestHistoryStatus"),
-	      "historyElement": $("#accordions"),
-	      "state": defaultHistoryState
+	      "yearsToShow": 					[2010, 2011, 2012],
+	      "dateElement": 					$(".date-manager"),
+	      "filtersElement": 			$(".filters"),
+	      "filterTypeElement": 		$("#serviceRequestType"),
+	      "filterStatusElement": 	$("#serviceRequestStatus"),
+	      "historyElement": 			$("#accordions"),
+	      "state": 								defaultHistoryState
 	  };
 	
 	
 		// initialize the service request history components
-		requestHistory.history(defaultHistoryParams);
+		serviceRequest.history(defaultHistoryParams);
 
 	  // handle hash change for service request history
 	  $(window).bind("hashchange", function (e) {
 	      // shallow copy the defaultHistoryParams.state before extending with $.deparam.fragment, otherwise the default is updated because of reference assignment
-	      requestHistory.history.showHistory($.extend($.extend({}, defaultHistoryParams.state), $.deparam.fragment()));
-	
-				// This needs to be here or hitting your browsers back button will not change the widget
-				// I tried adding this to the requestHistory.history.showHistory(), but it did not seam to work.
-				$('.date-manager').dateManager('hashChange');
+	      serviceRequest.history.showHistory($.extend($.extend({}, defaultHistoryParams.state), $.deparam.fragment()));
 	  });
 
 	  // first time, trigger the hash change to show the default history or reflect a bookmarked or linked hash
@@ -166,7 +162,7 @@
 				<div class="filters">
 					<label class="form-element-right form-element">
 						<span>Status</span>
-						<select name="requestHistoryStatus" id="requestHistoryStatus">
+						<select name="serviceRequestStatus" id="serviceRequestStatus">
 							<option value="open">Open Requests</option>
 							<option value="close">Closed Requests</option>
 							<option value="all">All Requests</option>
@@ -174,7 +170,7 @@
 					</label>
 					<label class="form-element">
 						<span>Show me</span>
-						<select name="requestHistoryType" id="requestHistoryType">
+						<select name="serviceRequestType" id="serviceRequestType">
 							<option value="apartment">My Apartment</option>
 							<option value="common">Common Area</option>
 							<option value="all">All</option>

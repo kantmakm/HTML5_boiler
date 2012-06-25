@@ -1,8 +1,8 @@
 (function ($) {
   // This is the simplest possible plugin to select years
   // FUNCTIONALITY TO SET AND INDICATE THE CURRENTLY SELECTED YEAR OMITTED FOR THIS EXAMPLE
-	var settings; // must be set out here!!!
 	$.fn.dateManager = function(method) {
+		var settings;
 		
 		// shared method for determining which are selected
 		var generateSize = function(index, settings) {
@@ -25,23 +25,24 @@
 				var thisYear = new Date().getFullYear();
 
 				// set defaults and override with options
-				settings = $.extend({
-					'onChange' : null,
-					'selectedYear' : thisYear,
-					'yearsToShow' : [thisYear]
+				this.dateManager.settings = $.extend({
+					'onChange' : 			null,
+					'selectedYear' : 	thisYear,
+					'yearsToShow' : 	[thisYear],
+					'hasMonths' : 		false
 				}, options);
 				
 				return this.each(function() {
 					var $this = $(this);
 					var $yearSelector = $(this).find('.year-selector .slider');
 					var years = $("<ul>").addClass('clearfix');
-					var selectedIndex = settings.yearsToShow.indexOf(settings.selectedYear);
+					var selectedIndex = $(this).dateManager.settings.yearsToShow.indexOf($(this).dateManager.settings.selectedYear);
 					// bind click events on years
-					$.each(settings.yearsToShow, function(index, value) {
-						var size = generateSize(index, settings);
+					$.each($(this).dateManager.settings.yearsToShow, function(index, value) {
+						var size = generateSize(index, $(this).dateManager.settings);
 						var $a = $('<a href="#"></a>').html(value.toString());
 						var $el = $("<li></li>").addClass(colors[parseInt(value)%3]).addClass(size).html($a);
-						$a.click(function() { settings.onChange(value); return false; });
+						$a.click(function() { $(this).dateManager.settings.onChange(value); return false; });
 						years.append($el);
 					});
 					// bind Events on left/right arrows
@@ -60,34 +61,39 @@
 			 */
 			selectYear: function(year)
 			{
-				settings.selectedYear = parseInt(year);
+				$(this).dateManager.settings.selectedYear = parseInt(year);
 				return $(this).each(function(){
 					var $ul = $(this).find('.year-selector ul li');
 					$ul.each(function(i,e){
-						$(e).removeClass('gone').removeClass('large').removeClass('x-large').removeClass('xx-large').removeClass('small').addClass(generateSize(i, settings));
+						$(e).removeClass('gone')
+							.removeClass('large')
+							.removeClass('x-large')
+							.removeClass('xx-large')
+							.removeClass('small')
+							.addClass(generateSize(i, $(this).dateManager.settings));
 					});
 				});
 			},
 			/**
-			 * Respond to hashChange
+			 * Respond to setDate
 			 */
-			hashChange: function()
+			setDate: function(historyState)
 			{
-				settings.selectedYear = parseInt($.deparam.fragment().year || new Date().getFullYear());
-				var selectedIndex = settings.yearsToShow.indexOf(settings.selectedYear);
+				$(this).dateManager.settings.selectedYear = parseInt(historyState.year || new Date().getFullYear());
+				var selectedIndex = $(this).dateManager.settings.yearsToShow.indexOf($(this).dateManager.settings.selectedYear);
 				var $dateManager = $(this);
 				// Are we against a wall?
 				var arrowPosition = 1;
-				if(selectedIndex === 0 || selectedIndex === settings.yearsToShow.length-1)
+				if(selectedIndex === 0 || selectedIndex === $(this).dateManager.settings.yearsToShow.length-1)
 				{
 					if(selectedIndex === 0){
 						arrowPosition = 0;
-					}else if(settings.yearsToShow.length > 2){
+					}else if($(this).dateManager.settings.yearsToShow.length > 2){
 						arrowPosition = 2;
 					}
 				}
 				// middle is selected, fadIn both selectors
-				if(arrowPosition === 1 && settings.yearsToShow.length > 2)
+				if(arrowPosition === 1 && $(this).dateManager.settings.yearsToShow.length > 2)
 				{
 					$dateManager.find('.left-selector, .right-selector').fadeIn();
 				}
@@ -100,33 +106,18 @@
 						$dateManager.find('.left-selector').fadeIn();
 					}
 					
-					if(selectedIndex === settings.yearsToShow.length-1) {
+					if(selectedIndex === $(this).dateManager.settings.yearsToShow.length-1) {
 						$dateManager.find('.right-selector').fadeOut();
 					} else {
 						$dateManager.find('.right-selector').fadeIn();
 					}
 				}
 				
-				// hide/show appropriate arrow
-				// switch(arrowPosition)
-				// {
-				// 	case 0:
-				// 		$dateManager.find('.left-selector').fadeOut();
-				// 		break;
-				// 	case 1:
-				// 		$dateManager.find('.left-selector, .right-selector').fadeIn();
-				// 		break;
-				// 	case 2:
-				// 		$dateManager.find('.right-selector').fadeOut();
-				// 		break;
-				// }
-				
-				
-				$dateManager.dateManager('selectYear', settings.selectedYear);
+				$dateManager.dateManager('selectYear', $(this).dateManager.settings.selectedYear);
 				// month-selctor exists; move the arrow to december
-				if($dateManager.find('.month-selector').length > 0)
+				if($(this).dateManager.settings.hasMonths === true)
 				{
-					
+					console.log('hey!');
 				}
 				// month-selector does not exist; move the arrow to the year
 				else

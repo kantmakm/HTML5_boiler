@@ -47,7 +47,7 @@ header .primary-nav-contents ul li {
 header .primary-nav-contents ul li a {
 	padding: 30px 30px 2px;
 	height: 45px;
-	color:#666666;
+	color:#444444;
 	display:block;
 	font-family: "HelveticaNeueLTStd", Helvetica, Arial, sans-serif;
 
@@ -124,7 +124,7 @@ header .dropdown-nav-contents ul {
 	padding: 0;
 }
 header .dropdown-nav-contents ul li a {
-	background: none repeat-x scroll 0 0 transparent;
+	background: url(../images/bkgd_nav_dropdown_tile.png) repeat-x scroll 0 40px transparent;
 	z-index: 1004;
 	padding: 10px 30px 10px 0;
 	display: block;
@@ -136,9 +136,19 @@ header .dropdown-nav-contents ul li a {
 	color: #444444;
 	text-align: right;
 	font-weight: bold;
+	
+	transition: 				background 1s;
+	-o-transition: 			background 1s;
+	-moz-transition: 		background 1s;
+	-webkit-transition: background 1s;
+	
 }
 header .dropdown-nav-contents ul.hover li a {
-	background-image: url(../images/bkgd_nav_dropdown_tile.png);
+	background-position: 0 0;
+	transition: 				background 0s;
+	-o-transition: 			background 0s;
+	-moz-transition: 		background 0s;
+	-webkit-transition: background 0s;
 }
 header .dropdown-nav-contents ul li {
 /*	padding: 10px;*/

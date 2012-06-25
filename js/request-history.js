@@ -1,79 +1,82 @@
-var requestHistory = (typeof (requestHistory) === "undefined" || !requestHistory)
+var serviceRequest = (typeof (serviceRequest) === "undefined" || !serviceRequest)
  ? function () {
-	return {
-		history: this.history
-	};
-} : requestHistory;
+	// return {
+	// 	history: this.history
+	// };
+} : serviceRequest;
 /**
  *
  */
-requestHistory.options = (typeof (requestHistory.options) === "undefined" || !requestHistory.options)
- ? {} : requestHistory.options;
+serviceRequest.options = (typeof (serviceRequest.options) === "undefined" || !serviceRequest.options)
+ ? {} : serviceRequest.options;
 /**
  *
  */
-requestHistory.history = (typeof (requestHistory.history) === "undefined" || !requestHistory.history)
+serviceRequest.history = (typeof (serviceRequest.history) === "undefined" || !serviceRequest.history)
  ? function (options) {
 		// initialize the dateManager component (was DateManager)
 		options.dateElement.dateManager({
 			'selectedYear': options.state.year,
-			'yearsToShow': options.yearsToShow,
-			'onChange': requestHistory.history.onYearChange // event handler to call when year selection changes
+			'yearsToShow': 	options.yearsToShow,
+			'onChange': 		serviceRequest.history.onYearChange, // event handler to call when year selection changes
+			'hasMonths': 		options.hasMonths
 		});
-		requestHistory.options = options;
+		serviceRequest.options = options;
 
 		// set initially selected values for filters, and the event handler for filter changes
-		requestHistory.history.setFilterState(options.state);
+		serviceRequest.history.setFilterState(options.state);
 		
 		options.filtersElement.find("select").each(function (index, value) {
 			$(value).change(function () {
-				requestHistory.history.onFilterChange($(value));
+				serviceRequest.history.onFilterChange($(value));
 			});
 		});
-} : requestHistory.history;
+} : serviceRequest.history;
 /**
  * Clicking a Year triggers this method
  */
-requestHistory.history.onYearChange = (typeof (requestHistory.history.onYearChange) === "undefined" || !requestHistory.history.onYearChange)
+serviceRequest.history.onYearChange = (typeof (serviceRequest.history.onYearChange) === "undefined" || !serviceRequest.history.onYearChange)
  ? function (year) {
 		$.bbq.pushState({ "year": year });
-} : requestHistory.history.onYearChange;
+} : serviceRequest.history.onYearChange;
 /*
 */
-requestHistory.history.onFilterChange = (typeof (requestHistory.history.onFilterChange) === "undefined" || !requestHistory.history.onFilterChange)
+serviceRequest.history.onFilterChange = (typeof (serviceRequest.history.onFilterChange) === "undefined" || !serviceRequest.history.onFilterChange)
  ? function (filter) {
 		var val = filter.children("option:selected").val();
 		switch (filter.attr("id")) {
-			case requestHistory.options.filterTypeElement.attr("id"):
+			case serviceRequest.options.filterTypeElement.attr("id"):
 				$.bbq.pushState({ "type": val });
 				break;
-			case requestHistory.options.filterStatusElement.attr("id"):
+			case serviceRequest.options.filterStatusElement.attr("id"):
 				$.bbq.pushState({ "status": val });
 				break;
 		}
-} : requestHistory.history.onFilterChange;
+} : serviceRequest.history.onFilterChange;
 /*
 */
-requestHistory.history.setFilterState = (typeof (requestHistory.history.setFilterState) === "undefined" || !requestHistory.history.setFilterState)
+serviceRequest.history.setFilterState = (typeof (serviceRequest.history.setFilterState) === "undefined" || !serviceRequest.history.setFilterState)
  ? function (state) {
-	requestHistory.options.filtersElement.find("select").each(function (index, value) {
+	serviceRequest.options.filtersElement.find("select").each(function (index, value) {
 		switch ($(value).attr("id")) {
-			case requestHistory.options.filterTypeElement.attr("id"):
+			case serviceRequest.options.filterTypeElement.attr("id"):
 				$(value).val(state.type);
 				break;
-			case requestHistory.options.filterStatusElement.attr("id"):
+			case serviceRequest.options.filterStatusElement.attr("id"):
 				$(value).val(state.status);
 				break;
 		}
 	});
-} : requestHistory.history.setFilterState;
+} : serviceRequest.history.setFilterState;
 /**
- * this responds to hashChange events
+ * this responds to setDate events
  */
-requestHistory.history.showHistory = (typeof (requestHistory.history.showHistory) === "undefined" || !requestHistory.history.showHistory)
+serviceRequest.history.showHistory = (typeof (serviceRequest.history.showHistory) === "undefined" || !serviceRequest.history.showHistory)
  ? function (historyState) {
+	serviceRequest.options.dateElement.dateManager('setDate', historyState);
+
 	// set selected elements on filters in case change is because of URL hash edit, rather than UI interaction (SET SELECTED YEAR OMITTED FOR THIS EXAMPLE)
-	requestHistory.history.setFilterState(historyState);
+	serviceRequest.history.setFilterState(historyState);
 	var id = historyState.status + '-' + historyState.type + '-' + historyState.year;
 
 	var $accordion = $('.accordion#' + id);
@@ -98,9 +101,9 @@ requestHistory.history.showHistory = (typeof (requestHistory.history.showHistory
 				var $accordion = $('<div></div>').addClass('accordion').addClass('discreet-accordion').attr('id', id);
 				var $header, $body, date;
 				$.each(data, function(i,e){
-					date = new Date(e.date);
+					date = new Date(e.date*1000);
 					$header = $('<h2></h2>').attr('rel', i);
-					$header.append($('<span></span>').addClass('last-updated').html(global.monthNames[date.getUTCMonth()]));
+					$header.append($('<span></span>').addClass('last-updated').html((date.getUTCMonth()+1) + "/" + date.getUTCDate() + "/" + date.getUTCFullYear().toString().slice(2)));
 					$header.append($('<span></span>').addClass('request').html(e.name));
 					$header.append($('<span></span>').addClass('description').html(e.description_cut));
 					$header.append($('<span></span>').addClass('status').html(e.status));
@@ -120,15 +123,15 @@ requestHistory.history.showHistory = (typeof (requestHistory.history.showHistory
 					
 				});
 				// var htmlViewFromAjaxCall = "<h2>Service Requests for Year: " + historyState.year + " Type: " + historyState.type + " Status: " + historyState.status + "</h2>";
-				requestHistory.options.historyElement.find('.accordion:visible').hide('blind', function(){
-					requestHistory.options.historyElement.append($accordion.accordion({
+				serviceRequest.options.historyElement.find('.accordion:visible').hide('blind', function(){
+					serviceRequest.options.historyElement.append($accordion.accordion({
 						autoHeight: false,
 						collapsible: true,
 						active: false
 					}).hide());
 					$accordion.show('blind')
 				});
-				// requestHistory.options.historyElement.html(htmlViewFromAjaxCall);
+				// serviceRequest.options.historyElement.html(htmlViewFromAjaxCall);
 			}
 		});
 	}
@@ -140,4 +143,4 @@ requestHistory.history.showHistory = (typeof (requestHistory.history.showHistory
 		});
 	}
 	
-} : requestHistory.history.showHistory;
+} : serviceRequest.history.showHistory;
