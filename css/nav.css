@@ -124,7 +124,7 @@ header .dropdown-nav-contents ul {
 	padding: 0;
 }
 header .dropdown-nav-contents ul li a {
-	background: url(../images/bkgd_nav_dropdown_tile.png) repeat-x scroll 0 -40px transparent;
+	background: url(../images/bkgd_nav_dropdown_tile.png) repeat-x scroll 0 40px transparent;
 	z-index: 1004;
 	padding: 10px 30px 10px 0;
 	display: block;
@@ -136,6 +136,12 @@ header .dropdown-nav-contents ul li a {
 	color: #444444;
 	text-align: right;
 	font-weight: bold;
+	
+	transition: 				background 0.5s;
+	-o-transition: 			background 0.5s;
+	-moz-transition: 		background 0.5s;
+	-webkit-transition: background 0.5s;
+	
 }
 header .dropdown-nav-contents ul.hover li a {
 	background-position: 0 0;
