@@ -30,8 +30,8 @@ global.nav.init = (typeof (global.nav.init) === "undefined" || !global.nav.init)
 			var $ul = $(this).children('ul');
 			global.nav.t = setTimeout(function(){
 				$ul.stop().animate({'height': 0}, function(){
-					$(this).parents('.dropdown-nav').removeClass('hover');
 				});
+				$ul.parents('.dropdown-nav').removeClass('hover');
 			}, 100);
 		});
 		// Go through the dubmenus and save the height so we can drop it like its hot on hover
@@ -54,8 +54,9 @@ global.nav.init = (typeof (global.nav.init) === "undefined" || !global.nav.init)
 				$(this).animate({'height': '0px'}, function(){
 					console.log('yeah!');
 					
-					$(this).parents('.dropdown-nav').removeClass('hover');
 				});
+				$(this).parents('.dropdown-nav').removeClass('hover');
+				
 				
 			}, 100);
 		});
