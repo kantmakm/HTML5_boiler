@@ -47,9 +47,16 @@ global.nav.init = (typeof (global.nav.init) === "undefined" || !global.nav.init)
 			});
 		}, function(){
 			global.nav.t = setTimeout(function(){
-				$(this).stop().animate({'height': 0}, function(){
+				console.log('here?');
+				
+				$(this).stop();
+				console.log('what?');
+				$(this).animate({'height': '0px'}, function(){
+					console.log('yeah!');
+					
 					$(this).parents('.dropdown-nav').removeClass('hover');
 				});
+				
 			}, 100);
 		});
 	
