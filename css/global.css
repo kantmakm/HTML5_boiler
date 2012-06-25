@@ -309,6 +309,7 @@ h4 {
 .list-form .form-element input {
 	padding: 1px 1px 1px 5px;	
 	width:350px;
+	height: 23px;
 }
 #dialog-email textarea {
 	width:420px;
