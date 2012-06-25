@@ -26,9 +26,10 @@
 
 				// set defaults and override with options
 				this.dateManager.settings = $.extend({
-					'onChange' : null,
-					'selectedYear' : thisYear,
-					'yearsToShow' : [thisYear]
+					'onChange' : 			null,
+					'selectedYear' : 	thisYear,
+					'yearsToShow' : 	[thisYear],
+					'hasMonths' : 		false
 				}, options);
 				
 				return this.each(function() {
@@ -64,16 +65,21 @@
 				return $(this).each(function(){
 					var $ul = $(this).find('.year-selector ul li');
 					$ul.each(function(i,e){
-						$(e).removeClass('gone').removeClass('large').removeClass('x-large').removeClass('xx-large').removeClass('small').addClass(generateSize(i, $(this).dateManager.settings));
+						$(e).removeClass('gone')
+							.removeClass('large')
+							.removeClass('x-large')
+							.removeClass('xx-large')
+							.removeClass('small')
+							.addClass(generateSize(i, $(this).dateManager.settings));
 					});
 				});
 			},
 			/**
-			 * Respond to hashChange
+			 * Respond to setDate
 			 */
-			hashChange: function()
+			setDate: function(historyState)
 			{
-				$(this).dateManager.settings.selectedYear = parseInt($.deparam.fragment().year || new Date().getFullYear());
+				$(this).dateManager.settings.selectedYear = parseInt(historyState.year || new Date().getFullYear());
 				var selectedIndex = $(this).dateManager.settings.yearsToShow.indexOf($(this).dateManager.settings.selectedYear);
 				var $dateManager = $(this);
 				// Are we against a wall?
@@ -107,26 +113,11 @@
 					}
 				}
 				
-				// hide/show appropriate arrow
-				// switch(arrowPosition)
-				// {
-				// 	case 0:
-				// 		$dateManager.find('.left-selector').fadeOut();
-				// 		break;
-				// 	case 1:
-				// 		$dateManager.find('.left-selector, .right-selector').fadeIn();
-				// 		break;
-				// 	case 2:
-				// 		$dateManager.find('.right-selector').fadeOut();
-				// 		break;
-				// }
-				
-				
 				$dateManager.dateManager('selectYear', $(this).dateManager.settings.selectedYear);
 				// month-selctor exists; move the arrow to december
-				if($dateManager.find('.month-selector').length > 0)
+				if($(this).dateManager.settings.hasMonths === true)
 				{
-					
+					console.log('hey!');
 				}
 				// month-selector does not exist; move the arrow to the year
 				else
