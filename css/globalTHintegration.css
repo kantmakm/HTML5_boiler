@@ -13,10 +13,10 @@
 	float:left; width:400px; padding-bottom:10px;	
 }
 .right-form-div{
-	float:left; width:100px;padding-left:20px;  padding-bottom:10px;
+	float:left; width:100px;margin-left:40px;  padding-bottom:10px;
 }
 .clear-both{clear:both;}
-
+.float-right{float:right;}
 .section-header{
 	background: url("../images/bkgd_accordion_header.png") repeat-x scroll 0 0 transparent;
 	border: 1px solid #CCF;	
@@ -34,3 +34,8 @@ label{font-weight:bold;}
 
 .content-padding{padding:20px;}
 /*.active{background: url("../images/bkgd_nav_primary_active.png") repeat-x scroll left 3px transparent; color:#fff;}*/
+.textbox-checkmark{background:url(images/icon_check.png) no-repeat right; background-position: 98% 50%;}
+
+/*  --------------------- Account settings  ---------------------------------------*/
+.security-question{width:550px;}
+/*  --------------------- End Account settings  -----------------------------------*/
