@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="css/reset.css"> <!-- Eric Meyer Stylesheet -->
   <link rel="stylesheet" href="css/style.css"> <!-- Default Stylesheet -->
   <link rel="stylesheet" href="css/global.css"> <!-- Added Styles For All Pages -->
+  <link rel="stylesheet" href="css/globalTHintegration.css">
   <link rel="stylesheet" href="css/fonts.css"> <!-- Added Styles For All Pages -->
   <link rel="stylesheet" href="css/jquery.ui.css"> <!-- Added Styles For All Pages -->
 	<!--[if lt IE 9]>
@@ -73,14 +74,13 @@
 </header>
   <div role="main" id="main" class="clearfix">
 		<div id="signin" class="titled-box clearfix">
-			<h1 class="box-title"><span>WELCOME TO myARCHSTONE</span></h1>
+			<h1 class="box-title"><span>Select a lease you would like to open</span></h1>
 			<div class="box-shadow-left"> &nbsp; </div><div class="box-shadow-right"> &nbsp; </div>
 			<div >
 				<form method="POST" action="select-a-lease.html">
-					<h1>Select a lease you would like to open</h1>
-					<p><input type="radio" name="lease1" /> [Apartment Address], [Customer Name], [Community]</p>
-					<p><input type="radio" name="lease1" /> 123 Main St #101, John Smith, Archstone Englewood</p>
-					<p><input type="radio" name="lease1" /> 234 Spruce St #12, John Smith, Archstone Utopia</p>
+					<p class="content-padding"><input type="radio" name="lease1" /> [Apartment Address], [Customer Name], [Community]</p>
+					<p class="content-padding"><input type="radio" name="lease1" /> 123 Main St #101, John Smith, Archstone Englewood</p>
+					<p class="content-padding"><input type="radio" name="lease1" /> 234 Spruce St #12, John Smith, Archstone Utopia</p>
 					
 					<div class="submit-area-right">
 						<button type="submit" class="submit"><span>Continue</span><span class="end"> &nbsp; </span></button>
