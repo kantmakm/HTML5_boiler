@@ -1,19 +1,10 @@
-var serviceRequest = (typeof (serviceRequest) === "undefined" || !serviceRequest)
- ? function () {
-	// return {
-	// 	history: this.history
-	// };
-} : serviceRequest;
+var serviceRequest = function () {};
+serviceRequest.options = {};
+
 /**
- *
+ * init method for request-history page
  */
-serviceRequest.options = (typeof (serviceRequest.options) === "undefined" || !serviceRequest.options)
- ? {} : serviceRequest.options;
-/**
- *
- */
-serviceRequest.history = (typeof (serviceRequest.history) === "undefined" || !serviceRequest.history)
- ? function (options) {
+serviceRequest.history = function (options) {
 		// initialize the dateManager component (was DateManager)
 		options.dateElement.dateManager({
 			'selectedYear': options.state.year,
@@ -31,18 +22,15 @@ serviceRequest.history = (typeof (serviceRequest.history) === "undefined" || !se
 				serviceRequest.history.onFilterChange($(value));
 			});
 		});
-} : serviceRequest.history;
+};
+
 /**
- * Clicking a Year triggers this method
+ * Clicking a Year/changing a filter triggers these methods
  */
-serviceRequest.history.onYearChange = (typeof (serviceRequest.history.onYearChange) === "undefined" || !serviceRequest.history.onYearChange)
- ? function (year) {
+serviceRequest.history.onYearChange = function (year) {
 		$.bbq.pushState({ "year": year });
-} : serviceRequest.history.onYearChange;
-/*
-*/
-serviceRequest.history.onFilterChange = (typeof (serviceRequest.history.onFilterChange) === "undefined" || !serviceRequest.history.onFilterChange)
- ? function (filter) {
+};
+serviceRequest.history.onFilterChange = function (filter) {
 		var val = filter.children("option:selected").val();
 		switch (filter.attr("id")) {
 			case serviceRequest.options.filterTypeElement.attr("id"):
@@ -52,11 +40,12 @@ serviceRequest.history.onFilterChange = (typeof (serviceRequest.history.onFilter
 				$.bbq.pushState({ "status": val });
 				break;
 		}
-} : serviceRequest.history.onFilterChange;
-/*
-*/
-serviceRequest.history.setFilterState = (typeof (serviceRequest.history.setFilterState) === "undefined" || !serviceRequest.history.setFilterState)
- ? function (state) {
+};
+
+/**
+ * this sets the correct filters
+ */
+serviceRequest.history.setFilterState = function (state) {
 	serviceRequest.options.filtersElement.find("select").each(function (index, value) {
 		switch ($(value).attr("id")) {
 			case serviceRequest.options.filterTypeElement.attr("id"):
@@ -67,39 +56,29 @@ serviceRequest.history.setFilterState = (typeof (serviceRequest.history.setFilte
 				break;
 		}
 	});
-} : serviceRequest.history.setFilterState;
+};
 /**
- * this responds to setDate events
+ * this responds to hash Change events
  */
-serviceRequest.history.showHistory = (typeof (serviceRequest.history.showHistory) === "undefined" || !serviceRequest.history.showHistory)
- ? function (historyState) {
-	serviceRequest.options.dateElement.dateManager('setDate', historyState);
-
-	// set selected elements on filters in case change is because of URL hash edit, rather than UI interaction (SET SELECTED YEAR OMITTED FOR THIS EXAMPLE)
-	serviceRequest.history.setFilterState(historyState);
+serviceRequest.history.showHistory = function (historyState) {
 	var id = historyState.status + '-' + historyState.type + '-' + historyState.year;
-
 	var $accordion = $('.accordion#' + id);
+	
+	// animate the dateManager
+	serviceRequest.options.dateElement.dateManager('setDate', historyState);
+	// set the correct filter
+	serviceRequest.history.setFilterState(historyState);
+	
 	// requested accordion doesn't exist. lets get it!
 	if($accordion.length === 0)
 	{
+		// make the JSON call to pull the accordion's data
 		$.getJSON('request-history.json', historyState, function(data, response){
-			// alarm: 0
-			// date: 1331856000
-			// description: "Disposal is not grinding properly. Makes a funny joke at my expense when I try to turn it on"
-			// description_cut: "Disposal is not grinding properly. Makes a funny ..."
-			// email: "bar@foo.com"
-			// enter: 1
-			// id: "000012"
-			// instructions: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
-			// name: "Garbage Disposal"
-			// pets: 1
-			// reporter: "Jon Smith"
-			// status: "Repaired Temporarily"
 			if(response === 'success')
 			{
 				var $accordion = $('<div></div>').addClass('accordion').addClass('discreet-accordion').attr('id', id);
 				var $header, $body, date;
+				// build each row and append it to the $accordion (which will be our future accordion)
 				$.each(data, function(i,e){
 					date = new Date(e.date*1000);
 					$header = $('<h2></h2>').attr('rel', i);
@@ -122,7 +101,7 @@ serviceRequest.history.showHistory = (typeof (serviceRequest.history.showHistory
 					$accordion.append($content);
 					
 				});
-				// var htmlViewFromAjaxCall = "<h2>Service Requests for Year: " + historyState.year + " Type: " + historyState.type + " Status: " + historyState.status + "</h2>";
+				// animate the old accordions out and initialize/animate the new one in 
 				serviceRequest.options.historyElement.find('.accordion:visible').hide('blind', function(){
 					serviceRequest.options.historyElement.append($accordion.accordion({
 						autoHeight: false,
@@ -131,7 +110,6 @@ serviceRequest.history.showHistory = (typeof (serviceRequest.history.showHistory
 					}).hide());
 					$accordion.show('blind')
 				});
-				// serviceRequest.options.historyElement.html(htmlViewFromAjaxCall);
 			}
 		});
 	}
@@ -143,4 +121,4 @@ serviceRequest.history.showHistory = (typeof (serviceRequest.history.showHistory
 		});
 	}
 	
-} : serviceRequest.history.showHistory;
+};

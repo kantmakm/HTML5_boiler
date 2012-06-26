@@ -1,3 +1,4 @@
+@charset "utf-8";
 header {
 	text-align:center;
 	position:relative;
@@ -177,10 +178,10 @@ header .dropdown-nav-contents ul ul {
 	-webkit-transition: box-shadow 0.5s;
 }
 header .dropdown-nav-contents ul li:hover ul {
-	box-shadow: 				0 0 5px 1px #000000;
-	-o-box-shadow: 			0 0 5px 1px #000000;
-	-moz-box-shadow: 		0 0 5px 1px #000000;
-	-webkit-box-shadow: 0 0 5px 1px #000000;
+	box-shadow: 				0 0 6px 1px rgba(0,0,0,0.7);
+	-o-box-shadow: 			0 0 6px 1px rgba(0,0,0,0.7);
+	-moz-box-shadow: 		0 0 6px 1px rgba(0,0,0,0.7);
+	-webkit-box-shadow: 0 0 6px 1px rgba(0,0,0,0.7);
 }
 header .dropdown-nav-contents ul ul li {
 	z-index: 1003;
