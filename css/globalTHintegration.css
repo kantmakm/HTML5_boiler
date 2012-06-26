@@ -17,6 +17,7 @@
 }
 .clear-both{clear:both;}
 .float-right{float:right;}
+.float-left{float:left;}
 .section-header{
 	background: url("../images/bkgd_accordion_header.png") repeat-x scroll 0 0 transparent;
 	border: 1px solid #CCF;	
@@ -30,12 +31,90 @@
 .show-toggle-b{display:none;}
 
 label{font-weight:bold;}
-.pad-below{margin-below:10px;}
+.pad-below{margin-bottom:10px;}
 
 .content-padding{padding:20px;}
 /*.active{background: url("../images/bkgd_nav_primary_active.png") repeat-x scroll left 3px transparent; color:#fff;}*/
-.textbox-checkmark{background:url(images/icon_check.png) no-repeat right; background-position: 98% 50%;}
+.textbox-checkmark{background:url(images/icon_check.png) no-repeat 98% 50% transparent;}
 
 /*  --------------------- Account settings  ---------------------------------------*/
 .security-question{width:550px;}
 /*  --------------------- End Account settings  -----------------------------------*/
+
+
+/*  --------------------- Account Summary  ---------------------------------------*/
+.top-box{width:380px; background-color:#666; height:225px;}
+.top-box .title{height:50px; background: #ffffff; padding-top:20px; padding-left:20px;}
+.top-box .title .pad-top{
+	position: relative; 
+	top: 5px;
+	font-family: "HelveticaNeueLTStd", Helvetica, Arial, sans-serif;
+	font-size: 22px;
+	text-transform: uppercase;
+	font-color: #444444;
+	}
+.top-box .current-bg{background:url(../images/bkgd_greyCurrentBal.png) no-repeat; height:100px; 
+	font-family: "HelveticaNeueLTStd", Helvetica, Arial, sans-serif;
+	font-size: 50px;
+	text-transform: uppercase;
+	color:#fff;
+	text-align:center;
+	position:relative;	
+}
+.top-box .current-bg .position-price{padding-top:15px;}
+.top-box .teal-toolbar{background: url(../images/bkgd_tealToolbar.png) repeat-x; 
+	padding:2px; 
+	padding-left:20px;
+	padding-right:15px;
+	color:#FFF; 
+	font-family: "HelveticaNeueLTStd", Helvetica, Arial, sans-serif;
+	font-size: 16 px;
+	text-transform: standard;
+}
+.top-box .teal-toolbar a{color:#FFF;}
+.circle-arrow{padding-bottom:5px;}
+
+
+.lease-container{
+	position:relative;
+	border:1px solid red;
+}
+.lease-date{
+	padding:10px 20px 0px 0px;
+	font-family: Helvetica;
+	font-size: 12px;
+	text-transform: standard;
+	font-color: #444444;
+	font-weight: regular;
+}
+.lease-bg{
+	background:url(../images/bkgd_greyLease.png) no-repeat; height:100px; 
+	color:white;
+	
+}
+.lease-positioning{
+	text-align:center;
+	font-family: "HelveticaNeueLTStd", Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	text-transform: standard;
+	font-color: white;
+}
+.claendar-holder{
+	width:170px;
+	text-align:center;
+}
+.left-calendar-flip{background:url(../images/flip-calendar-months.png) no-repeat;
+	height:78px;
+	width:84px;
+}
+.right-calendar-flip{background:url(../images/flip-calendar-days.png) no-repeat;
+	height:78px;
+	width:84px;
+}
+.view-lease-toolbar{
+	position:absolute;
+	bottom: 0px;
+}
+/*  --------------------- End Account Summary  -----------------------------------*/
+
+
