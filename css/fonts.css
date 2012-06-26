@@ -21,40 +21,47 @@
 	font-family: "HelveticaNeueLTStd", Helvetica, Arial, sans-serif;
 	font-size: 22px;
 	text-transform: uppercase;
-	font-color: #444444;
+	color: #444444;
 }
 .title-font{
 	font-family: "HelveticaNeueLTStd", Helvetica, Arial, sans-serif;
 	font-size: 16px;
 	text-transform: standard;
-	font-color: #444444;
+	color: #444444;
 }
 .body-font-12{
 	font-family: Helvetica;
 	font-size: 12px;
 	text-transform: standard;
-	font-color: #444444;
+	color: #444444;
+	font-weight: regular;
+}
+.body-font-14{
+	font-family: Helvetica;
+	font-size: 14px;
+	text-transform: standard;
+	color: #444444;
 	font-weight: regular;
 }
 .body-font-16{
 	font-family: Helvetica;
 	font-size: 16px;
 	text-transform: standard;
-	font-color: #444444;
+	color: #444444;
 	font-weight: regular;
 }
 .body-font-16-teal{
 	font-family: Helvetica;
 	font-size: 16px;
 	text-transform: standard;
-	font-color: #00929e;
+	color: #00929e;
 	font-weight: regular;
 }
-.body-font-12-teal{
+.body-font-14-teal{
 	font-family: Helvetica;
 	font-size: 12px;
 	text-transform: standard;
-	font-color: #00929e;
+	color: #00929e;
 	font-weight: regular;
 }
 
