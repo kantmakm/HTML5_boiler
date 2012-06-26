@@ -26,6 +26,7 @@
   <link rel="stylesheet" href="css/globalTHintegration.css">
   <link rel="stylesheet" href="css/fonts.css"> <!-- Added Styles For All Pages -->
   <link rel="stylesheet" href="css/jquery.ui.css"> <!-- Added Styles For All Pages -->
+  <link rel="stylesheet" href="css/forms.css">
 	<!--[if lt IE 9]>
 	  <link rel="stylesheet" href="css/ie.css">
 	<![endif]-->
@@ -87,24 +88,24 @@
 					
 						<label for="password">Password</label>					
 						<div style="width:550px;">
-							<div class="left-form-div"><input type="text" name="password" value="" class="textbox-checkmark"/></div>
-							<div class=" right-form-div form-note-alert"> (6 character minimum)</div>
+							<div style="float:left; width:400px;"><input type="text" name="password" value="" style="background:url(images/icon_check.png) no-repeat right; background-position: 98% 50%;"/></div>
+							<div style="float:left; width:100px;padding-left:20px;" class="form-note-alert"> (6 character minimum)</div>
 						</div>
-						<div  class="clear-both"></div>
+						<div style="clear:both;"></div>
 						<label for="confirmnpassword">Confirm Password</label>
 						<div style="width:550px;">
-							<div class="left-form-div"><input type="text" name="confirmnpassword" value="" class="textbox-checkmark"/></div>
-							<div class=" right-form-div form-note-alert"> password matches</div>
+							<div style="float:left; width:400px;"><input type="text" name="confirmnpassword" value="" style=" background:url(images/icon_check.png) no-repeat right; background-position: 98% 50%;"/></div>
+							<div style="float:left; width:100px;padding-left:20px;" class="form-note-alert"> password matches</div>
 						</div>
-						<div class="clear-both"></div>
+						<div style="clear:both;"></div>
 						<hr>
 						<h2>Select and answer security question(s)</h2>
 						<hr>
 						<p class="form-note">(You'll use these if you forget your password)</p><br>
 					
 						<!-- ---------------------- -->
-						<div class="security-question">
-							<div  class="left-form-div">
+						<div style="width:550px;">
+							<div style="float:left; width:400px;">
 								<label for="securityQuestion1">Security Question</label>	
 								<select name="securityQuestion1">
 									<option  value="What city were you born in?">What was your first car?</option>
@@ -117,16 +118,16 @@
 									<option  value="What city were you born in?">What is your mother's maiden name?</option>								
 								</select>
 							</div>
-							<div class="form-note-alert right-form-div"> you must always have one security question</div>						
-							<div class="clear-both"></div>
-							<br>
-							<label for="securityAnswer1">Security Question Answer</label>					
-							<input type="text" name="securityAnswer1" value="Denver" />	
-						</div>				
+							<div style="float:left; width:100px;margin-left:40px;" class="form-note-alert"> you must always have one security question</div>
+						</div>
+						<div style="clear:both;"></div>
+						<br>
+						<label for="securityAnswer1">Security Question Answer</label>					
+						<input type="text" name="securityAnswer1" value="Denver" />					
 						<!-- ---------------------- -->					
 						<label for="securityQuestion2">Security Question</label>					
-						<div class="security-question">
-							<div class="left-form-div">
+						<div style="width:550px;">
+							<div style="float:left; width:400px;">
 								<select name="securityQuestion2">
 									<option  value="What city were you born in?">What was your first car?</option>
 									<option  value="What city were you born in?">What was the first street you lived on?</option>
@@ -138,17 +139,17 @@
 									<option  value="What city were you born in?">What is your mother's maiden name?</option>								
 								</select>
 							</div>
-							<div class="form-note-alert right-form-div"></div>						
-							<div class="clear-both"></div>
-							<br>
-							<label for="securityAnswer2">Security Question Answer</label>					
-							<input type="text" name="securityAnswer2" value="Michael"/>
+							<div style="float:left; width:100px;padding-left:20px;" class="form-note-alert"></div>
 						</div>
-						
-						<button type="submit" class="submit float-right"><span>Remove</span></button>					
-						<div class="clear-both"></div>
+						<div style="clear:both;"></div>
+						<br>
+						<label for="securityAnswer2">Security Question Answer</label>					
+						<input type="text" name="securityAnswer2" value="Michael"/>
+						<!-- ---------------------- -->
+						<button style="float:right" type="submit" class="submit"><span>Remove</span><span class="end"> &nbsp; </span></button>					
+						<div style="clear:both;"></div>
 						<hr>
-						<a href=""><img src="images/button_plus.png"/> Add security question</a>
+						<img src="images/button_plus.png"/> Add security question
 						<hr>
 						<div class=" submit-area">
 							<button type="submit" class="submit"><span>Create my account</span><span class="end"> &nbsp; </span></button>

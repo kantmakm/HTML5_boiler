@@ -25,6 +25,7 @@
   <link rel="stylesheet" href="css/global.css"> <!-- Added Styles For All Pages -->
   <link rel="stylesheet" href="css/fonts.css"> <!-- Added Styles For All Pages -->
   <link rel="stylesheet" href="css/jquery.ui.css"> <!-- Added Styles For All Pages -->
+  <link rel="stylesheet" href="css/forms.css">
 	<!--[if lt IE 9]>
 	  <link rel="stylesheet" href="css/ie.css">
 	<![endif]-->
@@ -85,8 +86,7 @@
 			<div class="body2">
 				<form method="POST" action="select-a-lease.html">
 					<h3>Please Sign In</h3>
-					<p class="error"> &nbsp;Whoops! We didn’t recognize your username or password. </p>
-					<ul>
+					<ul class="form-with-validation">
 						<li><input type="text" class="autoclear" name="email" id="email" value="Email Address"></li>
 						<li><input type="password" class="autoclear" name="password" id="password" value="password"></li>
 					</ul>
