@@ -26,7 +26,7 @@ if (typeof (global) === "undefined" || !global) {
 		{
 			return $(target).each(function(){
 				//Gather browser dimensions
-				var browserwidth = $(window).width();
+				var browserwidth = $(window).width()+30;
 				var browserheight = $(window).height();
 				//Resize image to proper ratio
 				if ((browserheight/browserwidth) > global.background.ratio) {
@@ -41,7 +41,7 @@ if (typeof (global) === "undefined" || !global) {
 				    $(this).children().height(browserwidth * global.background.ratio);
 				}
 				//Make sure the image stays center in the window
-				$(this).children().css('left', (browserwidth - $(this).width())/2);
+				$(this).children().css('left', ((browserwidth - $(this).width())/2)-15);
 				$(this).children().css('top', (browserheight - $(this).height())/2);
 			});
 		},
