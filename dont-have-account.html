@@ -55,6 +55,9 @@
 	<script src="js/browserimage.js"></script>
   <script src="js/nav.js"></script>
 
+	<!-- Needed for autocomplete -->
+  <script src="js/account-register.js"></script>
+
   <!-- end scripts -->
 
 </head>
@@ -82,8 +85,8 @@
 					<p class="form-note">Please fill out the following information and we'll send you an email to activate your account</p>
 					<ul class="form-with-validation">
 						<li><input type="text" name="email" value="Email Address" class="autoclear"></li>
-						<li><input type="text" name="community" value="Your Community" class="autoclear"></li>
-						<li><input type="text" name="address" value="Your Address" class="autoclear"></li>
+						<li><input type="text" name="community" value="Your Community" class="autoclear" id="autocomplete-community"></li>
+						<li><input type="text" name="address" value="Your Address" class="autoclear" id="autocomplete-address"></li>
 					</ul>
 					<div class="submit-area-right">
 						<button type="submit" class="submit"><span>Send</span><span class="end"> &nbsp; </span></button>

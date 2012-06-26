@@ -1,5 +1,5 @@
 if (typeof (global) === "undefined" || !global) {
-  throw "global must be previously defined to use nav.js";
+  throw "global must be previously defined to use browserimage.js";
 }
 
 // This is adapted from:
