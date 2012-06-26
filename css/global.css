@@ -125,11 +125,7 @@ button.submit[disabled] span.end {
 }
 input[type=text],
 input[type=password],
-<<<<<<< HEAD
-input[type=email] {	
-=======
 input[type=email] {
->>>>>>> 62ff1b29dcb6852b271f23b8da3ecf5a2746d3c4
 	box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.25) inset;
 	width: 100%;
 	border-radius: 2px;
