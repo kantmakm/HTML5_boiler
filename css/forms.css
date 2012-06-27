@@ -25,3 +25,36 @@ ul.form-with-validation .ui-state-error-text {
 	padding-bottom: 40px;
 	display:block;
 }
+/* Styled Select Boxes */
+.select-wrapper{
+	background: url(../images/icon_dropdown.png) no-repeat scroll right 5px transparent;
+	display: inline-block;
+	padding: 0 0 0 4px;
+	position: relative;
+	height: 24px;
+	border: 0;
+}
+
+.select-wrapper label {
+	color: #333;
+	padding: 4px 10px 5px 5px;
+/*	background: url(../images/icon_dropdown.png) no-repeat scroll right -24px transparent;*/
+	float: left;
+	margin-right: -3px;
+	min-height:14px;
+}
+.select-wrapper select {
+	-webkit-appearance: none;
+	-khtml-appearance:none;
+	margin: 0;
+	opacity: 0;
+	filter: alpha(opacity=0);
+	z-index: 9999999;
+	outline: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 100%;
+	min-width:100%;
+}

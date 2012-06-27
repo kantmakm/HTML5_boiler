@@ -123,6 +123,7 @@ button.submit[disabled] span.end {
 .form-element {
 	padding-bottom:20px;
 }
+.select-wrapper label,
 input[type=text],
 input[type=password],
 input[type=email] {
