@@ -27,12 +27,13 @@ ul.form-with-validation .ui-state-error-text {
 }
 /* Styled Select Boxes */
 .select-wrapper{
-	background: url(../images/icon_dropdown.png) no-repeat scroll right 5px transparent;
+	background: url(../images/icon_dropdown.png) no-repeat scroll right center transparent;
 	display: inline-block;
-	padding: 0 0 0 4px;
+	padding: 0 10px 0 0;
 	position: relative;
-	height: 24px;
 	border: 0;
+	vertical-align: bottom;
+	margin-bottom: -5px;
 }
 
 .select-wrapper label {
