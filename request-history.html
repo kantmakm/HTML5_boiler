@@ -18,8 +18,7 @@
   <!-- Mobile viewport optimized: h5bp.com/viewport -->
   <meta name="viewport" content="width=device-width">
 
-  <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
-
+	<!-- Use this in all pages -->
   <link rel="stylesheet" href="css/reset.css"> <!-- Eric Meyer Stylesheet -->
   <link rel="stylesheet" href="css/style.css"> <!-- Default Stylesheet -->
   <link rel="stylesheet" href="css/jquery.ui.css"> <!-- Added Styles For All Pages -->
@@ -33,6 +32,10 @@
 	<!--[if IE 9]>
 	  <link rel="stylesheet" href="css/ie9.css">
 	<![endif]-->
+	
+	<!-- Specific to this page -->
+	<link rel="stylesheet" href="css/date.css"> <!-- Added Styles For the datemanager Pages -->
+	
 
 	<!-- Use this in all pages -->
   <script src="js/libs/modernizr-2.5.3.min.js"></script>
@@ -47,8 +50,6 @@
 	<!-- Specific to this page -->
   <script src="js/service-request.js"></script>
   <script src="js/datemanager.js"></script>
-	<link rel="stylesheet" href="css/date.css"> <!-- Added Styles For the datemanager Pages -->
-
 	<script>
 	$(function(){
 		
@@ -74,7 +75,6 @@
 
 	  // handle hash change for service request history
 	  $(window).bind("hashchange", function (e) {
-	      // shallow copy the defaultHistoryParams.state before extending with $.deparam.fragment, otherwise the default is updated because of reference assignment
 	      serviceRequest.history.showHistory($.extend($.extend({}, defaultHistoryParams.state), $.deparam.fragment()));
 	  });
 

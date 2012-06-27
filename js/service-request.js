@@ -49,10 +49,12 @@ serviceRequest.history.setFilterState = function (state) {
 	serviceRequest.options.filtersElement.find("select").each(function (index, value) {
 		switch ($(value).attr("id")) {
 			case serviceRequest.options.filterTypeElement.attr("id"):
-				$(value).val(state.type);
+				$(value).val(state.type)
+				$(value).siblings('label').html($(value).find(':selected').html());
 				break;
 			case serviceRequest.options.filterStatusElement.attr("id"):
 				$(value).val(state.status);
+				$(value).siblings('label').html($(value).find(':selected').html());
 				break;
 		}
 	});
