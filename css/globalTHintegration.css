@@ -98,16 +98,17 @@ label{font-weight:bold;}
 	font-size: 16px;
 	text-transform: standard;
 	font-color: white;
+	padding-top:20px;
 }
 .claendar-holder{
 	width:170px;
 	text-align:center;
 }
-.left-calendar-flip{background:url(../images/flip-calendar-months.png) no-repeat;
+.left-calendar-flip{background:url(../images/bkgnd_calendar_months.png) no-repeat;
 	height:78px;
 	width:84px;
 }
-.right-calendar-flip{background:url(../images/flip-calendar-days.png) no-repeat;
+.right-calendar-flip{background:url(../images/bkgnd_calendar_days.png) no-repeat;
 	height:78px;
 	width:84px;
 }
