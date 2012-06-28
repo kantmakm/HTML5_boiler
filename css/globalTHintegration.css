@@ -53,7 +53,7 @@ label{font-weight:bold;}
 	text-transform: uppercase;
 	font-color: #444444;
 	}
-.top-box .current-bg{background:url(../images/bkgd_greyCurrentBal.png) no-repeat; height:100px; 
+.top-box .current-bg{background:url(../images/bkgd_grey_current_bal.png) no-repeat; height:100px; 
 	font-family: "HelveticaNeueLTStd", Helvetica, Arial, sans-serif;
 	font-size: 50px;
 	text-transform: uppercase;
@@ -62,7 +62,7 @@ label{font-weight:bold;}
 	position:relative;	
 }
 .top-box .current-bg .position-price{padding-top:15px;}
-.top-box .teal-toolbar{background: url(../images/bkgd_tealToolbar.png) repeat-x; 
+.top-box .teal-toolbar{background: url(../images/bkgd_teal_toolbar.png) repeat-x; 
 	padding:2px; 
 	padding-left:20px;
 	padding-right:15px;
@@ -88,7 +88,7 @@ label{font-weight:bold;}
 	font-weight: regular;
 }
 .lease-bg{
-	background:url(../images/bkgd_greyLease.png) no-repeat; height:100px; 
+	background:url(../images/bkgd_grey_lease.png) no-repeat; height:100px; 
 	color:white;
 	
 }
