@@ -84,81 +84,10 @@ a {
 	text-align:right;
 	padding-right:20px;
 }
-button.submit {
-	height: 37px;
-	outline: none;
-	border: 0;
-	position: relative;
-	padding: 0;
-	margin: 0;
-	background: none;
-	overflow:visible;
-}
-button.submit span{
-	font-family: "HelveticaNeueBold", Helvetica, Arial, sans-serif;
-	font-size: 14px;
-	height: 37px;
-	background: url(../images/button_submit.png) no-repeat scroll left top transparent;
-	display:block;
-	padding: 10px 20px 10px 30px;
-	color:#FFFFFF;
-}
-button.submit span.end {
-	background-position: right -37px;
-	margin:0;
-	position:absolute;
-	top:0;
-	right:-10px;
-	height:37px;
-	width:10px;
-	padding:0;
-}
-button.submit[disabled] span {
-	background-position: left -74px;
-}
-button.submit[disabled] span.end {
-	background-position: right -111px;
-}
 
 .form-element {
 	padding-bottom:20px;
 }
-input[type=text],
-input[type=password],
-input[type=email] {
-	box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.25) inset;
-	width: 100%;
-	border-radius: 2px;
-	border: 1px solid #B9BCBE;
-	padding-left: 5px;
-	outline: none;
-	
-	transition: all 0.5s;
-	-o-transition: all 0.5s;
-	-moz-transition: all 0.5s;
-	-webkit-transition: all 0.5s;
-	
-}
-textarea {
-	background-color: #f6f6f6;
-	resize: none;
-	padding: 5px;
-	border:1px solid #c1c6c8;
-	border-radius: 2px;
-	-o-border-radius: 2px;
-	-moz-border-radius: 2px;
-	-webkit-border-radius: 2px;
-
-  box-shadow: 				inset 1px 1px 5px 0 rgba(0, 0, 0, 0.25);
-  -o-box-shadow: 			inset 1px 1px 5px 0 rgba(0, 0, 0, 0.25);
-  -moz-box-shadow: 		inset 1px 1px 5px 0 rgba(0, 0, 0, 0.25);
-  -webkit-box-shadow: inset 1px 1px 5px 0 rgba(0, 0, 0, 0.25);
-}
-input.autoclear {
-	color: #aeaeae;
-	background: none no-repeat scroll 0 0 #F2F2F2;
-}
-
 
 .form-element textarea {
 	width:420px;

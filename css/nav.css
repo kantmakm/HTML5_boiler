@@ -189,7 +189,7 @@ header .dropdown-nav-contents ul ul li {
 header .dropdown-nav-contents ul ul li a,
 header .dropdown-nav-contents ul.hover ul li a {
 	z-index: 1003;
-	padding: 10px;
+	padding: 10px 10px 5px;
 	background: none no-repeat scroll 0 0 #FFFFFF;
 	font-weight: normal;
 	text-align: left;
@@ -203,6 +203,10 @@ header .dropdown-nav-contents ul.hover ul li a {
 header .dropdown-nav-contents ul ul li a:hover,
 header .dropdown-nav-contents ul ul li:hover {
 	background-color: #afbf45;
+}
+header .dropdown-nav-contents ul ul li:hover a {
+	color: #FFFFFF;
+	font-weight:bold;
 }
 .dropdown-nav .ui-icon {
 	left: auto;

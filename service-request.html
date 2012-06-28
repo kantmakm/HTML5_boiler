@@ -18,15 +18,14 @@
   <!-- Mobile viewport optimized: h5bp.com/viewport -->
   <meta name="viewport" content="width=device-width">
 
-  <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
-
+	<!-- Use this in all pages -->
   <link rel="stylesheet" href="css/reset.css"> <!-- Eric Meyer Stylesheet -->
   <link rel="stylesheet" href="css/style.css"> <!-- Default Stylesheet -->
-  <link rel="stylesheet" href="css/global.css"> <!-- Added Styles For All Pages -->
-  <link rel="stylesheet" href="css/fonts.css">
-  <link rel="stylesheet" href="css/accordion.css">
   <link rel="stylesheet" href="css/jquery.ui.css"> <!-- Added Styles For All Pages -->
+  <link rel="stylesheet" href="css/global.css"> <!-- Added Styles For All Pages -->
   <link rel="stylesheet" href="css/forms.css">
+  <link rel="stylesheet" href="css/accordion.css">
+  <link rel="stylesheet" href="css/fonts.css">
 	<!--[if lt IE 9]>
 	  <link rel="stylesheet" href="css/ie.css">
 	<![endif]-->
@@ -34,25 +33,24 @@
 	  <link rel="stylesheet" href="css/ie9.css">
 	<![endif]-->
 	
-  <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
+	<!-- Specific to this page -->
+	<link rel="stylesheet" href="css/date.css"> <!-- Added Styles For the datemanager Pages -->
+	
 
-  <!-- All JavaScript at the bottom, except this Modernizr build.
-       Modernizr enables HTML5 elements & feature detects for optimal performance.
-       Create your own custom Modernizr build: www.modernizr.com/download/ -->
+	<!-- Use this in all pages -->
   <script src="js/libs/modernizr-2.5.3.min.js"></script>
-
-  <!-- JavaScript in the header so my other stuff doesn't break -->
-
-  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
   <script src="js/jquery-1.7.2.min.js"></script>
   <script src="js/ui/jquery-ui-1.8.20.custom.js"></script>
-
-  <!-- scripts concatenated and minified via build script -->
-  <script src="js/jquery.cookie.js"></script>
+  <script src="js/jquery-bbq.js"></script>
   <script src="js/plugins.js"></script>
   <script src="js/script.js"></script>
 	<script src="js/browserimage.js"></script>
   <script src="js/nav.js"></script>
+	
+	<!-- Specific to this page -->
+  <script src="js/service-request.js"></script>
+  <script src="js/datemanager.js"></script>
+
   <!-- end scripts -->
 
 </head>
@@ -61,30 +59,25 @@
 	<div id="background-image">
 		<img class="source-image" src="images/bkgd_graphite_burst.png" >
   </div>
-	<script type="text/javascript">global.background.init(); </script><!-- This needs to be here to resize this before the page finishes loading instead of after -->
+	<script type="text/javascript">global.background.init(); </script>
   <header>
 		<!-- Primary Navigation -->
 		<div class="primary-nav-contents">
 			<a href="index.html" id="logo"><img src="images/logo.png" width="167" height="38" ></a>
 			<ul class="primary-nav">
 				<li><a href="#" title="Contact Us">Payment</a></li>
-				<li class="active">
-					<a href="service-request.html">Service</a>
-					<!-- <ul>
-						<li><a href="service-request.html">New Request</a></li>
-						<li><a href="request-history.html" class="active">Previous Requests</a></li>
-					</ul> -->
-				</li>
+				<li class="active"><a href="service-request.html">Service</a></li>
 				<li><a href="#">Information</a></li>
-				<li><a href="#" class="cta-lease">Lease</a></li>
+				<li><a href="#">Lease</a></li>
 			</ul>
 		</div>
+		<!-- Dropdown -->
 		<div class="dropdown-nav-contents">
 			<ul class="dropdown-nav">
 				<li>
 					<a href="#"><span class="ui-icon"> &nbsp; </span>Genevieve Cornhill</a>
 					<ul>
-						<li><a href="#" class="cta-lease">Switch to Different Lease</a></li>
+						<li><a href="dialog-lease.html" class="cta-dialog" rel="request-history" title="Select the lease you would like to open">Switch to Different Lease</a></li>
 						<li><a href="#">Contact Information</a></li>
 						<li><a href="#">Settings</a></li>
 						<li><a href="index.html">Sign Out</a></li>
@@ -96,8 +89,8 @@
 		<!-- Secondary Navigation -->
 		<div class="secondary-nav-contents">
 			<ul class="secondary-nav">
-				<li><a href="service-request.html" class="active">New Request</a></li>
-				<li><a href="request-history.html">Previous Requests</a></li>
+				<li><a href="service-request.html">New Request</a></li>
+				<li><a href="request-history.html" class="active">Previous Requests</a></li>
 			</ul>
 		</div>
 		<!-- /Secondary Navigation -->

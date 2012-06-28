@@ -384,6 +384,8 @@
 .ui-menu .ui-menu-item a.ui-state-active {
 	font-weight: normal;
 	margin: -1px;
+	background: #00929E;
+	color: #FFFFFF;
 }
 /*!
  * jQuery UI Button 1.8.20
