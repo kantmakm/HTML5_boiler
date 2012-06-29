@@ -338,6 +338,9 @@ h4 {
 .large-titled-box .body {
 	margin:0 25px;
 }
+.large-titled-box div.accordion-body {
+	margin: 0;
+}
 .request-summary .request-title,
 .large-titled-box .box-title {
 	height: 33px;
