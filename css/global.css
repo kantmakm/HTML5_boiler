@@ -400,34 +400,34 @@ h4 {
 .medium-width .titled-box {
 	margin: 46px 0 20px;
 }
-#signin .body-left {
+.body-left {
 	width:240px;
 	padding-right:10px;
 	border-right:1px solid #cccccc;
 	font-size: 14px;
 }
-#signin .body-left ul {
+.body-left ul {
 	font-family: "HelveticaNeueLTStd", Helvetica, Arial, sans-serif;
 	padding: 10px 0;
 	margin: 0;
 }
-#signin .body-left ul li {
+.body-left ul li {
 	background: url(../images/icon_check.png) no-repeat scroll 0 0 transparent;
 	padding-left:15px;
 	font-size:16px;
 	color: #444444;
 }
-#signin .body-right {
+.body-right {
 	width: 305px;
 	float: left;
 	padding-left: 25px;
 }
-#signin .body-right h3 {
+h3.discreet {
 	font-size: 14px;
 	color: #444444;
 	font-weight: bold;
 }
-#signin .body-right p.error {
+.body-right p.error {
 	margin-right: 10px;
 	padding: 0 0 5px;
 	font-size: 11px;
@@ -453,11 +453,12 @@ h4 {
 .submit-area-right {
 	float:right;
 }
-#signin .submit {
+/*.submit {
 	font-family: "HelveticaNeueBold", Helvetica, Arial, sans-serif;
 	font-size: 14px;
 	text-shadow: 1px 0px 0px rgba(0,0,0,0.2);
 }
+*/
 .button-droid,
 .button-iphone {
 	display:block;
