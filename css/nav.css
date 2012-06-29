@@ -227,10 +227,6 @@ footer {
 	background: rgba(0, 0, 0, 0.7);
 	padding: 10px 20px;
 }
-footer .navigation,
-footer .right {
-	float:right;
-}
 footer .navigation a,
 footer .right a {
 	font-size: 14px;
@@ -242,7 +238,7 @@ footer .right a.cta-dialog {
 	color: #FFFFFF;
 	background: url(../images/icon_mail_simple.png) no-repeat scroll 0 8px transparent;
 }
-footer .copyright {
+footer .left-one-row {
 	padding-top: 5px;
 }
 footer p,
