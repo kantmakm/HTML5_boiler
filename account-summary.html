@@ -18,16 +18,14 @@
   <!-- Mobile viewport optimized: h5bp.com/viewport -->
   <meta name="viewport" content="width=device-width">
 
-  <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
-
+	<!-- Use this in all pages -->
   <link rel="stylesheet" href="css/reset.css"> <!-- Eric Meyer Stylesheet -->
   <link rel="stylesheet" href="css/style.css"> <!-- Default Stylesheet -->
-  <link rel="stylesheet" href="css/global.css"> <!-- Added Styles For All Pages -->
-  <link rel="stylesheet" href="css/globalTHintegration.css">
-  <link rel="stylesheet" href="css/global.css">
-  <link rel="stylesheet" href="css/fonts.css">
-  <link rel="stylesheet" href="css/accordion.css">
   <link rel="stylesheet" href="css/jquery.ui.css"> <!-- Added Styles For All Pages -->
+  <link rel="stylesheet" href="css/global.css"> <!-- Added Styles For All Pages -->
+  <link rel="stylesheet" href="css/forms.css">
+  <link rel="stylesheet" href="css/accordion.css">
+  <link rel="stylesheet" href="css/fonts.css">
 	<!--[if lt IE 9]>
 	  <link rel="stylesheet" href="css/ie.css">
 	<![endif]-->
@@ -35,25 +33,21 @@
 	  <link rel="stylesheet" href="css/ie9.css">
 	<![endif]-->
 	
-  <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
-
-  <!-- All JavaScript at the bottom, except this Modernizr build.
-       Modernizr enables HTML5 elements & feature detects for optimal performance.
-       Create your own custom Modernizr build: www.modernizr.com/download/ -->
+	<!-- Specific to this page -->
+	<link rel="stylesheet" href="css/account-summary.css"> 
+	
+  	<!-- Use this in all pages -->
   <script src="js/libs/modernizr-2.5.3.min.js"></script>
-
-  <!-- JavaScript in the header so my other stuff doesn't break -->
-
-  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
   <script src="js/jquery-1.7.2.min.js"></script>
   <script src="js/ui/jquery-ui-1.8.20.custom.js"></script>
+  <script src="js/jquery-bbq.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/browserimage.js"></script>
+  <script src="js/nav.js"></script>
 
   <!-- scripts concatenated and minified via build script -->
   <script src="js/jquery.cookie.js"></script>
-	<script src="js/browserimage.js"></script>
-  <script src="js/plugins.js"></script>
-  <script src="js/script.js"></script>
-  <script src="js/nav.js"></script>
   <!-- end scripts -->
 
 </head>
@@ -95,14 +89,14 @@
 			
 			<div class="clearfix">
 				<div class="top-box float-left">
-					<div class="title"><img src="images/icon_currentBalBars.png" />&nbsp;&nbsp;<span class="pad-top">CURRENT BALANCE</span></div>
+					<div class="title"><img src="images/icon_current_bal_bars.png" />&nbsp;&nbsp;<span class="pad-top">CURRENT BALANCE</span></div>
 					<div class="current-bg"><div class="position-price">$1,837.98</div></div>
-					<div class="teal-toolbar"><a href="">Pay Now<span class="float-right"><img class="circle-arrow" src="images/icon_circleArrow.png"/></span></a></div>
-					<div class="teal-toolbar"><a href="">View History<span class="float-right"><img class="circle-arrow" src="images/icon_circleArrow.png"/></span></a></div>
+					<div class="teal-toolbar"><a href="">Pay Now<span class="float-right"><img class="circle-arrow" src="images/icon_circle_arrow.png"/></span></a></div>
+					<div class="teal-toolbar"><a href="">View History<span class="float-right"><img class="circle-arrow" src="images/icon_circle_arrow.png"/></span></a></div>
 				</div>
 				
 				<div class="top-box float-right lease-container">
-					<div class="title"><img src="images/icon_leaseHouse.png" />&nbsp;&nbsp;<span class="pad-top">LEASE</span><span class="float-right lease-date">Expires October 31, 2012</span></div>
+					<div class="title"><img src="images/icon_lease_house.png" />&nbsp;&nbsp;<span class="pad-top">LEASE</span><span class="float-right lease-date">Expires October 31, 2012</span></div>
 					<div class="lease-bg">
 						<div class="lease-positioning">
 							That's only...
@@ -113,7 +107,7 @@
 						</div>
 					</div>
 					
-					<div class="teal-toolbar view-lease-toolbar"><a href="">View Lease<span class="float-right"><img class="circle-arrow" src="images/icon_circleArrow.png"/></span></a></div>
+					<div class="teal-toolbar view-lease-toolbar"><a href="">View Lease<span class="float-right"><img class="circle-arrow" src="images/icon_circle_arrow.png"/></span></a></div>
 				</div>
 			</div>
 			

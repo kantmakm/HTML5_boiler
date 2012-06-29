@@ -520,3 +520,21 @@ h4 {
 #service-request .two-column .label-column {
 	font-size: 18px;
 }
+
+
+/*	~~~~~~~~~~~ TH Tim's Modifications ~~~~~~~~~~~~~~~~~~~~~~~~	*/
+.clear-both{clear:both;}
+.float-right{float:right;}
+.float-left{float:left;}
+.section-header{
+	background: url("../images/bkgd_accordion_header.png") repeat-x scroll 0 0 transparent;
+	border: 1px solid #CCF;	
+	color: #999999;
+	height: 33px;
+	margin:0px;
+	padding: 20px 0 5px 20px;
+}
+.pad-below{margin-bottom:10px;}
+.content-padding{padding:20px;}
+
+/*	~~~~~~~~~~~ TH end Tim's Modifications ~~~~~~~~~~~~~~~~~~~~ */

@@ -135,3 +135,28 @@ input.autoclear {
 	color: #aeaeae;
 	background: none no-repeat scroll 0 0 #F2F2F2;
 }
+
+/*	TH - Styles I've added for forms.	*/
+/*styles used for registration and login pages.*/
+.form-note{font-style:italic; font-size:10px;}
+.form-note-alert{font-style:italic; font-size:10px; color: #FF0000;}
+.backtosignin{float:left; padding-top:5px;}
+
+.form-entry{
+	width:550px;
+}
+.left-form-div{
+	float:left; width:400px; padding-bottom:10px;	
+}
+.right-form-div{
+	float:left; width:100px;margin-left:40px;  padding-bottom:10px;
+}
+.show-toggle-a{display:block;}
+.show-toggle-b{display:none;}
+label{font-weight:bold;}
+.textbox-checkmark{background:url(images/icon_check.png) no-repeat 98% 50% transparent;}
+/*  --------------------- Account settings  ---------------------------------------*/
+.security-question{width:550px;}
+/*  --------------------- End Account settings  -----------------------------------*/
+
+/*	TH - end styles I've added		*/
