@@ -386,14 +386,14 @@ h4 {
 /**
  * Front-page specific
  */
-.signin #main {
+.medium-width #main {
 	width:640px;
 	padding-top: 60px;
 }
-.select-a-lease #main {
+.narrow-width #main {
 	width: 490px;
 }
-.signin .titled-box {
+.medium-width .titled-box {
 	margin: 46px 0 20px;
 }
 #signin .body-left {

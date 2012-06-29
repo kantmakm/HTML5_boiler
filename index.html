@@ -58,7 +58,7 @@
   <!-- end scripts -->
 
 </head>
-<body class="signin">
+<body class="medium-width">
 	<!-- The Stretchy Background Image -->
 	<div id="background-image">
 		<img class="source-image" src="images/bkgd_1.jpg" >
@@ -87,8 +87,14 @@
 				<form method="POST" action="select-a-lease.html">
 					<h3>Please Sign In</h3>
 					<ul class="form-with-validation">
-						<li><input type="text" class="autoclear" name="email" id="email" value="Email address"></li>
-						<li><input type="password" class="autoclear" name="password" id="password" value="Password"></li>
+						<li>
+							<label for="email">Email address <span class="required">*</span></label>
+							<input type="text" name="email" id="email" value="">
+						</li>
+						<li>
+							<label for="password">Password <span class="required">*</span></label>
+							<input data-val="true" type="password" data-val-required="Password Is Required" name="password" id="password" tabindex="3" value="">
+						</li>
 					</ul>
 					<div class="submit-area-right">
 						<button type="submit" class="submit"><span>Sign In</span><span class="end"> &nbsp; </span></button>
