@@ -153,7 +153,7 @@ input.autoclear {
 }
 .show-toggle-a{display:block;}
 .show-toggle-b{display:none;}
-label{font-weight:bold;}
+/*label{font-weight:bold;} don't make changes to such non-specific elements. this effects a lot */
 .textbox-checkmark{background:url(images/icon_check.png) no-repeat 98% 50% transparent;}
 /*  --------------------- Account settings  ---------------------------------------*/
 .security-question{width:550px;}

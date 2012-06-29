@@ -2,7 +2,7 @@ fieldset.date-manager {
 	position: relative;
 	display: block;
 	height: 55px;
-	margin: 0 -30px;
+	margin: 0;
 	padding: 20px 0 0;
 	border-top: 1px solid #E7E5E3;
 }
@@ -132,7 +132,7 @@ fieldset.date-manager {
 .green {
 	background-color: #6eb576;
 }
-#accordions {
+class="padded" {
 	transition: height 0.25s;
 	-o-transition: height 0.25s;
 	-moz-transition: height 0.25s;

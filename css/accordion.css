@@ -4,7 +4,7 @@
 .accordion {
 	
 }
-.accordion-box .ui-accordion .ui-accordion-header {
+.squared-accordion h2 {
 	background: url(../images/bkgd_accordion_header.png) repeat-x scroll 0 0 transparent;
 	height: 33px;
 	padding: 20px 0 5px 50px;
@@ -20,21 +20,20 @@
 	border-top: 1px solid #E7E5E3;
 /*	border-bottom: 1px solid #E7E5E3;*/
 }
-
-.accordion-box .ui-accordion .ui-state-active .ui-icon {
+.squared-accordion h2.ui-state-active {
+	color: #333333;
+	height:34px;
+}
+.squared-accordion h2.ui-state-active .ui-icon {
 	background-position: right bottom;
 }
-.accordion-box .ui-accordion .ui-accordion-content {
+.squared-accordion .ui-accordion-content {
 	border:0;
 	border-top:1px solid #E7E5E3;
 	padding: 20px 30px;
 /*	overflow:hidden;*/
 }
-.accordion-box .ui-accordion .ui-state-active {
-	color: #333333;
-	height:34px;
-}
-.accordion-box .ui-accordion-content h3 {
+.squared-accordion .ui-accordion-content h3 {
 /*	font-family: "HelveticaNeueLTStd", Helvetica, Arial, sans-serif;
 	color: #00919E;*/
 	font-size: 18px;
@@ -46,68 +45,75 @@
 /**
  * Discreet Accordion Styling
  */
-.discreet-accordion-box {
-	padding:0 30px 20px;
+#discreet-accordions {
+	padding:0 0 20px;
 }
-.discreet-accordion-box .discreet-accordion .ui-icon {
+.discreet-accordion .ui-icon {
 	display:none;
 }
-.discreet-accordion-box h1 {
+.discreet-accordion h1 {
 	margin: 0 -30px 0;
 	padding: 20px 30px 20px;
 }
-.discreet-accordion-box .discreet-accordion-header {
+.discreet-accordion-header {
 	padding-bottom:15px;
 }
-.discreet-accordion-box .discreet-accordion-header label.form-element span {
+.discreet-accordion-header label.form-element span {
 /*	font-family: "HelveticaNeueLTStd", Helvetica, Arial, sans-serif;*/
 /*	color: #00919e;*/
+	font-weight: lighter;
 	font-size: 18px;
 	color: #444444;
 }
-.discreet-accordion-box h2.accordion-header {
+.discreet-accordion-header h2.accordion-header {
 	clear:both;
 }
-.discreet-accordion-box .discreet-accordion h2 {
+.discreet-accordion h2 {
 	height:30px;
 	border:0;
 	background: none no-repeat scroll 0 0 transparent;
 	color: #6e6e6e;
 }
-.discreet-accordion-box h2 span,
-.discreet-accordion-box h2 a.email {
+h2.accordion-header span,
+.discreet-accordion h2 span,
+h2.accordion-header a.email,
+.discreet-accordion h2 a.email {
 	float:left;
 	display:block;
 	font-size: 12px;
 	padding:10px 0 0;
 }
-.discreet-accordion-box h2.accordion-header span {
+.discreet-accordion h2.accordion-header span {
 	font-size: 10px;
 	font-weight: bold;
 	padding:0;
 	color:#888888;
 }
-.discreet-accordion-box .discreet-accordion .ui-accordion-content {
+.discreet-accordion .ui-accordion-content {
 	border: 0;
 	background: none no-repeat scroll 0 0 #EFEFEF;
 	box-shadow: 0 0 15px 0 #999999 inset;
 	font-size: 12px;
 }
-.discreet-accordion-box .last-updated {
+.accordion-header .last-updated,
+.discreet-accordion .last-updated {
 	width:95px;   
 	font-weight:bold;        
 }                       
-.discreet-accordion-box .request {
+.accordion-header .request ,
+.discreet-accordion .request {
 	width:140px;          
 }                       
-.discreet-accordion-box .description {
+.accordion-header .description,
+.discreet-accordion .description {
 	width:305px;          
 }                       
-.discreet-accordion-box .status {
+.accordion-header .status,
+.discreet-accordion .status {
 	font-weight:bold;
 	width:145px;          
 }                       
-.discreet-accordion-box .discreet-accordion .email {
+.discreet-accordion .email {
 	width:25px;
 	background: url(../images/icon_mail.png) no-repeat scroll 0 0 transparent;
 }
@@ -117,7 +123,7 @@
 	font-weight: normal;
 }
 */
-.discreet-accordion-box .discreet-accordion {
+.discreet-accordion {
 	overflow: hidden;
 	position: relative;
 }

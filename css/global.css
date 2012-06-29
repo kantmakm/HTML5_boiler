@@ -268,7 +268,7 @@ h4 {
 	float:right;
 }
 .titled-box .box-title,
-.large-titled-box .box-title {
+.squared-box .box-title {
 	font-family: "HelveticaNeueLTStd", Helvetica, Arial, sans-serif;
 	font-size: 22px;
 	color: #6E6E6E;
@@ -327,29 +327,29 @@ h4 {
 .titled-box .box-shadow-right {
 	right: -5px;
 }
-.titled-box .body1,
-.titled-box .body2 {
+.titled-box .body-left,
+.titled-box .body-right {
 	float:left;
 }
 /* Squared-corners/no drop-shadow */
-.large-titled-box {
+.squared-box {
 	background-color:#FFFFFF;
 }
-.large-titled-box .body {
+.padded {
 	margin:0 25px;
 }
-.large-titled-box div.accordion-body {
+.squared-box div.accordion-body {
 	margin: 0;
 }
 .request-summary .request-title,
-.large-titled-box .box-title {
+.squared-box .box-title {
 	height: 33px;
-	padding: 20px 0 5px 30px;
+	padding: 15px 0 10px 30px;
 	background: url(../images/bkgd_box_header_large.png) repeat-x scroll 0 0 transparent;
 	font-weight: normal;
 }
 /* Both */
-.large-titled-box fieldset,
+.squared-box fieldset,
 .titled-box fieldset {
 	border-bottom: 2px solid #E7E5E3;
 	padding-bottom: 20px;
@@ -388,39 +388,39 @@ h4 {
 	padding-top: 60px;
 }
 .select-a-lease #main {
-	width: 450px;
+	width: 490px;
 }
 .signin .titled-box {
 	margin: 46px 0 20px;
 }
-#signin .body1 {
+#signin .body-left {
 	width:240px;
 	padding-right:10px;
 	border-right:1px solid #cccccc;
 	font-size: 14px;
 }
-#signin .body1 ul {
+#signin .body-left ul {
 	font-family: "HelveticaNeueLTStd", Helvetica, Arial, sans-serif;
 	padding: 10px 0;
 	margin: 0;
 }
-#signin .body1 ul li {
+#signin .body-left ul li {
 	background: url(../images/icon_check.png) no-repeat scroll 0 0 transparent;
 	padding-left:15px;
 	font-size:16px;
 	color: #444444;
 }
-#signin .body2 {
+#signin .body-right {
 	width: 305px;
 	float: left;
 	padding-left: 25px;
 }
-#signin .body2 h3 {
+#signin .body-right h3 {
 	font-size: 14px;
 	color: #444444;
 	font-weight: bold;
 }
-#signin .body2 p.error {
+#signin .body-right p.error {
 	margin-right: 10px;
 	padding: 0 0 5px;
 	font-size: 11px;

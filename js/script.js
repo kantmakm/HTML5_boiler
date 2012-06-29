@@ -99,10 +99,10 @@ global.bindEvents.dropdown = function() {
 			$label = $('<label></label>');
 			$label.insertBefore($(this));
 		}
-		$label.html($(this).find(':selected').html()).css('opacity', ($(this).attr('disabled') == false?1:0.5));
+		$label.html($(this).find(':selected').html()).css('opacity', ($(this).prop('disabled') === false?1:0.5));
 	})
 	.change(function(){
-		$(this).siblings('label').html($(this).find(':selected').html()).css('opacity', ($(this).attr('disabled') == false?1:0.5));
+		$(this).siblings('label').html($(this).find(':selected').html()).css('opacity', ($(this).prop('disabled') === false?1:0.5));
 	});
 }
 

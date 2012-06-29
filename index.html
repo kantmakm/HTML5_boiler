@@ -22,11 +22,10 @@
 
   <link rel="stylesheet" href="css/reset.css"> <!-- Eric Meyer Stylesheet -->
   <link rel="stylesheet" href="css/style.css"> <!-- Default Stylesheet -->
-  <link rel="stylesheet" href="css/jquery.ui.css"> <!-- Added Styles For All Pages -->
   <link rel="stylesheet" href="css/global.css"> <!-- Added Styles For All Pages -->
+  <link rel="stylesheet" href="css/fonts.css"> <!-- Added Styles For All Pages -->
+  <link rel="stylesheet" href="css/jquery.ui.css"> <!-- Added Styles For All Pages -->
   <link rel="stylesheet" href="css/forms.css">
-  <link rel="stylesheet" href="css/accordion.css">
-  <link rel="stylesheet" href="css/fonts.css">
 	<!--[if lt IE 9]>
 	  <link rel="stylesheet" href="css/ie.css">
 	<![endif]-->
@@ -34,17 +33,20 @@
 	  <link rel="stylesheet" href="css/ie9.css">
 	<![endif]-->
 	
+  <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
 
-<!-- Use this in all pages -->
+  <!-- All JavaScript at the bottom, except this Modernizr build.
+       Modernizr enables HTML5 elements & feature detects for optimal performance.
+       Create your own custom Modernizr build: www.modernizr.com/download/ -->
   <script src="js/libs/modernizr-2.5.3.min.js"></script>
-  <script src="js/jquery-1.7.2.min.js"></script>
+
+  <!-- JavaScript in the header so my other stuff doesn't break -->
+
+  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
   <script src="js/ui/jquery-ui-1.8.20.custom.js"></script>
-  <script src="js/jquery-bbq.js"></script>
-  <script src="js/plugins.js"></script>
-  <script src="js/script.js"></script>
-	<script src="js/browserimage.js"></script>
-  <script src="js/nav.js"></script>
-  
+  <script src="http://cachedcommons.org/cache/jquery-bbq/1.2.1/javascripts/jquery-bbq.js"></script>
+
   <!-- scripts concatenated and minified via build script -->
   <script src="js/jquery.cookie.js"></script>
   <script src="js/plugins.js"></script>
@@ -71,7 +73,7 @@
 		<div id="signin" class="titled-box clearfix">
 			<h1 class="box-title"><span>WELCOME TO myARCHSTONE</span></h1>
 			<div class="box-shadow-left"> &nbsp; </div><div class="box-shadow-right"> &nbsp; </div>
-			<div class="body1">
+			<div class="body-left">
 				<p class="body-font-14">With exclusive access to our resident-only web sites, hop on any computer with Internet access to:</p>
 				<ul>
 					<li>Pay your rent online</li>
@@ -81,7 +83,7 @@
 				</ul>
 				<p class="body-font-14">Log in now to get started!</p>
 			</div>
-			<div class="body2">
+			<div class="body-right">
 				<form method="POST" action="select-a-lease.html">
 					<h3>Please Sign In</h3>
 					<ul class="form-with-validation">
