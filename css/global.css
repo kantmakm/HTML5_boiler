@@ -209,7 +209,7 @@ h4 {
 }
 .description-summary h3,
 .description-summary h4,
-#dialog-email .form-element label {
+#dialog-email .form-element label.form-label {
 	width: 150px;
 	float: left;
 	clear: left;
@@ -218,7 +218,7 @@ h4 {
 	font-weight: bold;
 	margin:0 !important;
 }
-#dialog-email .form-element label {
+#dialog-email .form-element label.form-label {
 	width: 70px;
 	text-align: left;
 	font-size: 16px;

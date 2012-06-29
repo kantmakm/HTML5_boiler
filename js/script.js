@@ -48,7 +48,8 @@ global.bindEvents.dialog = function () {
 						height: "auto",
 			      width: "auto",
 						modal:true,
-						title: title
+						title: title,
+						open: global.bindEvents.dropdown
 					});
 				}
 			});
@@ -87,19 +88,22 @@ global.bindEvents.autoclear = function () {
 };
 
 global.bindEvents.dropdown = function() {
+	
 	//pseudo-styled dropdowns
 	$('select').each(function(){
-		var $label = $(this).siblings('label');
 		if(!$(this).parent().hasClass('select-wrapper'))
 		{
-			$(this).wrap('<div class="select-wrapper" />');
+			var $label = $(this).siblings('label');
+			$(this)
+				.wrap('<div class="select-wrapper" />')
+				.change(function(){
+					$(this).siblings('label').html($(this).find(':selected').html()).css('opacity', ($(this).prop('disabled') === false?1:0.5));
+				});
+
 			$label = $('<label></label>');
 			$label.insertBefore($(this));
+			$label.html($(this).find(':selected').html()).css('opacity', ($(this).prop('disabled') === false?1:0.5));
 		}
-		$label.html($(this).find(':selected').html()).css('opacity', ($(this).prop('disabled') === false?1:0.5));
-	})
-	.change(function(){
-		$(this).siblings('label').html($(this).find(':selected').html()).css('opacity', ($(this).prop('disabled') === false?1:0.5));
 	});
 }
 
