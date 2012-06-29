@@ -14,15 +14,12 @@ ul.form-with-validation input {
 	height: 35px;
 }
 ul.form-with-validation input.input-validation-error {
-	position:absolute;
-	bottom: 0;
 	margin: 0;
 	border: 1px solid #FF0000;
 }
 ul.form-with-validation .ui-state-error-text {
 	font-size: 11px;
 	font-weight: bold;
-	padding-bottom: 40px;
 	display:block;
 }
 /* Styled Select Boxes */

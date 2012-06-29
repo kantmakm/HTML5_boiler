@@ -63,16 +63,16 @@
 					<!-- <p class="error"> &nbsp;Whoops! We didn’t recognize your username or password. </p> -->
 					<ul class="form-with-validation">
 						<li>
-							<!-- 
-							note to MVC3-coders:
-							youi'll need to add the autoclear class to the input, and set the value="Guest" (or whatever you want the default to be).
-							 -->
-							<input data-val="true" data-val-required="Guest Name is required" id="GuestName" name="GuestName" tabindex="2" type="text" value="Guest" class="input-validation-error autoclear" />
+							<label for="guestName">Guest <span class="required">*</span></label>
+							<input data-val="true" data-val-required="Guest Name is required" id="GuestName" name="GuestName" tabindex="2" type="text" value="" class="input-validation-error" />
 							<span class="ui-state-error-text field-validation-error" data-valmsg-for="GuestName" data-valmsg-replace="true">
 								<span for="GuestName" generated="true" class="" style="">Guest Name is required</span>
 							</span>
 						</li>
-						<li><input type="password" class="autoclear" name="password" id="password" value="password"></li>
+						<li>
+							<label for="password">Password <span class="required">*</span></label>
+							<input data-val="true" type="password" data-val-required="Password Is Required" name="password" id="password" tabindex="3" value="">
+						</li>
 					</ul>
 					<div class="submit-area-right">
 						<button type="submit" class="submit"><span>Sign In</span><span class="end"> &nbsp; </span></button>
