@@ -1,6 +1,4 @@
-if (typeof (global) === "undefined" || !global) {
-  throw "global must be previously defined to use browserimage.js";
-}
+var global = (typeof (global) === "undefined" || !global) ? {} : global;
 
 // This is adapted from:
 // http://growmedia.ca/blog/2009/10/14/resizable-full-browser-background-image-with-jquery-preserving-aspect-ratio/
@@ -57,6 +55,9 @@ if (typeof (global) === "undefined" || !global) {
 			}
 		}
 	};
+	
+	global.background.init();
+	
 // })(jQuery);
 // The following is the corresponding HTML
 // <!-- The Stretchy Background Image -->

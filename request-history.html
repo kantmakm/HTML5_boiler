@@ -36,63 +36,21 @@
 	<!-- Specific to this page -->
 	<link rel="stylesheet" href="css/date.css"> <!-- Added Styles For the datemanager Pages -->
 	
-
+	<!-- All Scripts are in the bottom before the </body>. Except for jquery and modernizr -->
 	<!-- Use this in all pages -->
-  <script src="js/libs/modernizr-2.5.3.min.js"></script>
+	<script src="js/libs/modernizr-2.5.3.min.js"></script>
   <script src="js/jquery-1.7.2.min.js"></script>
-  <script src="js/ui/jquery-ui-1.8.20.custom.js"></script>
-  <script src="js/jquery-bbq.js"></script>
-  <script src="js/plugins.js"></script>
-  <script src="js/script.js"></script>
-  <script src="js/browserimage.js"></script>
-  <script src="js/nav.js"></script>
-	
-	<!-- Specific to this page -->
-  <script src="js/service-request.js"></script>
-  <script src="js/datemanager.js"></script>
-	<script>
-	$(function(){
-		
-		// set defaults for page loaded with no hashtags
-	  var defaultHistoryState = {
-	      "year": 2012, // would come from server side model
-	      "type": "apartment", // default initial selected item
-	      "status": "open" // default initial selected item
-	  };
-	  var defaultHistoryParams = {
-	      "yearsToShow": 					[2010, 2011, 2012],
-	      "dateElement": 					$(".date-manager"),
-	      "filtersElement": 			$(".filters"),
-	      "filterTypeElement": 		$("#serviceRequestType"),
-	      "filterStatusElement": 	$("#serviceRequestStatus"),
-	      "historyElement": 			$("#discreet-accordions"),
-	      "state": 								defaultHistoryState
-	  };
-	
-	
-		// initialize the service request history components
-		serviceRequest.history(defaultHistoryParams);
-
-	  // handle hash change for service request history
-	  $(window).bind("hashchange", function (e) {
-	      serviceRequest.history.showHistory($.extend($.extend({}, defaultHistoryParams.state), $.deparam.fragment()));
-	  });
-
-	  // first time, trigger the hash change to show the default history or reflect a bookmarked or linked hash
-	  $(window).trigger("hashchange");
-	});
-	</script>
-
-  <!-- end scripts -->
+  
 
 </head>
-<body class="signed-in request-history">
+<body>
 	<!-- The Stretchy Background Image -->
 	<div id="background-image">
 		<img class="source-image" src="images/bkgd_graphite_burst.png" >
   </div>
 	<!-- MJ: This needs to be here to resize this before the page finishes loading instead of after -->
-	<script type="text/javascript">global.background.init();</script>
+	<script src="js/browserimage.js"></script>
+
   <header>
 		<!-- Primary Navigation -->
 		<div class="primary-nav-contents">
@@ -101,10 +59,6 @@
 				<li><a href="#" title="Contact Us">Payment</a></li>
 				<li class="active">
 					<a href="service-request.html">Service</a>
-					<!-- <ul>
-						<li><a href="service-request.html">New Request</a></li>
-						<li><a href="request-history.html" class="active">Previous Requests</a></li>
-					</ul> -->
 				</li>
 				<li><a href="#">Information</a></li>
 				<li><a href="#">Lease</a></li>
@@ -347,6 +301,53 @@
 			</p>
 		</div>
   </footer>
+
+
+	<!-- Use this in all pages -->
+  <script src="js/ui/jquery-ui-1.8.20.custom.js"></script>
+  <script src="js/jquery-bbq.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/nav.js"></script>
+	
+	<!-- Specific to this page -->
+  <script src="js/service-request.js"></script>
+  <script src="js/datemanager.js"></script>
+	<script>
+	$(function(){
+		
+		// set defaults for page loaded with no hashtags
+	  var defaultHistoryState = {
+	      "year": 2012, // would come from server side model
+	      "type": "apartment", // default initial selected item
+	      "status": "open" // default initial selected item
+	  };
+	  var defaultHistoryParams = {
+	      "yearsToShow": 					[2010, 2011, 2012],
+	      "dateElement": 					$(".date-manager"),
+	      "filtersElement": 			$(".filters"),
+	      "filterTypeElement": 		$("#serviceRequestType"),
+	      "filterStatusElement": 	$("#serviceRequestStatus"),
+	      "historyElement": 			$("#discreet-accordions"),
+	      "state": 								defaultHistoryState
+	  };
+	
+	
+		// initialize the service request history components
+		serviceRequest.history(defaultHistoryParams);
+
+	  // handle hash change for service request history
+	  $(window).bind("hashchange", function (e) {
+	      serviceRequest.history.showHistory($.extend($.extend({}, defaultHistoryParams.state), $.deparam.fragment()));
+	  });
+
+	  // first time, trigger the hash change to show the default history or reflect a bookmarked or linked hash
+	  $(window).trigger("hashchange");
+	});
+	</script>
+
+  <!-- end scripts -->
+
 
   <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
        mathiasbynens.be/notes/async-analytics-snippet -->

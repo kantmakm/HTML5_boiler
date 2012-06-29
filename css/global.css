@@ -41,6 +41,9 @@ a {
 	-moz-transition: background-position 0.25s;
 	-webkit-transition: background-position 0.25s;
 }
+fieldset.no-border {
+	border: 0 !important;
+}
 #main, footer {
 	z-index:3;
 	position:relative;

@@ -37,21 +37,10 @@
 	<link rel="stylesheet" href="css/date.css"> <!-- Added Styles For the datemanager Pages -->
 	
 
+	<!-- All Scripts are in the bottom before the </body>. Except for jquery and modernizr -->
 	<!-- Use this in all pages -->
   <script src="js/libs/modernizr-2.5.3.min.js"></script>
   <script src="js/jquery-1.7.2.min.js"></script>
-  <script src="js/ui/jquery-ui-1.8.20.custom.js"></script>
-  <script src="js/jquery-bbq.js"></script>
-  <script src="js/plugins.js"></script>
-  <script src="js/script.js"></script>
-	<script src="js/browserimage.js"></script>
-  <script src="js/nav.js"></script>
-	
-	<!-- Specific to this page -->
-  <script src="js/service-request.js"></script>
-  <script src="js/datemanager.js"></script>
-
-  <!-- end scripts -->
 
 </head>
 <body class="signed-in service-request">
@@ -119,38 +108,40 @@
 							</div>
 						</fieldset>
 
-						<div class="two-column">
-							<h4 class="label-column">Can we come in?</h4 class="label-column">
-							<label><input type="radio" name="come_in" value="yes">I give permission to enter my apartment.</label>
-							<label><input type="radio" name="come_in" value="no">I prefer to be home. Please contact me to schedule a time.</label>
-						</div>
-
-						<div class="two-column">
-							<h4 class="label-column">Do you have an alarm?</h4 class="label-column">
-							<label><input type="radio" name="alarm" value="yes">Yes, I have an alarm.</label>
-							<label><input type="radio" name="alarm" value="no">No alarm.</label>
-						</div>
-						
-						<div class="two-column">
-							<h4 class="label-column">Do you have pets?</h4 class="label-column">
-							<label><input type="radio" name="pets" value="yes">Yes, I have a pet.</label>
-							<label><input type="radio" name="pets" value="no">No pets here.</label>
-						</div>
-					
-						<div class="form-element">
-							<h4>Anything else we should know?</h4>
-							<div class="form-element-with-notes">
-								<textarea cols="50" rows="3" class="auto-resize with-limit"></textarea>
-								<div class="notes">
-									<p>Optional</p>
-									<p><span class="char-limit">300</span> characters remaining</p>
-								</div>
-								
-								<p class="under-notes">It is our policy to respond to your in-home service request within 24 hours.
-								We may contact you with further questions.</p>
+						<fieldset class="no-border">
+							<div class="two-column">
+								<h4 class="label-column">Can we come in?</h4 class="label-column">
+								<label><input type="radio" name="come_in" value="yes">I give permission to enter my apartment.</label>
+								<label><input type="radio" name="come_in" value="no">I prefer to be home. Please contact me to schedule a time.</label>
 							</div>
-						</div>
-						<p class="submit-area"><button type="submit" class="submit"><span>Send Request</span><span class="end"> &nbsp; </span></button></p>
+
+							<div class="two-column">
+								<h4 class="label-column">Do you have an alarm?</h4 class="label-column">
+								<label><input type="radio" name="alarm" value="yes">Yes, I have an alarm.</label>
+								<label><input type="radio" name="alarm" value="no">No alarm.</label>
+							</div>
+						
+							<div class="two-column">
+								<h4 class="label-column">Do you have pets?</h4 class="label-column">
+								<label><input type="radio" name="pets" value="yes">Yes, I have a pet.</label>
+								<label><input type="radio" name="pets" value="no">No pets here.</label>
+							</div>
+					
+							<div class="form-element">
+								<h4>Anything else we should know?</h4>
+								<div class="form-element-with-notes">
+									<textarea cols="50" rows="3" class="auto-resize with-limit"></textarea>
+									<div class="notes">
+										<p>Optional</p>
+										<p><span class="char-limit">300</span> characters remaining</p>
+									</div>
+								
+									<p class="under-notes">It is our policy to respond to your in-home service request within 24 hours.
+									We may contact you with further questions.</p>
+								</div>
+							</div>
+							<p class="submit-area"><button type="submit" class="submit"><span>Send Request</span><span class="end"> &nbsp; </span></button></p>
+						</fieldset>
 					</form>
 				</div>
 				<h2>Common Area</h2>
@@ -173,6 +164,17 @@
 			</p>
 		</div>
   </footer>
+
+  <script src="js/ui/jquery-ui-1.8.20.custom.js"></script>
+  <script src="js/jquery-bbq.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/script.js"></script>
+	<script src="js/browserimage.js"></script>
+  <script src="js/nav.js"></script>
+	
+	<!-- Specific to this page -->
+  <script src="js/service-request.js"></script>
+  <script src="js/datemanager.js"></script>
 
   <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
        mathiasbynens.be/notes/async-analytics-snippet -->

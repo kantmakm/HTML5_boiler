@@ -10,10 +10,7 @@
 *///
 
 // Declare the global object. (unless it exists)
-var global = (typeof (global) === "undefined" || !global)
- ? function () {
-		global.bindEvents();
-} : global;
+var global = (typeof (global) === "undefined" || !global) ? {} : global;
 
 global.monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
@@ -199,5 +196,5 @@ if (!Array.prototype.indexOf)
 
 $(function(){
 	// magic!
-	global();
+	global.bindEvents();
 });
