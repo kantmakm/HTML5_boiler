@@ -22,6 +22,11 @@ ul.form-with-validation .ui-state-error-text {
 	font-weight: bold;
 	display:block;
 }
+ul.form-with-validation .message-text {
+	font-size: 11px;
+	float:right;
+	color: #6E6E6E; 
+}
 /* Styled Select Boxes */
 .select-wrapper{
 	background: url(../images/icon_dropdown.png) no-repeat scroll right center transparent;
@@ -152,7 +157,7 @@ input.autoclear {
 .show-toggle-a{display:block;}
 .show-toggle-b{display:none;}
 /*label{font-weight:bold;} don't make changes to such non-specific elements. this effects a lot */
-.textbox-checkmark{background:url(images/icon_check.png) no-repeat 98% 50% transparent;}
+.textbox-checkmark{background:url(../images/icon_check.png) no-repeat 98% center; }
 /*  --------------------- Account settings  ---------------------------------------*/
 .security-question{width:550px;}
 /*  --------------------- End Account settings  -----------------------------------*/
