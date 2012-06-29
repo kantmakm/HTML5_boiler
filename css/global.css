@@ -262,6 +262,9 @@ h4 {
 	width:30px;
 }
 /* Rounded Corners/Box-shadow */
+.marketing-boxes {
+	padding-top:10px;
+}
 .titled-box {
 	background-color: #FDFDFD;
 	position: relative;
