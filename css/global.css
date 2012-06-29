@@ -29,6 +29,10 @@ a {
 .left {
 	float:left;
 }
+.right,
+footer .right {
+	float: right;
+}
 .ui-icon {
 	background: url(../images/icon_triangle_accordion.png) no-repeat scroll 0 0 transparent;
 	width:14px;

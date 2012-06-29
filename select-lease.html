@@ -18,15 +18,14 @@
   <!-- Mobile viewport optimized: h5bp.com/viewport -->
   <meta name="viewport" content="width=device-width">
 
-  <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
-
+  <!-- Use this in all pages -->
   <link rel="stylesheet" href="css/reset.css"> <!-- Eric Meyer Stylesheet -->
   <link rel="stylesheet" href="css/style.css"> <!-- Default Stylesheet -->
-  <link rel="stylesheet" href="css/global.css"> <!-- Added Styles For All Pages -->
-  <link rel="stylesheet" href="css/globalTHintegration.css">
-  <link rel="stylesheet" href="css/fonts.css"> <!-- Added Styles For All Pages -->
   <link rel="stylesheet" href="css/jquery.ui.css"> <!-- Added Styles For All Pages -->
+  <link rel="stylesheet" href="css/global.css"> <!-- Added Styles For All Pages -->
   <link rel="stylesheet" href="css/forms.css">
+  <link rel="stylesheet" href="css/accordion.css">
+  <link rel="stylesheet" href="css/fonts.css">
 	<!--[if lt IE 9]>
 	  <link rel="stylesheet" href="css/ie.css">
 	<![endif]-->
@@ -34,25 +33,18 @@
 	  <link rel="stylesheet" href="css/ie9.css">
 	<![endif]-->
 	
-  <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
-
-  <!-- All JavaScript at the bottom, except this Modernizr build.
-       Modernizr enables HTML5 elements & feature detects for optimal performance.
-       Create your own custom Modernizr build: www.modernizr.com/download/ -->
+		<!-- Use this in all pages -->
   <script src="js/libs/modernizr-2.5.3.min.js"></script>
-
-  <!-- JavaScript in the header so my other stuff doesn't break -->
-
-  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script src="js/jquery-1.7.2.min.js"></script>
   <script src="js/ui/jquery-ui-1.8.20.custom.js"></script>
-  <script src="http://cachedcommons.org/cache/jquery-bbq/1.2.1/javascripts/jquery-bbq.js"></script>
+  <script src="js/jquery-bbq.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/browserimage.js"></script>
+  <script src="js/nav.js"></script>
 
   <!-- scripts concatenated and minified via build script -->
   <script src="js/jquery.cookie.js"></script>
-	<script src="js/browserimage.js"></script>
-  <script src="js/plugins.js"></script>
-  <script src="js/script.js"></script>
   <script src="js/yearpicker.js"></script>
   <script src="js/servicerequest.js"></script>
 
@@ -75,34 +67,24 @@
 </header>
   <div role="main" id="main" class="clearfix">
 		<div id="signin" class="titled-box clearfix">
-			<h1 class="box-title"><span>WELCOME TO myARCHSTONE</span></h1>
+			<h1 class="box-title"><span>Select a lease you would like to open</span></h1>
 			<div class="box-shadow-left"> &nbsp; </div><div class="box-shadow-right"> &nbsp; </div>
-			<div >
-				<form method="POST" action="we-sent-you-email.html">
-					<h1>Reset your password</h1>
-					<p class="form-note">Please answer one of your security questions to reset your password.</p><br />
-					<p class="form-note-alert">Your last answer didn't match the original, please try again</p><br>
-					<p>Question:</p>
-					<p>What city were you born in?</p><br>
+			<div class="body-font-14">
+				<form method="POST" action="select-a-lease.html">
+					<p class="content-padding"><input type="radio" name="lease1" /> [Apartment Address], [Customer Name], [Community]</p>
+					<p class="content-padding"><input type="radio" name="lease1" /> 123 Main St #101, John Smith, Archstone Englewood</p>
+					<p class="content-padding"><input type="radio" name="lease1" /> 234 Spruce St #12, John Smith, Archstone Utopia</p>
 					
-					<p>Answer:</p>
-					<div style="width:550px;">
-						<div style="float:left; width:400px;"><input type="text" name="securityanswer" value="" /></div>
-						<div style="float:left; width:100px;padding-left:20px;" class="form-note-alert">Your answer didn't match the original. Try it again.</div>
-					</div>
-					<div style="clear:both;"></div>
 					<div class="submit-area-right">
 						<button type="submit" class="submit"><span>Continue</span><span class="end"> &nbsp; </span></button>
 					</div>
-					<div class="backtosignin">
-						<a href="">< Back to sign in</a>
-					</div>					
+					
 				</form>
 			</div>
 			<p class="box-footer"><span></span></p>
 		</div>
 		
-		<div class="photo-box left clearfix">
+		<!--<div class="photo-box left clearfix">
 			<p><strong>OPTIONAL</strong><br/>MARKETING<br/>REAL<br/>ESTATE</p>
 			<img src="images/puppy.png">
 		</div>
@@ -114,7 +96,7 @@
 				<a href="#" class="button-iphone"> &nbsp; </a>
 			</div>
 			<p class="box-footer"><span></span></p>
-		</div>
+		</div>-->
 		
   </div>
   <footer>
