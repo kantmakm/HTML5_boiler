@@ -63,7 +63,10 @@ ul.form-with-validation .message-text {
 }
 
 /* Inputs */
-.select-wrapper label {
+.select-wrapper label,
+.form-with-validation input[type=text],
+.form-with-validation input[type=password],
+.form-with-validation input[type=email] {
 	width: 100%;
 }
 .select-wrapper label,

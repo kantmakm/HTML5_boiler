@@ -12,15 +12,17 @@ payments.register.slider = function(){
 		max: 100,
 		range: 'min',
 		slide: function( event, ui ) {
-			var value = $(this).parents('.ui-accordion-content').prev().find('.right').html().replace(/[^0-9\.]+/g, '');
+			var value = $(this).parents('.multi-accordion').find('table.balance .total').html().replace(/[^0-9\.]+/g, '');
 			var $radio = $(this).parent().find('input[type=radio]');
 			
-			if(!$radio.prop('selected'))$radio.prop('selected', true);
+			if(!$radio.prop('checked'))$radio.prop('checked', true);
+			
 			value = (ui.value/100)*parseInt(value);
 			$( this ).next().val( "$" + value.formatMoney(2, '.', ',') );
+			$(this).parents('.ui-accordion-content').prev().find('.right').html(value.formatMoney(2, '.', ','));
 		}
 	});
 	$('.slider .ui-slider-range').addClass('ui-corner-left');
-	$( "#amount" ).val( "$" + $( "#slider" ).slider( "value" ) );
 };
+// payments.register.radio = 
 payments.register.slider();

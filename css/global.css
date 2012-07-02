@@ -33,6 +33,12 @@ a {
 footer .right {
 	float: right;
 }
+.text-right {
+	text-align: right;
+}
+.text-normal {
+	font-weight: normal;
+}
 .ui-icon {
 	background: url(../images/icon_triangle_accordion.png) no-repeat scroll 0 0 transparent;
 	width:14px;
@@ -541,8 +547,28 @@ h3.discreet {
 /**
  * Page specific to make-onetime-payment.html
  */
+table.balance {
+	font-size: 12px;
+	font-weight: bold;
+}
+table.balance td.description {
+	text-align: center;
+	width: 100%;
+	font-weight: normal;
+}
+table.balance tbody td {
+	padding-bottom: 10px;
+	white-space: nowrap;
+}
+table.balance tfoot td {
+	padding-top: 15px;
+	border-top: 2px solid #E2E2E2;
+}
 
-
+table.balance tfoot .total {
+	font-weight: 100;
+	font-size: 18px;
+}
 /*	~~~~~~~~~~~ TH Tim's Modifications ~~~~~~~~~~~~~~~~~~~~~~~~	*/
 .clear-both{clear:both;}
 .float-right{float:right;}
