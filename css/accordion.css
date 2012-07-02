@@ -1,13 +1,13 @@
 /**
  * Square-titled Accordion Styling
  */
-.accordion {
-	
+.squared-accordion h2.ui-accordion-header {
+	padding: 20px 30px 5px 50px;
 }
 .squared-accordion h2 {
 	background: url(../images/bkgd_accordion_header.png) repeat-x scroll 0 0 transparent;
 	height: 33px;
-	padding: 20px 0 5px 50px;
+	padding: 20px 30px 5px;
 	margin: 0;
 	font-family: "HelveticaNeueLTStd", Helvetica, Arial, sans-serif;
 	
@@ -126,4 +126,29 @@ h2.accordion-header a.email,
 .discreet-accordion {
 	overflow: hidden;
 	position: relative;
+}
+
+/** 
+ * Multi-accordion styling
+ */
+.multi-accordion {}
+
+.multi-accordion .slider {
+	width: 250px;
+	display: inline-block;
+	background: none no-repeat scroll 0 0 #e7e5e3;
+	border: none;
+	height: 10px;
+
+}
+.multi-accordion .slider .ui-slider-range {
+	background: url(../images/bkgd_slider_tile.png) repeat-x scroll 0 0 #00929f;	
+}
+.multi-accordion .slider a.ui-slider-handle {
+	background: url(../images/button_slider_handle.png) no-repeat scroll center center transparent;
+	border: none;
+	height: 25px;
+	width: 25px;
+	top: -7px;
+	outline: none;
 }
