@@ -15,7 +15,7 @@ payments.register.slider = function(){
 			var value = $(this).parents('.ui-accordion-content').prev().find('.right').html().replace(/[^0-9\.]+/g, '');
 			var $radio = $(this).parent().find('input[type=radio]');
 			
-			if($radio.prop('selected'))
+			if(!$radio.prop('selected'))$radio.prop('selected', true);
 			value = (ui.value/100)*parseInt(value);
 			$( this ).next().val( "$" + value.formatMoney(2, '.', ',') );
 		}
