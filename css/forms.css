@@ -69,6 +69,9 @@ ul.form-with-validation .message-text {
 .form-with-validation input[type=email] {
 	width: 100%;
 }
+.form-with-validation input[type=radio] {
+	vertical-align: middle;
+}
 .select-wrapper label,
 input[type=text],
 input[type=password],

@@ -300,14 +300,16 @@ h4 {
 	font-weight: normal;
 	margin: 0;
 }
-.titled-box .box-title span,
-.titled-box .box-title a {
+.titled-box .box-title span {
 	background: url(../images/bkgd_box_header_small.png) no-repeat scroll left bottom transparent;
 	height: 29px;
 	padding: 15px 0 5px 20px;
 	left: -9px;
 	position: absolute;
 	top: 0;
+}
+.titled-box .box-title a.right {
+	padding: 20px 15px 0 0;
 }
 .titled-box .box-footer {
 	position: absolute;
@@ -353,6 +355,9 @@ h4 {
 }
 .padded {
 	margin: 10px 25px;
+}
+.padded-left {
+	margin-left:10px;
 }
 .squared-box div.accordion-body {
 	margin: 0;
