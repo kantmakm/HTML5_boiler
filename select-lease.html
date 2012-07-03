@@ -18,7 +18,7 @@
   <!-- Mobile viewport optimized: h5bp.com/viewport -->
   <meta name="viewport" content="width=device-width">
 
-  <!-- Use this in all pages -->
+ <!-- Use this in all pages -->
   <link rel="stylesheet" href="css/reset.css"> <!-- Eric Meyer Stylesheet -->
   <link rel="stylesheet" href="css/style.css"> <!-- Default Stylesheet -->
   <link rel="stylesheet" href="css/jquery.ui.css"> <!-- Added Styles For All Pages -->
@@ -33,22 +33,12 @@
 	  <link rel="stylesheet" href="css/ie9.css">
 	<![endif]-->
 	
-		<!-- Use this in all pages -->
-  <script src="js/libs/modernizr-2.5.3.min.js"></script>
-  <script src="js/jquery-1.7.2.min.js"></script>
-  <script src="js/ui/jquery-ui-1.8.20.custom.js"></script>
-  <script src="js/jquery-bbq.js"></script>
-  <script src="js/plugins.js"></script>
-  <script src="js/script.js"></script>
-  <script src="js/browserimage.js"></script>
-  <script src="js/nav.js"></script>
-
-  <!-- scripts concatenated and minified via build script -->
-  <script src="js/jquery.cookie.js"></script>
-  <script src="js/yearpicker.js"></script>
-  <script src="js/servicerequest.js"></script>
-
-  <!-- end scripts -->
+	<!-- Specific to this page -->
+	
+	<!-- All Scripts are in the bottom before the </body>. Except for jquery and modernizr -->
+	<!-- Use this in all pages -->
+	<script src="js/libs/modernizr-2.5.3.min.js"></script>
+  <script src="js/jquery-1.7.2.min.js"></script> 
 
 </head>
 <body class="medium-width">
@@ -56,58 +46,64 @@
 	<div id="background-image">
 		<img class="source-image" src="images/bkgd_1.jpg" alt="Archstone">
   </div>
-	<script type="text/javascript">Background.init(); </script>
-  <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
-       chromium.org/developers/how-tos/chrome-frame-getting-started -->
-  <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+	<!-- MJ: This needs to be here to resize this before the page finishes loading instead of after -->
+	<script src="js/browserimage.js"></script>
+
   <header>
 		<div class="primary-nav-contents">
 			<a href="index.html" id="logo"><img src="images/logo.png" width="167" height="38" alt="Archstone"></a>
 		</div>
 </header>
   <div role="main" id="main" class="clearfix">
-		<div id="signin" class="titled-box clearfix">
-			<h1 class="box-title"><span>Select a lease you would like to open</span></h1>
-			<div class="box-shadow-left"> &nbsp; </div><div class="box-shadow-right"> &nbsp; </div>
-			<div class="body-font-14">
-				<form method="POST" action="select-a-lease.html">
-					<p class="content-padding"><input type="radio" name="lease1" /> [Apartment Address], [Customer Name], [Community]</p>
-					<p class="content-padding"><input type="radio" name="lease1" /> 123 Main St #101, John Smith, Archstone Englewood</p>
-					<p class="content-padding"><input type="radio" name="lease1" /> 234 Spruce St #12, John Smith, Archstone Utopia</p>
-					
+		<div id="signin" class="squared-box clearfix">
+			<h1 class="box-title"><span>Select the lease you would like to open</span></h1>
+			<div class="padded clearfix">
+				<form method="POST" action="/">
+					<ul class="form-with-validation">
+						<li>
+							<input id="lease1" name="lease1" tabindex="2" type="radio" value="" class="padded-left" />
+							<label for="lease1">[ Apartment Address ] Customer Name [ Community ]</label>
+						</li>
+						<li>
+							<input id="lease2" name="lease2" tabindex="3" type="radio" value="" class="padded-left" />							 
+							<label for="lease2">123 Main Street #101, Genvieve Cornhill, Archstone Englewood</label>
+						</li>
+						<li>
+							<input id="lease3" name="lease3" tabindex="4" type="radio" value="" class="padded-left" />							 
+							<label for="lease3">456 Spruce Street #12, Genvieve Cornhill, Archstone Utopia</label>
+						</li>
+					</ul>					
 					<div class="submit-area-right">
 						<button type="submit" class="submit"><span>Continue</span><span class="end"> &nbsp; </span></button>
 					</div>
 					
 				</form>
 			</div>
-			<p class="box-footer"><span></span></p>
 		</div>
-		
-		<!--<div class="photo-box left clearfix">
-			<p><strong>OPTIONAL</strong><br>MARKETING<br>REAL<br>ESTATE</p>
-			<img src="images/puppy.png" alt="marketing message">
-		</div>
-		
-		<div class="titled-box left clearfix small-box titled-box-right">
-			<h1 class="box-title"><span>myARCHSTONE MOBILE</span></h1>
-			<div class="body clearfix">
-				<a href="#" class="button-droid"> &nbsp; </a>
-				<a href="#" class="button-iphone"> &nbsp; </a>
-			</div>
-			<p class="box-footer"><span></span></p>
-		</div>-->
 		
   </div>
   <footer>
-		<div class="right">
-			<a href="#">ArchstoneApartments.com</a>
-		</div>
-		<div class="left-one-row">
-				<a href="#">Copyright © 2012 Archstone. All Rights Reserved.</a> | 
-				<a href="#">Privacy Policy</a>
-		</div>
+	  <div class="right">
+		<a href="/">ArchstoneApartments.com</a>
+	  </div>
+	  <div class="left-one-row">
+		<a href="#">Copyright © 2012 Archstone. All Rights Reserved.</a> | 
+		<a href="#">Privacy Policy</a>
+	  </div>
   </footer>
+
+
+	<!-- Use this in all pages -->
+  <script src="js/ui/jquery-ui-1.8.20.custom.js"></script>
+  <script src="js/jquery-bbq.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/nav.js"></script>
+	
+	<!-- Specific to this page -->
+  <script src="js/service-request.js"></script>
+
+  <!-- end scripts -->
 
 
   <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
