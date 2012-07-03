@@ -369,6 +369,13 @@ h4 {
 	background: url(../images/bkgd_box_header_large.png) repeat-x scroll 0 0 transparent;
 	font-weight: normal;
 }
+.squared-box h1 .right {
+	font-family: Helvetica;
+	font-size: 14px;
+	text-transform: standard;
+	color: #444444;
+	font-weight: regular;
+}
 /* Both */
 .squared-box fieldset,
 .titled-box fieldset {
