@@ -570,7 +570,7 @@ table.balance tfoot td {
 	border-top: 2px solid #E2E2E2;
 }
 
-table.balance tfoot .total {
+table.balance tfoot #total {
 	font-weight: 100;
 	font-size: 18px;
 }
