@@ -356,6 +356,9 @@ h4 {
 .padded {
 	margin: 10px 25px;
 }
+.padded-left {
+	margin-left:10px;
+}
 .squared-box div.accordion-body {
 	margin: 0;
 }
