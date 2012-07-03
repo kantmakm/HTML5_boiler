@@ -2,27 +2,110 @@
 var payments = (typeof (payments) === "undefined" || !payments) ? {} : payments;
 
 // payments-register
-payments.register = function(){
-	payments.register.slider();
-};
-payments.register.slider = function(){
-	$( ".slider" ).slider({
+payments.options = {};
+payments.register = function(options){
+	
+	payments.options = options;
+	console.log(options);
+	// payments.options.totalBalance = parseFloat(payments.options.total.length === 1 ? payments.options.total.html().replace(/[^0-9\.]+/g, '') : 0);
+	
+	/**
+	 * slider
+	 */
+	payments.options.percentageSlider.slider({
 		value:10,
 		min: 0,
 		max: 100,
 		range: 'min',
 		slide: function( event, ui ) {
-			var value = $(this).parents('.multi-accordion').find('table.balance .total').html().replace(/[^0-9\.]+/g, '');
 			var $radio = $(this).parent().find('input[type=radio]');
 			
-			if(!$radio.prop('checked'))$radio.prop('checked', true);
-			
-			value = (ui.value/100)*parseInt(value);
+			if($radio.length === 1 && !$radio.prop('checked'))$radio.prop('checked', true);
+			value = (ui.value/100)*payments.options.totalBalance;
 			$( this ).next().val( "$" + value.formatMoney(2, '.', ',') );
-			$(this).parents('.ui-accordion-content').prev().find('.right').html(value.formatMoney(2, '.', ','));
+			payments.options.paymentAmount.html("$" + value.formatMoney(2, '.', ','));
+		},
+		stop: function(event, ui) {
+			var $radio = $(this).parent().find('input[type=radio]');
+			var $textbox = $(this).next();
+			var stateObj = { payment_amount: parseFloat($textbox.val().replace(/[^0-9\.]+/g, ''))};
+
+			eval('stateObj.' + $radio.attr('name') + ' = "' + $radio.val() + '"');
+			// eval('stateObj.' + $textbox.attr('name') + ' = ' + ui.value);
+			$.bbq.pushState(stateObj);
 		}
 	});
-	$('.slider .ui-slider-range').addClass('ui-corner-left');
+	payments.options.percentageSlider.find('.ui-slider-range').addClass('ui-corner-left');// jquery styling
+	
+	/**
+	 * bindEvents
+	 */
+	payments.options.paymentType.change(function(e){
+		var evaluate = 'var stateObj = {' + $(e.srcElement).attr('name') + ' : "' + $(e.srcElement).val() + '"};';
+		eval(evaluate);
+		if(typeof stateObj !== 'undefined')$.bbq.pushState(stateObj);
+	});
+	
+	payments.options.textBalances.change(function(e){
+		var numberVal = parseFloat($(this).val().replace(/[^0-9\.]+/g, ''));
+		var $radio = $(this).parent().find('input[type=radio]');
+		var evaluate = 'var stateObj = {' + $radio.attr('name') + ' : "' + $radio.val() + '"};';
+		eval(evaluate);
+		stateObj.payment_amount = numberVal;
+		$.bbq.pushState(stateObj);
+		// $(this).val(numberVal.formatMoney(2, '.', ','));
+	}).focus(function(){
+		var numberVal = parseFloat($(this).val().replace(/[^0-9\.]+/g, ''));
+		$(this).val(numberVal);
+	});
+	
 };
-// payments.register.radio = 
-payments.register.slider();
+payments.register.hashChange = function(state) {
+	console.log(state);
+	state.payment_amount = parseFloat(state.payment_amount);
+	var value, $selectedRadio;
+	
+	// paymentType radio button
+	payments.options.paymentType.each(function(i,e){
+		if($(e).val() === state.payment_type)$selectedRadio = $(e);
+	});
+	$selectedRadio.prop('checked', true)
+	
+	// get the value
+	switch(state.payment_type)
+	{
+		case "full":
+			value = (payments.options.totalBalance);
+			break;
+		case "percentage":
+			var percent = parseInt((parseFloat(state.payment_amount)/parseFloat(payments.options.totalBalance))*100);
+			value = state.payment_amount;
+
+			// percentage Slider
+			payments.options.percentageSlider
+				.slider('value', percent)
+				.next().val("$" + state.payment_amount.formatMoney(2, '.', ','));
+			break;
+		case "other":
+			var numberVal = parseFloat($selectedRadio.parent().next().val().replace(/[^0-9\.]+/g, ''));
+			console.log(isNaN(numberVal));
+			// empty "other" field, lets populate it
+			if(isNaN(numberVal))
+			{
+				console.log('what?');
+				$selectedRadio.parent().next().val("$" + state.payment_amount.formatMoney(2, '.', ','));
+				value = state.payment_amount;
+			}
+			else
+			{
+				value = numberVal;
+				$selectedRadio.parent().next().val("$" + value.formatMoney(2, '.', ','));
+			}
+			break;
+	}
+
+	// payment amount
+	payments.options.paymentAmount.html("$" + value.formatMoney(2, '.', ','));
+	
+	// payments.options.paymentType.val(state.payment_type);
+};

@@ -68,7 +68,7 @@
 						<tfoot>
 							<tr>
 								<td colspan="2" class="label">Current Balance</td>
-								<td colspan="2" class="total">$1,837.98</td>
+								<td colspan="2" id="total">$1,837.98</td>
 							</tr>
 						</tfoot>
 						<tbody>
@@ -107,12 +107,12 @@
 				</div>
 				
 				<h2>
-					<span class="right">$1,837.98</span>
+					<span class="right" id="payment-amount">$1,837.98</span>
 					<span>Payment Amount</span>
 				</h2>
 				<div class="clearfix">
 					<ul>
-						<li><label><input type="radio" name="payment_type" value="balance"><span>Current Balance: $1,837.98</span></label></li>
+						<li><label><input type="radio" name="payment_type" value="full" checked="checked"><span>Current Balance: $1,837.98</span></label></li>
 						<li>
 							<label><input type="radio" name="payment_type" value="percentage"><span>Percentage of the Balance</span></label>
 							<div class="slider"></div>
@@ -170,7 +170,36 @@
 	
 	<!-- Specific to this page -->
   <script src="js/make-onetime-payment.js"></script>
+	<script>
+	$(function(){
+		
+		// set defaults for page loaded with no hashtags
+	  var defaultParams = {
+	      "total": 								$('#total'),
+	      "paymentType": 					$("input[name=payment_type]"),
+	      "paymentAmount": 				$("#payment-amount"),
+				"percentageSlider": 		$('.slider'),
+				"totalBalance": 				parseFloat($('#total').html().replace(/[^0-9\.]+/g, '')),
+				"textBalances": 				$('.multi-accordion input[type=text]'),
+	      "state": 								{
+														      "payment_type": 'full', // would come from server side model
+																	"payment_amount": parseFloat($('#total').html().replace(/[^0-9\.]+/g, '')) //100% of total by default
+															  }
+	  };
+	
+	
+		// initialize the service request history components
+		payments.register(defaultParams);
 
+	  // handle hash change for service request history
+	  $(window).bind("hashchange", function (e) {
+	      payments.register.hashChange($.extend($.extend({}, defaultParams.state), $.deparam.fragment()));
+	  });
+
+	  // first time, trigger the hash change to show the default history or reflect a bookmarked or linked hash
+	  $(window).trigger("hashchange");
+	});
+	</script>
   <!-- end scripts -->
 
 
