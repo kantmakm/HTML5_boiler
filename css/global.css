@@ -375,6 +375,7 @@ h4 {
 }
 .squared-box p {
 	padding: 8px 0;
+	font-size: 14px;
 }
 /* Both */
 .squared-box fieldset,
