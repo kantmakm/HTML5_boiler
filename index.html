@@ -71,20 +71,20 @@
 			</div>
 			<div class="body-right">
 				<form method="POST" action="select-a-lease.html">
-					<h3 class="discreet">Sign In</h3>
+					<h3>Sign In</h3>
 					<ul class="form-with-validation">
 						<li>
 							<label for="email">Email address <span class="required">*</span></label>
-							<input data-val="true" data-val-required="Email address is required." type="text" name="email" id="email" value="">
+							<input data-val="true" data-val-required="Email address is required." type="text" name="email" id="email" value="" class="input-validation-error">
 							<span class="ui-state-error-text field-validation-error" data-valmsg-for="email" data-valmsg-replace="true">
 								<span for="email" generated="true" class="" style="">Email address is required.</span>
 							</span>
 						</li>
 						<li>
 							<label for="password">Password <span class="required">*</span></label>
-							<input data-val="true" type="password" data-val-required="Password Is Required" name="password" id="password" tabindex="3" value="">
+							<input data-val="true" type="password" data-val-required="Password is required" name="password" id="password" tabindex="3" value="" class="input-validation-error">
 							<span class="ui-state-error-text field-validation-error" data-valmsg-for="email" data-valmsg-replace="true">
-								<span for="password" generated="true" class="" style="">Password Is Required.</span>
+								<span for="password" generated="true" class="" style="">Password is required.</span>
 							</span>
 						</li>
 					</ul>
@@ -93,8 +93,8 @@
 					</div>
 					<div class="remember-area">
 						<input type="checkbox" name="remember_email" id="remember-email">
-						<p class="body-font-14"><label for="remember-email">Remember my email</label></p>
-						<p class="body-font-14-teal"><a href="#">Forgot password?</a></p>
+						<p><label for="remember-email">Remember my email</label></p>
+						<p><a href="#">Forgot password?</a></p>
 					</div>
 				</form>
 			</div>
