@@ -369,12 +369,8 @@ h4 {
 	background: url(../images/bkgd_box_header_large.png) repeat-x scroll 0 0 transparent;
 	font-weight: normal;
 }
-.squared-box h1 .right {
-	font-family: Helvetica;
-	font-size: 14px;
-	text-transform: standard;
-	color: #444444;
-	font-weight: regular;
+.squared-box p {
+	padding: 8px 0;
 }
 /* Both */
 .squared-box fieldset,
@@ -473,6 +469,9 @@ h3.discreet {
 }
 .submit-area-right {
 	float:right;
+}
+.box-title .submit-area-right {
+	margin: -5px 30px 0 0;
 }
 /*.submit {
 	font-family: "HelveticaNeueBold", Helvetica, Arial, sans-serif;
@@ -581,19 +580,48 @@ table.balance tfoot #total {
 	font-weight: 100;
 	font-size: 18px;
 }
+
+/**
+ * Page-specific to contact-information.html
+ */
+.switchable ul input, 
+.switchable ul p {
+	transition: all 0.5s;
+	-o-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+}
+.switchable ul input,
+.switchable ul .message-text {
+	opacity: 0;
+}
+.switchable ul p {
+	margin: -30px 7px 0;
+	opacity: 1;
+	width: 100%;
+}
+.switchable-edit ul li input,
+.switchable-edit ul li .message-text {
+	opacity: 1;
+}
+.switchable-edit ul li p {
+	opacity: 0;
+	width:0%;
+}
+
 /*	~~~~~~~~~~~ TH Tim's Modifications ~~~~~~~~~~~~~~~~~~~~~~~~	*/
-.clear-both{clear:both;}
-.float-right{float:right;}
-.float-left{float:left;}
-.section-header{
+.clear-both{clear:both;} /* should be replaced by .clearfix (and how that works) */
+.float-right{float:right;} /* should be replaced by .right */
+.float-left{float:left;} /* should be replaced  by .left */
+.section-header{ /* should be replaced by .squared-box h2 */
 	background: url("../images/bkgd_accordion_header.png") repeat-x scroll 0 0 transparent;
-	border: 1px solid #CCF;	
+	border-bottom: 1px solid #CCCCCC;	
 	color: #999999;
 	height: 33px;
 	margin:0px;
 	padding: 20px 0 5px 20px;
 }
 .pad-below{margin-bottom:10px;}
-.content-padding{padding:20px;}
+.content-padding{padding:20px;}/* should be replaced by .padded */
 
 /*	~~~~~~~~~~~ TH end Tim's Modifications ~~~~~~~~~~~~~~~~~~~~ */

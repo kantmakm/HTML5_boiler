@@ -12,7 +12,7 @@ accounts.register.autocomplete = function()
 		minLength: 2,
 		select: function( event, ui ) {
 			$(this).removeClass('autoclear');
-			if(typeof ui.item.address != 'undefined')$('#autocomplete-address').val(ui.item.address).removeClass('autoclear');
+			if(typeof ui.item.address !== 'undefined')$('#autocomplete-address').val(ui.item.address).removeClass('autoclear');
 		},
 		open: function() {
 			$( this ).removeClass( "ui-corner-all" ).addClass( "ui-corner-top" );
@@ -25,4 +25,4 @@ accounts.register.autocomplete = function()
 
 $(function(){
 	accounts.register();
-})
+});

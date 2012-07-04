@@ -18,17 +18,14 @@
   <!-- Mobile viewport optimized: h5bp.com/viewport -->
   <meta name="viewport" content="width=device-width">
 
-  <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
-
+ <!-- Use this in all pages -->
   <link rel="stylesheet" href="css/reset.css"> <!-- Eric Meyer Stylesheet -->
   <link rel="stylesheet" href="css/style.css"> <!-- Default Stylesheet -->
-  <link rel="stylesheet" href="css/global.css"> <!-- Added Styles For All Pages --> 
-  <link rel="stylesheet" href="css/nav.css">
-  <link rel="stylesheet" href="css/fonts.css">
-  <link rel="stylesheet" href="css/accordion.css">
   <link rel="stylesheet" href="css/jquery.ui.css"> <!-- Added Styles For All Pages -->
+  <link rel="stylesheet" href="css/global.css"> <!-- Added Styles For All Pages -->
   <link rel="stylesheet" href="css/forms.css">
-   <link rel="stylesheet" href="css/globalTHintegration.css">
+  <link rel="stylesheet" href="css/accordion.css">
+  <link rel="stylesheet" href="css/fonts.css">
 	<!--[if lt IE 9]>
 	  <link rel="stylesheet" href="css/ie.css">
 	<![endif]-->
@@ -36,34 +33,18 @@
 	  <link rel="stylesheet" href="css/ie9.css">
 	<![endif]-->
 	
-  <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
-
-  <!-- All JavaScript at the bottom, except this Modernizr build.
-       Modernizr enables HTML5 elements & feature detects for optimal performance.
-       Create your own custom Modernizr build: www.modernizr.com/download/ -->
-  <script src="js/libs/modernizr-2.5.3.min.js"></script>
-
-  <!-- JavaScript in the header so my other stuff doesn't break -->
-
-  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
-  <script src="js/jquery-1.7.2.min.js"></script>
-  <script src="js/ui/jquery-ui-1.8.20.custom.js"></script>
-
-  <!-- scripts concatenated and minified via build script -->
-  <script src="js/jquery.cookie.js"></script>
-	<script src="js/browserimage.js"></script>
-  <script src="js/plugins.js"></script>
-  <script src="js/script.js"></script>
-  <script src="js/nav.js"></script>
-  <!-- end scripts -->
+	<!-- All Scripts are in the bottom before the </body>. Except for jquery and modernizr -->
+	<!-- Use this in all pages -->
+	<script src="js/libs/modernizr-2.5.3.min.js"></script>
+  <script src="js/jquery-1.7.2.min.js"></script> 
 
 </head>
-<body class="signed-in service-request">
+<body class="signed-in">
 	<!-- The Stretchy Background Image -->
 	<div id="background-image">
 		<img class="source-image" src="images/bkgd_graphite_burst.png" alt="Archstone">
   </div>
-	<script type="text/javascript">Background.init(); </script><!-- This needs to be here to resize this before the page finishes loading instead of after -->
+	<script src="js/browserimage.js"></script>
   <header>
 		<!-- Primary Navigation -->
 		<div class="primary-nav-contents" style="width:790px;">
@@ -92,23 +73,44 @@
   </header>
 
   <div role="main" id="main" class="clearfix">
-		<div id="service-request" class="accordion-box squared-box clearfix">
-			<h1 class="box-title"><span>CONTACT INFORMATION</span>
-							<span style="float:right; padding-right:30px;"><button type="submit" class="submit"><span>Edit</span><span class="end"> &nbsp; </span></button></span>
-					<div class="clear-both"></div></h1>
-			<div >
+		<div id="service-request" class="accordion-box squared-box clearfix switchable">
+			<h1 class="box-title">
+				<span class="submit-area-right">
+					<button type="submit" class="submit right">
+						<span>Edit</span>
+						<span class="end"> &nbsp; </span>
+					</button>
+				</span>
+				<span>CONTACT INFORMATION</span>
+			</h1>
+			<div class="squared-accordion" >
 				<form method="POST" action="select-a-lease.html">
-					<div class="section-header">
-						My Contact
-					</div>
-					<div class="content-padding">
-						<label for="email">Email Address:</label><span class="form-note"> (for staying in touch)</span>
-						<div class="clear-both"></div>
-						<div class="form-entry">
-							<div class="show-toggle-a left-form-div pad-below">Billy.Bibbit@email.com</div>
-							<div class="left-form-div show-toggle-b"><input type="text" name="email" value="Billy.Bibbith@email.com"/></div>
-						</div>
-						<div class="clear-both"></div>
+					<h2>My Contact</h2>
+					<div class="padded">
+						<ul class="form-with-validation">
+							<li>
+								<label for="email">Email Address</label>
+								<span class="message-text">(for staying in touch)</span>
+								<input id="email" name="email" type="text" value="Billy.Bibbit@email.com">
+								<p>Billy.Bibbit@email.com</p>
+								<!-- This is a validation error. Uncomment to see how it looks -->
+								<!-- <span class="ui-state-error-text field-validation-error" data-valmsg-for="newPassword" data-valmsg-replace="true">
+									<span for="newPassword" generated="true" class="" style="">your password is not 6 characters</span>
+								</span> -->
+							</li>
+							<li>
+								<label for="email">Home Phone</label>
+								<span class="message-text">(optional)</span>
+								<input id="homephone" name="homephone" type="text" value="555-555-5555">
+								<p>555-555-5555</p>
+							</li>
+							<li>
+								<label for="email">Home Phone</label>
+								<span class="message-text">(for staying in touch)</span>
+								<input id="email" name="email" type="text" value="Billy.Bibbit@email.com">
+								<p>Billy.Bibbit@email.com</p>
+							</li>
+						</ul>
 						<label for="homephone">Home Phone:</label>
 						<div class="form-entry">
 							<div class="show-toggle-a left-form-div pad-below">555-555-5555</div>
@@ -122,24 +124,18 @@
 						</div>
 						<div style="clear:both;"></div>
 					</div>
-					<div class="section-header">
-						Emergency Contact
-					</div>
+					<h2>Emergency Contact</h2>
 					<div class="content-padding">
 						<label for="ername">Name:</label>
-						<div class="clear-both"></div>
 						<div class="form-entry">
 							<div class="show-toggle-a left-form-div pad-below">Nurse Ratched</div>
 							<div class="left-form-div show-toggle-b"><input type="text" name="ername" value="Nurse Ratched"/></div>
 						</div>
-						<div class="clear-both"></div>
 						<label for="errelationship">Relationship:</label>
-						<div class="clear-both"></div>
 						<div class="form-entry">
 							<div class="show-toggle-a left-form-div pad-below">Personal Nurse</div>
 							<div class="left-form-div show-toggle-b"><input type="text" name="errelationship" value="Personal Nurse"/></div>
 						</div>
-						<div class="clear-both"></div>
 						<label for="erhomephone">Home Phone:</label>
 						<div class="form-entry">
 							<div class="show-toggle-a left-form-div pad-below">666-666-6666</div>
@@ -147,10 +143,8 @@
 						</div>
 						<div style="clear:both;"></div>
 					</div>
-					<div class="section-header">
-						Employer Contact
-					</div>
-					<div class="content-padding">
+					<h2>Employer Contact</h2>
+					<div class="padded">
 						<label for="employmentstatus">Employment Status:</label>
 						<div class="form-entry">
 							<div class="show-toggle-a left-form-div" pad-below>Employed</div>
@@ -198,18 +192,28 @@
 		</div>
   </div>
   <footer>
-		<div class="right">
-			<a href="dialog-email.html" class="cta-dialog" rel="footer" title="Contact Us">Contact Us</a>
-		</div>
-		<div class="left">
-			<p>Champions Park  |  2525 E. 104th Ave., Thornton, CO 80233  |  (866) 914-9716</p>
-			<p>
-				<a href="#">Copyright © 2012 Archstone. All Rights Reserved.</a> | 
-				<a href="#">Privacy Policy</a> | 
-				<a href="/">ArchstoneApartments.com</a>
-			</p>
-		</div>
+	  <div class="right">
+		<a href="/">ArchstoneApartments.com</a>
+	  </div>
+	  <div class="left-one-row">
+		<a href="#">Copyright © 2012 Archstone. All Rights Reserved.</a> | 
+		<a href="#">Privacy Policy</a>
+	  </div>
   </footer>
+
+
+	<!-- Use this in all pages -->
+  <script src="js/ui/jquery-ui-1.8.20.custom.js"></script>
+  <script src="js/jquery-bbq.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/nav.js"></script>
+
+	<!-- Specific to this page -->
+  <script src="js/contact-information.js"></script>
+	
+  <!-- end scripts -->
+
 
   <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
        mathiasbynens.be/notes/async-analytics-snippet -->
