@@ -369,6 +369,9 @@ h4 {
 	background: url(../images/bkgd_box_header_large.png) repeat-x scroll 0 0 transparent;
 	font-weight: normal;
 }
+.squared-box p {
+	padding: 8px 0;
+}
 /* Both */
 .squared-box fieldset,
 .titled-box fieldset {
