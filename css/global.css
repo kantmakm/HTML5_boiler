@@ -287,8 +287,14 @@ h4 {
 .squared-box .box-title {
 	font-family: "HelveticaNeueLTStd", Helvetica, Arial, sans-serif;
 	font-size: 22px;
-	color: #6E6E6E;
+	/*color: #6E6E6E;*/
+	color: #444444; /* TM 7/4 :psd's show 444*/
 	font-weight: normal;
+}
+.squared-box .box-title.discreet {
+	font-size: 14px;
+	font-weight: bold;
+	padding-bottom:0;
 }
 .titled-box .box-title {
 	position: absolute;
@@ -307,6 +313,11 @@ h4 {
 	left: -9px;
 	position: absolute;
 	top: 0;
+}
+.titled-box .box-title a {
+	font-size: 12px;
+	color: #666666; /* TM 7/4 :psd's show 666*/
+	font-weight: regular;
 }
 .titled-box .box-title a.right {
 	padding: 20px 15px 0 0;
@@ -349,9 +360,10 @@ h4 {
 .titled-box .body-right {
 	float:left;
 }
+.squared-box h3,
 .titled-box h3 {
 	font-size: 16px;
-	color: #444444;
+	color: #999999;
 }
 /* Squared-corners/no drop-shadow */
 .squared-box {
@@ -375,7 +387,13 @@ h4 {
 }
 .squared-box p {
 	padding: 8px 0;
+}
+.squared-box p {
 	font-size: 14px;
+}
+.titled-box p,
+.squared-box p {
+	color:#444;
 }
 /* Both */
 .squared-box fieldset,
@@ -454,6 +472,7 @@ h3.discreet {
 	padding: 0 0 5px;
 	font-size: 11px;
 	font-family: "HelveticaNeueBold", Helvetica, Arial, sans-serif;
+	color: #e34848;
 }
 .remember-area {
 	float:left;
@@ -475,9 +494,9 @@ h3.discreet {
 .submit-area-right {
 	float:right;
 }
-.box-title .submit-area-right {
+/*.box-title .submit-area-right {
 	margin: -5px 30px 0 0;
-}
+}*/
 /*.submit {
 	font-family: "HelveticaNeueBold", Helvetica, Arial, sans-serif;
 	font-size: 14px;
@@ -494,10 +513,10 @@ h3.discreet {
 }
 .button-droid {
 	background: url(../images/button_droid.png) no-repeat scroll 0 0 transparent;
-	margin: 0 15px 0 0;
 }
 .button-iphone {
 	background: url(../images/button_iphone.png) no-repeat scroll 0 0 transparent;
+	margin: 0 15px 0 0;
 }
 
 /**

@@ -3,8 +3,11 @@ ul.form-with-validation {
 	padding: 0;
 }
 ul.form-with-validation label {
-	font-size: 14px;
 	color:#444;
+}
+ul.form-with-validation label.discreet {
+	color:#666;
+	font-size: 12px;
 }
 ul.form-with-validation li {
 	position: relative;
@@ -160,6 +163,9 @@ input.autoclear {
 .back-arrow {
 	background:url(../images/icon_back_arrow_teal.png) no-repeat left center;
 	padding-left: 12px;
+}
+.back-arrow  a{
+	font-size: 14px;
 }
 
 .form-entry{
