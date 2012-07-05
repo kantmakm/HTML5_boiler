@@ -584,29 +584,25 @@ table.balance tfoot #total {
 /**
  * Page-specific to contact-information.html
  */
-.switchable ul input, 
+/*.switchable ul input, 
 .switchable ul p {
 	transition: all 0.5s;
 	-o-transition: all 0.5s;
 	-moz-transition: all 0.5s;
 	-webkit-transition: all 0.5s;
 }
+*/
 .switchable ul input,
-.switchable ul .message-text {
+.switchable ul span {
 	opacity: 0;
 }
 .switchable ul p {
-	margin: -30px 7px 0;
+	margin: -38px 7px 0;
 	opacity: 1;
-	width: 100%;
 }
 .switchable-edit ul li input,
-.switchable-edit ul li .message-text {
+.switchable-edit ul li span {
 	opacity: 1;
-}
-.switchable-edit ul li p {
-	opacity: 0;
-	width:0%;
 }
 
 /*	~~~~~~~~~~~ TH Tim's Modifications ~~~~~~~~~~~~~~~~~~~~~~~~	*/
