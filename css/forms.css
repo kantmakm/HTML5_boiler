@@ -105,7 +105,7 @@ ul.form-with-validation .message-text {
 .padded .form-with-validation input[type=text],
 .padded .form-with-validation input[type=password],
 .padded .form-with-validation input[type=email] {
-	width: 100%;
+	width: 100%; 
 }
 .form-with-validation input[type=radio] {
 	vertical-align: middle;
