@@ -19,7 +19,7 @@ archstone.monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 
  */
 archstone.bindEvents = function () {
 	$.each(archstone.bindEvents, function(i,e){
-		if(typeof e == 'function')e();
+		if(typeof e == 'function' && i !== 'bind')e();
 	});
 };
 
