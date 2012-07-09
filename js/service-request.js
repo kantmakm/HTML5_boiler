@@ -104,13 +104,13 @@ serviceRequest.history.showHistory = function (historyState) {
 					
 				});
 				// animate the old accordions out and initialize/animate the new one in 
-				serviceRequest.options.historyElement.find('.accordion:visible').hide('blind', function(){
+				serviceRequest.options.historyElement.find('.accordion:visible').hide('blind', {'easing': "easeOutCubic"}, function(){
 					serviceRequest.options.historyElement.append($accordion.accordion({
 						autoHeight: false,
 						collapsible: true,
 						active: false
 					}).hide());
-					$accordion.show('blind')
+					$accordion.show('blind', {'easing': "easeInOutCubic"});
 				});
 			}
 		});
@@ -118,8 +118,8 @@ serviceRequest.history.showHistory = function (historyState) {
 	// requested accordion exists, lets just show that one!
 	else
 	{
-		$accordion.siblings(':visible').hide('blind', function(){
-			$accordion.show('blind');
+		$accordion.siblings(':visible').hide('blind', {'easing': "easeOutCubic"}, function(){
+			$accordion.show('blind', {'easing': "easeInCubic"});
 		});
 	}
 	

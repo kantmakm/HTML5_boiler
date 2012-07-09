@@ -9,29 +9,29 @@
 /*
 *///
 
-// Declare the global object. (unless it exists)
-var global = (typeof (global) === "undefined" || !global) ? {} : global;
+// Declare the archstone object. (unless it exists)
+var archstone = (typeof (archstone) === "undefined" || !archstone) ? {} : archstone;
 
-global.monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+archstone.monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
 /**
- * calling global.bindEvents() auto-executes any attribute of global.bindEvents which are functions().
+ * calling archstone.bindEvents() auto-executes any attribute of archstone.bindEvents which are functions().
  */
-global.bindEvents = function () {
-	$.each(global.bindEvents, function(i,e){
+archstone.bindEvents = function () {
+	$.each(archstone.bindEvents, function(i,e){
 		if(typeof e == 'function')e();
 	});
 };
 
 
-global.bindEvents.textarea = function(){
+archstone.bindEvents.textarea = function(){
 	// special instructions for textareas
 	if($('textarea').length == 0)return false;
-	global.textarea.bindCharLimit();
-	global.textarea.bindResize();
+	archstone.textarea.bindCharLimit();
+	archstone.textarea.bindResize();
 }
 
-global.bindEvents.dialog = function () {
+archstone.bindEvents.dialog = function () {
 	// One Dialog to rule them all
 	$('.cta-dialog').live('click', function(){
 		var title = $(this).attr('title');
@@ -49,7 +49,7 @@ global.bindEvents.dialog = function () {
 			      width: "auto",
 						modal:true,
 						title: title,
-						open: global.bindEvents.dropdown
+						open: archstone.bindEvents.dropdown
 					});
 				}
 			});
@@ -59,7 +59,7 @@ global.bindEvents.dialog = function () {
 	return false;
 };
 
-global.bindEvents.autoclear = function () {
+archstone.bindEvents.autoclear = function () {
 	// Auto Clear Form Fields When Active
 	$('input[type=text].autoclear, input[type=password].autoclear, textarea.autoclear')
 	  .click(function(){
@@ -87,7 +87,7 @@ global.bindEvents.autoclear = function () {
 		});
 };
 
-global.bindEvents.dropdown = function() {
+archstone.bindEvents.dropdown = function() {
 	
 	//pseudo-styled dropdowns
 	$('select').each(function(){
@@ -107,7 +107,7 @@ global.bindEvents.dropdown = function() {
 	});
 }
 
-global.bindEvents.accordion = function () {
+archstone.bindEvents.accordion = function () {
 	if($('.accordion').length == 0)return false;
 	var is_open = $('.discreet-accordion').length === 0;
 	if(is_open)is_open = 0;
@@ -117,10 +117,9 @@ global.bindEvents.accordion = function () {
 		active: is_open
 	});
 	$('.ui-icon').removeClass('ui-icon-triangle-1-e');
-
 };
 
-global.bindEvents.multiAccordion = function() {
+archstone.bindEvents.multiAccordion = function() {
 	if($('.multi-accordion').length == 0)return false;
 	$('.multi-accordion h2').each(function(){
 		var $head = $(this).addClass('ui-accordion-header').addClass('ui-state-active');
@@ -131,9 +130,9 @@ global.bindEvents.multiAccordion = function() {
 			$(this).addClass('ui-state-active').next().show('blind');
 		})
 	});
-}
+};
 
-global.textarea = {
+archstone.textarea = {
 	/**
 	 * character limit for textareas
 	 */
@@ -142,7 +141,7 @@ global.textarea = {
 		$('textarea.with-limit').each(function(){
 			var $limit = $(this).parents('.form-element').find('.char-limit');
 			$(this).data('limit', parseInt($limit.html()));
-			$(this).keydown(global.textarea.updateCharLimit);
+			$(this).keydown(archstone.textarea.updateCharLimit);
 		});
 	},
 	updateCharLimit: function()
@@ -161,11 +160,11 @@ global.textarea = {
 		}
 	},
 	/**
-	 * global.textarea resize with typing
+	 * archstone.textarea resize with typing
 	 */
 	bindResize: function()
 	{
-		$('textarea.auto-resize').keydown(global.textarea.resizeIt);
+		$('textarea.auto-resize').keydown(archstone.textarea.resizeIt);
 	},
 	resizeIt: function()
 	{
@@ -220,5 +219,5 @@ var n = this, c = isNaN(c = Math.abs(c)) ? 2 : c, d = d == undefined ? "," : d, 
  };
 $(function(){
 	// magic!
-	global.bindEvents();
+	archstone.bindEvents();
 });

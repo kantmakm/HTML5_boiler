@@ -20,6 +20,24 @@ ul.form-with-validation input {
 	-webkit-transition: all 0.25s;
 	height: 35px;
 }
+ul.form-with-validation .select-wrapper {
+	vertical-align: top;
+	margin: 0 10px 0 4px;
+}
+ul.form-with-validation li.address input.street {
+	margin-bottom: 10px;
+}
+ul.form-with-validation li.address input.city {
+	width: 510px !important;
+}
+ul.form-with-validation li.address input.zip {
+	width: 55px !important;
+}
+
+ul.form-with-validation .select-wrapper label {
+	padding-top: 9px;
+	padding-bottom:8px;
+}
 ul.form-with-validation input.input-validation-error {
 	margin: 0;
 	border: 1px solid #FF0000;
@@ -70,11 +88,13 @@ ul.form-with-validation .message-text {
 }
 
 /* Inputs */
-.select-wrapper label,
+.select-wrapper label {
+	width: 100%;
+}
 .form-with-validation input[type=text],
 .form-with-validation input[type=password],
 .form-with-validation input[type=email] {
-	width: 100%;
+	width: 660px;
 }
 .form-with-validation input[type=radio] {
 	vertical-align: middle;
@@ -97,7 +117,8 @@ input[type=email] {
 }
 
 /* Submit Button */
-button.submit {
+button.submit,
+button.cancel {
 	height: 37px;
 	outline: none;
 	border: 0;
@@ -107,7 +128,8 @@ button.submit {
 	background: none;
 	overflow:visible;
 }
-button.submit span{
+button.submit span,
+button.cancel span{
 	font-family: "HelveticaNeueBold", Helvetica, Arial, sans-serif;
 	font-size: 14px;
 	height: 37px;
@@ -116,7 +138,8 @@ button.submit span{
 	padding: 10px 20px 10px 30px;
 	color:#FFFFFF;
 }
-button.submit span.end {
+button.submit span.end,
+button.cancel span.end {
 	background-position: right -37px;
 	margin:0;
 	position:absolute;
@@ -126,10 +149,12 @@ button.submit span.end {
 	width:10px;
 	padding:0;
 }
-button.submit[disabled] span {
+button.submit[disabled] span,
+button.cancel span {
 	background-position: left -74px;
 }
-button.submit[disabled] span.end {
+button.submit[disabled] span.end,
+button.cancel span.end {
 	background-position: right -111px;
 }
 

@@ -385,6 +385,10 @@ h4 {
 	background: url(../images/bkgd_box_header_large.png) repeat-x scroll 0 0 transparent;
 	font-weight: normal;
 }
+.squared-box .box-title .submit-area-right {
+	padding-right:30px;
+	margin-top: -5px;
+}
 .squared-box p {
 	padding: 8px 0;
 }
@@ -608,16 +612,9 @@ table.balance tfoot #total {
 /**
  * Page-specific to contact-information.html
  */
-/*.switchable ul input, 
-.switchable ul p {
-	transition: all 0.5s;
-	-o-transition: all 0.5s;
-	-moz-transition: all 0.5s;
-	-webkit-transition: all 0.5s;
-}
-*/
 .switchable ul input,
-.switchable ul span {
+.switchable ul span,
+.switchable .select-wrapper {
 	opacity: 0;
 }
 .switchable ul p {
@@ -625,10 +622,16 @@ table.balance tfoot #total {
 	opacity: 1;
 }
 .switchable-edit ul li input,
-.switchable-edit ul li span {
+.switchable-edit ul li span,
+.switchable-edit ul li .select-wrapper {
 	opacity: 1;
 }
-
+.switchable .squared-accordion p {
+	font-size: 16px;
+}
+.switchable ul li.address p {
+	margin-top: -90px;
+}
 /*	~~~~~~~~~~~ TH Tim's Modifications ~~~~~~~~~~~~~~~~~~~~~~~~	*/
 .clear-both{clear:both;} /* should be replaced by .clearfix (and how that works) */
 .float-right{float:right;} /* should be replaced by .right */
