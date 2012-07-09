@@ -5,18 +5,24 @@ accounts.switchable = function(options)
 {
 	accounts.switchable.options = options;
 	accounts.switchable.options.switchable.find('li input[value=""]').parents('li').hide();
-	
+	accounts.switchable.options.switchable.find('.submit-area').hide();
+	// binding Events
 	accounts.switchable.options.toggleButton.toggle(accounts.switchable.show, accounts.switchable.hide);
-	
 	accounts.switchable.options.form.submit(function(){
 		accounts.switchable.hide();
+		return false;
+	});
+	accounts.switchable.options.cancelButton.click(function(){
+		accounts.switchable.options.switchable.find('li:not(.address) input').each(function(){
+			$(this).val($(this).siblings('p').html());
+		});
 	});
 };
 accounts.switchable.show = function()
 {
 	accounts.switchable.options.switchable.addClass('switchable-edit');
 	accounts.switchable.options.switchable.find('li p').fadeOut();
-	accounts.switchable.options.switchable.find('li:hidden').show('blinds');
+	accounts.switchable.options.switchable.find('li:hidden, .submit-area').show('blinds');
 	accounts.switchable.options.toggleButton.find('span:eq(0)').html('Save');
 };
 accounts.switchable.hide = function()
@@ -49,10 +55,10 @@ accounts.switchable.hide = function()
 				
 				if($p.length == 0)$p = $('<p></p>').appendTo(this);
 				$p.html(address);
-				
 			});
+			accounts.switchable.options.switchable.find('.submit-area').hide('blinds');
 		}else{
-			// MVC3 validation
+			// MVC3 validation ?
 			accounts.switchable.show();
 		}
 	});

@@ -94,7 +94,18 @@ ul.form-with-validation .message-text {
 .form-with-validation input[type=text],
 .form-with-validation input[type=password],
 .form-with-validation input[type=email] {
-	width: 660px;
+	width: 700px;
+}
+.body-right .form-with-validation input[type=text],
+.body-right .form-with-validation input[type=password],
+.body-right .form-with-validation input[type=email],
+.body-left .form-with-validation input[type=text],
+.body-left .form-with-validation input[type=password],
+.body-left .form-with-validation input[type=email],
+.padded .form-with-validation input[type=text],
+.padded .form-with-validation input[type=password],
+.padded .form-with-validation input[type=email] {
+	width: 100%;
 }
 .form-with-validation input[type=radio] {
 	vertical-align: middle;

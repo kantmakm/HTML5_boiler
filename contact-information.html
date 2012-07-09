@@ -129,7 +129,7 @@
 						</ul>
 					</div>
 					<h2>Emergency Contact</h2>
-					<div class="content-padding">
+					<div>
 						<ul class="form-with-validation">
 							<li>
 								<label for="ername">Name<span class="required">*</span></label>
@@ -188,13 +188,13 @@
 							</li>
 						</ul>
 					</div>
-					
-					<div class="submit-area show-toggle-b">
-						<button type="submit" class="submit"><span>Cancel Changes</span><span class="end"> &nbsp; </span></button>
-						<span style="width:50px;">&nbsp;</span>
-						<button type="submit" class="submit"><span>Save Changes</span><span class="end"> &nbsp; </span></button>
-					</div>					
 				</div>
+				<p class="submit-area">
+					<button type="button" class="cancel"><span>Cancel Changes</span><span class="end"> &nbsp; </span></button>
+					 &nbsp;&nbsp;&nbsp;
+					<button type="submit" class="submit"><span>Save Changes</span><span class="end"> &nbsp; </span></button>
+				</p>					
+				
 			</form>
 		</div>
   </div>
@@ -224,7 +224,8 @@
 		var defaultParams = {
 			switchable: $('.switchable'),
 			form: $('.switchable'),
-			toggleButton: $('.squared-box h1 .submit')
+			toggleButton: $('.squared-box h1 .submit'),
+			cancelButton: $('.switchable .submit-area button.cancel')
 		};
 		accounts.switchable(defaultParams);
 	});
