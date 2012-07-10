@@ -12,13 +12,16 @@
 	font-family: "HelveticaNeueLTStd", Helvetica, Arial, sans-serif;
 	
 	border: 0;
-	color: #999999;
+	color: #444444;
 	transition: color 0.25s;
 	-o-transition: color 0.25s;
 	-moz-transition: color 0.25s;
 	-webkit-transition: color 0.25s;
 	border-top: 1px solid #E7E5E3;
 /*	border-bottom: 1px solid #E7E5E3;*/
+}
+.squared-accordion h2.ui-accordion-header {
+	color: #999999;
 }
 .squared-accordion h2.ui-state-active {
 	color: #333333;

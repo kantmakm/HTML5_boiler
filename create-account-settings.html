@@ -83,47 +83,55 @@
 					<div class="padded">
 						<p class="form-note">(You'll use these if you forget your password)</p><br>
 						
-						<ul class="form-with-validation">
+						<ul class="form-with-validation duplicatable">
 							<li>
-								<label for="securityQuestion1">Security Question <span class="required">*</span></label>	
-								<span class="message-text" >you must always have one security question</span><br>
-								<select data-val="true" data-val-required="Security Question is required." name="securityQuestion1" id="securityQuestion1" class="input-validation-error">
-									<option  value="What was your first car?">What was your first car?</option>
-									<option  value="What was the name of your first pet?">What was the name of your first pet?</option>
-									<option  value="What is your father's middle name?">What is your father's middle name?</option>
-									<option  value="What are the last four digits of your social security number?">What are the last four digits of your social security number?</option>
-									<option  value="What city were you born in?">What city were you born in?</option>
-									<option  value="What is your mother's maiden name?">What is your mother's maiden name?</option>							
-								</select>
-								<span class="ui-state-error-text field-validation-error" data-valmsg-for="securityQuestion1" data-valmsg-replace="true">
-									<span for="securityQuestion1" generated="true" class="" style="">Security Question is required.</span>
-								</span>
+								<ul>
+									<li>
+										<label for="securityQuestion1">Security Question <span class="required">*</span></label>	
+										<span class="message-text" >you must always have one security question</span><br>
+										<select data-val="true" data-val-required="Security Question is required." name="securityQuestion1" id="securityQuestion1" class="input-validation-error">
+											<option  value="What was your first car?">What was your first car?</option>
+											<option  value="What was the name of your first pet?">What was the name of your first pet?</option>
+											<option  value="What is your father's middle name?">What is your father's middle name?</option>
+											<option  value="What are the last four digits of your social security number?">What are the last four digits of your social security number?</option>
+											<option  value="What city were you born in?">What city were you born in?</option>
+											<option  value="What is your mother's maiden name?">What is your mother's maiden name?</option>							
+										</select>
+										<span class="ui-state-error-text field-validation-error" data-valmsg-for="securityQuestion1" data-valmsg-replace="true">
+											<span for="securityQuestion1" generated="true" class="" style="">Security Question is required.</span>
+										</span>
+									</li>
+									<li>
+										<label for="securityAnswer1">Security Question Answer <span class="required">*</span></label>
+										<input data-val="true" data-val-required="Security Question Answer is required." id="securityAnswer1" name="securityAnswer1" type="text" value=""  class="input-validation-error">
+										<span class="ui-state-error-text field-validation-error" data-valmsg-for="securityAnswer1" data-valmsg-replace="true">
+											<span for="securityAnswer1" generated="true" class="" style="">Security Question Answer is required.</span>
+										</span>
+									</li>
+								</ul>
 							</li>
 							<li>
-								<label for="securityAnswer1">Security Question Answer <span class="required">*</span></label>
-								<input data-val="true" data-val-required="Security Question Answer is required." id="securityAnswer1" name="securityAnswer1" type="text" value=""  class="input-validation-error">
-								<span class="ui-state-error-text field-validation-error" data-valmsg-for="securityAnswer1" data-valmsg-replace="true">
-									<span for="securityAnswer1" generated="true" class="" style="">Security Question Answer is required.</span>
-								</span>
+								<ul>
+									<li>
+										<label for="securityQuestion2">Security Question</label><br>
+										<select name="securityQuestion2" id="securityQuestion2">
+											<option  value="What was your first car?">What was your first car?</option>
+											<option  value="What was the name of your first pet?">What was the name of your first pet?</option>
+											<option  value="What is your father's middle name?">What is your father's middle name?</option>
+											<option  value="What are the last four digits of your social security number?">What are the last four digits of your social security number?</option>
+											<option  value="What city were you born in?">What city were you born in?</option>
+											<option  value="What is your mother's maiden name?">What is your mother's maiden name?</option>								
+										</select>
+									</li>
+									<li>
+										<label for="securityAnswer2">Security Question Answer </label>
+										<input data-val="true" id="securityAnswer2" name="securityAnswer2" type="text" value="" />
+									</li>
+								</ul>
 							</li>
-							<li>
-								<label for="securityQuestion2">Security Question</label><br>
-								<select name="securityQuestion2" id="securityQuestion2">
-									<option  value="What was your first car?">What was your first car?</option>
-									<option  value="What was the name of your first pet?">What was the name of your first pet?</option>
-									<option  value="What is your father's middle name?">What is your father's middle name?</option>
-									<option  value="What are the last four digits of your social security number?">What are the last four digits of your social security number?</option>
-									<option  value="What city were you born in?">What city were you born in?</option>
-									<option  value="What is your mother's maiden name?">What is your mother's maiden name?</option>								
-								</select>
-							</li>
-							<li>
-								<label for="securityAnswer2">Security Question Answer </label>
-								<input data-val="true" id="securityAnswer2" name="securityAnswer2" type="text" value="" />
-							</li>
-							<li>
-								<button type="button" class="cancel"><span>Remove</span><span class="end"> &nbsp; </span></button>								
-								<p><a class="add-button small-teal" href="#">Add security question</a></p>
+							<li class="controls">
+								<button type="button" class="remove cancel"><span>Remove</span><span class="end"> &nbsp; </span></button>								
+								<p><a class="add-button small-teal add" href="#">Add security question</a></p>
 							</li>
 						</ul>
 					</div>
