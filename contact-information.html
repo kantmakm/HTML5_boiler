@@ -64,7 +64,7 @@
 					<ul>
 						<li><a href="#" class="cta-lease">Switch to Different Lease</a></li>
 						<li><a href="contact-information.html">Contact Information</a></li>
-						<li><a href="#">Settings</a></li>
+						<li><a href="account-settings.html">Settings</a></li>
 						<li><a href="index.html">Sign Out</a></li>
 					</ul>
 				</li>
@@ -94,8 +94,8 @@
 								<input id="myemail" name="myemail" type="text" value="Billy.Bibbit@email.com">
 								<p>Billy.Bibbit@email.com</p>
 								<!-- This is a validation error. Uncomment to see how it looks -->
-								<span class="ui-state-error-text field-validation-error" data-valmsg-for="newPassword" data-valmsg-replace="true">
-									<span for="newPassword" generated="true" class="" style="">your password is not 6 characters</span>
+								<span class="ui-state-error-text field-validation-error" data-valmsg-for="myemail" data-valmsg-replace="true">
+									<span for="myemail" generated="true" class="" style="">Email Address is required</span>
 								</span>
 							</li>
 							<li>
@@ -107,14 +107,14 @@
 							<li>
 								<label for="mymobilephone">Mobile Phone</label>
 								<span class="message-text">(optional)</span>
-								<input id="mymobilephone" name="mymobilephone" type="text" value="">
-								<!-- VERY IMPORTANT! notice that <p>'s don't exist when the values don't exist -->
+								<input id="mymobilephone" name="mymobilephone" type="text" value="555-555-5555">
+								<p>555-555-5555</p>
 							</li>
 							<li>
 								<label for="myworkphone">Work Phone</label>
 								<span class="message-text">(optional)</span>
-								<input id="myworkphone" name="myworkphone" type="text" value="555-555-5555">
-								<p>555-555-5555</p>
+								<input id="myworkphone" name="myworkphone" type="text" value="">
+								<!-- VERY IMPORTANT! notice that <p>'s don't exist when the values don't exist -->
 							</li>
 							<li>
 								<label for="myworkphone2">Work Phone</label>
@@ -138,7 +138,7 @@
 								<p>Nurse Ratched</p>
 							</li>
 							<li>
-								<label for="errelationship">Relationship</label>
+								<label for="errelationship">Relationship to you</label>
 								<input id="errelationship" name="errelationship" type="text" value="Personal Nurse">
 								<p>Personal Nurse</p>
 							</li>
@@ -181,10 +181,10 @@
 							<li class="address">
 								<label for="employeraddress">Address</label>
 								<input type="text" name="employeraddress" value="1600 Pennsylvania Avenue" class="street" />
-								<input type="text" name="employercity" class="city" value="Washington DC" />
-								<select name="employerstate" class="state" /><option name="DC">DC</option></select>
-								<input type="text" name="employerzipcode" value="20500" class="zip" />
-								<p>1600 Pennsylvania Avenue<br>Northwest Washington DC 20500</p>
+								<input type="text" name="employercity" class="city" value="Littleton" />
+								<select name="employerstate" class="state" /><option name="CO">CO</option></select>
+								<input type="text" name="employerzipcode" value="80127" class="zip" />
+								<p>1600 Pennsylvania Avenue<br>Littleton, CO 80127</p>
 							</li>
 						</ul>
 					</div>
