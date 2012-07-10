@@ -18,34 +18,29 @@
   <!-- Mobile viewport optimized: h5bp.com/viewport -->
   <meta name="viewport" content="width=device-width">
 
-  <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
-
+	<!-- Use this in all pages -->
   <link rel="stylesheet" href="css/reset.css"> <!-- Eric Meyer Stylesheet -->
   <link rel="stylesheet" href="css/style.css"> <!-- Default Stylesheet -->
-  <link rel="stylesheet" href="css/global.css"> <!-- Added Styles For All Pages -->
-  <link rel="stylesheet" href="css/fonts.css">
-  <link rel="stylesheet" href="css/accordion.css">
   <link rel="stylesheet" href="css/jquery.ui.css"> <!-- Added Styles For All Pages -->
+  <link rel="stylesheet" href="css/global.css"> <!-- Added Styles For All Pages -->
+  <link rel="stylesheet" href="css/forms.css">
+  <link rel="stylesheet" href="css/accordion.css">
+  <link rel="stylesheet" href="css/fonts.css">
+	<!--[if lt IE 9]>
+	  <link rel="stylesheet" href="css/ie.css">
+	<![endif]-->
+	<!--[if IE 9]>
+	  <link rel="stylesheet" href="css/ie9.css">
+	<![endif]-->
+	
+	<!-- Specific to this page -->
+	<link rel="stylesheet" href="css/date.css"> <!-- Added Styles For the datemanager Pages -->
+	
 
-  <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
-
-  <!-- All JavaScript at the bottom, except this Modernizr build.
-       Modernizr enables HTML5 elements & feature detects for optimal performance.
-       Create your own custom Modernizr build: www.modernizr.com/download/ -->
+	<!-- All Scripts are in the bottom before the </body>. Except for jquery and modernizr -->
+	<!-- Use this in all pages -->
   <script src="js/libs/modernizr-2.5.3.min.js"></script>
-
-  <!-- JavaScript in the header so my other stuff doesn't break -->
-
-  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
   <script src="js/jquery-1.7.2.min.js"></script>
-  <script src="js/ui/jquery-ui-1.8.20.custom.js"></script>
-
-  <!-- scripts concatenated and minified via build script -->
-  <script src="js/jquery.cookie.js"></script>
-  <script src="js/plugins.js"></script>
-  <script src="js/script.js"></script>
-	<script src="js/browserimage.js"></script>
-  <!-- end scripts -->
 
 </head>
 <body class="signed-in request-sent">
@@ -53,7 +48,7 @@
 	<div id="background-image">
 		<img class="source-image" src="images/bkgd_graphite_burst.png" >
   </div>
-	<script type="text/javascript">global.background.init(); </script><!-- This needs to be here to resize this before the page finishes loading instead of after -->
+	<script src="js/browserimage.js"></script>
   <header>
 		<!-- Primary Navigation -->
 		<div class="primary-nav-contents">
@@ -186,6 +181,13 @@
 			</p>
 		</div>
   </footer>
+
+  <script src="js/ui/jquery-ui-1.8.20.custom.js"></script>
+  <script src="js/jquery-bbq.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/script.js"></script>
+	<script src="js/browserimage.js"></script>
+  <script src="js/nav.js"></script>
 
   <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
        mathiasbynens.be/notes/async-analytics-snippet -->
