@@ -28,5 +28,15 @@ button.submit:active span {
 /*	border: none;*/
 	top: 1px; 
 	right: -10px;
+}
 
+.switchable ul input,
+.switchable ul span,
+.switchable .select-wrapper {
+	visibility:hidden;
+}
+.switchable-edit ul input,
+.switchable-edit ul span,
+.switchable-edit .select-wrapper {
+	visibility:visible;
 }

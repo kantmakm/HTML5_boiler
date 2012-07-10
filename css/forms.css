@@ -1,5 +1,6 @@
 @charset "utf-8";
-ul.form-with-validation {
+ul.form-with-validation,
+ul.form-with-validation ul {
 	padding: 0;
 }
 ul.form-with-validation label {
@@ -23,7 +24,7 @@ ul.form-with-validation input[type=password] {
 }
 ul.form-with-validation .select-wrapper {
 	vertical-align: top;
-	margin: 0 10px 0 4px;
+	margin: 0 10px 0 0;
 }
 ul.form-with-validation li.address input.street {
 	margin-bottom: 10px;
@@ -31,13 +32,20 @@ ul.form-with-validation li.address input.street {
 ul.form-with-validation li.address input.city {
 	width: 510px !important;
 }
+ul.form-with-validation li.address .select-wrapper label {
+	width: 30px;
+}
 ul.form-with-validation li.address input.zip {
 	width: 55px !important;
 }
 
 ul.form-with-validation .select-wrapper label {
+	width: 690px;
+	padding-top: 		8px;
+	padding-bottom:	7px;	
+/* This was changed for http://a/contact-information.html. Used to be:
 	padding-top: 9px;
-	padding-bottom:8px;
+	padding-bottom:8px;*/
 }
 ul.form-with-validation input.input-validation-error {
 	margin: 0;
@@ -66,9 +74,9 @@ ul.form-with-validation .message-text {
 
 .select-wrapper label {
 	color: #333;
-	padding: 4px 10px 5px 5px;
+	padding: 4px 30px 5px 5px;
+	margin: 0 -20px 0 0;
 	float: left;
-	margin: 0;
 	min-height:14px;
 	text-align: left;
 }
@@ -89,9 +97,6 @@ ul.form-with-validation .message-text {
 }
 
 /* Inputs */
-.select-wrapper label {
-	width: 100%;
-}
 .form-with-validation input[type=text],
 .form-with-validation input[type=password],
 .form-with-validation input[type=email] {
