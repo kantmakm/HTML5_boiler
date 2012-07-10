@@ -1,17 +1,13 @@
 // might already exist, if it does don't overwrite it
 var payments = (typeof (payments) === "undefined" || !payments) ? {} : payments;
 
-// payments-register
+// payments-onetime
 payments.options = {};
-payments.register = function(options){
+payments.onetime = function(options){
 	
 	payments.options = options;
-	console.log(options);
-	// payments.options.totalBalance = parseFloat(payments.options.total.length === 1 ? payments.options.total.html().replace(/[^0-9\.]+/g, '') : 0);
-	
-	/**
-	 * slider
-	 */
+
+	// slider
 	payments.options.percentageSlider.slider({
 		value:10,
 		min: 0,
@@ -47,8 +43,8 @@ payments.register = function(options){
 	});
 	
 	payments.options.textBalances.change(function(e){
-		var numberVal = parseFloat($(this).val().replace(/[^0-9\.]+/g, ''));
 		var $radio = $(this).parent().find('input[type=radio]');
+		var numberVal = parseFloat($(this).val().replace(/[^0-9\.]+/g, ''));
 		var evaluate = 'var stateObj = {' + $radio.attr('name') + ' : "' + $radio.val() + '"};';
 		eval(evaluate);
 		stateObj.payment_amount = numberVal;
@@ -60,7 +56,11 @@ payments.register = function(options){
 	});
 	
 };
-payments.register.hashChange = function(state) {
+// payments.onetime.hideSection = function(section)
+// {
+// 	payments.options.(' h2.' + section).hide('blinds').next().hide('blinds');
+// };
+payments.onetime.hashChange = function(state) {
 	console.log(state);
 	state.payment_amount = parseFloat(state.payment_amount);
 	var value, $selectedRadio;

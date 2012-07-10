@@ -13,7 +13,8 @@ ul.form-with-validation li {
 	position: relative;
 	margin: 0 0 10px;
 }
-ul.form-with-validation input {
+ul.form-with-validation input[type=text],
+ul.form-with-validation input[type=password] {
 	transition: 				all 0.25s;
 	-o-transition: 			all 0.25s;
 	-moz-transition: 		all 0.25s;

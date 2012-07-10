@@ -110,7 +110,7 @@
 					<span class="right" id="payment-amount">$1,837.98</span>
 					<span>Payment Amount</span>
 				</h2>
-				<div class="clearfix">
+				<div class="clearfix payment">
 					<ul>
 						<li><label><input type="radio" name="payment_type" value="full" checked="checked"><span>Current Balance: $1,837.98</span></label></li>
 						<li>
@@ -126,16 +126,56 @@
 					<span class="right">Primary Checking</span>
 					<span>Bank Account</span>
 				</h2>
-				<div class="clearfix">
-					<p>Primary Checking Account (...6525)</p>
-					<p>
-						<a href="#" class="replace">Replace with New Account</a>
-						<a href="#" class="remove">Replace with New Account</a>
-					</p>
-					<p>Please note: By replacing this account you will lose your existing account information</p>
+				<div class="clearfix account">
+					<div class="status">
+						<p>Primary Checking Account (...6525)</p>
+						<p>
+							<a href="#" class="replace">Replace with New Account</a>
+							<a href="#" class="remove">Replace with New Account</a>
+						</p>
+						<p>Please note: By replacing this account you will lose your existing account information</p>
+					</div>
+					<div class="replace">
+						<form class="replace">
+						<ul class="form-with-validation">
+							<li>
+								<label for="accountName">Account Nickname <span class="required">*</span></label>
+								<input data-val="true" data-val-required="Guest Name is required" id="accountName" name="accountName" tabindex="2" type="text" value="" class="input-validation-error">
+							</li>
+							
+							<li><img src="../images/routing_number.png"></li>
+							
+							<li>
+								<label for="routingNumber">Routing Number <span class="required">*</span></label>
+								<input data-val="true" type="password" data-val-required="Routing Number is Required" name="routingNumber" id="routingNumber" tabindex="3" value="">
+							</li>
+							<li>
+								<label for="confirmRoutingNumber">Confirm Routing Number <span class="required">*</span></label>
+								<input data-val="true" type="password" data-val-required="Routing Number is Required" name="confirmRoutingNumber" id="confirmRoutingNumber" tabindex="3" value="">
+							</li>
+							
+							<li>
+								<label for="accountNumber">Account Number <span class="required">*</span></label>
+								<input data-val="true" type="password" data-val-required="Account Number is Required" name="accountNumber" id="accountNumber" tabindex="3" value="">
+							</li>
+							<li>
+								<label for="confirmAccountNumber">Confirm Account Number <span class="required">*</span></label>
+								<input data-val="true" type="password" data-val-required="Account Number is Required" name="confirmAccountNumber" id="confirmAccountNumber" tabindex="3" value="">
+							</li>
+							<li>
+								<h4>Would you like to save this account?</h4>
+								<p><label><input type="radio" name="save" value="yes">Yes. Please save my account to use again</label></p>
+								<p><label><input type="radio" name="save" value="no">No thanks. I'll enter my account information each time I make a payment</label>
+								</p>
+							</li>
+							<li>
+								<button type="submit" class="submit"><span>Use This Account</span><span class="end"></span></button>
+							</li>
+						</ul>
+					</div>
 				</div>
 
-				<h2>
+				<h2 class="confirmation">
 					<span>Payment Confirmation</span>
 				</h2>
 				<div class="clearfix">
@@ -169,7 +209,7 @@
   <script src="js/nav.js"></script>
 	
 	<!-- Specific to this page -->
-  <script src="js/make-onetime-payment.js"></script>
+  <script src="js/onetime-payment.js"></script>
 	<script>
 	$(function(){
 		
@@ -180,7 +220,7 @@
 	      "paymentAmount": 				$("#payment-amount"),
 				"percentageSlider": 		$('.slider'),
 				"totalBalance": 				parseFloat($('#total').html().replace(/[^0-9\.]+/g, '')),
-				"textBalances": 				$('.multi-accordion input[type=text]'),
+				"textBalances": 				$('.multi-accordion .payment input[type=text]'),
 	      "state": 								{
 														      "payment_type": 'full', // would come from server side model
 																	"payment_amount": parseFloat($('#total').html().replace(/[^0-9\.]+/g, '')) //100% of total by default
@@ -189,11 +229,11 @@
 	
 	
 		// initialize the service request history components
-		payments.register(defaultParams);
+		payments.onetime(defaultParams);
 
 	  // handle hash change for service request history
 	  $(window).bind("hashchange", function (e) {
-	      payments.register.hashChange($.extend($.extend({}, defaultParams.state), $.deparam.fragment()));
+	      payments.onetime.hashChange($.extend($.extend({}, defaultParams.state), $.deparam.fragment()));
 	  });
 
 	  // first time, trigger the hash change to show the default history or reflect a bookmarked or linked hash
