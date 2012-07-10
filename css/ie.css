@@ -28,5 +28,8 @@ button.submit:active span {
 /*	border: none;*/
 	top: 1px; 
 	right: -10px;
+}
 
+.switchable ul input, .switchable ul span, .switchable .select-wrapper {
+	display:none;
 }

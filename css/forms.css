@@ -32,14 +32,20 @@ ul.form-with-validation li.address input.street {
 ul.form-with-validation li.address input.city {
 	width: 510px !important;
 }
+ul.form-with-validation li.address .select-wrapper label {
+	width: 30px;
+}
 ul.form-with-validation li.address input.zip {
 	width: 55px !important;
 }
 
 ul.form-with-validation .select-wrapper label {
 	width: 690px;
+	padding-top: 		8px;
+	padding-bottom:	7px;	
+/* This was changed for http://a/contact-information.html. Used to be:
 	padding-top: 9px;
-	padding-bottom:8px;
+	padding-bottom:8px;*/
 }
 ul.form-with-validation input.input-validation-error {
 	margin: 0;
