@@ -88,7 +88,9 @@ ul.two-thirds input[type=password] {
 .two-thirds .select-wrapper {
 	margin-bottom: 3px;
 }
-
+ul.two-thirds li label {
+	display:block;
+}
 /* Styled Select Boxes */
 .select-wrapper{
 	background: url(../images/icon_dropdown.png) no-repeat scroll right center transparent;

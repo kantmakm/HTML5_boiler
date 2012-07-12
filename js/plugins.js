@@ -96,6 +96,10 @@ $.fn.multiAccordion = function(method)
 	
 	function applyOptions(options)
 	{
+		$this.multiAccordion.settings = $.extend({
+			'locked': 	[],
+			'active':		[]
+		}, options);
 		
 	};
 	
