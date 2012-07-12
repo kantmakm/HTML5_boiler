@@ -61,35 +61,31 @@
 				<div class="squared-accordion" >
 					<h2>Create Password</h2>
 					<div class="padded">
-						<ul class="form-with-validation">
+						<ul class="two-thirds">
 							<li>							
-								<label for="password">Password <span class="required">*</span></label>
+								<h3><label for="password">Password <span class="required">*</span></label></h3>
+								<input data-val="true" data-val-required="Password is required." id="password" name="password" type="password" value="">
 								<span class="message-text" >(6 character minimum)</span>
-								<input data-val="true" data-val-required="Password is required." id="password" name="password" type="password" value="" class="input-validation-error textbox-checkmark" />
-								<span class="ui-state-error-text field-validation-error" data-valmsg-for="password" data-valmsg-replace="true">
-									<span for="password" generated="true" class="" style="">your password is not 6 characters</span>
-								</span>
+								
 							</li>
 							<li>
-								<label for="confirmPassword">Confirm Password <span class="required">*</span></label>
-								<input data-val="true" data-val-required="Confirm Password is required and must match Password." id="confirmPassword" name="confirmPassword" tabindex="3" type="password" value="" class="input-validation-error textbox-checkmark" />
-								<span class="ui-state-error-text field-validation-error" data-valmsg-for="confirmPassword" data-valmsg-replace="true">
-									<span for="confirmPassword" generated="true" class="" style="">your passwords don't match</span>
-								</span>
+								<h3><label for="confirmPassword">Confirm Password <span class="required">*</span></label></h3>
+								<input data-val="true" data-val-required="Confirm Password is required and must match Password." id="confirmPassword" name="confirmPassword" tabindex="3" type="password" value="">
 							</li>
 						</ul>
 					</div>				
 					<h2>Select and answer security question(s)</h2>
 					<div class="padded">
-						<p class="form-note">(You'll use these if you forget your password)</p><br>
+						<p class="form-note">(You'll use these if you forget your password)</p>
 						
-						<ul class="form-with-validation duplicatable">
+						<ul class="two-thirds duplicatable">
 							<li>
 								<ul>
 									<li>
-										<label for="securityQuestion1">Security Question <span class="required">*</span></label>	
-										<span class="message-text" >you must always have one security question</span><br>
-										<select data-val="true" data-val-required="Security Question is required." name="securityQuestion1" id="securityQuestion1" class="input-validation-error">
+										<h3>
+											<label for="securityQuestion1">Security Question <span class="required">*</span></label>
+										</h3>
+										<select data-val="true" data-val-required="Security Question is required." name="securityQuestion1" class="input-validation-error">
 											<option  value="What was your first car?">What was your first car?</option>
 											<option  value="What was the name of your first pet?">What was the name of your first pet?</option>
 											<option  value="What is your father's middle name?">What is your father's middle name?</option>
@@ -97,13 +93,19 @@
 											<option  value="What city were you born in?">What city were you born in?</option>
 											<option  value="What is your mother's maiden name?">What is your mother's maiden name?</option>							
 										</select>
+										<span class="message-text" >you must always have one security question</span>
+										
 										<span class="ui-state-error-text field-validation-error" data-valmsg-for="securityQuestion1" data-valmsg-replace="true">
 											<span for="securityQuestion1" generated="true" class="" style="">Security Question is required.</span>
 										</span>
 									</li>
 									<li>
-										<label for="securityAnswer1">Security Question Answer <span class="required">*</span></label>
-										<input data-val="true" data-val-required="Security Question Answer is required." id="securityAnswer1" name="securityAnswer1" type="text" value=""  class="input-validation-error">
+										<h3><label for="securityAnswer1">Security Question Answer <span class="required">*</span></label></h3>
+										<input data-val="true" data-val-required="Security Question Answer is required." name="securityAnswer1" type="text" value=""  class="input-validation-error">
+										<div class="right">
+											<button type="button" class="remove cancel"><span>Remove</span><span class="end"> &nbsp; </span></button>
+										</div>
+										
 										<span class="ui-state-error-text field-validation-error" data-valmsg-for="securityAnswer1" data-valmsg-replace="true">
 											<span for="securityAnswer1" generated="true" class="" style="">Security Question Answer is required.</span>
 										</span>
@@ -113,8 +115,8 @@
 							<li>
 								<ul>
 									<li>
-										<label for="securityQuestion2">Security Question</label><br>
-										<select name="securityQuestion2" id="securityQuestion2">
+										<h3><label>Security Question</label></h3>
+										<select name="securityQuestion2">
 											<option  value="What was your first car?">What was your first car?</option>
 											<option  value="What was the name of your first pet?">What was the name of your first pet?</option>
 											<option  value="What is your father's middle name?">What is your father's middle name?</option>
@@ -124,13 +126,15 @@
 										</select>
 									</li>
 									<li>
-										<label for="securityAnswer2">Security Question Answer </label>
-										<input data-val="true" id="securityAnswer2" name="securityAnswer2" type="text" value="" />
+										<h3><label for="securityAnswer2">Security Question Answer </label></h3>
+										<input data-val="true" name="securityAnswer2" type="text" value="">
+										<div class="right">
+											<button type="button" class="remove cancel"><span>Remove</span><span class="end"> &nbsp; </span></button>
+										</div>
 									</li>
 								</ul>
 							</li>
 							<li class="controls">
-								<button type="button" class="remove cancel"><span>Remove</span><span class="end"> &nbsp; </span></button>								
 								<p><a class="add-button small-teal add" href="#">Add security question</a></p>
 							</li>
 						</ul>
@@ -156,8 +160,8 @@
 	<!-- Use this in all pages -->
   <script src="js/ui/jquery-ui-1.8.20.custom.js"></script>
   <script src="js/jquery-bbq.js"></script>
-  <script src="js/plugins.js"></script>
   <script src="js/script.js"></script>
+  <script src="js/plugins.js"></script>
   <script src="js/nav.js"></script>
 	
 	<!-- Specific to this page -->

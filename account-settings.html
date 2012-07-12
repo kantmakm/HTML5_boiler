@@ -41,106 +41,113 @@
   <script src="js/jquery-1.7.2.min.js"></script> 
 
 </head>
-<body class="signed-in">
+<body>
 	<!-- The Stretchy Background Image -->
 	<div id="background-image">
-		<img class="source-image" src="images/bkgd_graphite_burst.png" alt="Archstone">
+		<img class="source-image" src="images/bkgd_1.jpg" alt="Archstone">
   </div>
 	<!-- MJ: This needs to be here to resize this before the page finishes loading instead of after -->
 	<script src="js/browserimage.js"></script>
 
   <header>
-		<!-- Primary Navigation -->
-		<div class="primary-nav-contents" style="width:790px;">
+		<div class="primary-nav-contents">
 			<a href="index.html" id="logo"><img src="images/logo.png" width="167" height="38" alt="Archstone"></a>
-			<ul class="primary-nav">
-				<li><a href="onetime-payment.html">Payment</a></li>
-				<li><a href="service-request.html">Service</a></li>
-				<li><a href="#">Information</a></li>
-				<li><a href="#" class="cta-lease">Lease</a></li>
-				<li><a href="#" class="active">Jane Smith</a></li>
-			</ul>
-		</div>
-		<!-- Dropdown Nav-->
-		<div class="dropdown-nav-contents">
-			<ul class="dropdown-nav">
-				<li>
-					<a href="#"><span class="ui-icon"> &nbsp; </span>Genevieve Cornhill</a>
-					<ul>
-						<li><a href="dialog-lease.html" class="cta-dialog" rel="request-history" title="Select the lease you would like to open">Switch to Different Lease</a></li>
-						<li><a href="contact-information.html">Contact Information</a></li>
-						<li><a href="account-settings.html">Settings</a></li>
-						<li><a href="index.html">Sign Out</a></li>
-					</ul>
-				</li>
-			</ul>
 		</div>
 	</header>
 	<div role="main" id="main" class="clearfix">
 		<div class="accordion-box squared-box clearfix">
-			<form method="POST" action="request-history.html">
-				<h1 class="box-title"><span class="title-area-right">Community: Utopia</span><span>ACCOUNT SETTINGS</span></h1>
-				<div class="squared-accordion" >		
+			<form method="POST" action="select-lease.html">
+				<h1 class="box-title"><span class="title-area-right">Community: Utopia</span><span>CREATE YOUR ACCOUNT SETTINGS</span></h1>
+				<div class="squared-accordion" >
+					
+					
 					<h2>Select and answer security question(s)</h2>
 					<div class="padded">
-						<p class="form-note">(You'll use these if you forget your password)</p><br>
-						
-						<ul class="form-with-validation">
+						<p class="form-note">(You'll use these if you forget your password)</p>
+						<ul class="two-thirds duplicatable">
 							<li>
-								<label for="securityQuestion1">Security Question <span class="required">*</span></label>	
-								<span class="message-text" >you must always have one security question</span><br>
-								<select data-val="true" data-val-required="Security Question is required." name="securityQuestion1" id="securityQuestion1" class="input-validation-error">
-									<option  value="What was your first car?">What was your first car?</option>
-									<option  value="What was the name of your first pet?">What was the name of your first pet?</option>
-									<option  value="What is your father's middle name?">What is your father's middle name?</option>
-									<option  value="What are the last four digits of your social security number?">What are the last four digits of your social security number?</option>
-									<option  value="What city were you born in?">What city were you born in?</option>
-									<option  value="What is your mother's maiden name?">What is your mother's maiden name?</option>							
-								</select>
+								<ul>
+									<li>
+										<h3>
+											<label for="securityQuestion1">Security Question <span class="required">*</span></label>
+										</h3>
+										<select data-val="true" data-val-required="Security Question is required." name="securityQuestion1" class="input-validation-error">
+											<option  value="What was your first car?">What was your first car?</option>
+											<option  value="What was the name of your first pet?">What was the name of your first pet?</option>
+											<option  value="What is your father's middle name?">What is your father's middle name?</option>
+											<option  value="What are the last four digits of your social security number?">What are the last four digits of your social security number?</option>
+											<option  value="What city were you born in?">What city were you born in?</option>
+											<option  value="What is your mother's maiden name?">What is your mother's maiden name?</option>							
+										</select>
+										<span class="message-text" >you must always have one security question</span>
+										
+										<span class="ui-state-error-text field-validation-error" data-valmsg-for="securityQuestion1" data-valmsg-replace="true">
+											<span for="securityQuestion1" generated="true" class="" style="">Security Question is required.</span>
+										</span>
+									</li>
+									<li>
+										<h3><label for="securityAnswer1">Security Question Answer <span class="required">*</span></label></h3>
+										<input data-val="true" data-val-required="Security Question Answer is required." name="securityAnswer1" type="text" value=""  class="input-validation-error">
+										<div class="right">
+											<button type="button" class="remove cancel"><span>Remove</span><span class="end"> &nbsp; </span></button>
+										</div>
+										
+										<span class="ui-state-error-text field-validation-error" data-valmsg-for="securityAnswer1" data-valmsg-replace="true">
+											<span for="securityAnswer1" generated="true" class="" style="">Security Question Answer is required.</span>
+										</span>
+									</li>
+								</ul>
 							</li>
 							<li>
-								<label for="securityAnswer1">Security Question Answer <span class="required">*</span></label>
-								<input data-val="true" data-val-required="Security Question Answer is required." id="securityAnswer1" name="securityAnswer1" type="text" value="Denver" >
+								<ul>
+									<li>
+										<h3><label>Security Question</label></h3>
+										<select name="securityQuestion2">
+											<option  value="What was your first car?">What was your first car?</option>
+											<option  value="What was the name of your first pet?">What was the name of your first pet?</option>
+											<option  value="What is your father's middle name?">What is your father's middle name?</option>
+											<option  value="What are the last four digits of your social security number?">What are the last four digits of your social security number?</option>
+											<option  value="What city were you born in?">What city were you born in?</option>
+											<option  value="What is your mother's maiden name?">What is your mother's maiden name?</option>								
+										</select>
+									</li>
+									<li>
+										<h3><label for="securityAnswer2">Security Question Answer </label></h3>
+										<input data-val="true" name="securityAnswer2" type="text" value="">
+										<div class="right">
+											<button type="button" class="remove cancel"><span>Remove</span><span class="end"> &nbsp; </span></button>
+										</div>
+									</li>
+								</ul>
 							</li>
-							<li>
-								<label for="securityQuestion2">Security Question</label><br>
-								<select name="securityQuestion2" id="securityQuestion2">
-									<option  value="What was your first car?">What was your first car?</option>
-									<option  value="What was the name of your first pet?">What was the name of your first pet?</option>
-									<option  value="What is your father's middle name?" selected="selected">What is your father's middle name?</option>
-									<option  value="What are the last four digits of your social security number?">What are the last four digits of your social security number?</option>
-									<option  value="What city were you born in?">What city were you born in?</option>
-									<option  value="What is your mother's maiden name?">What is your mother's maiden name?</option>								
-								</select>
-							</li>
-							<li>
-								<label for="securityAnswer2">Security Question Answer </label>
-								<input data-val="true" id="securityAnswer2" name="securityAnswer2" type="text" value="Michael" />
-							</li>
-							<li>
-								<button type="button" class="cancel"><span>Remove</span><span class="end"> &nbsp; </span></button>								
-								<p><a class="add-button small-teal" href="#">Add security question</a></p>
+							<li class="controls">
+								<p><a class="add-button small-teal add" href="#">Add security question</a></p>
 							</li>
 						</ul>
 					</div>
-					<h2>Change Password</h2>
+					
+					
+					<h2>Create Password</h2>
 					<div class="padded">
-						<ul class="form-with-validation">
+						<ul class="two-thirds">
 							<li>							
-								<label for="password">Current Password <span class="required">*</span></label>
-								<input data-val="true" data-val-required="Current Password is required." id="password" name="password" type="password" value="">
-							</li>
-							<li>
-								<label for="newPassword">New Password <span class="required">*</span></label>
+								<h3><label for="currentPassword">Current Password <span class="required">*</span></label></h3>
+								<input data-val="true" data-val-required="Password is required." id="currentPassword" name="currentPassword" type="password" value="">
 								<span class="message-text" >(6 character minimum)</span>
-								<input data-val="true" data-val-required="New Password is required." id="newPassword" name="newPassword" tabindex="2" type="password" value="">
+							</li>
+							<li>							
+								<h3><label for="password">Password <span class="required">*</span></label></h3>
+								<input data-val="true" data-val-required="Password is required." id="password" name="password" type="password" value="">
+								<span class="message-text" >(6 character minimum)</span>
 							</li>
 							<li>
-								<label for="confirmPassword">Confirm New Password <span class="required">*</span></label>
-								<input data-val="true" data-val-required="Confirm New Password is required and must match New Password." id="confirmPassword" name="confirmPassword" tabindex="3" type="password" value="">
+								<h3><label for="confirmPassword">Confirm Password <span class="required">*</span></label></h3>
+								<input data-val="true" data-val-required="Confirm Password is required and must match Password." id="confirmPassword" name="confirmPassword" tabindex="3" type="password" value="">
 							</li>
 						</ul>
-					</div>		
+					</div>			
+						
+					
 					<h2>Change Email Address</h2>
 					<div class="padded">
 						<p class="form-note">(This will be your new Archstone sign in email address and will effect all leases associated with your account)</p><br>
@@ -159,11 +166,10 @@
 							</li>
 						</ul>
 					</div>		
+					
 				</div>
 				<p class="submit-area">
-					<button type="button" class="cancel"><span>Cancel Changes</span><span class="end"> &nbsp; </span></button>
-					&nbsp;&nbsp;&nbsp;
-					<button type="submit" class="submit"><span>Save Changes</span><span class="end"> &nbsp; </span></button>
+					<button type="submit" class="submit"><span>Create my Account</span><span class="end"> &nbsp; </span></button>
 				</p>				
 			</form>
 		</div>		
@@ -182,8 +188,8 @@
 	<!-- Use this in all pages -->
   <script src="js/ui/jquery-ui-1.8.20.custom.js"></script>
   <script src="js/jquery-bbq.js"></script>
-  <script src="js/plugins.js"></script>
   <script src="js/script.js"></script>
+  <script src="js/plugins.js"></script>
   <script src="js/nav.js"></script>
 	
 	<!-- Specific to this page -->

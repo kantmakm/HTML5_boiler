@@ -15,7 +15,9 @@ ul.form-with-validation li {
 	margin: 0 0 10px;
 }
 ul.form-with-validation input[type=text],
-ul.form-with-validation input[type=password] {
+ul.form-with-validation input[type=password],
+ul.two-thirds input[type=text],
+ul.two-thirds input[type=password] {
 	transition: 				all 0.25s;
 	-o-transition: 			all 0.25s;
 	-moz-transition: 		all 0.25s;
@@ -51,16 +53,42 @@ ul.form-with-validation input.input-validation-error {
 	margin: 0;
 	border: 1px solid #FF0000;
 }
-ul.form-with-validation .ui-state-error-text {
+ul.form-with-validation .ui-state-error-text,
+ul.two-thirds .ui-state-error-text {
 	font-size: 11px;
 	font-weight: bold;
 	display:block;
 }
-ul.form-with-validation .message-text {
+ul.form-with-validation .message-text,
+ul.two-thirds .message-text {
 	font-size: 11px;
-	float:right;
 	color: #6E6E6E; 
+	float:right;
 }
+ul.two-thirds .message-text,
+ul.two-thirds .right {
+	width:230px;
+	padding-top: 10px;
+}
+ul.two-thirds .right {
+	padding-top: 0;
+}
+/**
+ * duplicatable content (see create-account-settings.html for an example)
+ */
+ul.two-thirds,
+.two-thirds ul {
+	padding:0;
+	margin:0;
+}
+ul.two-thirds input[type=text],
+ul.two-thirds input[type=password] {
+	width: 450px;
+}
+.two-thirds .select-wrapper {
+	margin-bottom: 3px;
+}
+
 /* Styled Select Boxes */
 .select-wrapper{
 	background: url(../images/icon_dropdown.png) no-repeat scroll right center transparent;

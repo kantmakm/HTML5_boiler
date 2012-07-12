@@ -629,7 +629,7 @@ table.balance tfoot #total {
 }
 
 /**
- * Page-specific to contact-information.html
+ * switchable content
  */
 .switchable ul input,
 .switchable ul span,
@@ -651,7 +651,8 @@ table.balance tfoot #total {
 .switchable ul li.address p {
 	margin-top: -90px;
 }
-/*	~~~~~~~~~~~ TH Tim's Modifications ~~~~~~~~~~~~~~~~~~~~~~~~	*/
+
+/*	~~~~~~~~~~~~~~~~~~~~~~ TH Tim's Modifications ~~~~~~~~~~~~~~~~~~~~~~	*/
 .clear-both{clear:both;} /* should be replaced by .clearfix (and how that works) */
 .float-right{float:right;} /* should be replaced by .right */
 .float-left{float:left;} /* should be replaced  by .left */

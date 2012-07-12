@@ -88,49 +88,41 @@ archstone.bindEvents.autoclear = function () {
 };
 
 archstone.bindEvents.dropdown = function() {
-	
 	//pseudo-styled dropdowns
 	$('select').each(function(){
-		if(!$(this).parent().hasClass('select-wrapper'))
+		if(!$(this).parent().hasClass('select-wrapper') || $(this).data('events') === undefined)
 		{
 			var $label = $(this).siblings('label');
-			$(this)
-				.wrap('<div class="select-wrapper" />')
-				.change(function(){
+			if(!$(this).parent().hasClass('select-wrapper'))$(this).wrap('<div class="select-wrapper" />')
+			if($(this).data('events') == undefined)
+			{
+				$(this).change(function(){
 					$(this).siblings('label').html($(this).find(':selected').html()).css('opacity', ($(this).prop('disabled') === false?1:0.5));
 				});
+			}
 
-			$label = $('<label></label>');
-			$label.insertBefore($(this));
-			$label.html($(this).find(':selected').html()).css('opacity', ($(this).prop('disabled') === false?1:0.5));
+			if($(this).siblings('label').length == 0)
+			{
+				$label = $('<label></label>');
+				$label.insertBefore($(this));
+				$label.html($(this).find(':selected').html()).css('opacity', ($(this).prop('disabled') === false?1:0.5));
+			}
 		}
 	});
 }
 
-archstone.bindEvents.accordion = function () {
-	if($('.accordion').length == 0)return false;
-	var is_open = $('.discreet-accordion').length === 0;
-	if(is_open)is_open = 0;
-	$('.accordion').accordion({
-		autoHeight: false,
-		collapsible: true,
-		active: is_open
-	});
-	$('.ui-icon').removeClass('ui-icon-triangle-1-e');
-};
-
-archstone.bindEvents.multiAccordion = function() {
-	if($('.multi-accordion').length == 0)return false;
-	$('.multi-accordion h2').each(function(){
-		var $head = $(this).addClass('ui-accordion-header').addClass('ui-state-active');
-		$head.append('<span class="ui-icon"></span>').next().addClass('ui-accordion-content');
-		$head.toggle(function(){
-			$(this).removeClass('ui-state-active').next().hide('blind');
-		}, function(){
-			$(this).addClass('ui-state-active').next().show('blind');
-		})
-	});
-};
+// archstone.bindEvents.multiAccordion = function() {
+// 	if($('.multi-accordion').length == 0)return false;
+// 	$('.multi-accordion h2').each(function(){
+// 		var $head = $(this).addClass('ui-accordion-header').addClass('ui-state-active');
+// 		$head.append('<span class="ui-icon"></span>').next().addClass('ui-accordion-content');
+// 		$head.toggle(function(){
+// 			$(this).removeClass('ui-state-active').next().hide('blind');
+// 		}, function(){
+// 			$(this).addClass('ui-state-active').next().show('blind');
+// 		})
+// 	});
+// };
 
 archstone.textarea = {
 	/**
