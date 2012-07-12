@@ -70,16 +70,18 @@ ul.two-thirds .right {
 	width:230px;
 	padding-top: 10px;
 }
-ul.two-thirds .right {
-	padding-top: 0;
-}
 /**
  * duplicatable content (see create-account-settings.html for an example)
  */
+
+ul.two-thirds .right {
+	padding-top: 0;
+}
 ul.two-thirds,
 .two-thirds ul {
 	padding:0;
 	margin:0;
+	color: #F00 !important;
 }
 ul.two-thirds input[type=text],
 ul.two-thirds input[type=password] {
