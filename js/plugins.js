@@ -47,7 +47,6 @@ $.fn.duplicatable = function(method)
 			// setting a $this.duplicatable.settings to a $(jquery) element, will not account for others 
 			$this.find($this.duplicatable.settings.removeButton)
 				.live('click', function(){
-					console.log('what?');
 					$this.duplicatable('remove', this);
 					return this;
 				})
@@ -94,10 +93,15 @@ $.fn.duplicatable = function(method)
 $.fn.multiAccordion = function(method)
 {
 	var $this = $(this);
+	
+	function applyOptions(options)
+	{
+		
+	};
+	
 	var methods = {
 		init: function()
 		{
-			console.log('hoyah!');
 			$this.children('h2').each(function(){
 				var $head = $(this).addClass('ui-accordion-header').addClass('ui-state-active');
 				$head.append('<span class="ui-icon"></span>').next().addClass('ui-accordion-content');
@@ -107,6 +111,10 @@ $.fn.multiAccordion = function(method)
 					$(this).addClass('ui-state-active').next().show('blind');
 				})
 			});
+		},
+		options: function(options)
+		{
+			
 		}
 	};
 	
@@ -118,7 +126,6 @@ $.fn.multiAccordion = function(method)
   } else {
     $.error( 'Method ' +  method + ' does not exist on jQuery.tooltip' );
   }
-	
 }
 
 

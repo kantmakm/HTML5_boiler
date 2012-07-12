@@ -16,6 +16,15 @@ a {
 	color:#00929f;
 	text-decoration: none;
 }
+a.replace {
+	background: url(../images/icon_account_replace.png) no-repeat scroll left center transparent;
+	padding: 0 5px 0 20px;
+}
+a.remove {
+	background: url(../images/icon_account_remove.png) no-repeat scroll left center transparent;
+	padding: 0 5px 0 15px;
+	color: #cf2434;
+}
 /*a:hover {
 	text-decoration:underline;
 }*/
@@ -600,25 +609,25 @@ h3.discreet {
 /**
  * Page specific to make-onetime-payment.html
  */
-table.balance {
+.balance table {
 	font-size: 12px;
 	font-weight: bold;
 }
-table.balance td.description {
+.balance table td.description {
 	text-align: center;
 	width: 100%;
 	font-weight: normal;
 }
-table.balance tbody td {
+.balance table tbody td {
 	padding-bottom: 10px;
 	white-space: nowrap;
 }
-table.balance tfoot td {
+.balance table tfoot td {
 	padding-top: 15px;
 	border-top: 2px solid #E2E2E2;
 }
 
-table.balance tfoot #total {
+.balance table tfoot #total {
 	font-weight: 100;
 	font-size: 18px;
 }

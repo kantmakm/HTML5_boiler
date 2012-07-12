@@ -62,9 +62,9 @@
 					<span class="right">May 2012</span>
 					<span>BALANCE DETAILS</span>
 				</h2>
-				<div class="clearfix">
+				<div class="clearfix balance">
 					<a href="#" class="right" >See Account History</a>
-					<table class="left balance" width="550" border="0" cellpadding="0">
+					<table class="left" width="550" border="0" cellpadding="0">
 						<tfoot>
 							<tr>
 								<td colspan="2" class="label">Current Balance</td>
@@ -128,15 +128,15 @@
 				</h2>
 				<div class="clearfix account">
 					<div class="status">
-						<p>Primary Checking Account (...6525)</p>
-						<p>
+						<p class="selected">Primary Checking Account (...6525)</p>
+						<p class="controls">
 							<a href="#" class="replace">Replace with New Account</a>
-							<a href="#" class="remove">Replace with New Account</a>
+							<a href="#" class="remove">Remove Account</a>
 						</p>
 						<p>Please note: By replacing this account you will lose your existing account information</p>
 					</div>
 					<div class="replace">
-						<form class="replace">
+						<form>
 						<ul class="form-with-validation">
 							<li>
 								<label for="accountName">Account Nickname <span class="required">*</span></label>
@@ -172,6 +172,7 @@
 								<button type="submit" class="submit"><span>Use This Account</span><span class="end"></span></button>
 							</li>
 						</ul>
+						</form>
 					</div>
 				</div>
 
@@ -179,10 +180,15 @@
 					<span>Payment Confirmation</span>
 				</h2>
 				<div class="clearfix">
-					<p><label>
-						<input type="checkbox" name="i_agree">
-						<span>I want to make a one-time payment to Utopia for $1,837.98 to be deducted from the above account.</span>
-					</label></p>
+					<p>
+						<label>
+							<input type="checkbox" name="i_agree">
+							<span>I want to make a one-time payment to Utopia for $1,837.98 to be deducted from the above account.</span>
+						</label>
+					</p>
+					<p class="submit-area">
+						<button type="submit" class="submit"><span>Pay Now</span><span class="end"></span></button>
+					</p>
 				</div>
 
 				
@@ -204,8 +210,8 @@
 	<!-- Use this in all pages -->
   <script src="js/ui/jquery-ui-1.8.20.custom.js"></script>
   <script src="js/jquery-bbq.js"></script>
-  <script src="js/plugins.js"></script>
   <script src="js/script.js"></script>
+  <script src="js/plugins.js"></script>
   <script src="js/nav.js"></script>
 	
 	<!-- Specific to this page -->
@@ -214,19 +220,24 @@
 	$(function(){
 		
 		// set defaults for page loaded with no hashtags
+		// dividing elements into 4 sections: balance, payment, account, confirmation
 	  var defaultParams = {
-	      "total": 								$('#total'),
-	      "paymentType": 					$("input[name=payment_type]"),
-	      "paymentAmount": 				$("#payment-amount"),
-				"percentageSlider": 		$('.slider'),
-				"totalBalance": 				parseFloat($('#total').html().replace(/[^0-9\.]+/g, '')),
-				"textBalances": 				$('.multi-accordion .payment input[type=text]'),
-	      "state": 								{
-														      "payment_type": 'full', // would come from server side model
-																	"payment_amount": parseFloat($('#total').html().replace(/[^0-9\.]+/g, '')) //100% of total by default
-															  }
+			"$balance": 			$(".squared-accordion .balance"),
+			"$payment": 			$(".squared-accordion .payment"),
+			"$account": 			$(".squared-accordion .account"),
+			"$confirmation": 	$(".squared-accordion .confirmation"),
+	    "state": 					{
+													"payment_type": 'full', // would come from server side model
+													"payment_amount": parseFloat($('#total').html().replace(/[^0-9\.]+/g, '')) //100% of total by default
+												}
 	  };
-	
+		defaultParams.$balance.$total = 						$('#total');
+		defaultParams.$balance.total = 							parseFloat(defaultParams.$balance.$total.html().replace(/[^0-9\.]+/g, ''));
+		defaultParams.$payment.$type = 							$("input[name=payment_type]");
+		defaultParams.$payment.$amount = 						$("#payment-amount");
+		defaultParams.$payment.$percentageSlider = 	$('.slider');
+		defaultParams.$payment.$balances =					$('.payment input[type=text]');
+		defaultParams.$account.$form = 							$('.account form');
 	
 		// initialize the service request history components
 		payments.onetime(defaultParams);
