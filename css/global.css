@@ -70,11 +70,6 @@ fieldset.no-border {
 	display:block;
 	padding-left: 25px;
 }
-a.small-teal {
-	font-size: 11px;
-	font-family: Arial, sans-serif;
-	color: #00919E;
-}
 #main {
 	width: 770px;
 	margin: 0 auto;

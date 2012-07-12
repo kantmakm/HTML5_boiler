@@ -1,25 +1,24 @@
-<div id="dialog-lease" class="list-form">
-	<form action="index.html" method="POST">
-		<div class="form-element">
-			<input type="radio" value="0" name="lease-location" id="location-0">
-			<label for="location-0">[ Apartment Address ] Customer Name [ Community ]</label>
-		</div>
-
-		<div class="form-element">
-			<input type="radio" value="1" name="lease-location" id="location-1">
-			<label for="location-1">123 Main Street #101, Genvieve Cornhill, Archstone Englewood</label>
-		</div>
-
-		<div class="form-element">
-			<input type="radio" value="2" name="lease-location" id="location-2">
-			<label for="location-2">456 Spruce Street #12, Genevieve Cornhill, Archstone</label>
+<div>
+	<form method="POST" action="request-history.html">
+		<ul class="form-with-validation">
+			<li>
+				<input id="lease1" name="lease1" tabindex="2" type="radio" value="" class="padded-left" />
+				<label for="lease1" class="discreet">[ Apartment Address ] Customer Name [ Community ]</label>
+			</li>
+			<li>
+				<input id="lease2" name="lease2" tabindex="3" type="radio" value="" class="padded-left" />							 
+				<label for="lease2" class="discreet">123 Main St #101, Genvieve Cornhill, Archstone Englewood</label>
+			</li>
+			<li>
+				<input id="lease3" name="lease3" tabindex="4" type="radio" value="" class="padded-left" />							 
+				<label for="lease3" class="discreet">456 Spruce Street #12, Genvieve Cornhill, Archstone Utopia</label>
+			</li>
+		</ul>					
+		<div class="submit-area-right">
+			<button type="button" class="cancel"><span>Cancel</span><span class="end"> &nbsp; </span></button>
+			&nbsp;&nbsp;&nbsp;
+			<button type="submit" class="submit"><span>Continue</span><span class="end"> &nbsp; </span></button>
 		</div>
 		
-		<p class="submit-area">
-			<button type="submit" class="submit"><span>Continue</span><span class="end"> &nbsp; </span></button>
-			&nbsp;&nbsp;&nbsp;&nbsp;
-			<button class="submit"><span>Cancel</span><span class="end"> &nbsp; </span></button>
-		</p>
-
 	</form>
 </div>
