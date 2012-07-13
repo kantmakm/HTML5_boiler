@@ -252,9 +252,6 @@ p.form-note{
 	color: #888;
 }
 .form-note-alert{font-style:italic; font-size:10px; color: #FF0000;}
-.back-to-sign-in{float:left; position: relative; height:20px; width:120px;}
-.back-to-sign-in .sign-in-text {position:absolute; bottom:0px; padding-left:5px;}
-
 .form-entry{
 	width:550px;
 }
@@ -271,5 +268,4 @@ p.form-note{
 /*  --------------------- Account settings  ---------------------------------------*/
 .security-question{width:550px;}
 /*  --------------------- End Account settings  -----------------------------------*/
-
 /*	TH - end styles I've added		*/

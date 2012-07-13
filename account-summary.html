@@ -88,137 +88,28 @@
 		<div id="service-request" class="accordion-box  clearfix">
 			
 			<div class="clearfix">
-				<div class="top-box float-left">
+				<div class="top-box left">
 					<div class="title"><img src="images/icon_current_bal_bars.png" />&nbsp;&nbsp;<span class="pad-top">CURRENT BALANCE</span></div>
 					<div class="current-bg"><div class="position-price">$1,837.98</div></div>
-					<div class="teal-toolbar"><a href="">Pay Now<span class="float-right"><img class="circle-arrow" src="images/icon_circle_arrow.png"/></span></a></div>
-					<div class="teal-toolbar"><a href="">View History<span class="float-right"><img class="circle-arrow" src="images/icon_circle_arrow.png"/></span></a></div>
+					<div class="teal-toolbar"><a href="">Pay Now<span class="right"><img class="circle-arrow" src="images/icon_circle_arrow.png"/></span></a></div>
+					<div class="teal-toolbar"><a href="">View History<span class="right"><img class="circle-arrow" src="images/icon_circle_arrow.png"/></span></a></div>
 				</div>
 				
-				<div class="top-box float-right lease-container">
-					<div class="title"><img src="images/icon_lease_house.png" />&nbsp;&nbsp;<span class="pad-top">LEASE</span><span class="float-right lease-date">Expires October 31, 2012</span></div>
+				<div class="top-box right lease-container">
+					<div class="title"><img src="images/icon_lease_house.png" />&nbsp;&nbsp;<span class="pad-top">LEASE</span><span class="right lease-date">Expires October 31, 2012</span></div>
 					<div class="lease-bg">
 						<div class="lease-positioning">
 							That's only...
 						</div>
 						<div class="clearfix claendar-holder">
-							<div class="left-calendar-flip float-left"></div>
-							<div class="right-calendar-flip float-right"></div>
+							<div class="left-calendar-flip left"></div>
+							<div class="right-calendar-flip right"></div>
 						</div>
 					</div>
 					
-					<div class="teal-toolbar view-lease-toolbar"><a href="">View Lease<span class="float-right"><img class="circle-arrow" src="images/icon_circle_arrow.png"/></span></a></div>
+					<div class="teal-toolbar view-lease-toolbar"><a href="">View Lease<span class="right"><img class="circle-arrow" src="images/icon_circle_arrow.png"/></span></a></div>
 				</div>
-			</div>
-			
-			
-			<div >
-				<form method="POST" action="select-lease.html">
-					<div class="section-header">
-						Select and answer security question(s)
-					</div>
-					<div class="content-padding">
-						<p class="form-note">(You'll use these if you forget your password)</p><br>						
-						<!-- ---------------------- -->					
-						<label for="securityQuestion1">Security Question</label>					
-						<div class="security-question">
-							<div class="left-form-div">
-								<select name="securityQuestion1">
-									<option  value="What city were you born in?">What was your first car?</option>
-									<option  value="What city were you born in?">What was the first street you lived on?</option>
-									<option  value="What city were you born in?">What was the name of your first pet?</option>
-									<option  value="What city were you born in?">What is your father's middle name?</option>
-									<option  value="What city were you born in?">What are the last four digits of your social security number?</option>
-									<option  value="What city were you born in?">What city were you born in?</option>
-									<option  value="What city were you born in?">What city were you born in?</option>
-									<option  value="What city were you born in?">What is your mother's maiden name?</option>								
-								</select>
-							</div>
-							<div class="form-note-alert right-form-div"></div>						
-							<div class="clear-both"></div>
-							<br>
-							<label for="securityAnswer1">Security Question Answer</label>					
-							<input type="text" name="securityAnswer1" value="Denver"/>
-						</div>
-						<!-- ---------------------- -->
-						<label for="securityQuestion2">Security Question</label>					
-						<div class="security-question">
-							<div class="left-form-div">
-								<select name="securityQuestion2">
-									<option  value="What city were you born in?">What was your first car?</option>
-									<option  value="What city were you born in?">What was the first street you lived on?</option>
-									<option  value="What city were you born in?">What was the name of your first pet?</option>
-									<option  value="What city were you born in?">What is your father's middle name?</option>
-									<option  value="What city were you born in?">What are the last four digits of your social security number?</option>
-									<option  value="What city were you born in?">What city were you born in?</option>
-									<option  value="What city were you born in?">What city were you born in?</option>
-									<option  value="What city were you born in?">What is your mother's maiden name?</option>								
-								</select>
-							</div>
-							<div class="form-note-alert right-form-div"></div>						
-							<div class="clear-both"></div>
-							<br>
-							<label for="securityAnswer2">Security Question Answer</label>					
-							<input type="text" name="securityAnswer2" value="Michael"/>
-						</div>
-						<!-- ---------------------- -->
-						<div><button type="submit" class="submit float-right"><span>Remove</span></button></div><br>
-						<div class="clear-both"></div>
-						<div><a href=""><img src="images/button_plus.png"/> Add security question</a></div>
-					</div><!-- end content-padding -->
-					
-					<div class="section-header">
-						Change Password
-					</div>
-					<div class="content-padding">
-						<label for="currentpassord">Current Password:</label>
-						<div class="clear-both"></div>
-						<div class="form-entry">
-							<div class="left-form-div"><input type="password" name="currentpassord" value="blahblah" class="textbox-checkmark"/></div>
-						</div>
-						<div class="clear-both"></div>
-						<label for="newpassword">New Password:</label>
-						<div class="form-entry">
-							<div class="left-form-div"><input type="password" name="newpassword" value="yoohoo" class="textbox-checkmark" /></div>
-						</div>
-						<div class="clear-both"></div>
-						<label for="confirmnewpassword">Confirm New Password:</label>
-						<div class="form-entry">
-							<div class="left-form-div"><input type="password" name="confirmnewpassword" value="yoohoo" class="textbox-checkmark"/></div>
-						</div>
-						<div class="clear-both"></div>
-					</div>
-					<div class="section-header">
-						Change Email Address
-					</div>
-					<div class="content-padding">
-						<div class="content-padding">
-						<p class="form-note">(This will be your new Archstone sign in email address abd will affect all leases associated with your account.)</p><br>
-						<label for="currentemail">Current Email Address:</label>
-						<div class="clear-both"></div>
-						<div class="form-entry">
-							<div class="left-form-div"><input type="text" name="currentemail" value="blahblah@blah.com" class="textbox-checkmark"/></div>
-						</div>
-						<div class="clear-both"></div>
-						<label for="newemail">New Email Address:</label>
-						<div class="form-entry">
-							<div class="left-form-div"><input type="text" name="newemail" value="yoohoo@blah.com" class="textbox-checkmark" /></div>
-						</div>
-						<div class="clear-both"></div>
-						<label for="confirmnewemail">Confirm New Email Address:</label>
-						<div class="form-entry">
-							<div class="left-form-div"><input type="text" name="confirmnewemail" value="heya@blah.com" class="textbox-checkmark"/></div>
-						</div>
-						<div class="clear-both"></div>
-					</div>
-					<div class="submit-area">
-						<button type="submit" class="submit"><span>Cancel Changes</span><span class="end"> &nbsp; </span></button>
-						<span style="width:50px;">&nbsp;</span>
-						<button type="submit" class="submit"><span>Save Changes</span><span class="end"> &nbsp; </span></button>
-					</div>					
-				</form>
-			</div>
-		</div>
+			</div>			
   </div>
   <footer>
 		<div class="right">
