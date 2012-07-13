@@ -82,6 +82,9 @@ ul.two-thirds,
 	padding:0;
 	margin:0;
 }
+.two-thirds li {
+	padding-top: 10px;
+}
 ul.two-thirds input[type=text],
 ul.two-thirds input[type=password] {
 	width: 450px;

@@ -107,7 +107,7 @@
 				</div>
 				
 				<h2>
-					<span class="right" id="payment-amount">$1,837.98</span>
+					<span class="right" id="payment-label">$1,837.98</span>
 					<span>Payment Amount</span>
 				</h2>
 				<div class="clearfix payment">
@@ -123,7 +123,7 @@
 				</div>
 				
 				<h2>
-					<span class="right">Primary Checking</span>
+					<span class="right" id="account-label">Primary Checking</span>
 					<span>Bank Account</span>
 				</h2>
 				<div class="clearfix account">
@@ -222,6 +222,7 @@
 		// set defaults for page loaded with no hashtags
 		// dividing elements into 4 sections: balance, payment, account, confirmation
 	  var defaultParams = {
+			"$accordion": 		$('.squared-accordion'),
 			"$balance": 			$(".squared-accordion .balance"),
 			"$payment": 			$(".squared-accordion .payment"),
 			"$account": 			$(".squared-accordion .account"),
@@ -234,10 +235,14 @@
 		defaultParams.$balance.$total = 						$('#total');
 		defaultParams.$balance.total = 							parseFloat(defaultParams.$balance.$total.html().replace(/[^0-9\.]+/g, ''));
 		defaultParams.$payment.$type = 							$("input[name=payment_type]");
-		defaultParams.$payment.$amount = 						$("#payment-amount");
+		defaultParams.$payment.$label = 						$("#payment-label");
 		defaultParams.$payment.$percentageSlider = 	$('.slider');
 		defaultParams.$payment.$balances =					$('.payment input[type=text]');
 		defaultParams.$account.$form = 							$('.account form');
+		defaultParams.$account.$addButton = 				$('.add-button'); // this will be used with .live(); otherwise this would have to be a
+		defaultParams.$account.$removeButton = 			$('.account .remove');
+		defaultParams.$account.$replaceButton = 		$('.account .replace');
+		defaultParams.$account.$label 				= 		$('#account-label');
 	
 		// initialize the service request history components
 		payments.onetime(defaultParams);

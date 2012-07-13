@@ -94,6 +94,7 @@ $.fn.multiAccordion = function(method)
 {
 	var $this = $(this);
 	
+	//* this method is reponsible for hiding/showing based on locked/active status
 	function applyOptions()
 	{
 		if($this.multiAccordion.settings.active.length === 0){
@@ -103,20 +104,16 @@ $.fn.multiAccordion = function(method)
 		}
 		
 		$this.children('h2').each(function(i, e){
-			var activeIndex = $this.multiAccordion.settings.active ? $this.multiAccordion.settings.active.indexOf(i) : -1;
-			var lockedIndex = $this.multiAccordion.settings.locked.indexOf(i);
-			console.log('activeIndex: %o', activeIndex);
-			console.log('lockedIndex: %o', lockedIndex);
-			// Locking this row down
-			// if($this.multiAccordion.settings.locked.indexOf(i) !== -1 && activeIndex !== -1)$(this).click();
+			var activeIndex = $this.multiAccordion.settings.active !== false ? $this.multiAccordion.settings.active.indexOf(i) : -1;
+			var lockedIndex = $this.multiAccordion.settings.locked !== false ? $this.multiAccordion.settings.locked.indexOf(i) : -1;
 
-			// active row;; show it
-			if($this.multiAccordion.settings.active === false || activeIndex === -1)
+			// inactive row; hide it
+			if(activeIndex === -1 || lockedIndex !== -1)
 			{
 				$(this).removeClass('ui-state-active').next().not(':hidden').hide('blind');
 			}
-			// inactive row; hide it
-			else
+			// active, unlocked row; show it
+			else if(activeIndex !== -1 && lockedIndex === -1)
 			{
 				$(this).addClass('ui-state-active').next().not(':visible').show('blind');
 			}
@@ -133,16 +130,16 @@ $.fn.multiAccordion = function(method)
 			}, options);
 			applyOptions();
 			
-			console.log(arguments);
-			console.log($this.multiAccordion.settings.active);
-			
 			$this.children('h2').each(function(){
 				var $head = $(this).addClass('ui-accordion-header').addClass('ui-state-active');
 				$head.append('<span class="ui-icon"></span>').next().addClass('ui-accordion-content');
 				$head.click(function(){
+					var active = $this.multiAccordion.settings.active;
+					var locked = $this.multiAccordion.settings.locked;
+					if(active === false)active = [];
+					if(locked === false)locked = [];
 					var thisIndex = $this.children('h2').index($(this));
-					console.log($this.multiAccordion.settings.active);
-					console.log(thisIndex);
+
 					
 					// open
 					if($this.multiAccordion.settings.active === false)$this.multiAccordion.settings.active = [];
@@ -151,8 +148,6 @@ $.fn.multiAccordion = function(method)
 						$this.multiAccordion.settings.active.push(thisIndex);
 					// close
 					}else{
-						console.log('thisIndex: %o', thisIndex);
-						console.log('toSplice: %o', $this.multiAccordion.settings.active.indexOf(thisIndex));
 						$this.multiAccordion.settings.active.splice($this.multiAccordion.settings.active.indexOf(thisIndex), 1);
 						if($this.multiAccordion.settings.active.length == 0)$this.multiAccordion.settings.active = false;
 					}
@@ -180,6 +175,38 @@ $.fn.multiAccordion = function(method)
 					return $this.multiAccordion.settings[arguments[0]];
 				}
 			}
+		},
+		lock: function(i)
+		{
+			var locked = $this.multiAccordion('options', 'locked');
+			if(locked.indexOf(i) === -1)
+			{
+				locked.push(i);
+				$this.multiAccordion('options', 'locked', locked);
+			}
+		},
+		unlock: function(i)
+		{
+			var locked = $this.multiAccordion('options', 'locked');
+			if(locked.indexOf(i) !== -1)locked.splice(locked.indexOf(i), 1)
+			$this.multiAccordion('options', 'locked', locked);
+		},
+		activate: function(i)
+		{
+			var active = $this.multiAccordion('options', 'active');
+			active = active === false ? [] : active;
+			if(active.indexOf(i) === -1)
+			{
+				active.push(i);
+				$this.multiAccordion('options', 'active', active);
+			}
+		},
+		deactivate: function(i)
+		{
+			var active = $this.multiAccordion('options', 'active');
+			active = active === false ? [] : active;
+			if(active.indexOf(i) !== -1)active.splice(active.indexOf(i), 1)
+			$this.multiAccordion('options', 'active', active);
 		}
 	};
 	

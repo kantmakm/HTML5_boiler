@@ -19,7 +19,7 @@ payments.onetime = function(options){
 			if($radio.length === 1 && !$radio.prop('checked'))$radio.prop('checked', true);
 			value = (ui.value/100)*payments.options.$balance.total;
 			$( this ).next().val( "$" + value.formatMoney(2, '.', ',') );
-			payments.options.$payment.$amount.html("$" + value.formatMoney(2, '.', ','));
+			payments.options.$payment.$label.html("$" + value.formatMoney(2, '.', ','));
 		},
 		stop: function(event, ui) {
 			var $radio = $(this).parent().find('input[type=radio]');
@@ -40,7 +40,6 @@ payments.onetime = function(options){
 		eval(evaluate);
 		if(typeof stateObj !== 'undefined')$.bbq.pushState(stateObj);
 	});
-	
 	payments.options.$payment.$balances.blur(function(e){
 		var $radio = $(this).parent().find('input[type=radio]');
 		var numberVal = parseFloat($(this).val().replace(/[^0-9\.]+/g, ''));
@@ -53,6 +52,18 @@ payments.onetime = function(options){
 		var numberVal = parseFloat($(this).val().replace(/[^0-9\.]+/g, ''));
 		if(isNaN(numberVal))numberVal = payments.options.state.payment_amount;
 		$(this).val(numberVal);
+	});
+	payments.options.$account.$addButton.live('click', function(){
+		payments.options.$accordion.multiAccordion('unlock', 2);
+		payments.options.$accordion.multiAccordion('activate', 2);
+		return false;
+	});
+	payments.options.$account.$removeButton.click(function(){
+		// lock the payment confirmation pane
+		payments.options.$accordion.multiAccordion('lock', 3);
+		payments.options.$accordion.multiAccordion('lock', 2);
+		payments.options.$account.$label.html($('<a href="#"></a>').addClass('add-button').html('add account'));
+		return false;
 	});
 	
 };
@@ -98,6 +109,6 @@ payments.onetime.hashChange = function(state) {
 	}
 
 	// payment amount
-	payments.options.$payment.$amount.html("$" + value.formatMoney(2, '.', ','));
+	payments.options.$payment.$label.html("$" + value.formatMoney(2, '.', ','));
 	
 };
