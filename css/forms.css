@@ -3,6 +3,7 @@ ul.form-with-validation,
 ul.form-with-validation ul {
 	padding: 0;
 }
+ul.two-thirds label,
 ul.form-with-validation label {
 	color:#444;
 }
@@ -33,12 +34,26 @@ ul.form-with-validation li.address input.street {
 }
 ul.form-with-validation li.address input.city {
 	width: 510px !important;
+} 
+ul.two-thirds li.address input.city {
+	margin-right:5px;
+	margin-top:10px;
+	width:300px;
+}
+ul.two-thirds li.address input.state {
+	margin-top:10px;
+	width:80px;
 }
 ul.form-with-validation li.address .select-wrapper label {
 	width: 30px;
 }
 ul.form-with-validation li.address input.zip {
 	width: 55px !important;
+}
+ul.two-thirds li.address input.zip {
+	margin-left:15px;
+	margin-top:10px;
+	width:60px;
 }
 
 ul.form-with-validation .select-wrapper label {
