@@ -306,7 +306,8 @@ h4 {
 .squared-box .box-title.discreet {
 	font-size: 14px;
 	font-weight: bold;
-	padding-bottom:0;
+	padding-top: 15px;
+	padding-bottom: 10px;
 }
 .titled-box .box-title {
 	position: absolute;
@@ -397,10 +398,11 @@ h4 {
 }
 .request-summary .request-title,
 .squared-box .box-title {
-	height: 33px;
-	padding: 15px 0 10px 30px;
+	height: 20px;
+	padding: 10px 0 15px 30px;
 	background: url(../images/bkgd_box_header_large.png) repeat-x scroll 0 0 transparent;
 	font-weight: normal;
+	border-bottom: 1px solid #bfc3c5;
 }
 .squared-box .box-title .submit-area-right {
 	padding-right:30px;
