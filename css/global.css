@@ -6,6 +6,9 @@
 body {
 	background-color:#000000;
 }
+/*body, p, h1, h2, h3, h4, h5, span, a, li {
+	font-family: Comic Sans MS !important;
+}*/
 body.signed-in {
 	background: url(../images/bkgd_graphite_tile.png) repeat scroll 0 0 transparent;
 }

@@ -77,7 +77,7 @@ $.fn.duplicatable = function(method)
 		}
 	};
 	
-	/* Method calling logic */
+	// Method calling logic 
   if ( methods[method] ) {
     return methods[ method ].apply( this, Array.prototype.slice.call( arguments, 1 ));
   } else if ( typeof method === 'object' || ! method ) {
@@ -94,31 +94,92 @@ $.fn.multiAccordion = function(method)
 {
 	var $this = $(this);
 	
-	function applyOptions(options)
+	function applyOptions()
 	{
-		$this.multiAccordion.settings = $.extend({
-			'locked': 	[],
-			'active':		[]
-		}, options);
+		if($this.multiAccordion.settings.active.length === 0){
+			$this.children('h2').each(function(i,e){
+				$this.multiAccordion.settings.active.push(i);
+			});
+		}
 		
+		$this.children('h2').each(function(i, e){
+			var activeIndex = $this.multiAccordion.settings.active ? $this.multiAccordion.settings.active.indexOf(i) : -1;
+			var lockedIndex = $this.multiAccordion.settings.locked.indexOf(i);
+			console.log('activeIndex: %o', activeIndex);
+			console.log('lockedIndex: %o', lockedIndex);
+			// Locking this row down
+			// if($this.multiAccordion.settings.locked.indexOf(i) !== -1 && activeIndex !== -1)$(this).click();
+
+			// active row;; show it
+			if($this.multiAccordion.settings.active === false || activeIndex === -1)
+			{
+				$(this).removeClass('ui-state-active').next().not(':hidden').hide('blind');
+			}
+			// inactive row; hide it
+			else
+			{
+				$(this).addClass('ui-state-active').next().not(':visible').show('blind');
+			}
+		});
 	};
 	
 	var methods = {
-		init: function()
+		/* initialize */
+		init: function(options)
 		{
+			$this.multiAccordion.settings = $.extend({
+				'locked': 	[],
+				'active':		[]
+			}, options);
+			applyOptions();
+			
+			console.log(arguments);
+			console.log($this.multiAccordion.settings.active);
+			
 			$this.children('h2').each(function(){
 				var $head = $(this).addClass('ui-accordion-header').addClass('ui-state-active');
 				$head.append('<span class="ui-icon"></span>').next().addClass('ui-accordion-content');
-				$head.toggle(function(){
-					$(this).removeClass('ui-state-active').next().hide('blind');
-				}, function(){
-					$(this).addClass('ui-state-active').next().show('blind');
-				})
+				$head.click(function(){
+					var thisIndex = $this.children('h2').index($(this));
+					console.log($this.multiAccordion.settings.active);
+					console.log(thisIndex);
+					
+					// open
+					if($this.multiAccordion.settings.active === false)$this.multiAccordion.settings.active = [];
+					if($this.multiAccordion.settings.active.indexOf(thisIndex) === -1)
+					{
+						$this.multiAccordion.settings.active.push(thisIndex);
+					// close
+					}else{
+						console.log('thisIndex: %o', thisIndex);
+						console.log('toSplice: %o', $this.multiAccordion.settings.active.indexOf(thisIndex));
+						$this.multiAccordion.settings.active.splice($this.multiAccordion.settings.active.indexOf(thisIndex), 1);
+						if($this.multiAccordion.settings.active.length == 0)$this.multiAccordion.settings.active = false;
+					}
+					applyOptions();
+					
+				});
 			});
+			
 		},
+		/* Set/Get options */
 		options: function(options)
 		{
-			
+			// the first argument is good
+			if(typeof arguments[0] == 'string' && typeof $this.multiAccordion.settings[arguments[0]] !== 'undefined')
+			{
+				// second argument is good; treat as setter
+				if(typeof arguments[1] !== 'undefined' && arguments[1] instanceof Array)
+				{
+					$this.multiAccordion.settings[arguments[0]] = arguments[1];
+					applyOptions();
+				}
+				// second argument is not present/good; treat as getter
+				else
+				{
+					return $this.multiAccordion.settings[arguments[0]];
+				}
+			}
 		}
 	};
 	
