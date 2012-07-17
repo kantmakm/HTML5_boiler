@@ -40,3 +40,6 @@ button.submit:active span {
 .switchable-edit .select-wrapper {
 	visibility:visible;
 }
+.rounded-box .box-title{
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fafafa', endColorstr='#eeeeee',GradientType=0 ); /* IE6-9 */
+}

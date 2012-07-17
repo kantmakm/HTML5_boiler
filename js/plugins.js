@@ -94,7 +94,7 @@ $.fn.multiAccordion = function(method)
 {
 	var $this = $(this);
 	
-	//* this method is reponsible for hiding/showing based on locked/active status
+	/* this method is reponsible for hiding/showing based on locked/active status */
 	function applyOptions()
 	{
 		if($this.multiAccordion.settings.active.length === 0){
@@ -176,6 +176,7 @@ $.fn.multiAccordion = function(method)
 				}
 			}
 		},
+		/* Easier to use lock/unlock and activate/deactivate methods */
 		lock: function(i)
 		{
 			var locked = $this.multiAccordion('options', 'locked');
@@ -222,7 +223,7 @@ $.fn.multiAccordion = function(method)
 
 
 /********************************
- * adding bindEvents for widgets
+ * bindEvents for widgets
  ********************************/
 if($('ul.duplicatable').length > 0)
 {
@@ -231,10 +232,11 @@ if($('ul.duplicatable').length > 0)
 	};
 }
 // binding the custom multiAccordion widget
-if($('.multi-accordion').length !== 0)archstone.bindEvents.multiAccordion = function() {
-	$('.multi-accordion').multiAccordion();
-};
-
+if($('.multi-accordion').length !== 0){
+	archstone.bindEvents.multiAccordion = function() {
+		$('.multi-accordion').multiAccordion();
+	};
+}
 // accordion binding (though it does not use a custom widget, I found it fitting that it be bound here)
 if($('.accordion').length !== 0)
 {

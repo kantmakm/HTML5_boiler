@@ -89,6 +89,7 @@ ul.two-thirds input[type=text],
 ul.two-thirds input[type=password] {
 	width: 450px;
 }
+
 .two-thirds .select-wrapper {
 	margin-bottom: 3px;
 }
@@ -166,8 +167,15 @@ input[type=email] {
 	-webkit-transition: all 0.5s;
 	
 }
-
+input[type=radio],
+input[type=checkbox]{
+	margin: 5px 5px 0 0;
+}
 /* Submit Button */
+a.submit {
+	display: inline-block;
+}
+a.submit,
 button.submit,
 button.cancel {
 	height: 37px;
@@ -179,6 +187,7 @@ button.cancel {
 	background: none;
 	overflow:visible;
 }
+a.submit span,
 button.submit span,
 button.cancel span{
 	font-family: "HelveticaNeueBold", Helvetica, Arial, sans-serif;
@@ -189,6 +198,7 @@ button.cancel span{
 	padding: 10px 20px 10px 30px;
 	color:#FFFFFF;
 }
+a.submit span.end,
 button.submit span.end,
 button.cancel span.end {
 	background-position: right -37px;

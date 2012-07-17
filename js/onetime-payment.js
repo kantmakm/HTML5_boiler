@@ -19,7 +19,10 @@ payments.onetime = function(options){
 			if($radio.length === 1 && !$radio.prop('checked'))$radio.prop('checked', true);
 			value = (ui.value/100)*payments.options.$balance.total;
 			$( this ).next().val( "$" + value.formatMoney(2, '.', ',') );
-			payments.options.$payment.$label.html("$" + value.formatMoney(2, '.', ','));
+			console.log(payments.options.$payment.$label);
+			payments.options.$payment.$label.each(function(){
+				$(this).html("$" + value.formatMoney(2, '.', ','));
+			});
 		},
 		stop: function(event, ui) {
 			var $radio = $(this).parent().find('input[type=radio]');
@@ -40,7 +43,14 @@ payments.onetime = function(options){
 		eval(evaluate);
 		if(typeof stateObj !== 'undefined')$.bbq.pushState(stateObj);
 	});
-	payments.options.$payment.$balances.blur(function(e){
+	payments.options.$payment.$balances.keydown(function(e){
+		console.log(e.keyCode);
+		if(e.keyCode == 13)
+		{
+			console.log('blur!');
+			$(this).blur();
+		}
+	}).blur(function(e){
 		var $radio = $(this).parent().find('input[type=radio]');
 		var numberVal = parseFloat($(this).val().replace(/[^0-9\.]+/g, ''));
 		var evaluate = 'var stateObj = {' + $radio.attr('name') + ' : "' + $radio.val() + '"};';
@@ -48,21 +58,54 @@ payments.onetime = function(options){
 		eval(evaluate);
 		stateObj.payment_amount = numberVal;
 		$.bbq.pushState(stateObj);
+
 	}).focus(function(){
 		var numberVal = parseFloat($(this).val().replace(/[^0-9\.]+/g, ''));
 		if(isNaN(numberVal))numberVal = payments.options.state.payment_amount;
 		$(this).val(numberVal);
 	});
+	// add Account button
 	payments.options.$account.$addButton.live('click', function(){
-		payments.options.$accordion.multiAccordion('unlock', 2);
+		payments.options.$account.$label.fadeOut(function(){
+			$(this).html('').show();
+		});
+		payments.options.$account.$replacement.show();
+		payments.options.$account.$information.hide();
+		payments.options.$accordion.multiAccordion('options', 'locked', [0,1,3]);
 		payments.options.$accordion.multiAccordion('activate', 2);
 		return false;
 	});
+	// remove account button
 	payments.options.$account.$removeButton.click(function(){
-		// lock the payment confirmation pane
+		payments.options.$account.$label.fadeOut(function(){
+			$(this).html($('<a href="#"></a>').addClass('add-button').html('add account')).fadeIn();
+		});
 		payments.options.$accordion.multiAccordion('lock', 3);
 		payments.options.$accordion.multiAccordion('lock', 2);
-		payments.options.$account.$label.html($('<a href="#"></a>').addClass('add-button').html('add account'));
+		payments.options.$account.$information.hide('blind');
+		return false;
+	});
+	// replace account button
+	payments.options.$account.$replaceButton.click(function(){
+		payments.options.$account.$label.fadeOut(function(){
+			$(this).html('').show();
+		});
+		payments.options.$accordion.multiAccordion('options', 'locked', [0,1,3]);
+		payments.options.$account.$replacement.show('blind');
+		payments.options.$account.$information.hide('blind');
+		return false;
+	});
+	// "add new account" form submission
+	payments.options.$account.$replacement.children('form').submit(function(){
+		$.getJSON($(this).attr('action'), $(this).serialize(), function(data, reponse){
+			// we're going to have to do some logic here to handle if they enter bad (not invalid) data.
+			// for now, this assumes that the JSON is communicating that everything worked out.
+			
+			payments.options.$account.$replacement.hide('blind');
+			payments.options.$account.$information.show('blind');
+			payments.options.$accordion.multiAccordion('options', 'locked', []);
+			payments.options.$accordion.multiAccordion('options', 'active', []);
+		});
 		return false;
 	});
 	
@@ -109,6 +152,7 @@ payments.onetime.hashChange = function(state) {
 	}
 
 	// payment amount
-	payments.options.$payment.$label.html("$" + value.formatMoney(2, '.', ','));
-	
+	payments.options.$payment.$label.each(function(){
+		$(this).html("$" + value.formatMoney(2, '.', ','));
+	});
 };

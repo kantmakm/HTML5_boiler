@@ -168,8 +168,11 @@ h4 {
 .form-element-with-notes .notes {
 	float: left;
 	width: 200px;
-	font-size: 10px;
 	padding-left: 20px;
+}
+.notes,
+.squared-box p.notes {
+	font-size: 10px;
 }
 .form-element-with-notes .under-notes {
 	color: #6E6E6E;
@@ -220,6 +223,34 @@ h4 {
 /**
  * shared modular style-rules
  */
+.rounded-box {
+	background-color: #FFFFFF;
+
+	border-radius: 4px;
+	-o-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	
+	box-shadow: 1px 1px 4px 0 rgba(0,0,0,0.3);
+}
+.rounded-box .box-title{
+	padding: 10px 15px 5px;
+	border-bottom: 1px solid #BFC3C5;
+	background: url(../images/bkgd_box_header_small.png) repeat-x scroll 0 0 transparent;
+
+	-webkit-border-top-left-radius: 4px;
+	-webkit-border-top-right-radius: 4px;
+	-moz-border-radius-topleft: 4px;
+	-moz-border-radius-topright: 4px;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+}
+.rounded-box .box-title a.right {
+	padding-top: 5px;
+	font-size: 12px;
+	text-decoration: none;
+	color: #444444;
+}
 
 /*description-summary*/
 #dialog-email .form-element {
@@ -283,19 +314,10 @@ h4 {
 .marketing-boxes {
 	padding-top:20px;
 }
-.titled-box {
-	background-color: #FDFDFD;
-	position: relative;
-	padding: 20px 25px;/* Used to be 20 24 */
-	margin: 40px 0;
-}
 .small-box {
 	padding: 10px 10px !important;
 }
-.titled-box-right {
-	float:right;
-}
-.titled-box .box-title,
+.rounded-box .box-title,
 .squared-box .box-title {
 	font-family: "HelveticaNeueLTStd", Helvetica, Arial, sans-serif;
 	font-size: 22px;
@@ -309,77 +331,18 @@ h4 {
 	padding-top: 15px;
 	padding-bottom: 10px;
 }
-.titled-box .box-title {
-	position: absolute;
-	top: -49px;
-	left: 6px;
-	right: -3px;
-	height: 49px;
-	background: url(../images/bkgd_box_header_small.png) no-repeat scroll right top transparent;
-	font-weight: normal;
-	margin: 0;
-}
-.titled-box .box-title span {
-	background: url(../images/bkgd_box_header_small.png) no-repeat scroll left bottom transparent;
-	height: 29px;
-	padding: 15px 0 5px 20px;
-	left: -9px;
-	position: absolute;
-	top: 0;
-}
 .squared-box .box-title .title-area-right {
 	padding: 10px 34px 0 0;
 }
-.titled-box .box-title .title-area-right {
-	padding: 20px 15px 0 0;
-}
 .squared-box .box-title .title-area-right,
-.titled-box .box-title .title-area-right {
+.rounded-box .box-title .title-area-right {
 	font-size: 12px;
 	color: #666666; /* TM 7/4 :psd's show 666*/
 	font-weight: regular;
 	float:right;
 }
-.titled-box .box-footer {
-	position: absolute;
-	bottom: -10px;
-	left: 6px;
-	right: 0;
-	height: 10px;
-	background: url(../images/bkgd_box_footer.png) no-repeat scroll right top transparent;
-	font-size: 16px;
-	font-weight: normal;
-	margin: 0;
-}
-.titled-box .box-footer span {
-	background: url(../images/bkgd_box_footer.png) no-repeat scroll left bottom transparent;
-	height: 10px;
-	padding: 0;
-	left: -9px;
-	position: absolute;
-	bottom: 0;
-	width: 10px;
-}
-.titled-box .box-shadow-left,
-.titled-box .box-shadow-right {
-	position:absolute;
-	top:0;
-	bottom:0;
-	background:url(../images/bkgd_box_shadow.png) repeat-y scroll 0 0 transparent;
-}
-.titled-box .box-shadow-left {
-	left: -4px;
-	background-position: right top;
-}
-.titled-box .box-shadow-right {
-	right: -5px;
-}
-.titled-box .body-left,
-.titled-box .body-right {
-	float:left;
-}
 .squared-box h3,
-.titled-box h3 {
+.rounded-box h3 {
 	font-size: 16px;
 	color: #999999;
 }
@@ -389,6 +352,9 @@ h4 {
 }
 .padded {
 	margin: 10px 25px;
+}
+.padded-small {
+	margin: 10px;
 }
 .padded-left {
 	margin-left:10px;
@@ -414,13 +380,13 @@ h4 {
 .squared-box p {
 	font-size: 14px;
 }
-.titled-box p,
+.rounded-box p,
 .squared-box p {
 	color:#444;
 }
 /* Both */
 .squared-box fieldset,
-.titled-box fieldset {
+.rounded-box fieldset {
 	border-bottom: 2px solid #E7E5E3;
 	padding-bottom: 20px;
 /*	margin-bottom: 20px;*/
@@ -464,19 +430,17 @@ h4 {
  */
 .medium-width #main {
 	width:640px;
-	padding-top: 60px;
+/*	padding-top: 60px;*/
 }
 .narrow-width #main {
 	width: 490px;
-}
-.medium-width .titled-box {
-	margin: 46px 0 20px;
 }
 .body-left {
 	width:240px;
 	padding-right:10px;
 	border-right:1px solid #cccccc;
 	font-size: 14px;
+	float: left;
 }
 .body-left ul {
 	font-family: "HelveticaNeueLTStd", Helvetica, Arial, sans-serif;
@@ -526,15 +490,6 @@ h3.discreet {
 .submit-area-right {
 	float:right;
 }
-/*.box-title .submit-area-right {
-	margin: -5px 30px 0 0;
-}*/
-/*.submit {
-	font-family: "HelveticaNeueBold", Helvetica, Arial, sans-serif;
-	font-size: 14px;
-	text-shadow: 1px 0px 0px rgba(0,0,0,0.2);
-}
-*/
 .button-droid,
 .button-iphone {
 	display:block;

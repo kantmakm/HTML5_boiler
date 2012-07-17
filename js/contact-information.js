@@ -27,7 +27,7 @@ accounts.switchable.show = function()
 };
 accounts.switchable.hide = function()
 {
-	$.getJSON('contact-information.json', accounts.switchable.options.form.serialize(), function(data, response){
+	$.getJSON('blank.json', accounts.switchable.options.form.serialize(), function(data, response){
 		if(response === 'success')
 		{
 			accounts.switchable.options.toggleButton.find('span:eq(0)').html('Edit');

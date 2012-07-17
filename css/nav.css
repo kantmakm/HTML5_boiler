@@ -17,14 +17,14 @@ header .primary-nav-contents
 /*	background: url(../images/bkgd_nav_primary_tile.png) repeat-x scroll 0 0 #FFFFFF;*/
 	z-index: 1002;
 }
-header .primary-nav-contents,
-header .secondary-nav-contents {
+.signed-in header .primary-nav-contents,
+.signed-in header .secondary-nav-contents {
 	width: 770px;
 	text-align: left;
 	margin: 0 auto;
 	position: relative;
 }
-.medium-width header .primary-nav-contents {
+header .primary-nav-contents {
 	text-align:center;
 }
 header .secondary-nav-contents,
@@ -220,7 +220,7 @@ header .dropdown-nav-contents ul ul li:hover a {
  */
 footer {
 	width: 730px;
-	height: 23px;
+/*	height: 23px; this should flow with the text. leaving incase this causes problems */
 	margin: 0 auto 18px auto;
 	display: block;
 	background: #000000;
@@ -248,4 +248,9 @@ footer div {
 	font-size: 10px;
 	text-decoration: none;
 	line-height: 1.5;
+}
+/* unfloating to let the footer flow with text. */
+footer .left,
+footer .left-one-row {
+	float: none;
 }

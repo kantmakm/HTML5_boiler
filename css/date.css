@@ -1,7 +1,7 @@
-fieldset.date-manager {
+.date-manager {
 	position: relative;
 	display: block;
-	height: 55px;
+/*	height: 55px; this allows the box to flow with months (if they exist). leaving this here in case it causes poblems*/
 	margin: 0;
 	padding: 20px 0 0;
 	border-top: 1px solid #E7E5E3;
@@ -119,7 +119,28 @@ fieldset.date-manager {
 .date-manager .year-selector li.active a {
 	background-position: right bottom;
 }
+.date-manager .month-selector {
+	margin: 0 0 0 15px;
+	float: left;
+	padding: 0 25px;
 
+	transition: all 0.75s;
+	-o-transition: all 0.75s;
+	-moz-transition: all 0.75s;
+	-webkit-transition: all 0.75s;
+}
+.date-manager .month-selector li {
+	float: left;
+	width: 45px;
+	text-align: center;
+}
+.date-manager .month-selector li a {
+	font-size: 10px;
+	font-weight: bold;	
+}
+.date-manager .month-selector li.active a {
+	
+}
 /**
  * Background-Colors
  */
