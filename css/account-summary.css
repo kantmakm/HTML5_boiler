@@ -6,13 +6,13 @@
 	position: relative; 
 	top: 5px;
 	font-family: "HelveticaNeueLTStd", Helvetica, Arial, sans-serif;
-	font-size: 22px;
+	font-size: 1.375em;
 	text-transform: uppercase;
 	font-color: #444444;
 	}
 .top-box .current-bg{background:url(../images/bkgd_grey_current_bal.png) no-repeat; height:100px; 
 	font-family: "HelveticaNeueLTStd", Helvetica, Arial, sans-serif;
-	font-size: 50px;
+	font-size: 3.125em;
 	text-transform: uppercase;
 	color:#fff;
 	text-align:center;
@@ -25,7 +25,7 @@
 	padding-right:15px;
 	color:#FFF; 
 	font-family: "HelveticaNeueLTStd", Helvetica, Arial, sans-serif;
-	font-size: 16 px;
+	font-size: 1.000em;
 	text-transform: standard;
 }
 .top-box .teal-toolbar a{color:#FFF;}
@@ -39,7 +39,7 @@
 .lease-date{
 	padding:10px 20px 0px 0px;
 	font-family: Helvetica;
-	font-size: 12px;
+	font-size: 0.750em;
 	text-transform: standard;
 	font-color: #444444;
 	font-weight: regular;
@@ -52,7 +52,7 @@
 .lease-positioning{
 	text-align:center;
 	font-family: "HelveticaNeueLTStd", Helvetica, Arial, sans-serif;
-	font-size: 16px;
+	font-size: 1.000em;
 	text-transform: standard;
 	font-color: white;
 	padding-top:20px;

@@ -39,7 +39,7 @@
 .squared-accordion .ui-accordion-content h3 {
 /*	font-family: "HelveticaNeueLTStd", Helvetica, Arial, sans-serif;
 	color: #00919E;*/
-	font-size: 18px;
+	font-size: 1.125em;
 	color: #6E6E6E;
 	padding: 0 0 20px;
 	border-bottom: 1px solid #E7E5E3;
@@ -65,7 +65,7 @@
 /*	font-family: "HelveticaNeueLTStd", Helvetica, Arial, sans-serif;*/
 /*	color: #00919e;*/
 	font-weight: lighter;
-	font-size: 18px;
+	font-size: 1.125em;
 	color: #444444;
 }
 .discreet-accordion-header h2.accordion-header {
@@ -83,11 +83,11 @@ h2.accordion-header a.email,
 .discreet-accordion h2 a.email {
 	float:left;
 	display:block;
-	font-size: 12px;
+	font-size: 0.750em;
 	padding:10px 0 0;
 }
 .discreet-accordion h2.accordion-header span {
-	font-size: 10px;
+	font-size: 0.625em;
 	font-weight: bold;
 	padding:0;
 	color:#888888;
@@ -96,7 +96,7 @@ h2.accordion-header a.email,
 	border: 0;
 	background: none no-repeat scroll 0 0 #EFEFEF;
 	box-shadow: 0 0 15px 0 #999999 inset;
-	font-size: 12px;
+	font-size: 0.750em;
 }
 .accordion-header .last-updated,
 .discreet-accordion .last-updated {

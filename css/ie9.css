@@ -7,3 +7,6 @@ button.submit:active span.end {
 	top: 1px; 
 	right: -10px;
 }*/
+.request-summary .request-title .id {
+	bottom: 4px;
+}

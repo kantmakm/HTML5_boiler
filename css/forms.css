@@ -9,7 +9,7 @@ ul.form-with-validation label {
 }
 ul.form-with-validation label.discreet {
 	color:#666;
-	font-size: 12px;
+	font-size: 0.750em;
 }
 ul.form-with-validation li {
 	position: relative;
@@ -70,13 +70,13 @@ ul.form-with-validation input.input-validation-error {
 }
 ul.form-with-validation .ui-state-error-text,
 ul.two-thirds .ui-state-error-text {
-	font-size: 11px;
+	font-size: 0.688em;
 	font-weight: bold;
 	display:block;
 }
 ul.form-with-validation .message-text,
 ul.two-thirds .message-text {
-	font-size: 11px;
+	font-size: 0.688em;
 	color: #6E6E6E; 
 	float:right;
 }
@@ -197,7 +197,7 @@ button.cancel {
 button.submit span,
 button.cancel span{
 	font-family: "HelveticaNeueBold", Helvetica, Arial, sans-serif;
-	font-size: 14px;
+	font-size: 0.875em;
 	height: 37px;
 	background: url(../images/button_submit.png) no-repeat scroll left top transparent;
 	display:block;
@@ -247,11 +247,11 @@ input.autoclear {
 /*	TH - Styles I've added for forms.	*/
 /*styles used for registration and login pages.*/
 p.form-note{
-	font-size: 11px;
+	font-size: 0.688em;
 	font-family: Arial, sans-serif;
 	color: #888;
 }
-.form-note-alert{font-style:italic; font-size:10px; color: #FF0000;}
+.form-note-alert{font-style:italic; font-size: 0.625em; color: #FF0000;}
 .form-entry{
 	width:550px;
 }

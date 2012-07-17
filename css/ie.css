@@ -40,3 +40,6 @@ button.submit:active span {
 .switchable-edit .select-wrapper {
 	visibility:visible;
 }
+.request-summary .request-title .id {
+	bottom: 4px;
+}
