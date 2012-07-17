@@ -141,7 +141,7 @@ fieldset.form-element {
 }
 h4 {
 	padding: 0 0 10px;
-	font-size: 18px;
+	font-size: 1.125em;
 }
 .form-element,
 .form-element-right {
@@ -156,7 +156,7 @@ h4 {
 .form-element label,
 .form-element-right label {
 	display:block;
-	font-size:12px;
+	font-size: 0.750em;
 	color: #666666;
 	margin:10px 0 0;
 }
@@ -168,6 +168,7 @@ h4 {
 .form-element-with-notes .notes {
 	float: left;
 	width: 200px;
+	font-size: 0.625em;
 	padding-left: 20px;
 }
 .notes,
@@ -179,7 +180,7 @@ h4 {
 	padding-top: 10px;
 	float: left;
 	clear:left;
-	font-size:12px;
+	font-size: 0.750em;
 	width:410px;
 }
 .form-element-with-notes textarea {
@@ -194,7 +195,7 @@ h4 {
  */
 .two-column {
 	position:relative;
-	font-size:12px;
+	font-size: 1em;
 	color: #666666;
 	padding: 10px 0 0 200px;
 	
@@ -212,7 +213,7 @@ h4 {
 }
 
 .two-column label {
-	font-size:12px;
+	font-size: 0.750em;
 	color: #666666;
 	margin: 0 0 5px;
 	display:block;
@@ -247,7 +248,7 @@ h4 {
 }
 .rounded-box .box-title a.right {
 	padding-top: 5px;
-	font-size: 12px;
+	font-size: 12px; /* this is new */
 	text-decoration: none;
 	color: #444444;
 }
@@ -258,7 +259,7 @@ h4 {
 	padding: 0;
 }
 #dialog-email .description-summary {
-	font-size:12px;
+	font-size: 0.750em;
 }
 .description-summary h3,
 .description-summary h4,
@@ -274,7 +275,7 @@ h4 {
 #dialog-email .form-element label.form-label {
 	width: 70px;
 	text-align: left;
-	font-size: 16px;
+	font-size: 1.000em;
 	font-family: "HelveticaNeueLTStd", Helvetica, Arial, sans-serif;
 }
 .description-summary p,
@@ -320,13 +321,13 @@ h4 {
 .rounded-box .box-title,
 .squared-box .box-title {
 	font-family: "HelveticaNeueLTStd", Helvetica, Arial, sans-serif;
-	font-size: 22px;
+	font-size: 1.375em;
 	/*color: #6E6E6E;*/
 	color: #444444; /* TM 7/4 :psd's show 444*/
 	font-weight: normal;
 }
 .squared-box .box-title.discreet {
-	font-size: 14px;
+	font-size: 0.875em;
 	font-weight: bold;
 	padding-top: 15px;
 	padding-bottom: 10px;
@@ -336,14 +337,14 @@ h4 {
 }
 .squared-box .box-title .title-area-right,
 .rounded-box .box-title .title-area-right {
-	font-size: 12px;
+	font-size: 0.563em;
 	color: #666666; /* TM 7/4 :psd's show 666*/
 	font-weight: regular;
 	float:right;
 }
 .squared-box h3,
 .rounded-box h3 {
-	font-size: 16px;
+	font-size: 1em;
 	color: #999999;
 }
 /* Squared-corners/no drop-shadow */
@@ -378,7 +379,7 @@ h4 {
 	padding: 8px 0;
 }
 .squared-box p {
-	font-size: 14px;
+	font-size: .875em;
 }
 .rounded-box p,
 .squared-box p {
@@ -398,7 +399,7 @@ h4 {
 	padding-left: 12px;
 }
 .back-arrow  a{
-	font-size: 14px;
+	font-size: 0.875em;
 }
 /**
  * Photo Box
@@ -418,12 +419,12 @@ h4 {
 	width:150px;
 	font-family: "HelveticaNeueLTStd", Helvetica, Arial, sans-serif;
 	text-shadow: 2px 0px 0px #FFFFFF;
-	font-size: 22px;
+	font-size: 1.375em;
 	color: #1C1C1C;
 	line-height: 1;
 }
 .photo-box p strong {
-	font-size: 30px;
+	font-size: 1.364em;
 }
 /**
  * Front-page specific
@@ -439,7 +440,7 @@ h4 {
 	width:240px;
 	padding-right:10px;
 	border-right:1px solid #cccccc;
-	font-size: 14px;
+	font-size: 0.875em;
 	float: left;
 }
 .body-left ul {
@@ -450,7 +451,7 @@ h4 {
 .body-left ul li {
 	background: url(../images/icon_check.png) no-repeat scroll 0 0 transparent;
 	padding-left:15px;
-	font-size:16px;
+	font-size: 1.125em;
 	color: #444444;
 }
 .body-right {
@@ -459,14 +460,14 @@ h4 {
 	padding-left: 25px;
 }
 h3.discreet {
-	font-size: 14px;
+	font-size: 0.875em;
 	color: #444444;
 	font-weight: bold;
 }
 .body-right p.error {
 	margin-right: 10px;
 	padding: 0 0 5px;
-	font-size: 11px;
+	font-size: 0.688em;
 	font-family: "HelveticaNeueBold", Helvetica, Arial, sans-serif;
 	color: #e34848;
 }
@@ -474,7 +475,7 @@ h3.discreet {
 	float:left;
 	position:relative;
 	padding-left: 25px;
-	font-size: 12px;
+	font-size: 0.750em;
 	color: #555555;
 }
 .remember-area input {
@@ -563,14 +564,14 @@ h3.discreet {
  *
  */
 #service-request .two-column .label-column {
-	font-size: 18px;
+	font-size: 1.125em;
 }
 
 /**
  * Page specific to make-onetime-payment.html
  */
 .balance table {
-	font-size: 12px;
+	font-size: 0.750em;
 	font-weight: bold;
 }
 .balance table td.description {
@@ -589,7 +590,7 @@ h3.discreet {
 
 .balance table tfoot #total {
 	font-weight: 100;
-	font-size: 18px;
+	font-size: 1.5em;
 }
 
 /**
@@ -610,7 +611,7 @@ h3.discreet {
 	opacity: 1;
 }
 .switchable .squared-accordion p {
-	font-size: 16px;
+	font-size: 1.000em;
 }
 .switchable ul li.address p {
 	margin-top: -90px;
